@@ -28,5 +28,9 @@ jobs:
         run: python scripts/check_package.py
       - name: Check generated coverage freshness
         run: python scripts/build_coverage.py --check
+      - name: Check source-feature matrix and README text maps
+        run: python scripts/build_feature_docs.py --check
+      - name: Replay conflict policies
+        run: python scripts/compare_policies.py > /tmp/atlas-conflicts.json
       - name: Verify installed runtime footprint
         run: python skills/paper-review-atlas/scripts/atlas.py verify-install
