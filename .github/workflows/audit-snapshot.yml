@@ -31,7 +31,7 @@ jobs:
               sid, name, url = item
               p = urllib.parse.urlparse(url)
               bits = p.path.strip('/').split('/')
-              if p.scheme != 'https' or p.netloc != 'github.com' or len(bits) < 6 or bits[2] != 'blob':
+              if p.scheme != 'https' or p.netloc != 'github.com' or len(bits) < 5 or bits[2] != 'blob':
                   return dict(source=sid, name=name, url=url, error='unsupported source URL')
               raw = 'https://raw.githubusercontent.com/' + '/'.join(bits[:2] + bits[3:])
               try:
@@ -49,6 +49,15 @@ jobs:
           with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
               results = list(pool.map(fetch, items))
           (out / 'source-manifest.json').write_text(json.dumps(results, ensure_ascii=False, indent=2))
+          try:
+              with urllib.request.urlopen('https://arxiv.org/pdf/2210.03629v3', timeout=45) as response:
+                  pdf = response.read(15000001)
+              if not pdf.startswith(b'%PDF') or len(pdf) > 15000000:
+                  raise ValueError('unexpected paper response')
+              (out / 'react-v3.pdf').write_bytes(pdf)
+              print('public_paper_sha256', hashlib.sha256(pdf).hexdigest())
+          except Exception as exc:
+              print('public_paper_fetch_error', str(exc))
           import subprocess
           tracked = subprocess.check_output(['git', 'ls-files', '-z']).decode().split('\0')
           with zipfile.ZipFile(out / 'repository.zip', 'w', zipfile.ZIP_DEFLATED) as z:
