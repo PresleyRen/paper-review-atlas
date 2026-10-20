@@ -263,7 +263,7 @@ test_webshop_react_vs_il (test_real_paper.RealPaperCalculations.test_webshop_rea
 test_webshop_react_vs_ilrl (test_real_paper.RealPaperCalculations.test_webshop_react_vs_ilrl) ... ok
 
 ----------------------------------------------------------------------
-Ran 247 tests in 3.347s
+Ran 247 tests in 3.588s
 
 OK
 Generated 5 coverage artifacts. Structural consistency only; no semantic review-effectiveness claim.

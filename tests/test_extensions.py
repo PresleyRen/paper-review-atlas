@@ -63,6 +63,10 @@ class NewHelpers(unittest.TestCase):
     def test_locate_capability_and_feature(self):
         for query in ['C19','F030','academic-paper-reviewer','图表']:
             r=ext.locate(query);self.assertTrue(r['capabilities']);self.assertTrue(r['features'])
+        self.assertEqual([c['id'] for c in ext.locate('C19')['capabilities']], ['C19'])
+        self.assertEqual([f['id'] for f in ext.locate('F030')['features']], ['F030'])
+        self.assertEqual([f['module'] for f in ext.locate('academic-paper-reviewer')['features']], ['academic-paper-reviewer'])
+        self.assertEqual([g['id'] for g in ext.locate('G03')['gaps']], ['G03'])
     def test_locate_gap_returns_repair_and_capabilities(self):
         r=ext.locate('G03');self.assertIn('G03',[g['id'] for g in r['gaps']]);self.assertIn('C11',[c['id'] for c in r['capabilities']])
     def test_locate_empty_rejected_and_unknown_not_invented(self):

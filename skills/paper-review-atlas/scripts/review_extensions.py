@@ -18,20 +18,35 @@ def load(name):
 
 
 def locate(query: str) -> dict:
-    """Search capability IDs, module names, bilingual features and repair routes."""
-    q = query.strip().casefold()
-    if not q:
+    """Resolve exact IDs first, then search descriptions without recursive fan-out."""
+    if not isinstance(query, str) or not query.strip():
         raise AuditInputError('locate needs a nonempty ID or search term')
+    q = query.strip().casefold()
     caps = load('capabilities')['capabilities']
     features = load('features')['features']
     gaps = load('gaps')['gaps']
-    direct = [c for c in caps if q in json.dumps(c, ensure_ascii=False).casefold()]
-    matches = [f for f in features if q in json.dumps(f, ensure_ascii=False).casefold()]
-    ids = {c['id'] for c in direct} | {x for f in matches for x in f['capabilities']}
-    ids |= {x for g in gaps if q == g['id'].casefold() for x in g['capabilities']}
+    exact_caps = [c for c in caps if c['id'].casefold() == q]
+    exact_features = [f for f in features if f['id'].casefold() == q or f['module'].casefold() == q]
+    exact_gaps = [g for g in gaps if g['id'].casefold() == q]
+    if exact_caps:
+        ids = {c['id'] for c in exact_caps}
+        found_features = [f for f in features if set(f['capabilities']) & ids]
+        found_gaps = [g for g in gaps if set(g['capabilities']) & ids]
+    elif exact_features:
+        found_features = exact_features
+        ids = {x for f in exact_features for x in f['capabilities']}
+        found_gaps = [g for g in gaps if set(g['capabilities']) & ids]
+    elif exact_gaps:
+        found_gaps = exact_gaps
+        ids = {x for g in exact_gaps for x in g['capabilities']}
+        found_features = [f for f in features if set(f['capabilities']) & ids]
+    else:
+        direct = [c for c in caps if q in json.dumps(c, ensure_ascii=False).casefold()]
+        found_features = [f for f in features if q in json.dumps(f, ensure_ascii=False).casefold()]
+        found_gaps = [g for g in gaps if q in json.dumps(g, ensure_ascii=False).casefold()]
+        ids = {c['id'] for c in direct} | {x for f in found_features for x in f['capabilities']} | {x for g in found_gaps for x in g['capabilities']}
     return {'query': query, 'capabilities': [c for c in caps if c['id'] in ids],
-            'features': [f for f in features if f in matches or set(f['capabilities']) & ids],
-            'gaps': [g for g in gaps if set(g['capabilities']) & ids or q in json.dumps(g, ensure_ascii=False).casefold()]}
+            'features': found_features, 'gaps': found_gaps}
 
 
 def calibrate(records: list[dict]) -> dict:
