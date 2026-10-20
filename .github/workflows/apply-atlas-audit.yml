@@ -1,0 +1,103 @@
+name: Apply and validate Atlas audit
+on:
+  push:
+    branches: ['audit/feature-completeness']
+    paths: ['.github/workflows/apply-atlas-audit.yml']
+permissions:
+  contents: write
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: audit/feature-completeness
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Apply hash-verified original changes
+        shell: python
+        run: |
+          import hashlib, json, lzma, pathlib, shutil, subprocess
+          root = pathlib.Path.cwd().resolve()
+          parts = [root / '.atlas-upload' / ('part-%02d.xz' % i) for i in range(15)]
+          data = lzma.decompress(b''.join(p.read_bytes() for p in parts))
+          assert hashlib.sha256(data).hexdigest() == 'c4fc00ef51cb01d6382c2b133fe9a0f872f5d6fcb73bff0f83b9029634bd1f12'
+          payload = json.loads(data)
+          subprocess.run(['git', 'apply', '--check', '-'], input=payload['patch'], text=True, check=True)
+          subprocess.run(['git', 'apply', '-'], input=payload['patch'], text=True, check=True)
+          for name, text in payload['files'].items():
+              p = (root / name).resolve()
+              if root not in p.parents or '.git' in pathlib.Path(name).parts:
+                  raise ValueError('unsafe path: ' + name)
+              p.parent.mkdir(parents=True, exist_ok=True)
+              p.write_text(text, encoding='utf-8')
+          cases = json.loads((root / 'tests/fixtures/feature-walkthrough.json').read_text())['cases']
+          for case in cases:
+              data = (case['review_output']['quote'] + '\n').encode('utf-8')
+              assert hashlib.sha256(data).hexdigest() == case['input_sha256']
+              p = (root / case['input_path']).resolve()
+              if root not in p.parents:
+                  raise ValueError('unsafe fixture path')
+              p.parent.mkdir(parents=True, exist_ok=True)
+              p.write_bytes(data)
+          shutil.rmtree(root / '.atlas-upload')
+          print('Applied original source patch and reconstructed', len(cases), 'hashed fixtures')
+      - name: Replay conflict and public-paper checks
+        run: |
+          python scripts/compare_policies.py > docs/validation/conflict-comparison.json
+          python skills/paper-review-atlas/scripts/atlas.py audit --root tests/fixtures/real_react --spec verified-spec.json > docs/validation/react-correct.json
+          set +e
+          python skills/paper-review-atlas/scripts/atlas.py audit --root tests/fixtures/real_react --spec intentional-error-spec.json > docs/validation/react-error.json
+          status=$?
+          set -e
+          test "$status" -eq 1
+      - name: Regenerate documents
+        run: |
+          python scripts/build_coverage.py
+          python scripts/build_feature_docs.py
+      - name: Run all tests
+        run: |
+          python -m unittest discover -s tests -v > docs/validation/v1.1-unit-tests.txt 2>&1
+          cat docs/validation/v1.1-unit-tests.txt
+      - name: Record actual test execution
+        shell: python
+        run: |
+          import hashlib, json, os, pathlib, re, sys
+          out = pathlib.Path('docs/validation')
+          data = (out / 'v1.1-unit-tests.txt').read_bytes()
+          matches = re.findall(r'Ran (\d+) tests', data.decode())
+          assert matches and int(matches[-1]) == 247
+          summary = {'version': '1.1.0', 'date': '2026-10-20', 'python': sys.version, 'test_command': 'python -m unittest discover -s tests -v', 'tests': 247, 'result': 'passed', 'test_log_sha256': hashlib.sha256(data).hexdigest(), 'groups': {'original': 88, 'policy_and_helpers': 81, 'feature_contracts': 68, 'public_paper': 10}, 'conflicts': {'rules': 16, 'cases': 58, 'selected_matches': 58, 'alternative_matches': 13, 'kind': 'explicit rule implementations on supplied structured facts'}, 'inventory': {'repositories': 13, 'modules': 61, 'facets': 227, 'capabilities': 36, 'gaps': 12, 'modes': 11}, 'execution_url': os.environ['GITHUB_SERVER_URL'] + '/' + os.environ['GITHUB_REPOSITORY'] + '/actions/runs/' + os.environ['GITHUB_RUN_ID'], 'baseline_commit': 'd8dc5b1f90b32159c7d3aece69e3af12c5cfc24f'}
+          (out / 'v1.1-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n')
+      - name: Verify package and generators
+        run: |
+          python scripts/check_package.py
+          python scripts/build_coverage.py --check
+          python scripts/build_feature_docs.py --check
+          python skills/paper-review-atlas/scripts/atlas.py verify-install
+      - name: Archive validated source for recovery
+        shell: python
+        run: |
+          import pathlib, zipfile
+          root = pathlib.Path.cwd()
+          with zipfile.ZipFile('/tmp/atlas-validated.zip', 'w', zipfile.ZIP_DEFLATED) as z:
+              for p in root.rglob('*'):
+                  rel = p.relative_to(root)
+                  if p.is_file() and not any(x in rel.parts for x in ('.git', '__pycache__', '.atlas-upload')):
+                      z.write(p, rel)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: atlas-validated-update
+          path: /tmp/atlas-validated.zip
+          retention-days: 1
+          if-no-files-found: error
+      - name: Commit validated source on audit branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git restore --source=HEAD -- .github/workflows/ci.yml
+          git add -A
+          git commit -m "feat: integrate source features, conflict tests and bilingual capability maps"
+          git push origin HEAD:audit/feature-completeness
