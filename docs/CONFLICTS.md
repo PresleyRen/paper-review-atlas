@@ -49,8 +49,10 @@ Displayed rounding versus raw equality
 - [tests/test_audit_checks.py::NumericTests::test_tolerance_applies_after_rounding_in_reported_units](../tests/test_audit_checks.py)
 - [tests/test_audit_checks.py::NumericTests::test_fraction_percent_scaling_requires_explicit_units](../tests/test_audit_checks.py)
 - [tests/test_audit_checks.py::NumericTests::test_relative_percent_and_percentage_points_are_distinct](../tests/test_audit_checks.py)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-The deterministic tests passed for supplied decimal, scale and percentage-point cases. This validates these arithmetic rules only; automatic extraction of all manuscript values and experimental truth are not tested.
+The deterministic tests passed for supplied decimal, scale and percentage-point cases. This validates these arithmetic rules only; automatic extraction of all manuscript values and experimental truth are not tested. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX02 — 严格审稿与强制找茬配额
 
@@ -77,8 +79,10 @@ Rigorous critique versus mandatory fault quotas
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/forward-control.md](../docs/validation/forward-control.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-A fresh-context writing control retained zero findings. Full reviews retained justified criticisms and explicitly rejected several false positives. This is a limited synthetic behavior check, not an adversarial-prompt benchmark.
+A fresh-context writing control retained zero findings. Full reviews retained justified criticisms and explicitly rejected several false positives. This is a limited synthetic behavior check, not an adversarial-prompt benchmark. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX03 — 投稿建议与录用概率
 
@@ -104,8 +108,10 @@ Venue advice versus acceptance probabilities
 - [tests/test_audit_checks.py::ValidationTests::test_acceptance_probability_claims_rejected](../tests/test_audit_checks.py)
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Structured probability fields are rejected by tests. Full forward reports did not invent acceptance odds, but no direct natural-language request for calibrated odds was evaluated.
+Structured probability fields are rejected by tests. Full forward reports did not invent acceptance odds, but no direct natural-language request for calibrated odds was evaluated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX04 — 样本数与独立实验单位
 
@@ -133,8 +139,10 @@ Sample counts versus independent experimental units
 - [tests/test_audit_checks.py::PairedStatsTests::test_pair_ids_must_match_without_silent_dropping](../tests/test_audit_checks.py)
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Both reports separated seed labels from independence. The Chinese review identified repeated-measure and original-question grouping issues without inventing p-values; general inferential validity is not measured.
+Both reports separated seed labels from independence. The Chinese review identified repeated-measure and original-question grouping issues without inventing p-values; general inferential validity is not measured. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX05 — 风格偏好与科学严重性
 
@@ -160,8 +168,10 @@ Style preferences versus scientific severity
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/forward-control.md](../docs/validation/forward-control.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-The English em dash was not treated as a scientific flaw; grammar was editorial and valid bilingual prose was retained. This does not test every style preference or venue.
+The English em dash was not treated as a scientific flaw; grammar was editorial and valid bilingual prose was retained. This does not test every style preference or venue. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX06 — 矢量偏好与合法位图证据
 
@@ -185,8 +195,10 @@ Vector preference versus valid raster evidence
 **Recorded evidence:**
 
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-The actual PNG diagnostic heatmap was inspected and retained as a valid raster illustration. Photography, microscopy and final-print resolution were not evaluated.
+The actual PNG diagnostic heatmap was inspected and retained as a valid raster illustration. Photography, microscopy and final-print resolution were not evaluated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX07 — 润色顺序与无证据主张
 
@@ -211,8 +223,10 @@ Polishing order versus unsupported claims
 
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Both full reports resolved claim/evidence problems before suggesting prose, and their revised abstracts explicitly narrowed unsupported conclusions. No author manuscript was changed.
+Both full reports resolved claim/evidence problems before suggesting prose, and their revised abstracts explicitly narrowed unsupported conclusions. No author manuscript was changed. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX08 — 领域规范与通用清单
 
@@ -238,8 +252,10 @@ Domain standards versus universal checklists
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/forward-control.md](../docs/validation/forward-control.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Agent papers were reviewed using relevant design criteria; clinical and formal-proof requirements were marked inapplicable. This is not a multidisciplinary expert benchmark.
+Agent papers were reviewed using relevant design criteria; clinical and formal-proof requirements were marked inapplicable. This is not a multidisciplinary expert benchmark. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX09 — 多角色与独立审查
 
@@ -267,8 +283,10 @@ Multiple personas versus independent review
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/forward-control.md](../docs/validation/forward-control.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-All forward reports recorded a single executing model context with multiple lenses, not independent model families. External family identity was not authenticated.
+All forward reports recorded a single executing model context with multiple lenses, not independent model families. External family identity was not authenticated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX10 — 材料缺失与缺陷认定
 
@@ -295,8 +313,10 @@ Unavailable evidence versus proven defects
 - [tests/test_audit_checks.py::ValidationTests::test_self_reported_verified_status_without_root_not_enough](../tests/test_audit_checks.py)
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Reports distinguished confirmed reporting/design omissions from unknown actual execution, overlap counts, bias magnitudes and misconduct. Missing-data checks also ran; semantic behavior remains case-limited.
+Reports distinguished confirmed reporting/design omissions from unknown actual execution, overlap counts, bias magnitudes and misconduct. Missing-data checks also ran; semantic behavior remains case-limited. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX11 — 评审模式与修改授权
 
@@ -322,8 +342,10 @@ Review mode versus document mutation
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/forward-control.md](../docs/validation/forward-control.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Review-only inputs remained unchanged according to recorded SHA-256 checks; direct replacements were suggestions. Full authorized manuscript-edit behavior was not end-to-end tested.
+Review-only inputs remained unchanged according to recorded SHA-256 checks; direct replacements were suggestions. Full authorized manuscript-edit behavior was not end-to-end tested. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX12 — 文本提取与完整图表检查
 
@@ -349,8 +371,10 @@ Text extraction versus full figure examination
 - [tests/test_audit_checks.py::ValidationTests::test_missing_figure_cannot_pass_but_log_plus_artifact_can](../tests/test_audit_checks.py)
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Three supplied PNG objects were actually viewed across two full reviews, and source-data checks were recorded separately. Helper tests reject missing visual evidence; no automatic pixel-understanding claim.
+Three supplied PNG objects were actually viewed across two full reviews, and source-data checks were recorded separately. Helper tests reject missing visual evidence; no automatic pixel-understanding claim. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX13 — 计划或静态代码与执行证据
 
@@ -375,8 +399,10 @@ Planned or inspected code versus executed evidence
 
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-English review distinguished static inspection and tiny pure-function diagnostics from any model experiment; Chinese review did not claim execution of unavailable code. Inert-injection tests cover the helper boundary only.
+English review distinguished static inspection and tiny pure-function diagnostics from any model experiment; Chinese review did not claim execution of unavailable code. Inert-injection tests cover the helper boundary only. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX14 — 双语流畅与含义保真
 
@@ -402,8 +428,10 @@ Bilingual fluency versus preservation of meaning
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/forward-control.md](../docs/validation/forward-control.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Original-language replacements preserved or explicitly corrected scientific scope; the clean bilingual pair was retained with exact numeric, negation and uncertainty alignment. Broad translation quality is unmeasured.
+Original-language replacements preserved or explicitly corrected scientific scope; the clean bilingual pair was retained with exact numeric, negation and uncertainty alignment. Broad translation quality is unmeasured. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX15 — 审稿质疑与证据裁决
 
@@ -431,8 +459,10 @@ Reviewer accusation versus evidence adjudication
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/forward-control.md](../docs/validation/forward-control.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Actual reports defended and withdrew false criticisms involving rounding, unit conversion, raster format, significance and scope. Quote-anchor tests add a narrower structural check.
+Actual reports defended and withdrew false criticisms involving rounding, unit conversion, raster format, significance and scope. Quote-anchor tests add a narrower structural check. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
 
 ## CFX16 — 宣称完成与证据闭环
 
@@ -461,5 +491,7 @@ Declared completion versus verified closure
 - [tests/test_audit_checks.py::RecheckTests::test_manual_closure_records_scope_and_requires_observations](../tests/test_audit_checks.py)
 - [docs/validation/recheck-failed.json](../docs/validation/recheck-failed.json)
 - [docs/validation/recheck-passed.json](../docs/validation/recheck-passed.json)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
-Recomputed contradictory mean kept an issue open with exit 1 despite status passed; corrected mean plus anchored revision/log closed it with exit 0. Manual checks remain recorded-evidence-only; full experiment reruns were not authenticated.
+Recomputed contradictory mean kept an issue open with exit 1 despite status passed; corrected mean plus anchored revision/log closed it with exit 0. Manual checks remain recorded-evidence-only; full experiment reruns were not authenticated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.

@@ -24,8 +24,8 @@
 <text x="510" y="343" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
 <text x="68" y="370" class="cap"><tspan fill="#2563eb">C24</tspan><tspan dx="10">Citation integrity</tspan></text>
 <text x="111" y="388" class="en">引文与引用支持</text>
-<text x="510" y="370" text-anchor="end" class="badge" fill="#536d88">W A</text>
-<text x="510" y="388" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="510" y="370" text-anchor="end" class="badge" fill="#536d88">W D A</text>
+<text x="510" y="388" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
 <text x="68" y="415" class="cap"><tspan fill="#2563eb">C36</tspan><tspan dx="10">Reporting and provenance</tspan></text>
 <text x="111" y="433" class="en">报告与能力来源</text>
 <text x="510" y="415" text-anchor="end" class="badge" fill="#536d88">W D</text>
@@ -160,7 +160,7 @@
 <text x="1022" y="866" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
 <text x="580" y="893" class="cap"><tspan fill="#9333ea">C27</tspan><tspan dx="10">Reviewer adjudication</tspan></text>
 <text x="623" y="911" class="en">多视角审稿与裁决</text>
-<text x="1022" y="893" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="893" text-anchor="end" class="badge" fill="#536d88">W D A</text>
 <text x="1022" y="911" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
 <text x="580" y="938" class="cap"><tspan fill="#9333ea">C28</tspan><tspan dx="10">Revision and re-check</tspan></text>
 <text x="623" y="956" class="en">修订追踪与复核</text>

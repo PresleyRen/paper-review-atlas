@@ -1,0 +1,1225 @@
+{
+  "scope": "61 representative same-context review walkthroughs; automated tests check artifacts, anchors and routes, not semantic accuracy",
+  "cases": [
+    {
+      "id": "FC001",
+      "feature": "F001",
+      "module": "cs-ai-paper-review",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC001.txt",
+      "input_sha256": "0df2f67363b9f508224f9d36388ff19dd64c5fe1f76ae0acc663c928e847cfe0",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The new system is universally better. Only task A is evaluated.",
+        "line": 1,
+        "response": "把全称主张改为已测试任务上的结论，并优先核查该任务的对照和结果。",
+        "acceptance_check": "摘要与结论不再把单任务结果扩展为所有任务。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC002",
+      "feature": "F002",
+      "module": "ieee-access-review",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC002.txt",
+      "input_sha256": "8272e509f3f999326de317e02099a9e34680ceeb270d868384085d67c5c273af",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Target brief V2 requires an artifact statement. The draft has none.",
+        "line": 1,
+        "response": "按用户给出的V2标准补充真实的数据代码可用性说明，记录该标准的来源版本。",
+        "acceptance_check": "每个适用标准ID均能找到对应材料或待办。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC003",
+      "feature": "F003",
+      "module": "paper-surgical-editor",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC003.txt",
+      "input_sha256": "d389ece57fc8b5e26179c693c561f18fbad414d915c5c6f1164007e8489a72ea",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Issue I7 fixes Table 2; the abstract still reports the obsolete value.",
+        "line": 1,
+        "response": "保留I7，列出摘要与表2的依赖关系；同步修订后再核对数字。",
+        "acceptance_check": "原问题编号不变，摘要和表2均通过同源重算。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC004",
+      "feature": "F004",
+      "module": "paper-busy-reviewer",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC004.txt",
+      "input_sha256": "9b8e87fe6d7a04e2b4504698c94879e6ef390da0e7042182799c560535440b50",
+      "review_output": {
+        "decision": "request_evidence",
+        "quote": "Visible materials: title, abstract and Figure 1 only. Methods are unavailable.",
+        "line": 1,
+        "response": "先给有限表面审阅：说明主问题是否清楚，列出需读方法才能判断的问题。",
+        "acceptance_check": "不以未见方法为由断言实验没有做。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC005",
+      "feature": "F005",
+      "module": "paper-reviewer-sim",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC005.txt",
+      "input_sha256": "e3378e24be3f99a0943f7d5e72b2b1446507d5a219a74770c29d1c4b7226dd19",
+      "review_output": {
+        "decision": "retain",
+        "quote": "Reviewer A says a baseline is missing. Appendix B contains that baseline.",
+        "line": 1,
+        "response": "定位附录B后撤回缺失指控，继续检查该基线是否匹配而非强行保留拒稿理由。",
+        "acceptance_check": "最终问题表不包含已被附录解决的指控。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC006",
+      "feature": "F006",
+      "module": "paper-venue-fit-strategy",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC006.txt",
+      "input_sha256": "4a295a1c7673f054fd4cb195a3cc5e6fd89e307578aef51f7c21f6c94728a51e",
+      "review_output": {
+        "decision": "conditional",
+        "quote": "Venue X serves NLP readers; venue Y serves power systems. The paper studies parsing.",
+        "line": 1,
+        "response": "按当前官方范围核验X的适配性；不根据易录用传闻把Y当同类选择。",
+        "acceptance_check": "比较表写出主题、读者与正式要求的证据。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC007",
+      "feature": "F007",
+      "module": "paper-novelty-positioning",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC007.txt",
+      "input_sha256": "08666f4c33bc3af3a2f0800ab1a643f78ca487b4851b79c62823419390b74777",
+      "review_output": {
+        "decision": "request_evidence",
+        "quote": "Prior method uses retrieval plus reranking. Ours uses retrieval plus reranking too.",
+        "line": 1,
+        "response": "比较具体交互、目标函数和可验证效果；不能只把组合名称作为创新。",
+        "acceptance_check": "贡献表指出实质差异或将定位改为应用/实证贡献。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC008",
+      "feature": "F008",
+      "module": "paper-abstract-title-contribution",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC008.txt",
+      "input_sha256": "305ae312c49007b99ff3634f2e9133299acd68086e095609e0914585ce5cb080",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Title: Training-Free. Method: We fine-tune the encoder on labels.",
+        "line": 1,
+        "response": "明确训练免费指哪个组件，或修改标题；同步摘要和贡献表。",
+        "acceptance_check": "标题的训练范围与方法中的实际训练步骤一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC009",
+      "feature": "F009",
+      "module": "paper-claim-evidence-auditor",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC009.txt",
+      "input_sha256": "f51d4f012e3fc21a010c785221c367c04a99c480d601d7bb128c5f371cd53d77",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The theorem assumes independent errors. The conclusion applies it to correlated agents.",
+        "line": 1,
+        "response": "将定理应用限制到满足假设的情形，或提供相关误差下的新论证。",
+        "acceptance_check": "结论逐项绑定实际满足的假设。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC010",
+      "feature": "F010",
+      "module": "paper-structure-pertinence",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC010.txt",
+      "input_sha256": "ab7d93737394522e9d55e699329d4ed03331bd4b877dbaa380c303b8fb2ec2b7",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The title promises efficiency; no runtime or cost measurement appears in results.",
+        "line": 1,
+        "response": "补充与效率主张对应的测量，或删除效率承诺；给出结果导航。",
+        "acceptance_check": "标题关键词均有可定位的证据。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC011",
+      "feature": "F011",
+      "module": "paper-experiment-design",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC011.txt",
+      "input_sha256": "cfbf4ab2b099f1554f3b0208a52ddbd4cfc36fcb2d50d719d02250bb847c9e6e",
+      "review_output": {
+        "decision": "revise",
+        "quote": "We will vary ten knobs and report whichever configuration wins.",
+        "line": 1,
+        "response": "先固定主张和比较问题，定义有利、不利、不确定结果下的决定；探索与确认分开。",
+        "acceptance_check": "实验规格写明变量、选择规则和对应结论。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC012",
+      "feature": "F012",
+      "module": "paper-baseline-benchmark-audit",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC012.txt",
+      "input_sha256": "2209426e14f1a2c68d9116c79c3f4ed4cacdabe421bc5e2f36803d2105d9c031",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Agent A uses 20 calls; Agent B uses 2 calls. The paper attributes the gain to memory.",
+        "line": 1,
+        "response": "加入同预算无记忆对照和质量成本曲线，区分记忆与额外计算。",
+        "acceptance_check": "只有控制调用预算后的差异用于记忆归因。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC013",
+      "feature": "F013",
+      "module": "paper-ml-validity-leakage",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC013.txt",
+      "input_sha256": "70b0e11d7aac33064b0dfaf33de5a357fe960c3ef2b7f679bcb1ad61d4fe7c18",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The retrieval index includes validation and test answers used during evaluation.",
+        "line": 1,
+        "response": "从索引剔除测试答案并重建评测；保留污染范围和重跑记录。",
+        "acceptance_check": "索引血缘和隔离后的结果可复查。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC014",
+      "feature": "F014",
+      "module": "paper-claims-vs-data",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC014.txt",
+      "input_sha256": "f8df7f93e8f7c9a669b2364528a97080516120e75251fdfde0ece1420b53ba07",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Runs: 0.80, 0.84, 0.88. Reported three-run mean: 88%.",
+        "line": 1,
+        "response": "重算均值为84%；将摘要表图转为同一数据来源生成。",
+        "acceptance_check": "对应声明全部为84%，最高值单独标注。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC015",
+      "feature": "F015",
+      "module": "paper-figure-table-auditor",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC015.txt",
+      "input_sha256": "f9f332a1bb4140fb0ea9d9f8a2244bcd4c0f29203d2cabb338f985ceb8f50186",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Caption: 95% confidence interval. Plot metadata: error bars are standard deviations.",
+        "line": 1,
+        "response": "纠正误差线定义或按正确独立单位重新计算区间，核对图注和正文。",
+        "acceptance_check": "实际误差线计算与图注术语一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC016",
+      "feature": "F016",
+      "module": "paper-formula-audit",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC016.txt",
+      "input_sha256": "24600b81933e8b68cffc5dde772467d99a6537ad5f4afd0a2dd98d621e5b6c0b",
+      "review_output": {
+        "decision": "revise",
+        "quote": "O(NM) is always faster than O(N log N). No relation between M and N is given.",
+        "line": 1,
+        "response": "指定M与N的增长关系，区分渐近阶和实际耗时；给出M=N等反例。",
+        "acceptance_check": "不再以无条件Big-O比较证明运行更快。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC017",
+      "feature": "F017",
+      "module": "paper-theory-proof-audit",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC017.txt",
+      "input_sha256": "e7a14757cb5921a54d572cb53b24164ddb7373771b06a80ff30e93458f330722",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Claim: x squared is strictly positive for every real x.",
+        "line": 1,
+        "response": "用x=0反驳严格正性；改为非负，或增加x不等于0的假设。",
+        "acceptance_check": "原命题的零值边界被修正，修改后的假设与结论一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC018",
+      "feature": "F018",
+      "module": "paper-systems-performance-audit",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC018.txt",
+      "input_sha256": "a55cbb899119babf8a8a620fd7bf3217a64f35d2e85e7f32fb62942efc73f035",
+      "review_output": {
+        "decision": "revise",
+        "quote": "A warm-cache run is compared with B cold-start latency; only the mean is reported.",
+        "line": 1,
+        "response": "按相同冷热条件比较，补充样本量和相关尾延迟，说明端到端范围。",
+        "acceptance_check": "相同测量条件下的分布而非混杂均值支持速度结论。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC019",
+      "feature": "F019",
+      "module": "paper-dataset-benchmark-paper",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC019.txt",
+      "input_sha256": "4cc8ece153f40b12278a98a4997630733ea57606f0a77b9f0d75d1fa3aed54d4",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The leaderboard lets teams query hidden labels after every submission.",
+        "line": 1,
+        "response": "隔离测试反馈并定义提交策略和版本；检查反复调参带来的测试集适应。",
+        "acceptance_check": "维护政策和最终保留测试能够支持泛化评估。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC020",
+      "feature": "F020",
+      "module": "paper-user-study-audit",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC020.txt",
+      "input_sha256": "5a7d03c6bdcd8eb9c5c67dc4edcf37436ff76e220513d35fbda5c5d6617b6748",
+      "review_output": {
+        "decision": "revise",
+        "quote": "All participants use A first and B second. Authors attribute better B scores to the UI.",
+        "line": 1,
+        "response": "检查学习与疲劳效应；采用反平衡设计或限定因果解释。",
+        "acceptance_check": "顺序效应与系统效应被识别或结论相应收窄。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC021",
+      "feature": "F021",
+      "module": "paper-citation-check",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC021.txt",
+      "input_sha256": "e5d0fdf9c103658131a12ddad186e63c4d358961cf4b818c1c1819d336cf7d74",
+      "review_output": {
+        "decision": "request_evidence",
+        "quote": "A DOI resolves to a genuine paper on vision, but it is cited for a language-memory theorem.",
+        "line": 1,
+        "response": "分别核验身份和定理支持；真实DOI不能替代文中命题的来源。",
+        "acceptance_check": "提供相关定理位置，或更换/删除不支持该断言的引用。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC022",
+      "feature": "F022",
+      "module": "paper-security-ethics-safety",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC022.txt",
+      "input_sha256": "34b00dbcef864df92c0c80d8cf2a6163fdadfa7aa75fa9a10cf8770b9916c634",
+      "review_output": {
+        "decision": "request_evidence",
+        "quote": "Public examples contain named customer conversations without a documented release basis.",
+        "line": 1,
+        "response": "检查授权与去标识化；用脱敏样例替换，并在发布前核验许可。",
+        "acceptance_check": "公开材料没有未授权可识别信息，授权依据可查。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC023",
+      "feature": "F023",
+      "module": "paper-limitations-threats",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC023.txt",
+      "input_sha256": "5e3f2a6f39921b873254f54ac080d75c1c2ff6855ca88aedc198168d2d14fbd9",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Limitation: every study has limitations. All experiments use one hospital.",
+        "line": 1,
+        "response": "具体说明单中心选择如何影响目标人群泛化及已有缓解。",
+        "acceptance_check": "局限对应实际主张、影响路径和剩余证据。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC024",
+      "feature": "F024",
+      "module": "paper-artifact-evaluation",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC024.txt",
+      "input_sha256": "d0087b8e33d057599467b0541edbd3858348c30ac21bb02b08d95be2a1c570d5",
+      "review_output": {
+        "decision": "request_evidence",
+        "quote": "README lists a command, but no execution output or environment lock is available.",
+        "line": 1,
+        "response": "把现状记录为可尝试的复现入口；请求环境锁定和实际输出。",
+        "acceptance_check": "实际命令、环境、返回码、输出与图表对应。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC025",
+      "feature": "F025",
+      "module": "paper-repro-compliance",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC025.txt",
+      "input_sha256": "68e3440b8eedfaa71a7920417a12ddfe01184c9ad57e1a6b94e5eef8f27cec86",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The source compiles, but the submitted PDF clips the final column of Table 3.",
+        "line": 1,
+        "response": "检查最终PDF页图并调整表宽，重新编译后复查全部列。",
+        "acceptance_check": "目标版面中表3内容完整可读。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC026",
+      "feature": "F026",
+      "module": "paper-writing-auditor",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC026.txt",
+      "input_sha256": "8543403d700001369b2afaed6fa8c95a5dfd80efbf2d1018e95ee4570c3925ec",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The results shows a higher success rate on the evaluated tasks.",
+        "line": 1,
+        "response": "改为The results show a higher success rate on the evaluated tasks.，保持评测范围。",
+        "acceptance_check": "主谓一致且不新增全领域或因果结论。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC027",
+      "feature": "F027",
+      "module": "paper-ai-prose-signals",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC027.txt",
+      "input_sha256": "5736361774ebf1c53e5e190af04407e6c1b0f98cde158d34873c5b580792023f",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Three adjacent paragraphs start with It is important to note that; a fourth uses an em dash.",
+        "line": 1,
+        "response": "指出前三处重复且检查是否有信息；普通破折号保留，不据此判定作者身份。",
+        "acceptance_check": "删除冗余但不因标点升级为科学问题。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC028",
+      "feature": "F028",
+      "module": "paper-external-review-triage",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC028.txt",
+      "input_sha256": "16ec602adc005cf07397caef8ec0a7235714d706cd658fba45142462761c5635",
+      "review_output": {
+        "decision": "retain",
+        "quote": "The external review says there is no ablation. Section 4.3 contains a matched-budget ablation.",
+        "line": 1,
+        "response": "核读4.3后撤回缺失意见；若仍有具体混杂，再单独列出。",
+        "acceptance_check": "最终意见忠实对应附录/正文已有实验。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC029",
+      "feature": "F029",
+      "module": "paper-rebuttal-response",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC029.txt",
+      "input_sha256": "82e29f3d6dfa5edc64c5a101219e3b6454885172796d95cf852c18ab4043d41f",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Response: We have run the requested experiment. The experiment is only planned next month.",
+        "line": 1,
+        "response": "改为拟开展并说明当前证据和可完成替代；完成后再更新为已运行。",
+        "acceptance_check": "回应中的完成时态与实际产物一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC030",
+      "feature": "F030",
+      "module": "academic-paper-reviewer",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC030.txt",
+      "input_sha256": "110cf11ac5fe331b0c1a0fbcaeacf3a7c14807fe52286eaee350294f5f6a20f2",
+      "review_output": {
+        "decision": "conditional",
+        "quote": "The author asks why ten repetitions on each of five tasks are not fifty independent tasks.",
+        "line": 1,
+        "response": "guided先问推断单位，再解释同题相关性；引导到按题配对或分层分析。",
+        "acceptance_check": "作者能指出独立单位，并将修订决定绑定问题ID。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC031",
+      "feature": "F031",
+      "module": "paper-audit",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC031.txt",
+      "input_sha256": "28d9389de2df0821becb96b87da473a7691c29f79448383fe40a61f38db7b973",
+      "review_output": {
+        "decision": "request_evidence",
+        "quote": "A deep-review request supplies only two abstract paragraphs and no figures.",
+        "line": 1,
+        "response": "先审已提供段落，明确全文和图像未检查；保留后续全文路径。",
+        "acceptance_check": "报告不把未读部分列为通过。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC032",
+      "feature": "F032",
+      "module": "latex-paper-en",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC032.txt",
+      "input_sha256": "3c56c85eb3eb4f134f30548975234103a51f3d5bf9177698621ea6d7aff2d384",
+      "review_output": {
+        "decision": "retain",
+        "quote": "Edit prose but preserve the source tokens \\cite{Smith2020} and \\label{eq:loss}.",
+        "line": 1,
+        "response": "保持引用键和标签；只修改正文语法并对源代码差异核对。",
+        "acceptance_check": "键、标签、公式宏不被润色意外改写。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC033",
+      "feature": "F033",
+      "module": "latex-thesis-zh",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC033.txt",
+      "input_sha256": "74b265d9e84810753e12f664acffc6f0bed160f9b271eaea9fa3d9bd9d374655",
+      "review_output": {
+        "decision": "revise",
+        "quote": "学校模板要求中英文摘要对应；英文摘要删除了中文中的未达到显著性。",
+        "line": 1,
+        "response": "恢复统计限定，建立中英术语与句子对照，并按实际学校模板检查。",
+        "acceptance_check": "两种摘要的结论强度和数量一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC034",
+      "feature": "F034",
+      "module": "typst-paper",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC034.txt",
+      "input_sha256": "2e9b97347e05bffb48e34cc9dccb8bf84b2387d0e77eb75dc9d3bfd9e6ffd880",
+      "review_output": {
+        "decision": "revise",
+        "quote": "A prose edit renamed @smith2020 but did not change the Hayagriva bibliography key.",
+        "line": 1,
+        "response": "恢复或一致更新引用键；保留Typst函数和公式结构，执行实际构建。",
+        "acceptance_check": "无未解析引用，编辑前后文献身份相同。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC035",
+      "feature": "F035",
+      "module": "cover-letter",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC035.txt",
+      "input_sha256": "a47cbca6b2817b27cc8cf56d6e0e06fb84405157906550610e92c9cb1690aaa1",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Cover letter says first-ever clinical validation; manuscript reports an offline benchmark.",
+        "line": 1,
+        "response": "改为实际离线评测贡献；将投稿信逐项映射到正文，删除未做的临床验证。",
+        "acceptance_check": "每句研究声明有相应正文依据。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC036",
+      "feature": "F036",
+      "module": "bib-search-citation",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC036.txt",
+      "input_sha256": "b040a6b10b928c65a613b205fabdf32e128bd844ebcc6fb63db575a3e24b1394",
+      "review_output": {
+        "decision": "retain",
+        "quote": "Shared library contains keys used2024 and spare2023. Only used2024 is cited.",
+        "line": 1,
+        "response": "保留未引用的共享条目，提供原始条目精确导出；另查真正未定义的键。",
+        "acceptance_check": "unused不被自动删除，缺键与未用键分开。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC037",
+      "feature": "F037",
+      "module": "paper-skill",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC037.txt",
+      "input_sha256": "7598056cc590df5228106d213c897658b31beb5babfc99bab738d81dcee8869d",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Chinese draft: 可能改善已测任务. English draft: guarantees success in every domain.",
+        "line": 1,
+        "response": "英文保持可能性和已测范围；保留作者结构并同步论点证据图。",
+        "acceptance_check": "翻译不会把可能变保证、把局部变全部。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC038",
+      "feature": "F038",
+      "module": "peer-review",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC038.txt",
+      "input_sha256": "51636ab6d53570dc98dbbf5f4000b963938841a69367799339dd4a3f7c9502cb",
+      "review_output": {
+        "decision": "revise",
+        "quote": "A fixable statistical objection appears only in the confidential editor note.",
+        "line": 1,
+        "response": "在作者意见中清楚提出统计问题和可执行修复；保密通道用于适当编辑事项。",
+        "acceptance_check": "作者能够看到并修复影响结论的问题。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC039",
+      "feature": "F039",
+      "module": "scientific-critical-thinking",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC039.txt",
+      "input_sha256": "a84fec23ca9143c792ffe92d3864bcbad2386e925d0cd7cded73ecce0773e67c",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Patients self-select treatment; an observed association is called causal proof.",
+        "line": 1,
+        "response": "检查混杂与选择机制；采用与设计一致的关联措辞或补充识别策略。",
+        "acceptance_check": "不把未经识别的关联写成因果证明。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC040",
+      "feature": "F040",
+      "module": "statistical-analysis",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC040.txt",
+      "input_sha256": "ca9094118e0d96ef3e01eab729c84e8aaa6ed5b77523a2fd26d0ac08d2a6c81a",
+      "review_output": {
+        "decision": "revise",
+        "quote": "p=0.08, therefore the two methods are equivalent.",
+        "line": 1,
+        "response": "非显著不等价；等效主张需要预设容许界值和相应区间/检验。",
+        "acceptance_check": "结论与实际检验目标一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC041",
+      "feature": "F041",
+      "module": "scientific-visualization",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC041.txt",
+      "input_sha256": "57bab37163ca8b934b0dacc75e1811bd4915691402c97b4f48b77153314d8d65",
+      "review_output": {
+        "decision": "retain",
+        "quote": "A line plot uses a clearly labeled y-axis from 25 to 40 to compare close scores.",
+        "line": 1,
+        "response": "检查比例和图注；清晰标示的线图缩放无需机械改成零起点。",
+        "acceptance_check": "未凭非零坐标单独制造科学缺陷。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC042",
+      "feature": "F042",
+      "module": "scientific-writing",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC042.txt",
+      "input_sha256": "cc79fe14cda8fef52b99abcebd2002059713e4f1c07505be9ac5a0634f2bd818",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The Results section adds a new participant exclusion that is absent from Methods.",
+        "line": 1,
+        "response": "在方法中交代排除规则和时间点，在结果中报告对应数量与影响。",
+        "acceptance_check": "读者能够重建分析人群和选择过程。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC043",
+      "feature": "F043",
+      "module": "citation-management",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC043.txt",
+      "input_sha256": "5a6d35bcb0d5283f394295d84775f94bf8e9c75b36214d3917e52a4995332385",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Two BibTeX entries share one key but describe different papers.",
+        "line": 1,
+        "response": "分配稳定唯一键并校正文内引用；核验元数据，不静默覆盖。",
+        "acceptance_check": "每个引用键唯一对应一篇正确文献。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC044",
+      "feature": "F044",
+      "module": "scholar-evaluation",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC044.txt",
+      "input_sha256": "ab213151b7b27d8db1636e27a451e30ef3b0ec4f21052e6085301291a6264a76",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The rubric awards soundness points solely for author affiliation prestige.",
+        "line": 1,
+        "response": "移除名望代理，定义针对论文方法和证据的锚点；记录维度分歧。",
+        "acceptance_check": "评分与可观察研究内容对应。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC045",
+      "feature": "F045",
+      "module": "research-review",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC045.txt",
+      "input_sha256": "f0b8fd73a27a2fc439ea8e95d5e2387e20649c7ab8c53c1f231e6c107102e270",
+      "review_output": {
+        "decision": "retain",
+        "quote": "Two review rounds repeat the same resolved complaint without new evidence.",
+        "line": 1,
+        "response": "保存解决证据，停止重复升级；把下一轮用于仍开放的实质问题。",
+        "acceptance_check": "收敛记录区分已解决与未解决事项。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC046",
+      "feature": "F046",
+      "module": "experiment-audit",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC046.txt",
+      "input_sha256": "901b61f970ffe85a2147d68ab22d2cfc650b19f47a4a3271bb5e56d16866f49c",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The evaluator defines accuracy() but reports a fixed constant instead of calling it.",
+        "line": 1,
+        "response": "追踪实际指标调用到输出，移除常量替代并重跑受控评测。",
+        "acceptance_check": "执行轨迹和输出来自指定指标与真实标签。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC047",
+      "feature": "F047",
+      "module": "paper-claim-audit",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC047.txt",
+      "input_sha256": "8e7fdb2c6e4e6c93cddbde92fcdf9b28fa94d057294addaabda70ba09b038455",
+      "review_output": {
+        "decision": "request_evidence",
+        "quote": "A report certifies Table 1 but its input hash belongs to yesterday's manuscript.",
+        "line": 1,
+        "response": "重新绑定当前稿和结果的哈希，在新任务中核查受影响主张。",
+        "acceptance_check": "报告输入版本与交付稿一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC048",
+      "feature": "F048",
+      "module": "result-to-claim",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC048.txt",
+      "input_sha256": "7f5667112e36d21ba19a32f5a542447449defda72d156376a816534dc3f0d526",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The output exists and its mean is correct; the comparison changes both model and budget.",
+        "line": 1,
+        "response": "保留数值结论，拒绝单机制归因；增加匹配对照或限定为系统级比较。",
+        "acceptance_check": "可用性、算术、科学支持三种状态各自记录。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC049",
+      "feature": "F049",
+      "module": "pre-submission-reviewer",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC049.txt",
+      "input_sha256": "b03058243681e03152efb241e1e012dfbafbbcdb4cefaa09b96d2e5df7c98f9a",
+      "review_output": {
+        "decision": "retain",
+        "quote": "The draft uses a normal em dash and readable PNG; no venue rule prohibits either.",
+        "line": 1,
+        "response": "保留合法表达与图像，继续检查实际逻辑、语法、图注和排版。",
+        "acceptance_check": "不把风格偏好升级成重大缺陷。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC050",
+      "feature": "F050",
+      "module": "figure-designer",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC050.txt",
+      "input_sha256": "c98b6bd616ada189f99024f7ae7b785ab1b8bf653bc39afd69fac921b754fdb7",
+      "review_output": {
+        "decision": "conditional",
+        "quote": "The author needs a method overview linking retrieval, reranking and answer generation.",
+        "line": 1,
+        "response": "给出左到右文本布局、各模块输入输出和箭头；标示真实组件并选择合适工具。",
+        "acceptance_check": "布局能画出且与方法一致，不虚构性能数字。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC051",
+      "feature": "F051",
+      "module": "paper-polish",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC051.txt",
+      "input_sha256": "4642dac3367cf9cddefd32e3414501396f3f5c22df793f5852c260c9a5e6ddbd",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Original: The effect may be task-dependent. Proposed polish: The effect is universal.",
+        "line": 1,
+        "response": "保留may和task-dependent，仅改善语法节奏；原句清楚时可不改。",
+        "acceptance_check": "润色保持不确定性与适用范围。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC052",
+      "feature": "F052",
+      "module": "ieee-reviewer",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC052.txt",
+      "input_sha256": "57d2ef3c5f49236e7970220ec1b3de03f73c7c54b5853e2abb17486711a033c6",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Comment: Novelty is weak. No prior method or affected claim is named.",
+        "line": 1,
+        "response": "定位贡献和最接近方法，指出差异缺口并给最小修复建议。",
+        "acceptance_check": "质疑与具体证据、修复要求成对出现。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC053",
+      "feature": "F053",
+      "module": "ieee-experiment",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC053.txt",
+      "input_sha256": "b4a6c35a409b9d6b9c6f703537e500f5349daa2f84ff7d0b18bde365f86d08b0",
+      "review_output": {
+        "decision": "revise",
+        "quote": "A proposed ablation disables the input parser and makes the whole system unusable.",
+        "line": 1,
+        "response": "采用保持输入输出接口的替代组件，隔离目标机制而不是测试系统破坏。",
+        "acceptance_check": "对照仍可完成任务，只有目标因素变化。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC054",
+      "feature": "F054",
+      "module": "ieee-figure-table",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC054.txt",
+      "input_sha256": "5f2669e999ca9a8096155fcb3f4aa839fec5a7be5b72ca9cc762baa6c251e175",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Table mixes accuracy values 0.84 and 82 under one percent header.",
+        "line": 1,
+        "response": "统一单位为84和82，标明分母、方向、聚合及不确定性。",
+        "acceptance_check": "同一表格列中的分母、百分比单位与指标含义均保持一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC055",
+      "feature": "F055",
+      "module": "peer-review-skill",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC055.txt",
+      "input_sha256": "1798d4e9490c5e28cfc993572873101ef09e74a72bb1497af5d3cc50d9ba7d14",
+      "review_output": {
+        "decision": "retain",
+        "quote": "The manuscript is a narrative survey; the reviewer demands a randomized clinical trial.",
+        "line": 1,
+        "response": "按综述目标检查覆盖、选择与分类，不套用不相关的试验要求。",
+        "acceptance_check": "审查规范与文章类型一致。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC056",
+      "feature": "F056",
+      "module": "scientific-manuscript-review",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC056.txt",
+      "input_sha256": "efe806ec07c730083d34e440eb52982b689239b3f19f5cc07614d0dd04fbf121",
+      "review_output": {
+        "decision": "request_evidence",
+        "quote": "A geophysical inversion claim ignores the sensor geometry used to recover the parameter.",
+        "line": 1,
+        "response": "按物理可辨识性检查采集几何、前向模型和参数非唯一性；请求敏感性依据。",
+        "acceptance_check": "结论与实际观测几何的约束相符。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC057",
+      "feature": "F057",
+      "module": "paper-self-review",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC057.txt",
+      "input_sha256": "025d1d331718dd8e9763a9029b965f088ec35a08aa72fd861a427b62bcf2dcd8",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Abstract says 100 tasks; Methods says 80 eligible tasks; the denominator is unexplained.",
+        "line": 1,
+        "response": "对照排除流程、分析集合和结果分母，统一口径并说明原因。",
+        "acceptance_check": "跨章节样本数量可核对。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC058",
+      "feature": "F058",
+      "module": "results-analysis",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC058.txt",
+      "input_sha256": "bd0a4750988f8b675abefde330934f903392c0a5efb1e30b01464c6f96d27460",
+      "review_output": {
+        "decision": "revise",
+        "quote": "A plot was manually redrawn to make curves agree with a narrative; the CSV disagrees.",
+        "line": 1,
+        "response": "从冻结的结果生成图，保留冲突版本并重新确定能支持的论断。",
+        "acceptance_check": "图中值能够追溯到指定数据和脚本。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC059",
+      "feature": "F059",
+      "module": "citation-verification",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC059.txt",
+      "input_sha256": "2550410641a4cc7742ee1e3afad14c82998da48d2134e1565076a2d450001173",
+      "review_output": {
+        "decision": "revise",
+        "quote": "A real 2020 DOI is attached to a different 2024 title and author list.",
+        "line": 1,
+        "response": "查规范元数据和实际全文，分别修正身份字段及支持关系。",
+        "acceptance_check": "作者、年份、标题、标识符对应同一文献。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC060",
+      "feature": "F060",
+      "module": "ml-paper-writing",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC060.txt",
+      "input_sha256": "a18437ed00b90ff0c0ebb6fcaac9a84b48888fa8ce28a915bbf1d05a3cc26130",
+      "review_output": {
+        "decision": "revise",
+        "quote": "The central story is speed, but the frozen results show only a robustness improvement.",
+        "line": 1,
+        "response": "重建主张证据表，选择有支持的稳健性叙事，保留未改进的速度结果。",
+        "acceptance_check": "标题到章节主线对应真实结果而非预设故事。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    },
+    {
+      "id": "FC061",
+      "feature": "F061",
+      "module": "paper-review-lite",
+      "classification": "synthetic_micro_case",
+      "input_path": "tests/fixtures/feature_walkthrough/FC061.txt",
+      "input_sha256": "a029fa8208177c3bb16363c81037bfb5c6b4228ec36b2bfd7cc53817f6d14e8f",
+      "review_output": {
+        "decision": "revise",
+        "quote": "Nine roles use the same model family but are described as nine independent models.",
+        "line": 1,
+        "response": "标明同模型多视角，交叉检查实际意见；跨模型需真实调用来源。",
+        "acceptance_check": "来源记录不把角色数量当独立模型数量。"
+      },
+      "provenance": {
+        "reviewer": "authoring assistant applying Atlas protocols",
+        "context": "same development conversation",
+        "blind": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+Paper Review Atlas
+├── 证据与溯源
+│   ├── C01 材料接收与溯源
+│   ├── C04 主张—证据闭环
+│   ├── C24 引文与引用支持
+│   └── C36 报告与能力来源
+├── 贡献与论证
+│   ├── C02 目标期刊与会议适配
+│   ├── C03 创新性与文献定位
+│   ├── C05 论证与反例
+│   └── C26 局限与效度威胁
+├── 实验设计
+│   ├── C07 实验设计与因果边界
+│   ├── C08 基线与预算公平
+│   ├── C09 消融与归因
+│   └── C14 稳健性与泛化
+├── 评测有效性
+│   ├── C10 泄漏与污染
+│   ├── C11 统计推断
+│   ├── C12 人工与大模型评测
+│   └── C13 系统性能与资源成本
+├── 方法与复现
+│   ├── C15 理论、公式与证明
+│   ├── C16 产物与复现
+│   ├── C17 代码与结果一致性
+│   └── C31 数据集与基准论文
+├── 图表与数值
+│   ├── C18 数值追溯与一致性
+│   ├── C19 图形视觉检查
+│   ├── C20 图形与科学结论
+│   └── C21 表格语义与可比性
+├── 中英文写作
+│   ├── C06 结构与叙事
+│   ├── C22 中英文书写审校
+│   ├── C23 保留证据的改写
+│   └── C34 翻译与跨语种保真
+├── 审稿与修改
+│   ├── C25 伦理与研究安全
+│   ├── C27 多视角审稿与裁决
+│   ├── C28 修订追踪与复核
+│   └── C29 回复审稿人与申辩
+└── 交付与扩展
+    ├── C30 投稿与提交检查
+    ├── C32 综述与文献评述
+    ├── C33 能力地图与扩展
+    └── C35 文件格式与渲染
+
+Paper Review Atlas
+├── Evidence and traceability
+│   ├── C01 Intake and provenance
+│   ├── C04 Claim–evidence linkage
+│   ├── C24 Citation integrity
+│   └── C36 Reporting and provenance
+├── Contribution and reasoning
+│   ├── C02 Venue fit
+│   ├── C03 Novelty and literature
+│   ├── C05 Arguments and counterexamples
+│   └── C26 Limitations and threats
+├── Experiment design
+│   ├── C07 Experiment design
+│   ├── C08 Baselines and budgets
+│   ├── C09 Ablation and attribution
+│   └── C14 Robustness and generalization
+├── Evaluation validity
+│   ├── C10 Leakage and contamination
+│   ├── C11 Statistical inference
+│   ├── C12 Human and LLM evaluation
+│   └── C13 Systems and resource cost
+├── Methods and artifacts
+│   ├── C15 Theory and formulas
+│   ├── C16 Artifact reproducibility
+│   ├── C17 Code–result integrity
+│   └── C31 Datasets and benchmarks
+├── Figures, tables and numbers
+│   ├── C18 Numeric traceability
+│   ├── C19 Visual figure inspection
+│   ├── C20 Figure scientific support
+│   └── C21 Table semantics
+├── Bilingual writing
+│   ├── C06 Structure and narrative
+│   ├── C22 Chinese and English style
+│   ├── C23 Evidence-preserving edits
+│   └── C34 Translation preservation
+├── Review and revision
+│   ├── C25 Ethics and research safety
+│   ├── C27 Reviewer adjudication
+│   ├── C28 Revision and re-check
+│   └── C29 Rebuttal and response
+└── Delivery and extension
+    ├── C30 Submission readiness
+    ├── C32 Surveys and reviews
+    ├── C33 Coverage and extension
+    └── C35 Formats and rendering

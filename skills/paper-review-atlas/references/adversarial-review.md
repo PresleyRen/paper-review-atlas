@@ -107,3 +107,9 @@ Where new experiments are unrealistic, distinguish a defensible narrowing from a
 
 The adjudication log should make the review auditable: objection, counterargument, inspected evidence, decision, reason, and surviving issue IDs.
 Finish when the material objections have been tested against available evidence, not when every imaginable criticism has been generated.
+
+## Executable conflict decisions
+
+For ambiguous rule conflicts, inspect the actual evidence before constructing the facts for `atlas.py policy`. CFX01 recomputes source numbers and CFX16 invokes evidence-backed recheck; other rules validate and route reviewer-supplied facts. Keep their provenance attached. Do not turn a declared `image_viewed` flag into a claim that a script inspected pixels.
+
+Use positive controls as well as flawed examples: a legitimate rounded number, a clear raster image, a bounded negative result and a fully supported sentence should survive review. Use contrary evidence from appendices to retract a false objection. In full reviews, preserve the withdrawn-objection record and the evidence that changed the decision.

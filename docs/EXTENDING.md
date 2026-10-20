@@ -53,3 +53,9 @@ python -m unittest discover -s tests -v
 The three JSON registries are the source of truth. Stable capability IDs, protocol files, source mappings, conflict decisions, and concrete test evidence must evolve together. Generated maps describe implementation scope, not detection accuracy. Add an adverse case, a correct control and a missing-evidence case; use fresh-context behavioral review where a unit test cannot measure semantics. A source inventory entry is not a port. Keep external licenses separate and record actual reuse honestly.
 
 The generator validates registry references, test-symbol existence, safe paths and source reciprocity. It does not execute or authenticate the evidence files. The test suite separately exercises these invariants, including adding C37 without editing the graph template.
+
+## v1.1 feature-level navigation
+
+Start with [EXTENSION_INDEX.md](EXTENSION_INDEX.md) or `atlas.py locate Cxx/Fxxx/Gxx`. The new `features.json` records module-specific facets, complements and representative cases; `gaps.json` records the missing implementation, edit path, test entry and closure criterion. `guide.json` supplies concise bilingual capability descriptions for README. The two existing/generated documentation paths are both maintained: `build_coverage.py` and `build_feature_docs.py`.
+
+For README edits, change `docs/templates/README.zh.md` / `README.en.md`, then regenerate. Keep explanatory validation methodology in validation documents rather than duplicating it throughout the user-facing README. New source modules need a fresh stable Fxxx ID and a representative fixture; the inventory equality tests detect an unmapped module. Source-feature fixture tests check records and anchors, so genuine behavior changes also need an actual review or executable helper test.

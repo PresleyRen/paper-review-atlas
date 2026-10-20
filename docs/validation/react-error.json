@@ -1,0 +1,28 @@
+{
+  "status": "mismatch",
+  "scope": "Declared anchors and computations only; source selection and scientific validity require review.",
+  "results": [
+    {
+      "kind": "number",
+      "id": "invented-percent-confusion-probe",
+      "status": "mismatch",
+      "reported": "9.9",
+      "reported_unit": "percent",
+      "tolerance": "0",
+      "source": {
+        "path": "table4.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "baseline": {
+        "path": "table4.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "calculated": "32.8903654485049833887043189368770764119601328903654485049833887043189368770764119601328903654485049833887043189368770764119601328903654485049833887043189368770764119601328903654485",
+      "rounded_calculated": "32.9",
+      "absolute_error": "23",
+      "message": "reported value disagrees with declared calculation"
+    }
+  ]
+}

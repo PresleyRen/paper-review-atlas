@@ -1,0 +1,1 @@
+Runs: 0.80, 0.84, 0.88. Reported three-run mean: 88%.

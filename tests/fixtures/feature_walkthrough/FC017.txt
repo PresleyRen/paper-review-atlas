@@ -1,0 +1,1 @@
+Claim: x squared is strictly positive for every real x.

@@ -163,3 +163,11 @@ Suggest precise edits rather than merely “add references” or “follow the j
 After edits, rebuild bibliography/cross-references where tools permit and inspect the rendered output.
 Close citation-support findings only after the revised claim and its actual supporting source agree.
 Close a submission check only against the requested version and destination; a later template change may require rechecking.
+
+## Local bibliography handoff
+
+`bib-audit` can locate entries by a text query, preserve their original BibTeX and report duplicate or undefined citation keys. An uncited entry in a shared bibliography is informational, not an error requiring deletion. Match source identity first; then inspect the relevant claim in the full text. Local key validation does not perform that online/content check. Preserve correction, retraction and version observations with dates when actually checked.
+
+## Explicit target and response channels
+
+Load `guided-calibration.md` when criteria are supplied or rating behavior is being evaluated. Keep criterion IDs and versions stable across specialist perspectives. Do not merge incompatible venue criteria into a universal checklist. A cover letter should map every scientific assertion back to the paper and clearly distinguish author declarations that still require confirmation from observed manuscript content.

@@ -1,0 +1,1 @@
+A geophysical inversion claim ignores the sensor geometry used to recover the parameter.

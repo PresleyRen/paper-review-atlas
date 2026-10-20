@@ -1,0 +1,35 @@
+{
+  "numeric_claims": [
+    {
+      "id": "invented-percent-confusion-probe",
+      "source": {
+        "path": "table4.csv",
+        "format": "csv",
+        "where": {
+          "method": "ReAct"
+        }
+      },
+      "operation": "value",
+      "field": "success_rate",
+      "reported": "9.9",
+      "source_unit": "percent",
+      "reported_unit": "percent",
+      "comparison": {
+        "source": {
+          "path": "table4.csv",
+          "format": "csv",
+          "where": {
+            "method": "Act"
+          }
+        },
+        "operation": "value",
+        "field": "success_rate"
+      },
+      "change": "relative_percent",
+      "rounding": {
+        "places": 1,
+        "mode": "half_even"
+      }
+    }
+  ]
+}

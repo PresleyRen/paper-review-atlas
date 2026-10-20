@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "package_version": "1.0.0",
+  "package_version": "1.1.0",
   "as_of": "2026-10-20",
   "coverage_claim": "36 documented review capabilities. Status is implementation scope, not a measured effectiveness score. Deterministic helpers operate only on supplied structured records; external adapters are requirements, not bundled tools.",
   "groups": [
@@ -636,7 +636,8 @@
       "implementation": {
         "workflow": true,
         "deterministic": [
-          "reconcile_number"
+          "reconcile_number",
+          "export_macros"
         ],
         "adapter": [
           "Machine-readable result exports"
@@ -659,9 +660,11 @@
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
           "docs/validation/behavioral-rubric.md",
-          "tests/test_audit_checks.py::NumericTests::test_relative_percent_and_percentage_points_are_distinct"
+          "tests/test_audit_checks.py::NumericTests::test_relative_percent_and_percentage_points_are_distinct",
+          "tests/test_extensions.py",
+          "docs/validation/v1.1-audit.md"
         ],
-        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim. v1.1 adds tested local record helpers; see the audit report for their exact execution scope."
       },
       "limitations": "Deterministic helpers check supplied records only; they do not extract all paper numbers or validate the underlying experiment."
     },
@@ -865,7 +868,9 @@
       "protocol": "references/citations-venues.md",
       "implementation": {
         "workflow": true,
-        "deterministic": [],
+        "deterministic": [
+          "bibliography"
+        ],
         "adapter": [
           "Bibliographic lookup and full text"
         ]
@@ -879,10 +884,13 @@
         "SRC11"
       ],
       "verification": {
-        "state": "not_measured",
+        "state": "partial",
         "planned_cases": [],
-        "evidence": [],
-        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+        "evidence": [
+          "tests/test_extensions.py",
+          "docs/validation/v1.1-audit.md"
+        ],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness. v1.1 adds tested local record helpers; see the audit report for their exact execution scope."
       },
       "limitations": "DOI identity and bibliographic existence do not establish that the source supports the cited claim."
     },
@@ -954,7 +962,10 @@
       "protocol": "references/adversarial-review.md",
       "implementation": {
         "workflow": true,
-        "deterministic": [],
+        "deterministic": [
+          "policy",
+          "calibrate"
+        ],
         "adapter": [
           "Optional independent-model or human review"
         ]
@@ -985,9 +996,11 @@
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/behavioral-rubric.md"
+          "docs/validation/behavioral-rubric.md",
+          "tests/test_extensions.py",
+          "docs/validation/v1.1-audit.md"
         ],
-        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim. v1.1 adds tested local record helpers; see the audit report for their exact execution scope."
       },
       "limitations": "Multiple personas from one model are correlated viewpoints, not independent expert validation."
     },
@@ -1154,7 +1167,8 @@
         "workflow": true,
         "deterministic": [
           "validate_registry",
-          "coverage_artifact_drift"
+          "coverage_artifact_drift",
+          "locate"
         ],
         "adapter": []
       },
@@ -1165,9 +1179,11 @@
         "planned_cases": [],
         "evidence": [
           "tests/test_coverage.py::CoverageRegistryTests::test_xml_escaping_and_registry_extension_need_no_template_edit",
-          "docs/validation/integration-review.md"
+          "docs/validation/integration-review.md",
+          "tests/test_extensions.py",
+          "docs/validation/v1.1-audit.md"
         ],
-        "annotation": "Registry reciprocity, generated map freshness and extension by C37 are tested in the repository. The generator is a repository maintenance tool, not part of the installed runtime; adding a real new scientific domain still needs behavioral validation."
+        "annotation": "Registry reciprocity, generated map freshness and extension by C37 are tested in the repository. The generator is a repository maintenance tool, not part of the installed runtime; adding a real new scientific domain still needs behavioral validation. v1.1 adds tested local record helpers; see the audit report for their exact execution scope."
       },
       "limitations": "Registry coverage shows implemented instructions, not measured real-world review accuracy."
     },

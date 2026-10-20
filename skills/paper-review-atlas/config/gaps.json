@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "gaps": [
+    {
+      "id": "G01",
+      "title": "真实论文专家盲测",
+      "status": "open",
+      "capabilities": [
+        "C03",
+        "C05",
+        "C07",
+        "C22",
+        "C27"
+      ],
+      "edit_location": "references/adversarial-review.md",
+      "remedy": "建立获授权的论文与专家逐条标签；按问题类型统计漏检、误报和严重度分歧。",
+      "test_command": "python -m unittest discover -s tests -p test_feature_contracts.py -v",
+      "acceptance_check": "新增冻结基准、盲测输出、独立判读与重复运行结果"
+    },
+    {
+      "id": "G02",
+      "title": "跨模型实际执行",
+      "status": "open",
+      "capabilities": [
+        "C12",
+        "C27"
+      ],
+      "edit_location": "references/adversarial-review.md",
+      "remedy": "接入用户选择的模型后端；保存模型家族、版本、输入哈希和原始输出，再交叉裁决。",
+      "test_command": "python -m unittest discover -s tests -p test_extensions.py -v",
+      "acceptance_check": "不同模型实际调用记录可复查，不能以角色名代替来源"
+    },
+    {
+      "id": "G03",
+      "title": "复杂统计推断引擎",
+      "status": "open",
+      "capabilities": [
+        "C07",
+        "C11",
+        "C12"
+      ],
+      "edit_location": "references/experiments-statistics.md",
+      "remedy": "增加设计驱动的配对/分层区间与检验适配器；先固定独立单位，再用解析解及模拟覆盖率验证。",
+      "test_command": "python -m unittest discover -s tests -p test_extensions.py -v",
+      "acceptance_check": "配对、聚类、缺失和多重比较正反对照及数值参考一致"
+    },
+    {
+      "id": "G04",
+      "title": "PDF与多栏公式解析",
+      "status": "open",
+      "capabilities": [
+        "C01",
+        "C19",
+        "C35"
+      ],
+      "edit_location": "references/input-output.md",
+      "remedy": "实现宿主解析适配器；留页图和文字坐标映射，增加中文、多栏与公式案例。",
+      "test_command": "python -m unittest discover -s tests -p test_feature_contracts.py -v",
+      "acceptance_check": "图注、表格、公式锚点与实际页图一致"
+    },
+    {
+      "id": "G05",
+      "title": "DOCX修订痕迹交付",
+      "status": "open",
+      "capabilities": [
+        "C23",
+        "C28",
+        "C35"
+      ],
+      "edit_location": "references/revision-rebuttal.md",
+      "remedy": "将稳定问题ID绑定Word修订与批注；保留原稿并渲染比较。",
+      "test_command": "python -m unittest discover -s tests -p test_feature_contracts.py -v",
+      "acceptance_check": "接受/拒绝修订后文本、表格、公式和引用仍正确"
+    },
+    {
+      "id": "G06",
+      "title": "LaTeX与Typst编译适配",
+      "status": "open",
+      "capabilities": [
+        "C15",
+        "C30",
+        "C35"
+      ],
+      "edit_location": "references/input-output.md",
+      "remedy": "加入隔离构建；锁定编译器和字体，记录返回码与PDF页图差异。",
+      "test_command": "python -m unittest discover -s tests -p test_feature_contracts.py -v",
+      "acceptance_check": "标签、引用、公式宏、Hayagriva与中文字体实测通过"
+    },
+    {
+      "id": "G07",
+      "title": "文献在线身份与支持核验",
+      "status": "open",
+      "capabilities": [
+        "C03",
+        "C24",
+        "C32"
+      ],
+      "edit_location": "references/citations-venues.md",
+      "remedy": "接入公开元数据与全文；分别记录身份、版本、勘误/撤稿、命题支持。",
+      "test_command": "python -m unittest discover -s tests -p test_extensions.py -v",
+      "acceptance_check": "已知DOI错配、标题重名、真实但不支持命题均被区分"
+    },
+    {
+      "id": "G08",
+      "title": "图表视觉标注基准",
+      "status": "open",
+      "capabilities": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "edit_location": "references/figures-tables.md",
+      "remedy": "建立坐标截断、线图缩放、单位、误差线和清晰位图正反图集；用实际视觉输出判读。",
+      "test_command": "python -m unittest discover -s tests -p test_real_paper.py -v",
+      "acceptance_check": "至少两种图类型和清晰正确对照具有专家标签及视觉日志"
+    },
+    {
+      "id": "G09",
+      "title": "实验可复现环境",
+      "status": "open",
+      "capabilities": [
+        "C08",
+        "C13",
+        "C16",
+        "C17"
+      ],
+      "edit_location": "references/code-reproducibility.md",
+      "remedy": "添加安全运行适配器；锁定环境、真实ground truth、随机种子和结果哈希。",
+      "test_command": "python -m unittest discover -s tests -p test_extensions.py -v",
+      "acceptance_check": "从干净环境执行到论文表图的完整运行链可重建"
+    },
+    {
+      "id": "G10",
+      "title": "更多学科专门规范",
+      "status": "open",
+      "capabilities": [
+        "C07",
+        "C15",
+        "C25",
+        "C31",
+        "C32"
+      ],
+      "edit_location": "references/domain-agent.md",
+      "remedy": "由领域专家补充地球物理、临床、质性、形式化等profile；记录适用条件和反例。",
+      "test_command": "python -m unittest discover -s tests -p test_feature_contracts.py -v",
+      "acceptance_check": "各profile有真正适用与不适用的研究案例并经领域核查"
+    },
+    {
+      "id": "G11",
+      "title": "返修长期回归",
+      "status": "open",
+      "capabilities": [
+        "C23",
+        "C28",
+        "C29",
+        "C34"
+      ],
+      "edit_location": "references/revision-rebuttal.md",
+      "remedy": "准备多版本稿件；检测问题修复后在摘要、附录、译文或图表中重新出现。",
+      "test_command": "python -m unittest discover -s tests -p test_extensions.py -v",
+      "acceptance_check": "旧问题ID不变、回归问题重新打开、全部受影响位置被复核"
+    },
+    {
+      "id": "G12",
+      "title": "BibTeX扩展语法",
+      "status": "open",
+      "capabilities": [
+        "C24",
+        "C35"
+      ],
+      "edit_location": "references/citations-venues.md",
+      "remedy": "加入宏展开、crossref继承及复杂查询过滤；保留原始条目，使用标准语法对照集。",
+      "test_command": "python -m unittest discover -s tests -p test_extensions.py -v",
+      "acceptance_check": "宏、交叉引用、括号引用和坏文件恢复各有对照"
+    }
+  ]
+}

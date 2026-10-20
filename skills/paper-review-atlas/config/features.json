@@ -1,0 +1,2419 @@
+{
+  "schema_version": 1,
+  "features": [
+    {
+      "id": "F001",
+      "source": "SRC01",
+      "module": "cs-ai-paper-review",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/cs-ai-paper-review/SKILL.md",
+      "source_blob_sha": "204d5e03c6f4f92256fb6ace4d1326ec8907b693",
+      "source_sha256": "6240a6c0e3346f873c38da6dfa3c8f9de0f3ffec60f7e4b74385ad288dc9aef2",
+      "facets": [
+        "分离科学有效性与投稿适配",
+        "按依赖顺序调度专项",
+        "合并问题和验收清单"
+      ],
+      "capabilities": [
+        "C01",
+        "C02",
+        "C04",
+        "C27",
+        "C36"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/citations-venues.md",
+        "references/input-output.md",
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC001",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F001",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F002",
+      "source": "SRC01",
+      "module": "ieee-access-review",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/ieee-access-review/SKILL.md",
+      "source_blob_sha": "9fd33f98c431434de349d9431074c6c0cfa6fbbf",
+      "source_sha256": "07c840ab3fe2ce7fa50b1c16571c547b14eac66d1f45e8dd66c5c8a5976731e2",
+      "facets": [
+        "绑定具体目标标准",
+        "按目标期刊审稿机制组织意见",
+        "核查官方格式与伦理要求"
+      ],
+      "capabilities": [
+        "C02",
+        "C30"
+      ],
+      "implementation_locations": [
+        "references/citations-venues.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC002",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F002",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F003",
+      "source": "SRC01",
+      "module": "paper-surgical-editor",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-surgical-editor/SKILL.md",
+      "source_blob_sha": "5a1423e99872f67d21fad5691f1cf738cfddc1ce",
+      "source_sha256": "a4bb80c6a9cf48a378df0738ba6b30b99a7d0252b449e86a4a7ca70dd00b9e78",
+      "facets": [
+        "固定审查版本",
+        "建立稳定问题台账",
+        "按科学依赖最小修改",
+        "修改后对抗复审"
+      ],
+      "capabilities": [
+        "C23",
+        "C28"
+      ],
+      "implementation_locations": [
+        "references/bilingual-writing.md",
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        }
+      ],
+      "review_case": "FC003",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F003",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "recheck_issue"
+      ]
+    },
+    {
+      "id": "F004",
+      "source": "SRC01",
+      "module": "paper-busy-reviewer",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-busy-reviewer/SKILL.md",
+      "source_blob_sha": "2a28f29314b0bbdb9f091eb009483e01d9989d5e",
+      "source_sha256": "3a64144a033d53aa0ab793bfae41e95d349cd3cd57eef0557f16c0baeefe6c08",
+      "facets": [
+        "只看声明的表面材料",
+        "六问式快速定位贡献",
+        "识别标题摘要主图之间断裂"
+      ],
+      "capabilities": [
+        "C06",
+        "C27"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/bilingual-writing.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        }
+      ],
+      "review_case": "FC004",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F004",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F005",
+      "source": "SRC01",
+      "module": "paper-reviewer-sim",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-reviewer-sim/SKILL.md",
+      "source_blob_sha": "e4635e1bb529ca764aeee2dc3c638a4bc71530d6",
+      "source_sha256": "d4106ac5c74c91de9c40a058751cf443acf20c0f7cffe04290ff52cc8fe1d71f",
+      "facets": [
+        "技术方法统计等多视角",
+        "模拟最强拒稿理由",
+        "章节逐段扫描",
+        "对负面意见复核"
+      ],
+      "capabilities": [
+        "C05",
+        "C27"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC005",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F005",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F006",
+      "source": "SRC01",
+      "module": "paper-venue-fit-strategy",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-venue-fit-strategy/SKILL.md",
+      "source_blob_sha": "7400db0e20373022848de1539fcb0e47dcabc384",
+      "source_sha256": "ea9d4f41b995b514a1392c9f93f363e8df7303298f6262852628137b6bf1698b",
+      "facets": [
+        "候选期刊比较",
+        "区分读者范围与质量要求",
+        "基于当前投稿规则提出路线"
+      ],
+      "capabilities": [
+        "C02",
+        "C30"
+      ],
+      "implementation_locations": [
+        "references/citations-venues.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC006",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F006",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F007",
+      "source": "SRC01",
+      "module": "paper-novelty-positioning",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-novelty-positioning/SKILL.md",
+      "source_blob_sha": "3dd9e17151d36f0c8058675a3d417133154b1302",
+      "source_sha256": "b6e89eb0cd7c9cbbce2e8fe5f5075d044503dbe114e02b5b42f75e80acbb2fab",
+      "facets": [
+        "与最近邻方法逐项对照",
+        "区分组合工程与新机制",
+        "按证据选择贡献定位"
+      ],
+      "capabilities": [
+        "C03",
+        "C05"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC007",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F007",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F008",
+      "source": "SRC01",
+      "module": "paper-abstract-title-contribution",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-abstract-title-contribution/SKILL.md",
+      "source_blob_sha": "3afab953c76b9ba2ff60202bb395b39582a8d491",
+      "source_sha256": "deaf4fda4ab9a079f650a6a896430f056743148c621612062cc1b95cc8087429",
+      "facets": [
+        "标题承诺与摘要一致",
+        "贡献可验证",
+        "避免摘要新增未支持结论"
+      ],
+      "capabilities": [
+        "C04",
+        "C06",
+        "C22"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC008",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F008",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F009",
+      "source": "SRC01",
+      "module": "paper-claim-evidence-auditor",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-claim-evidence-auditor/SKILL.md",
+      "source_blob_sha": "5fbf0c09e73a01f7358486dec2602f2b0b81242b",
+      "source_sha256": "477649cc28101f297e240ad91613eff34147d6cf40b587e88ee22215dccfecda",
+      "facets": [
+        "经验理论因果等主张分类",
+        "证据强弱逐项标注",
+        "定位支撑与反证"
+      ],
+      "capabilities": [
+        "C04",
+        "C18"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        }
+      ],
+      "review_case": "FC009",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F009",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F010",
+      "source": "SRC01",
+      "module": "paper-structure-pertinence",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-structure-pertinence/SKILL.md",
+      "source_blob_sha": "80f389c55d47e5422af314d7cfd93edd9d918772",
+      "source_sha256": "01d0858189835787d507adf66c7849d1a94b96556d3d8e8b30db9e27295e14b7",
+      "facets": [
+        "章节服务明确问题",
+        "标题词均有对应证据",
+        "负结果与适用条件对称呈现"
+      ],
+      "capabilities": [
+        "C06"
+      ],
+      "implementation_locations": [
+        "references/bilingual-writing.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        }
+      ],
+      "review_case": "FC010",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F010",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F011",
+      "source": "SRC01",
+      "module": "paper-experiment-design",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-experiment-design/SKILL.md",
+      "source_blob_sha": "1293a05c9cbb3c888ecc94f030655b454acad91f",
+      "source_sha256": "3400b60b9052484972707a854d4d141f827cb7f2777a0f151c6d28466ed6aa52",
+      "facets": [
+        "实验回答指定疑问",
+        "区别验证与探索",
+        "预先写出三类结果的后续决定"
+      ],
+      "capabilities": [
+        "C07",
+        "C09",
+        "C11",
+        "C14"
+      ],
+      "implementation_locations": [
+        "references/experiments-statistics.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC011",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F011",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F012",
+      "source": "SRC01",
+      "module": "paper-baseline-benchmark-audit",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-baseline-benchmark-audit/SKILL.md",
+      "source_blob_sha": "f6ef3e80ef28e721015f0a1956ce0c2766f643f0",
+      "source_sha256": "62d12548b97a6dc5260b9f9ea03c53a2233988be869c688c335080a143565e92",
+      "facets": [
+        "简单标准强基线分类",
+        "数据模型调参与预算公平",
+        "基准选择可信度"
+      ],
+      "capabilities": [
+        "C08",
+        "C13",
+        "C31"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/experiments-statistics.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC012",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F012",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F013",
+      "source": "SRC01",
+      "module": "paper-ml-validity-leakage",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-ml-validity-leakage/SKILL.md",
+      "source_blob_sha": "1b664ae540d8535b4b9135578b74e91d22031987",
+      "source_sha256": "87292360deb07479dd94b48a074bf742f10934882aebfac666252b20bb421496",
+      "facets": [
+        "检查数据血缘与时间切分",
+        "提示词检索缓存污染",
+        "评委与评价目标错位"
+      ],
+      "capabilities": [
+        "C10",
+        "C12",
+        "C31"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/experiments-statistics.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC013",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F013",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F014",
+      "source": "SRC01",
+      "module": "paper-claims-vs-data",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-claims-vs-data/SKILL.md",
+      "source_blob_sha": "2a00aee8e9898bed4b422da2ed81c1bf681f84ef",
+      "source_sha256": "6c1ae3f885119b6891e014f34247bfdc744d9ceff71b9b35df8ed1035464af19",
+      "facets": [
+        "全文数字回溯",
+        "识别最好种子冒充均值",
+        "单位精度转换",
+        "数字单一来源生成"
+      ],
+      "capabilities": [
+        "C04",
+        "C17",
+        "C18"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/code-reproducibility.md",
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        },
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC014",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F014",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "reconcile_number",
+        "export_macros"
+      ]
+    },
+    {
+      "id": "F015",
+      "source": "SRC01",
+      "module": "paper-figure-table-auditor",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-figure-table-auditor/SKILL.md",
+      "source_blob_sha": "20a380f5b3a19df45bc0b7c1d12e629bebe977f9",
+      "source_sha256": "d824186d5a4bb91bf63efb0181f27a3004d858d3e8a33ad003745c967ae31fd9",
+      "facets": [
+        "每图表的论证目的",
+        "图注自包含",
+        "轴与误差线",
+        "消除纯审美误报"
+      ],
+      "capabilities": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "implementation_locations": [
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        }
+      ],
+      "review_case": "FC015",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F015",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "reconcile_number"
+      ]
+    },
+    {
+      "id": "F016",
+      "source": "SRC01",
+      "module": "paper-formula-audit",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-formula-audit/SKILL.md",
+      "source_blob_sha": "0c2c34a9672f00eaf542acf7dfc3fb241f43d069",
+      "source_sha256": "90c6464f4912803ff6def7dc4b50d8aad9d1f5fa334007f33190a4dd089b2a0d",
+      "facets": [
+        "公式符号定义域",
+        "单位与极端情形",
+        "多参数复杂度增长区间",
+        "公式到代码对应"
+      ],
+      "capabilities": [
+        "C15"
+      ],
+      "implementation_locations": [
+        "references/formal-theory.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC016",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F016",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F017",
+      "source": "SRC01",
+      "module": "paper-theory-proof-audit",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-theory-proof-audit/SKILL.md",
+      "source_blob_sha": "c36aa1ad61e7461f51fdb16cde8b9513eed8566e",
+      "source_sha256": "be0de298b7cbe8c6d13b6097caca35455a4805a7f0687efa3e569935abd6ccd2",
+      "facets": [
+        "定理依赖图",
+        "假设是否充分",
+        "证明步骤与反例",
+        "定理不等于经验泛化"
+      ],
+      "capabilities": [
+        "C15"
+      ],
+      "implementation_locations": [
+        "references/formal-theory.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC017",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F017",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F018",
+      "source": "SRC01",
+      "module": "paper-systems-performance-audit",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-systems-performance-audit/SKILL.md",
+      "source_blob_sha": "202f2487f1bb48356a5b6d338697ecb94d473382",
+      "source_sha256": "577bb910e22fc3b400830bc51b8f118b03a2ce85b0ffb43a6303e93dc2ad173b",
+      "facets": [
+        "冷热缓存与硬件一致",
+        "尾延迟吞吐资源成本",
+        "测量扰动和工作负载退化"
+      ],
+      "capabilities": [
+        "C13"
+      ],
+      "implementation_locations": [
+        "references/experiments-statistics.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC018",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F018",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F019",
+      "source": "SRC01",
+      "module": "paper-dataset-benchmark-paper",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-dataset-benchmark-paper/SKILL.md",
+      "source_blob_sha": "4e20fae703b6c401b53598229aa18f37fa545770",
+      "source_sha256": "692819fa40ba609ba84b09df501dd3f741736f3f681e470940fa25e771922b33",
+      "facets": [
+        "代表性与标注来源",
+        "许可与版本",
+        "隐藏测试集",
+        "榜单维护与重复反馈"
+      ],
+      "capabilities": [
+        "C25",
+        "C31"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC019",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F019",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F020",
+      "source": "SRC01",
+      "module": "paper-user-study-audit",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-user-study-audit/SKILL.md",
+      "source_blob_sha": "e34bb70248ded1b3ddd815745df641befd79574b",
+      "source_sha256": "58d6327d48eb03343f3b50b3b09d72070d8dc4b0f9a0cfbd54604dc9e056fff9",
+      "facets": [
+        "参与者招募与流失",
+        "顺序学习携带效应",
+        "量表与定性编码",
+        "同意和补偿"
+      ],
+      "capabilities": [
+        "C07",
+        "C11",
+        "C12",
+        "C25"
+      ],
+      "implementation_locations": [
+        "references/experiments-statistics.md",
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC020",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F020",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F021",
+      "source": "SRC01",
+      "module": "paper-citation-check",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-citation-check/SKILL.md",
+      "source_blob_sha": "96a4f4d7fe0d4744ee6d644f46e4b349520fc30a",
+      "source_sha256": "81896e9b99a8051afb26b51c960202716929698b50b534b5e1106eb8e7a3fc17",
+      "facets": [
+        "文献身份核对",
+        "引文是否支持邻近命题",
+        "区分元数据错误与缺字段提醒"
+      ],
+      "capabilities": [
+        "C03",
+        "C24"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/citations-venues.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC021",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F021",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F022",
+      "source": "SRC01",
+      "module": "paper-security-ethics-safety",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-security-ethics-safety/SKILL.md",
+      "source_blob_sha": "779c62236e238f56a4a901b310fcbb4ad0f01cf1",
+      "source_sha256": "a1538012d9a739eefc4dd86d036610c15a76cb69cfb279980044d48550f7bd52",
+      "facets": [
+        "隐私授权与双重用途",
+        "模型数据威胁路径",
+        "参与者风险",
+        "缓解与披露"
+      ],
+      "capabilities": [
+        "C25"
+      ],
+      "implementation_locations": [
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC022",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F022",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F023",
+      "source": "SRC01",
+      "module": "paper-limitations-threats",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-limitations-threats/SKILL.md",
+      "source_blob_sha": "dd1c86077744451efd08e1949f39ad9599839969",
+      "source_sha256": "8f909cace9b8d9327028f6314a5e44df43bdb14105b0eaf6baad1b5901b47bd5",
+      "facets": [
+        "内部外部构念与结论效度",
+        "已有缓解与剩余问题",
+        "不让泛泛局限替代具体论证"
+      ],
+      "capabilities": [
+        "C14",
+        "C26"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/experiments-statistics.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC023",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F023",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F024",
+      "source": "SRC01",
+      "module": "paper-artifact-evaluation",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-artifact-evaluation/SKILL.md",
+      "source_blob_sha": "2be3da50d2bc733334eba27501ed32a157bafebf",
+      "source_sha256": "3bf34cc4a4ba03a7bdb8d24b7ef7ea227b45183c500b30c2611a64a7349a3961",
+      "facets": [
+        "环境依赖与复现入口",
+        "图表到命令输出",
+        "实跑结果及资源需求",
+        "版本冻结"
+      ],
+      "capabilities": [
+        "C16",
+        "C17"
+      ],
+      "implementation_locations": [
+        "references/code-reproducibility.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC024",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F024",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "resolve_under_root"
+      ]
+    },
+    {
+      "id": "F025",
+      "source": "SRC01",
+      "module": "paper-repro-compliance",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-repro-compliance/SKILL.md",
+      "source_blob_sha": "fe24ad677c50f053bf4acb45ff913a39846a9c09",
+      "source_sha256": "e8f11628f2a66108422297d971b93c3429d405836a38df56061f717df89de462",
+      "facets": [
+        "可复现与测量规范分开",
+        "核查实际渲染PDF",
+        "匿名页码字体引用与补充材料"
+      ],
+      "capabilities": [
+        "C16",
+        "C30"
+      ],
+      "implementation_locations": [
+        "references/citations-venues.md",
+        "references/code-reproducibility.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC025",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F025",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F026",
+      "source": "SRC01",
+      "module": "paper-writing-auditor",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-writing-auditor/SKILL.md",
+      "source_blob_sha": "3bf998c667023d43295fdf6467d09ce8416c88c5",
+      "source_sha256": "b1c03d47ca6f0d4471a7ed22916be5ac790955406f0f9ad49aa20862018c0592",
+      "facets": [
+        "语法歧义与长句",
+        "术语和符号统一",
+        "原句改句理由",
+        "局部改动不改变贡献"
+      ],
+      "capabilities": [
+        "C06",
+        "C22",
+        "C23"
+      ],
+      "implementation_locations": [
+        "references/bilingual-writing.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        }
+      ],
+      "review_case": "FC026",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F026",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F027",
+      "source": "SRC01",
+      "module": "paper-ai-prose-signals",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-ai-prose-signals/SKILL.md",
+      "source_blob_sha": "0eab8066beb926bae22fab467343b4723849bf31",
+      "source_sha256": "3610900a8771c0684e2f71dbf62a0346be00ca31dc438e3347dd23cbdedde297",
+      "facets": [
+        "统计重复模式和空泛句",
+        "局部删除无信息措辞",
+        "保留真实作者表达"
+      ],
+      "capabilities": [
+        "C22"
+      ],
+      "implementation_locations": [
+        "references/bilingual-writing.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        }
+      ],
+      "review_case": "FC027",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F027",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F028",
+      "source": "SRC01",
+      "module": "paper-external-review-triage",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-external-review-triage/SKILL.md",
+      "source_blob_sha": "d9345d74d11e73687e5702af52bc8a87834624a1",
+      "source_sha256": "5ba39e1c7979e5336655bc770a40df406b0265cd87fdf3bffa569e36b9127e2c",
+      "facets": [
+        "逐条核验外审意见",
+        "查附录反证",
+        "合并重复与撤回误报",
+        "保留作者决定"
+      ],
+      "capabilities": [
+        "C27",
+        "C28"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "回复与裁决需要重新对照正文证据，不能只接收审稿人的断言。"
+        }
+      ],
+      "review_case": "FC028",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F028",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "policy",
+        "verify_quote"
+      ]
+    },
+    {
+      "id": "F029",
+      "source": "SRC01",
+      "module": "paper-rebuttal-response",
+      "source_url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-rebuttal-response/SKILL.md",
+      "source_blob_sha": "a983fd229c468f04d6db8eda3a96cfcd3f918a40",
+      "source_sha256": "68a980a0685436fd828b1f0ab205c4a25c8abed6da1f8985485afdec8ef811df",
+      "facets": [
+        "意见逐条分诊",
+        "回应对应实际修改",
+        "合理异议",
+        "区分完成与计划"
+      ],
+      "capabilities": [
+        "C28",
+        "C29"
+      ],
+      "implementation_locations": [
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "回复与裁决需要重新对照正文证据，不能只接收审稿人的断言。"
+        }
+      ],
+      "review_case": "FC029",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F029",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "recheck_issue"
+      ]
+    },
+    {
+      "id": "F030",
+      "source": "SRC02",
+      "module": "academic-paper-reviewer",
+      "source_url": "https://github.com/Imbad0202/academic-research-skills/blob/main/academic-paper-reviewer/SKILL.md",
+      "source_blob_sha": "c277a392721272688a5ba1133b5428e7df66a349",
+      "source_sha256": "bedfda8a9202456b57cbd6ebc99c58b6db13a75e0110c1be33493d6bad94b536",
+      "facets": [
+        "审稿目标标准绑定",
+        "分角色评阅与总编整合",
+        "引导式问答",
+        "标注集校准与复审"
+      ],
+      "capabilities": [
+        "C01",
+        "C02",
+        "C05",
+        "C07",
+        "C11",
+        "C27",
+        "C28",
+        "C29",
+        "C34",
+        "C36"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/experiments-statistics.md",
+        "references/input-output.md",
+        "references/review-contract.md",
+        "references/revision-rebuttal.md",
+        "references/guided-calibration.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        },
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC030",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F030",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "calibrate",
+        "policy"
+      ]
+    },
+    {
+      "id": "F031",
+      "source": "SRC03",
+      "module": "paper-audit",
+      "source_url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/paper-audit/SKILL.md",
+      "source_blob_sha": "19a08b79e5644b2becedb8451320d7ab4cd61bb6",
+      "source_sha256": "1c3722d635ade9784d0484ae1defeb255d944906b2c9393d70b735d1b2dbd20f",
+      "facets": [
+        "快速深审投稿门检复审分流",
+        "多格式输入",
+        "报告定位与置信度",
+        "脚本与语义证据分开"
+      ],
+      "capabilities": [
+        "C01",
+        "C04",
+        "C18",
+        "C22",
+        "C24",
+        "C28",
+        "C30",
+        "C35",
+        "C36"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/figures-tables.md",
+        "references/input-output.md",
+        "references/review-contract.md",
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        },
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC031",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F031",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "validate_report"
+      ]
+    },
+    {
+      "id": "F032",
+      "source": "SRC03",
+      "module": "latex-paper-en",
+      "source_url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/latex-paper-en/SKILL.md",
+      "source_blob_sha": "5438e00d64865d06e21eef0c66ad61a912145644",
+      "source_sha256": "36e081ad6dfa2b70b0f78fd71296aa6a2db2fcf00ff166f0240d05cfee4f6f7f",
+      "facets": [
+        "英语LaTeX润色与长句拆分",
+        "章节语义改写",
+        "数学引用标签宏保护",
+        "渲染编译核查"
+      ],
+      "capabilities": [
+        "C06",
+        "C19",
+        "C22",
+        "C23",
+        "C24",
+        "C30",
+        "C35"
+      ],
+      "implementation_locations": [
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/figures-tables.md",
+        "references/input-output.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        },
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        },
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC032",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F032",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F033",
+      "source": "SRC03",
+      "module": "latex-thesis-zh",
+      "source_url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/latex-thesis-zh/SKILL.md",
+      "source_blob_sha": "cca8df75ae3da3d8f43f0da730177df9426a8a94",
+      "source_sha256": "cb5fa3606d4cb76000b066ce810bc51c055425ff4caf5e881b983f41914492be",
+      "facets": [
+        "中文学位论文结构",
+        "学校模板与学位要求",
+        "中英摘要术语表",
+        "评阅意见回复"
+      ],
+      "capabilities": [
+        "C06",
+        "C22",
+        "C23",
+        "C24",
+        "C30",
+        "C34",
+        "C35"
+      ],
+      "implementation_locations": [
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/input-output.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        },
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC033",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F033",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F034",
+      "source": "SRC03",
+      "module": "typst-paper",
+      "source_url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/typst-paper/SKILL.md",
+      "source_blob_sha": "62d5a2902e1f4df0d2556e4025df8bfd03f309b8",
+      "source_sha256": "e3df819ea32ae9c5f3128afbd486171a61478e8dafeaeb58c87b1e05d3bd6b78",
+      "facets": [
+        "Typst源码结构",
+        "Hayagriva文献",
+        "标签公式和函数保护",
+        "构建与语言修改分开"
+      ],
+      "capabilities": [
+        "C22",
+        "C30",
+        "C35"
+      ],
+      "implementation_locations": [
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/input-output.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        },
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC034",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F034",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F035",
+      "source": "SRC03",
+      "module": "cover-letter",
+      "source_url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/cover-letter/SKILL.md",
+      "source_blob_sha": "9d20256417bd372ef5948d3e4593b5f21ceb72ec",
+      "source_sha256": "53505ae4db4c801166ca58d7229a93873593539048e5c91d74f50b393894e4a8",
+      "facets": [
+        "投稿信与研究贡献匹配",
+        "目标读者和期刊范围",
+        "逐句对应正文",
+        "真实作者声明"
+      ],
+      "capabilities": [
+        "C30"
+      ],
+      "implementation_locations": [
+        "references/citations-venues.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC035",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F035",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F036",
+      "source": "SRC03",
+      "module": "bib-search-citation",
+      "source_url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/bib-search-citation/SKILL.md",
+      "source_blob_sha": "c72af79a478027e0fc80527cc1af1453dd125a68",
+      "source_sha256": "550476cf42fe9791826ee287f9cb8a851d9a0baee6a205101dab846705ac9101",
+      "facets": [
+        "本地文献库筛选",
+        "完整原始条目导出",
+        "键和元数据保留",
+        "线上核验独立进行"
+      ],
+      "capabilities": [
+        "C03",
+        "C24"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/citations-venues.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC036",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F036",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "bibliography"
+      ]
+    },
+    {
+      "id": "F037",
+      "source": "SRC04",
+      "module": "paper-skill",
+      "source_url": "https://github.com/cLin-c/paper-skill/blob/main/SKILL.md",
+      "source_blob_sha": "10c647cf905dba7a5f387fc453e22cec69f2e0b8",
+      "source_sha256": "022146312bae25715198af0b7d46efcf6790e062c178535319ef1dd2166acf86",
+      "facets": [
+        "中文协作英文交稿",
+        "作者风格与章节选择",
+        "论点证据图表统一",
+        "修改记录与门检"
+      ],
+      "capabilities": [
+        "C01",
+        "C04",
+        "C06",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C28",
+        "C30",
+        "C34",
+        "C35"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/figures-tables.md",
+        "references/input-output.md",
+        "references/review-contract.md",
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        },
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC037",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F037",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "recheck_issue",
+        "validate_report"
+      ]
+    },
+    {
+      "id": "F038",
+      "source": "SRC05",
+      "module": "peer-review",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/peer-review/SKILL.md",
+      "source_blob_sha": "d4f3c3e3b5c19fec2518d569ded7e37ac96a964b",
+      "source_sha256": "a042ccdc76d3399431b9a6c4cd4f98968eab964b1c14baeea4d9e73de82c7d19",
+      "facets": [
+        "从贡献到方法证据完整审阅",
+        "按研究类型选择规范",
+        "作者与编辑通道分开",
+        "可操作意见"
+      ],
+      "capabilities": [
+        "C01",
+        "C04",
+        "C07",
+        "C11",
+        "C25",
+        "C26",
+        "C27",
+        "C36"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/experiments-statistics.md",
+        "references/input-output.md",
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC038",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F038",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F039",
+      "source": "SRC05",
+      "module": "scientific-critical-thinking",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-critical-thinking/SKILL.md",
+      "source_blob_sha": "2a2fc151b5b13e4e11ece7410f21a14d5b25e30d",
+      "source_sha256": "563af70571b7dcd6a96bf2e303bedfdcba623b4e9f082d58f04aacbc961fdae4",
+      "facets": [
+        "因果混杂与替代解释",
+        "证据等级适用性",
+        "偏倚风险",
+        "反证优先检查"
+      ],
+      "capabilities": [
+        "C05",
+        "C07",
+        "C10",
+        "C14",
+        "C15",
+        "C25",
+        "C26"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/experiments-statistics.md",
+        "references/formal-theory.md",
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC039",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F039",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F040",
+      "source": "SRC05",
+      "module": "statistical-analysis",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/statistical-analysis/SKILL.md",
+      "source_blob_sha": "4ea7453a12e63f0dbc31d7a47ed41fe3ff4c4c1a",
+      "source_sha256": "e112848726b3713267cac65e4e2c15491a0a26ee1ed628db01195f7e43f97997",
+      "facets": [
+        "设计驱动检验选择",
+        "假设检查与稳健替代",
+        "效应量区间",
+        "功效敏感性和贝叶斯诊断"
+      ],
+      "capabilities": [
+        "C07",
+        "C11",
+        "C12",
+        "C18"
+      ],
+      "implementation_locations": [
+        "references/experiments-statistics.md",
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC040",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F040",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "paired_run_stats"
+      ]
+    },
+    {
+      "id": "F041",
+      "source": "SRC05",
+      "module": "scientific-visualization",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-visualization/SKILL.md",
+      "source_blob_sha": "44ea38c24fb5015535254bfd9b5ae9a856195408",
+      "source_sha256": "8cbde7cdc10d959cf72cfd08335cc8ce996247eee6ebdb900eb64a4cb0ff34a3",
+      "facets": [
+        "按数据选择视觉编码",
+        "最终尺寸可读性",
+        "色觉与灰度",
+        "显式导出参数和版本"
+      ],
+      "capabilities": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "implementation_locations": [
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        }
+      ],
+      "review_case": "FC041",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F041",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F042",
+      "source": "SRC05",
+      "module": "scientific-writing",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-writing/SKILL.md",
+      "source_blob_sha": "446993fcd4716ae54ab74bc2a91e3bc5af5235c7",
+      "source_sha256": "511a2096bebecd8cf0f8212b9d262d37154ae1ba566eb385d93ac968682edbd1",
+      "facets": [
+        "先大纲后段落",
+        "IMRAD按研究适配",
+        "引用融入论证",
+        "正式稿与内部笔记分开"
+      ],
+      "capabilities": [
+        "C03",
+        "C06",
+        "C22",
+        "C23",
+        "C24",
+        "C32"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/domain-agent.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        },
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC042",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F042",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F043",
+      "source": "SRC05",
+      "module": "citation-management",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/citation-management/SKILL.md",
+      "source_blob_sha": "b63b589d4d423969a63e032e62c2b74969147c1c",
+      "source_sha256": "dc79fe1e8438dcf598040615d5323360c6a7ed0b868fc3ffc82512c871a1e3ff",
+      "facets": [
+        "发现与规范元数据",
+        "BibTeX清理",
+        "重复与完整性",
+        "引用与写作联动"
+      ],
+      "capabilities": [
+        "C03",
+        "C24",
+        "C32"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/citations-venues.md",
+        "references/domain-agent.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC043",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F043",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "bibliography"
+      ]
+    },
+    {
+      "id": "F044",
+      "source": "SRC05",
+      "module": "scholar-evaluation",
+      "source_url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scholar-evaluation/SKILL.md",
+      "source_blob_sha": "900bc621e6165f7ec27ba29095774fa464c4d368",
+      "source_sha256": "9abc66a9ba13f6cf0f61614ddfff17822b5be2cc7118f52ef2631323dac8c94e",
+      "facets": [
+        "先定义评价构念",
+        "证据锚定量表",
+        "维度判断与分歧",
+        "不用名望替代论文质量"
+      ],
+      "capabilities": [
+        "C02",
+        "C04",
+        "C06",
+        "C27"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/guided-calibration.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC044",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F044",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "calibrate"
+      ]
+    },
+    {
+      "id": "F045",
+      "source": "SRC06",
+      "module": "research-review",
+      "source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/research-review/SKILL.md",
+      "source_blob_sha": "0408068f39d57b95b5f8a886fa6edf6baae422e0",
+      "source_sha256": "70190357b1abf871e9c92c41deda89b2479361efe0f13b618887076206845192",
+      "facets": [
+        "外部审阅迭代对话",
+        "区分具体质疑与泛泛意见",
+        "收敛条件",
+        "保存调用和决定记录"
+      ],
+      "capabilities": [
+        "C03",
+        "C05",
+        "C07",
+        "C27",
+        "C28"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/experiments-statistics.md",
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC045",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F045",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F046",
+      "source": "SRC06",
+      "module": "experiment-audit",
+      "source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/experiment-audit/SKILL.md",
+      "source_blob_sha": "36a2b28e519656de4e212752023e1846719a4dea",
+      "source_sha256": "6a8b6817a30e1bef03ad2bd679155ce39c2b0977bca38874485f7f5c1fd2567c",
+      "facets": [
+        "真实参考答案来源",
+        "归一化语义",
+        "结果文件与死代码",
+        "实际评测和代理评测区分"
+      ],
+      "capabilities": [
+        "C07",
+        "C08",
+        "C10",
+        "C13",
+        "C16",
+        "C17",
+        "C18"
+      ],
+      "implementation_locations": [
+        "references/code-reproducibility.md",
+        "references/experiments-statistics.md",
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC046",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F046",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F047",
+      "source": "SRC06",
+      "module": "paper-claim-audit",
+      "source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/paper-claim-audit/SKILL.md",
+      "source_blob_sha": "6889da5372a59d809b0fe67edaf837badb5265cb",
+      "source_sha256": "3cf3ecdf14899aa011c7f5baf5efcba7a67e940a65e7938170426f4af2b032ea",
+      "facets": [
+        "独立新上下文逐主张审查",
+        "输入哈希",
+        "表图原始结果核对",
+        "便于机器读取的审计产物"
+      ],
+      "capabilities": [
+        "C04",
+        "C17",
+        "C18",
+        "C20",
+        "C21"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/code-reproducibility.md",
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        },
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC047",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F047",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "verify_quote",
+        "reconcile_number"
+      ]
+    },
+    {
+      "id": "F048",
+      "source": "SRC06",
+      "module": "result-to-claim",
+      "source_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/result-to-claim/SKILL.md",
+      "source_blob_sha": "e4f63c77cdcc2cb9d51f1458d3e88fc224a76d6c",
+      "source_sha256": "387612e7ee7bacccc47d9948e6bae67d18d33af4e9c920b8fd181dd5105fa2ea",
+      "facets": [
+        "结果可用数字正确支持命题三层",
+        "支持部分不支持分流",
+        "下一实验或写作决定"
+      ],
+      "capabilities": [
+        "C04",
+        "C18",
+        "C23"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        }
+      ],
+      "review_case": "FC048",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F048",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F049",
+      "source": "SRC07",
+      "module": "pre-submission-reviewer",
+      "source_url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/main/skills/pre-submission-reviewer/SKILL.md",
+      "source_blob_sha": "9d03e557c462f00460919c181af0f47f97737697",
+      "source_sha256": "639a96684ad6ca50fb1141287c4d3f2af76653b95cb2dae3dd7897d212bd8c35",
+      "facets": [
+        "宏观逻辑和章节扫查",
+        "英语语法LaTeX图像",
+        "逐维反馈",
+        "投稿前最终检查"
+      ],
+      "capabilities": [
+        "C02",
+        "C04",
+        "C06",
+        "C19",
+        "C22",
+        "C27",
+        "C30"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        }
+      ],
+      "review_case": "FC049",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F049",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F050",
+      "source": "SRC07",
+      "module": "figure-designer",
+      "source_url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/main/skills/figure-designer/SKILL.md",
+      "source_blob_sha": "6b58f1ad0f357fb4d658a6ca13a7df5c54ee48f9",
+      "source_sha256": "c9ba67c1c21972ac6e48f22397e45b9e0855f0feb407c3599308de2902880b57",
+      "facets": [
+        "动机方法结果图分类",
+        "可画的文本布局",
+        "真实标签与图注",
+        "工具和导出路线"
+      ],
+      "capabilities": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "implementation_locations": [
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        }
+      ],
+      "review_case": "FC050",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F050",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F051",
+      "source": "SRC07",
+      "module": "paper-polish",
+      "source_url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/main/skills/paper-polish/SKILL.md",
+      "source_blob_sha": "51c620067f7b37260cc2497b8907a5b1dcd0121a",
+      "source_sha256": "fde7964acfea805a399d52da0355dac3139b51be9b2aa456348538c4713f75ce",
+      "facets": [
+        "一次聚焦润色",
+        "保留作者含义与声音",
+        "中译英",
+        "长文分段和文件变更交付"
+      ],
+      "capabilities": [
+        "C06",
+        "C22",
+        "C23"
+      ],
+      "implementation_locations": [
+        "references/bilingual-writing.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        }
+      ],
+      "review_case": "FC051",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F051",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F052",
+      "source": "SRC08",
+      "module": "ieee-reviewer",
+      "source_url": "https://github.com/CloudWave818/ieee-skills/blob/main/skills/ieee-reviewer/SKILL.md",
+      "source_blob_sha": "c2e66f02d76b0e70bba092c4dffa6b1199062a59",
+      "source_sha256": "7ffaaec576e425e5db092c8c8abba69e7977c235505e0c5c99ae6482f8318359",
+      "facets": [
+        "有明确清单的审稿路由",
+        "贡献方法复现评议",
+        "具体缺陷和修复要求成对输出"
+      ],
+      "capabilities": [
+        "C02",
+        "C04",
+        "C05",
+        "C27",
+        "C29"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/citations-venues.md",
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC052",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F052",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F053",
+      "source": "SRC08",
+      "module": "ieee-experiment",
+      "source_url": "https://github.com/CloudWave818/ieee-skills/blob/main/skills/ieee-experiment/SKILL.md",
+      "source_blob_sha": "5579f5347e45496f633af5099b42287e5c1a460d",
+      "source_sha256": "21048e83b92df1fdef8cf3117233a85d17ef62a18f435da7c7654c58165310d6",
+      "facets": [
+        "命题到对照消融",
+        "实验规格和预算",
+        "评价流程",
+        "失败后修订决定"
+      ],
+      "capabilities": [
+        "C07",
+        "C08",
+        "C09",
+        "C11",
+        "C14"
+      ],
+      "implementation_locations": [
+        "references/experiments-statistics.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC053",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F053",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F054",
+      "source": "SRC08",
+      "module": "ieee-figure-table",
+      "source_url": "https://github.com/CloudWave818/ieee-skills/blob/main/skills/ieee-figure-table/SKILL.md",
+      "source_blob_sha": "d6bd1ada90a4d889f0a90ac40fb1904120c1890d",
+      "source_sha256": "f856aafc643e219c74967c85a23b90eaefc051497443575983ed38d9f7796350",
+      "facets": [
+        "图表计划到图注",
+        "表头单位显著性",
+        "完整原图查看",
+        "IEEE目的格式核查"
+      ],
+      "capabilities": [
+        "C19",
+        "C20",
+        "C21"
+      ],
+      "implementation_locations": [
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        }
+      ],
+      "review_case": "FC054",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F054",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F055",
+      "source": "SRC09",
+      "module": "peer-review-skill",
+      "source_url": "https://github.com/manoloss612/peer-review-skill/blob/main/SKILL.md",
+      "source_blob_sha": "17143b18f7e8f9fed09c138fe410681b0208f1df",
+      "source_sha256": "cad3cd8eb41f24290883a83a1ce421c328b2a1acb2d8bc190e0054176cdb262f",
+      "facets": [
+        "中英及双语报告",
+        "研究论文与综述分流",
+        "逐章节与内部一致性",
+        "附修改清单"
+      ],
+      "capabilities": [
+        "C01",
+        "C22",
+        "C27",
+        "C32",
+        "C34",
+        "C36"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/bilingual-writing.md",
+        "references/domain-agent.md",
+        "references/input-output.md",
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        }
+      ],
+      "review_case": "FC055",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F055",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F056",
+      "source": "SRC10",
+      "module": "scientific-manuscript-review",
+      "source_url": "https://github.com/GuangyaoYin/skill-scientific-manuscript-review/blob/main/SKILL.md",
+      "source_blob_sha": "23f5234d09893d4bb8d82137ba877149508700f5",
+      "source_sha256": "8020735b679ad2755acafe176398197a09fcf9b185e2618ad0bd6dd7c1ae45ea",
+      "facets": [
+        "领域优先的技术检查",
+        "地球物理物理解释",
+        "中英双通道",
+        "可编辑审稿交付"
+      ],
+      "capabilities": [
+        "C01",
+        "C07",
+        "C22",
+        "C27",
+        "C34",
+        "C35"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/bilingual-writing.md",
+        "references/experiments-statistics.md",
+        "references/input-output.md",
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C04",
+          "reason": "语言修订前先检查主张证据，防止润色放大结论。"
+        },
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC056",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F056",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F057",
+      "source": "SRC11",
+      "module": "paper-self-review",
+      "source_url": "https://github.com/Galaxy-Dawn/claude-scholar/blob/main/skills/paper-self-review/SKILL.md",
+      "source_blob_sha": "e72019b31b7c5074d0b28d5766465b687f9368b7",
+      "source_sha256": "e9c0040db7394e537becb5209f1b0100eb1267fbf1c540a2da07d7876cb93a41",
+      "facets": [
+        "结构逻辑引用数字图表总检",
+        "投稿前自检顺序",
+        "主张与结果交叉核验"
+      ],
+      "capabilities": [
+        "C01",
+        "C04",
+        "C06",
+        "C27",
+        "C30"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/review-contract.md"
+      ],
+      "complements": [
+        {
+          "capability": "C28",
+          "reason": "把审查意见变成稳定问题及后续验收。"
+        }
+      ],
+      "review_case": "FC057",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F057",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "validate_report"
+      ]
+    },
+    {
+      "id": "F058",
+      "source": "SRC11",
+      "module": "results-analysis",
+      "source_url": "https://github.com/Galaxy-Dawn/claude-scholar/blob/main/skills/results-analysis/SKILL.md",
+      "source_blob_sha": "22e34019d8bef9bc8d1a0f86528f61c0288e3cb1",
+      "source_sha256": "2232f74d141fad4a3e23635be0109217713d34bf0cb7be8d120e6296f4b79782",
+      "facets": [
+        "原始结果盘点",
+        "固定比较问题",
+        "实算与实图",
+        "只读审计",
+        "分析产物与论文叙述分开"
+      ],
+      "capabilities": [
+        "C11",
+        "C18"
+      ],
+      "implementation_locations": [
+        "references/experiments-statistics.md",
+        "references/figures-tables.md"
+      ],
+      "complements": [
+        {
+          "capability": "C07",
+          "reason": "数字或图形正确之后检查比较是否能支持所称机制。"
+        }
+      ],
+      "review_case": "FC058",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F058",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "paired_run_stats",
+        "reconcile_number"
+      ]
+    },
+    {
+      "id": "F059",
+      "source": "SRC11",
+      "module": "citation-verification",
+      "source_url": "https://github.com/Galaxy-Dawn/claude-scholar/blob/main/skills/citation-verification/SKILL.md",
+      "source_blob_sha": "04b91fc947f0373f2c5678c8b5ce6608ff2f8352",
+      "source_sha256": "c98a1be776ee4301425e01e4ed46488aba293487c8b572de8963cadf805f929a",
+      "facets": [
+        "写作时主动核验",
+        "规范作者年份标识",
+        "元数据与内容双检",
+        "查不到则请求资料"
+      ],
+      "capabilities": [
+        "C24"
+      ],
+      "implementation_locations": [
+        "references/citations-venues.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC059",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F059",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F060",
+      "source": "SRC12",
+      "module": "ml-paper-writing",
+      "source_url": "https://github.com/slark-prime/ml-paper-writing/blob/main/SKILL.md",
+      "source_blob_sha": "b5b5fe576f956437b4d72c3811928103bd5eb9ab",
+      "source_sha256": "738f48b1332d3d1163e1438eac775c16a460699dc89d1884de5cf3e1dc957d36",
+      "facets": [
+        "研究清单和论文契约",
+        "证明模块与产物主线",
+        "按证据选叙事",
+        "不利结果合理分流"
+      ],
+      "capabilities": [
+        "C01",
+        "C04",
+        "C06",
+        "C16",
+        "C23",
+        "C28",
+        "C30"
+      ],
+      "implementation_locations": [
+        "references/argument-novelty.md",
+        "references/bilingual-writing.md",
+        "references/citations-venues.md",
+        "references/code-reproducibility.md",
+        "references/review-contract.md",
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C27",
+          "reason": "文件和元数据检查之后对科学判断进行反证与裁决。"
+        }
+      ],
+      "review_case": "FC060",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F060",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    },
+    {
+      "id": "F061",
+      "source": "SRC13",
+      "module": "paper-review-lite",
+      "source_url": "https://github.com/scdenney/open-science-skills/blob/main/codex/paper-review-lite/SKILL.md",
+      "source_blob_sha": "967a6e4e1e5a08746be0fb64d08836a3441dfb8e",
+      "source_sha256": "70ff0bcf2f889e472389c5f2c3ec9be4db6914e6a2c814464c2fa56201720db1",
+      "facets": [
+        "主审先理解论文",
+        "多角色深审",
+        "交叉检查与裁决",
+        "修改优先级",
+        "跨模型来源记录"
+      ],
+      "capabilities": [
+        "C01",
+        "C05",
+        "C07",
+        "C11",
+        "C25",
+        "C27",
+        "C28",
+        "C32"
+      ],
+      "implementation_locations": [
+        "references/adversarial-review.md",
+        "references/argument-novelty.md",
+        "references/domain-agent.md",
+        "references/experiments-statistics.md",
+        "references/review-contract.md",
+        "references/revision-rebuttal.md"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "设计审查之后核对真实数值、单位和聚合。"
+        }
+      ],
+      "review_case": "FC061",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F061",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": []
+    }
+  ]
+}

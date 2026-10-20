@@ -1,0 +1,3 @@
+method,hotpot_em,cohort
+PaLM-540B-ReAct,29.4,500 validation questions
+GPT-3-ReAct,30.8,500 validation questions

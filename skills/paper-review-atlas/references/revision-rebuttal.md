@@ -145,3 +145,10 @@ When relevant host tools exist, compile/render the final source and inspect the 
 If a tool or input is missing, state the incomplete check and avoid a blanket “fully verified” claim.
 Drafting a response or preparing files does not itself authorize sending them to reviewers or submitting a manuscript.
 Continue with publication or external communication only when that action is authorized by the user's request.
+
+## Status interoperability
+
+The machine-readable `issue.status` enum remains `confirmed | unverified | closed`.
+Narrative progress states such as open, addressed, accepted risk and unresolved are a separate revision ledger, not replacements for that enum. A successful `recheck` returns `closed`; an unsuccessful one returns `open` as a **recheck outcome**, leaving the underlying confirmed/unverified issue unresolved. Never write `open` into `issue.status`. Accepted risk is not automatically a closed issue.
+
+After a numerical correction, enumerate dependent abstract sentences, tables, captions, appendices, generated macros and translations. Recheck each affected occurrence. Keep unfavorable results and analysis chronology visible in the scientific record; do not rewrite an exploratory observation as a preregistered prediction.

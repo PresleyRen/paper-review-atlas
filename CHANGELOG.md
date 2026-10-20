@@ -14,3 +14,12 @@ Initial public release of Paper Review Atlas.
 - Fixed pre-release declaration precision loss, invalid recheck exit classification, recursive install overlap, and duplicate skill discovery from backups.
 
 Validation scope and remaining gaps are documented in `docs/VALIDATION.md`; this release does not claim calibrated review accuracy or independent expert equivalence.
+
+## 1.1.0 — 2026-10-20
+
+- Add 61 module-level source-feature records and 227 named facets, complementary lanes and 12 actionable development gaps.
+- Add generated bilingual README capability tables and plain-text trees, feature matrix, walkthrough and extension index.
+- Add guided/calibration modes and criteria-binding protocol; clarify issue versus revision states.
+- Implement locate, structured conflict-policy checks, labeled calibration counts, source-checked numeric macros and local BibTeX inspection.
+- Add 58 competing-policy cases, module-level contract checks and a public ReAct paper demonstration with actual table calculations.
+- Preserve v1.0 validation artifacts; distinguish arithmetic/record checks from semantic reviewer effectiveness.

@@ -1,0 +1,184 @@
+{
+  "capabilities": [
+    {
+      "id": "C01",
+      "effect_zh": "整理版本、原稿、附件、原图、结果和代码，建立材料清单",
+      "effect_en": "Versioned manuscript, supplement, visual, data and code inventory"
+    },
+    {
+      "id": "C02",
+      "effect_zh": "对照目标期刊/会议读者、范围和具体标准，给出适配路线",
+      "effect_en": "Destination-specific fit and criteria checklist"
+    },
+    {
+      "id": "C03",
+      "effect_zh": "比较最近邻工作，明确已知内容、真实差异和贡献定位",
+      "effect_en": "Nearest-work comparison and evidence-backed contribution positioning"
+    },
+    {
+      "id": "C04",
+      "effect_zh": "把每个重要主张连到实验、理论、图表或文献",
+      "effect_en": "Claim-to-experiment, proof, figure and citation map"
+    },
+    {
+      "id": "C05",
+      "effect_zh": "找出逻辑跳跃、反例、替代解释和缺失前提",
+      "effect_en": "Located logical gaps, counterexamples and alternative explanations"
+    },
+    {
+      "id": "C06",
+      "effect_zh": "调整标题、摘要、章节和段落，使问题、方法、结果衔接",
+      "effect_en": "Coherent title, abstract, section and paragraph structure"
+    },
+    {
+      "id": "C07",
+      "effect_zh": "把主张转成可检验假设、对照、独立单位和实验决定",
+      "effect_en": "Claim-specific experiment cards and analysis decisions"
+    },
+    {
+      "id": "C08",
+      "effect_zh": "核对数据、模型、调参、token、调用次数和硬件公平性",
+      "effect_en": "Matched-data, model, tuning, inference and hardware comparison"
+    },
+    {
+      "id": "C09",
+      "effect_zh": "检查消融能否识别模块作用、交互效应和额外预算贡献",
+      "effect_en": "Mechanism-isolating ablations and interaction analysis"
+    },
+    {
+      "id": "C10",
+      "effect_zh": "追踪切分、标注、检索、缓存和未来信息泄漏路径",
+      "effect_en": "Data-lineage and train/test contamination audit"
+    },
+    {
+      "id": "C11",
+      "effect_zh": "检查配对、重复测量、效应量、区间、检验与多重比较",
+      "effect_en": "Design-aware statistics, uncertainty and multiplicity review"
+    },
+    {
+      "id": "C12",
+      "effect_zh": "检查评委盲化、评分量表、顺序、自偏好与人工一致性",
+      "effect_en": "Human/LLM judge design, bias and agreement checks"
+    },
+    {
+      "id": "C13",
+      "effect_zh": "检查端到端延迟、吞吐、内存、能源、费用与测量条件",
+      "effect_en": "End-to-end performance, resource and measurement audit"
+    },
+    {
+      "id": "C14",
+      "effect_zh": "检查数据变化、长任务、缺工具、噪声和预算变化下的表现",
+      "effect_en": "Claim-relevant stress tests and generalization analysis"
+    },
+    {
+      "id": "C15",
+      "effect_zh": "核查符号、维度、假设、证明、反例与复杂度增长区间",
+      "effect_en": "Notation, dimensional, proof and asymptotic-growth review"
+    },
+    {
+      "id": "C16",
+      "effect_zh": "把图表连接到环境、数据、命令、运行日志与输出",
+      "effect_en": "Artifact-to-command reproducibility map"
+    },
+    {
+      "id": "C17",
+      "effect_zh": "核对指标实现、真实标签、配置和结果的对应关系",
+      "effect_en": "Code, reference answer, configuration and output consistency"
+    },
+    {
+      "id": "C18",
+      "effect_zh": "重算声明的CSV/JSON值，区分均值、最大值、单位和舍入",
+      "effect_en": "Source-number reconciliation and checked numeric macros"
+    },
+    {
+      "id": "C19",
+      "effect_zh": "实际检查坐标、标注、图例、颜色、字体和裁切",
+      "effect_en": "Rendered-figure readability and encoding inspection"
+    },
+    {
+      "id": "C20",
+      "effect_zh": "判断图能支持什么结论，设计替代图与可直接采用的图注",
+      "effect_en": "Figure-to-claim reasoning, redesign sketches and captions"
+    },
+    {
+      "id": "C21",
+      "effect_zh": "检查表头、分母、指标方向、最优值和比较条件",
+      "effect_en": "Table semantics, denominators and comparability checks"
+    },
+    {
+      "id": "C22",
+      "effect_zh": "检查中英文语法、术语、长句、重复与学术表达",
+      "effect_en": "Chinese/English grammar, terminology and local prose editing"
+    },
+    {
+      "id": "C23",
+      "effect_zh": "给出原句—改句—理由，实施已授权修改并保护科研含义",
+      "effect_en": "Meaning-preserving revisions with tracked changes"
+    },
+    {
+      "id": "C24",
+      "effect_zh": "核对文献身份、引用支持、本地BibTeX键与原始条目",
+      "effect_en": "Citation identity/support checks and local bibliography audit"
+    },
+    {
+      "id": "C25",
+      "effect_zh": "检查参与者、隐私、授权、数据发布和双重用途问题",
+      "effect_en": "Research ethics, authorization and release review"
+    },
+    {
+      "id": "C26",
+      "effect_zh": "把局限和效度威胁对应到具体结论，说明已有缓解",
+      "effect_en": "Claim-specific limitations, mitigations and residual questions"
+    },
+    {
+      "id": "C27",
+      "effect_zh": "挑战、辩护、裁决并撤回误报；支持引导问答和标注集校准",
+      "effect_en": "Adversarial adjudication, guided dialogue and labeled calibration"
+    },
+    {
+      "id": "C28",
+      "effect_zh": "用稳定ID跟踪修改，重跑验收条件并发现问题回归",
+      "effect_en": "Stable-ID revision tracking and evidence-backed recheck"
+    },
+    {
+      "id": "C29",
+      "effect_zh": "逐条回应审稿意见，明确修改位置、合理异议和待做工作",
+      "effect_en": "Point-by-point rebuttal and change correspondence"
+    },
+    {
+      "id": "C30",
+      "effect_zh": "检查目标要求、投稿信、补充材料和最终交付稿",
+      "effect_en": "Destination-specific submission and cover-letter preparation"
+    },
+    {
+      "id": "C31",
+      "effect_zh": "检查数据集代表性、标注、版本、许可与榜单治理",
+      "effect_en": "Dataset construction, labeling and benchmark governance"
+    },
+    {
+      "id": "C32",
+      "effect_zh": "检查综述检索范围、筛选、分类、遗漏和选择偏差",
+      "effect_en": "Review-article search, selection and synthesis audit"
+    },
+    {
+      "id": "C33",
+      "effect_zh": "按能力、来源特色或缺口ID定位文件、测试和补强步骤",
+      "effect_en": "Capability/feature/gap lookup and extension planning"
+    },
+    {
+      "id": "C34",
+      "effect_zh": "保持翻译前后的数值、否定、比较、不确定性与因果关系",
+      "effect_en": "Cross-language preservation of scientific meaning"
+    },
+    {
+      "id": "C35",
+      "effect_zh": "按PDF、Word、LaTeX、Typst分流，保护公式、标签和引用",
+      "effect_en": "Format-aware extraction, editing and rendering routes"
+    },
+    {
+      "id": "C36",
+      "effect_zh": "输出带位置、证据、严重度、改法和验收条件的报告",
+      "effect_en": "Traceable findings, coverage ledger and actionable report"
+    }
+  ]
+}

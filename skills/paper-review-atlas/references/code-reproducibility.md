@@ -116,3 +116,7 @@ Close a code/result finding only after the relevant path or data is checked in t
 If a patch fixes the implementation but no corrected experiment has run, keep the scientific result unverified.
 Report unexplained inconsistencies neutrally and ask for the evidence needed to resolve them.
 Preserve all executed-check provenance so a later review can distinguish new evidence from repeated assertions.
+
+## Single numerical source
+
+Use a versioned machine-readable export for recurring values. After reconciling aggregation, units and precision, `export-macros` can produce LaTeX numeric commands. A failed claim prevents the whole export. For other formats, use an equivalent generated values artifact. Preserve raw results and distinguish generated display values from measurements. Never regenerate experimental observations merely to match the prose.

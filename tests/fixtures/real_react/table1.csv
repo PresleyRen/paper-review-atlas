@@ -1,0 +1,6 @@
+method,hotpot_em,fever_accuracy
+Standard,28.7,57.1
+CoT,29.4,56.3
+Act,25.7,58.9
+ReAct,27.4,60.9
+ReAct+CoT-SC,35.1,62.0

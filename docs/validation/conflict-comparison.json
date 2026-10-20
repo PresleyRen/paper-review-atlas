@@ -1,0 +1,1006 @@
+{
+  "kind": "deterministic policy comparison on supplied facts",
+  "upstream_models_executed": false,
+  "cases": 58,
+  "alternative_matches": 13,
+  "selected_matches": 58,
+  "results": [
+    {
+      "id": "CFX01-rounded",
+      "expected": "retain",
+      "alternative": "correct",
+      "selected": {
+        "rule": "CFX01",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "retain",
+        "check": {
+          "status": "verified",
+          "reported": "0.948",
+          "reported_unit": "number",
+          "tolerance": "0",
+          "source": {
+            "path": "values.csv",
+            "rows_total": 4,
+            "rows_selected": 1
+          },
+          "calculated": "0.9477",
+          "rounded_calculated": "0.948",
+          "absolute_error": "0",
+          "message": "reported value agrees with declared calculation"
+        }
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX01-wrong",
+      "expected": "correct",
+      "alternative": "correct",
+      "selected": {
+        "rule": "CFX01",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "correct",
+        "check": {
+          "status": "mismatch",
+          "reported": "0.949",
+          "reported_unit": "number",
+          "tolerance": "0",
+          "source": {
+            "path": "values.csv",
+            "rows_total": 4,
+            "rows_selected": 1
+          },
+          "calculated": "0.9477",
+          "rounded_calculated": "0.948",
+          "absolute_error": "0.001",
+          "message": "reported value disagrees with declared calculation"
+        }
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX01-missing",
+      "expected": "request_source",
+      "alternative": "request_source",
+      "selected": {
+        "rule": "CFX01",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "request_source",
+        "check": {
+          "status": "unverified",
+          "reported": "0.948",
+          "reported_unit": "number",
+          "tolerance": "0",
+          "message": "source is missing or is not a regular file: missing.csv"
+        }
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX02-clean",
+      "expected": "report",
+      "alternative": "fill_quota",
+      "selected": {
+        "rule": "CFX02",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "report",
+        "issue_ids": []
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX02-one",
+      "expected": "report",
+      "alternative": "fill_quota",
+      "selected": {
+        "rule": "CFX02",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "report",
+        "issue_ids": [
+          "I1"
+        ]
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX02-duplicate",
+      "expected": "report",
+      "alternative": "fill_quota",
+      "selected": {
+        "rule": "CFX02",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "report",
+        "issue_ids": [
+          "I1"
+        ]
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX03-requested",
+      "expected": "qualitative_assessment",
+      "alternative": "numerical_probability",
+      "selected": {
+        "rule": "CFX03",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "qualitative_assessment",
+        "acceptance_probability": null
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX03-none",
+      "expected": "qualitative_assessment",
+      "alternative": "numerical_probability",
+      "selected": {
+        "rule": "CFX03",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "qualitative_assessment",
+        "acceptance_probability": null
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX03-score",
+      "expected": "qualitative_assessment",
+      "alternative": "numerical_probability",
+      "selected": {
+        "rule": "CFX03",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "qualitative_assessment",
+        "acceptance_probability": null
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX04-repeats",
+      "expected": "group_or_justify",
+      "alternative": "independent_analysis",
+      "selected": {
+        "rule": "CFX04",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "group_or_justify",
+        "observations": 4,
+        "distinct_units": 2
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX04-independent",
+      "expected": "independent_analysis",
+      "alternative": "independent_analysis",
+      "selected": {
+        "rule": "CFX04",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "independent_analysis",
+        "observations": 2,
+        "distinct_units": 2
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX04-unknown",
+      "expected": "group_or_justify",
+      "alternative": "independent_analysis",
+      "selected": {
+        "rule": "CFX04",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "group_or_justify",
+        "observations": 2,
+        "distinct_units": 2
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX05-dash",
+      "expected": "optional_style",
+      "alternative": "major_style_error",
+      "selected": {
+        "rule": "CFX05",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "optional_style"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX05-meaning",
+      "expected": "clarify",
+      "alternative": "major_style_error",
+      "selected": {
+        "rule": "CFX05",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "clarify"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX05-science",
+      "expected": "scientific_review",
+      "alternative": "major_style_error",
+      "selected": {
+        "rule": "CFX05",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "scientific_review"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX05-venue",
+      "expected": "format_fix",
+      "alternative": "major_style_error",
+      "selected": {
+        "rule": "CFX05",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "format_fix"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX05-clean",
+      "expected": "retain",
+      "alternative": "major_style_error",
+      "selected": {
+        "rule": "CFX05",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "retain"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX06-raster",
+      "expected": "retain",
+      "alternative": "repair_format",
+      "selected": {
+        "rule": "CFX06",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "retain"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX06-vector",
+      "expected": "retain",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX06",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "retain"
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX06-blur",
+      "expected": "repair_readability",
+      "alternative": "repair_format",
+      "selected": {
+        "rule": "CFX06",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "repair_readability"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX06-wrong-export",
+      "expected": "repair_format",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX06",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "repair_format"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX07-preserved",
+      "expected": "retain",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX07",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "retain",
+        "changed_fields": []
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX07-causal",
+      "expected": "review_scientific_change",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX07",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "review_scientific_change",
+        "changed_fields": [
+          "causality"
+        ]
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX07-number",
+      "expected": "review_scientific_change",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX07",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "review_scientific_change",
+        "changed_fields": [
+          "quantities"
+        ]
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX07-negated",
+      "expected": "review_scientific_change",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX07",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "review_scientific_change",
+        "changed_fields": [
+          "polarity"
+        ]
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX14-preserved",
+      "expected": "retain",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX14",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "retain",
+        "changed_fields": []
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX14-causal",
+      "expected": "review_scientific_change",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX14",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "review_scientific_change",
+        "changed_fields": [
+          "causality"
+        ]
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX14-number",
+      "expected": "review_scientific_change",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX14",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "review_scientific_change",
+        "changed_fields": [
+          "quantities"
+        ]
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX14-negated",
+      "expected": "review_scientific_change",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX14",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "review_scientific_change",
+        "changed_fields": [
+          "polarity"
+        ]
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX08-ml",
+      "expected": "not_applicable",
+      "alternative": "apply",
+      "selected": {
+        "rule": "CFX08",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "not_applicable"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX08-clinical",
+      "expected": "apply",
+      "alternative": "apply",
+      "selected": {
+        "rule": "CFX08",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "apply"
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX08-qual",
+      "expected": "apply",
+      "alternative": "apply",
+      "selected": {
+        "rule": "CFX08",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "apply"
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX09-one",
+      "expected": "same_family_views",
+      "alternative": "independent_review",
+      "selected": {
+        "rule": "CFX09",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "same_family_views",
+        "independent_error_processes": false
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX09-three",
+      "expected": "same_family_views",
+      "alternative": "independent_review",
+      "selected": {
+        "rule": "CFX09",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "same_family_views",
+        "independent_error_processes": false
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX09-cross",
+      "expected": "reported_cross_family_views",
+      "alternative": "independent_review",
+      "selected": {
+        "rule": "CFX09",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "reported_cross_family_views",
+        "independent_error_processes": false
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX10-missing",
+      "expected": "request_evidence",
+      "alternative": "confirmed_misconduct",
+      "selected": {
+        "rule": "CFX10",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "request_evidence",
+        "misconduct_established": false
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX10-inference",
+      "expected": "request_evidence",
+      "alternative": "confirmed_misconduct",
+      "selected": {
+        "rule": "CFX10",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "request_evidence",
+        "misconduct_established": false
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX10-observed_omission",
+      "expected": "report_located_issue",
+      "alternative": "confirmed_misconduct",
+      "selected": {
+        "rule": "CFX10",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "report_located_issue",
+        "misconduct_established": false
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX10-observed_contradiction",
+      "expected": "report_located_issue",
+      "alternative": "confirmed_misconduct",
+      "selected": {
+        "rule": "CFX10",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "report_located_issue",
+        "misconduct_established": false
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX11-review",
+      "expected": "suggest_only",
+      "alternative": "tracked_edit",
+      "selected": {
+        "rule": "CFX11",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "suggest_only"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX11-revise",
+      "expected": "tracked_edit",
+      "alternative": "tracked_edit",
+      "selected": {
+        "rule": "CFX11",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "tracked_edit"
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX11-unauthorized",
+      "expected": "prepare_only",
+      "alternative": "tracked_edit",
+      "selected": {
+        "rule": "CFX11",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "prepare_only"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX11-authorized",
+      "expected": "submit",
+      "alternative": "tracked_edit",
+      "selected": {
+        "rule": "CFX11",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "submit"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX12-00",
+      "expected": "visual_unassessed",
+      "alternative": "visual_record_available",
+      "selected": {
+        "rule": "CFX12",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "visual_unassessed",
+        "numeric_record": "not_recomputed"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX12-01",
+      "expected": "visual_unassessed",
+      "alternative": "visual_record_available",
+      "selected": {
+        "rule": "CFX12",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "visual_unassessed",
+        "numeric_record": "recomputed"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX12-10",
+      "expected": "visual_record_available",
+      "alternative": "visual_record_available",
+      "selected": {
+        "rule": "CFX12",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "visual_record_available",
+        "numeric_record": "not_recomputed"
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX12-11",
+      "expected": "visual_record_available",
+      "alternative": "visual_record_available",
+      "selected": {
+        "rule": "CFX12",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "visual_record_available",
+        "numeric_record": "recomputed"
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX13-planned",
+      "expected": "planned",
+      "alternative": "reproduced",
+      "selected": {
+        "rule": "CFX13",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "planned"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX13-static_inspection",
+      "expected": "static_inspection",
+      "alternative": "reproduced",
+      "selected": {
+        "rule": "CFX13",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "static_inspection"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX13-executed",
+      "expected": "recomputed",
+      "alternative": "reproduced",
+      "selected": {
+        "rule": "CFX13",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "recomputed"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX13-failed",
+      "expected": "execution_failed",
+      "alternative": "reproduced",
+      "selected": {
+        "rule": "CFX13",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "execution_failed"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX15-valid",
+      "expected": "retain",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX15",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "retain"
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX15-appendix",
+      "expected": "withdraw",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX15",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "withdraw"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX15-unknown",
+      "expected": "investigate",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX15",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "investigate"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX15-partial",
+      "expected": "narrow",
+      "alternative": "retain",
+      "selected": {
+        "rule": "CFX15",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "narrow"
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX16-fixed",
+      "expected": "closed",
+      "alternative": "closed",
+      "selected": {
+        "rule": "CFX16",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "closed",
+        "check": {
+          "status": "closed",
+          "issue_id": "I1",
+          "validation": {
+            "status": "valid",
+            "effective_status": "closed",
+            "errors": [],
+            "warnings": [],
+            "validation_scope": "record_structure_and_exact_evidence_anchors",
+            "id": "I1",
+            "evidence_check": {
+              "status": "verified",
+              "source": "original.md",
+              "requested_line": 1,
+              "matches": [
+                {
+                  "line_start": 1,
+                  "line_end": 1,
+                  "column_start": 1
+                }
+              ],
+              "message": "exact quote and anchor verified"
+            },
+            "closure_check": {
+              "status": "verified",
+              "revision_evidence": {
+                "status": "verified",
+                "source": "revision.md",
+                "requested_line": 1,
+                "matches": [
+                  {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "column_start": 1
+                  }
+                ],
+                "message": "exact quote and anchor verified"
+              },
+              "closure_scope": "declarative_check_recomputed",
+              "check_evidence": {
+                "status": "verified",
+                "source": "check.md",
+                "requested_line": 1,
+                "matches": [
+                  {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "column_start": 1
+                  }
+                ],
+                "message": "exact quote and anchor verified"
+              },
+              "check_evaluation": {
+                "status": "verified",
+                "reported": "84",
+                "reported_unit": "percent",
+                "tolerance": "0",
+                "source": {
+                  "path": "values.csv",
+                  "rows_total": 4,
+                  "rows_selected": 3
+                },
+                "calculated": "84",
+                "rounded_calculated": "84",
+                "absolute_error": "0",
+                "message": "reported value agrees with declared calculation",
+                "evaluation_kind": "number",
+                "execution_scope": "builtin_declarative_check_only"
+              },
+              "message": "revision and check record anchors verified; semantic judgment is not authenticated"
+            }
+          }
+        }
+      },
+      "alternative_matches": true,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX16-false-pass",
+      "expected": "open",
+      "alternative": "closed",
+      "selected": {
+        "rule": "CFX16",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "open",
+        "check": {
+          "status": "open",
+          "issue_id": "I1",
+          "validation": {
+            "status": "invalid",
+            "effective_status": "confirmed",
+            "errors": [
+              "recomputed declarative check failed"
+            ],
+            "warnings": [],
+            "validation_scope": "record_structure_and_exact_evidence_anchors",
+            "id": "I1",
+            "evidence_check": {
+              "status": "verified",
+              "source": "original.md",
+              "requested_line": 1,
+              "matches": [
+                {
+                  "line_start": 1,
+                  "line_end": 1,
+                  "column_start": 1
+                }
+              ],
+              "message": "exact quote and anchor verified"
+            },
+            "closure_check": {
+              "status": "mismatch",
+              "revision_evidence": {
+                "status": "verified",
+                "source": "revision.md",
+                "requested_line": 1,
+                "matches": [
+                  {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "column_start": 1
+                  }
+                ],
+                "message": "exact quote and anchor verified"
+              },
+              "closure_scope": "declarative_check_recomputed",
+              "check_evidence": {
+                "status": "verified",
+                "source": "check.md",
+                "requested_line": 1,
+                "matches": [
+                  {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "column_start": 1
+                  }
+                ],
+                "message": "exact quote and anchor verified"
+              },
+              "check_evaluation": {
+                "status": "mismatch",
+                "reported": "88",
+                "reported_unit": "percent",
+                "tolerance": "0",
+                "source": {
+                  "path": "values.csv",
+                  "rows_total": 4,
+                  "rows_selected": 3
+                },
+                "calculated": "84",
+                "rounded_calculated": "84",
+                "absolute_error": "4",
+                "message": "reported value disagrees with declared calculation",
+                "evaluation_kind": "number",
+                "execution_scope": "builtin_declarative_check_only"
+              },
+              "message": "recomputed declarative check failed"
+            }
+          }
+        }
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    },
+    {
+      "id": "CFX16-false-anchor",
+      "expected": "open",
+      "alternative": "closed",
+      "selected": {
+        "rule": "CFX16",
+        "basis": "supplied facts; record check unless an executable check is attached",
+        "action": "open",
+        "check": {
+          "status": "open",
+          "issue_id": "I1",
+          "validation": {
+            "status": "invalid",
+            "effective_status": "confirmed",
+            "errors": [
+              "closure evidence contradicts its declared location"
+            ],
+            "warnings": [],
+            "validation_scope": "record_structure_and_exact_evidence_anchors",
+            "id": "I1",
+            "evidence_check": {
+              "status": "verified",
+              "source": "original.md",
+              "requested_line": 1,
+              "matches": [
+                {
+                  "line_start": 1,
+                  "line_end": 1,
+                  "column_start": 1
+                }
+              ],
+              "message": "exact quote and anchor verified"
+            },
+            "closure_check": {
+              "status": "mismatch",
+              "revision_evidence": {
+                "status": "mismatch",
+                "source": "revision.md",
+                "requested_line": 1,
+                "matches": [],
+                "message": "exact quote not present at the declared location"
+              },
+              "closure_scope": "declarative_check_recomputed",
+              "check_evidence": {
+                "status": "verified",
+                "source": "check.md",
+                "requested_line": 1,
+                "matches": [
+                  {
+                    "line_start": 1,
+                    "line_end": 1,
+                    "column_start": 1
+                  }
+                ],
+                "message": "exact quote and anchor verified"
+              },
+              "check_evaluation": {
+                "status": "verified",
+                "reported": "84",
+                "reported_unit": "percent",
+                "tolerance": "0",
+                "source": {
+                  "path": "values.csv",
+                  "rows_total": 4,
+                  "rows_selected": 3
+                },
+                "calculated": "84",
+                "rounded_calculated": "84",
+                "absolute_error": "0",
+                "message": "reported value agrees with declared calculation",
+                "evaluation_kind": "number",
+                "execution_scope": "builtin_declarative_check_only"
+              },
+              "message": "closure evidence contradicts its declared location"
+            }
+          }
+        }
+      },
+      "alternative_matches": false,
+      "selected_matches": true
+    }
+  ]
+}

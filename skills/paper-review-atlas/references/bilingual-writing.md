@@ -124,3 +124,9 @@ For a translation, compare both versions against the same evidence rather than t
 For a substantive scope correction, link the edit to the relevant claim or finding ID.
 For a purely editorial change, do not imply the paper's scientific validity improved.
 Close a writing finding after checking the revised passage in context and confirming its scientific invariants.
+
+## Source-specific writing diagnostics
+
+When repetition is suspected, count the repeated words, sentence openings or transitions in the inspected span and show locations before recommending deletion. Those counts describe the text, not its author's identity. A rhetorical variation is useful only when it improves the reader's understanding. Retain clear sentences rather than always generating a replacement.
+
+Preserve an explicitly requested author style, section purpose and glossary. For long documents, keep an edited/remaining section ledger and revisit terminology, quantities and references across section boundaries. Source-format edits must protect citation keys, equation labels, custom macros, Typst functions and Hayagriva entries. Compile and render when those tools are available; report separately what text was changed and what build was run.

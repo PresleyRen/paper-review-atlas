@@ -1,0 +1,139 @@
+{
+  "numeric_claims": [
+    {
+      "id": "hotpot-react-vs-cot",
+      "source": {
+        "path": "table1.csv",
+        "format": "csv",
+        "where": {
+          "method": "ReAct"
+        }
+      },
+      "operation": "value",
+      "field": "hotpot_em",
+      "reported": "-2.0",
+      "source_unit": "percent",
+      "reported_unit": "percentage_point",
+      "comparison": {
+        "source": {
+          "path": "table1.csv",
+          "format": "csv",
+          "where": {
+            "method": "CoT"
+          }
+        },
+        "operation": "value",
+        "field": "hotpot_em"
+      },
+      "change": "percentage_points"
+    },
+    {
+      "id": "fever-react-vs-cot",
+      "source": {
+        "path": "table1.csv",
+        "format": "csv",
+        "where": {
+          "method": "ReAct"
+        }
+      },
+      "operation": "value",
+      "field": "fever_accuracy",
+      "reported": "4.6",
+      "source_unit": "percent",
+      "reported_unit": "percentage_point",
+      "comparison": {
+        "source": {
+          "path": "table1.csv",
+          "format": "csv",
+          "where": {
+            "method": "CoT"
+          }
+        },
+        "operation": "value",
+        "field": "fever_accuracy"
+      },
+      "change": "percentage_points"
+    },
+    {
+      "id": "webshop-react-vs-act",
+      "source": {
+        "path": "table4.csv",
+        "format": "csv",
+        "where": {
+          "method": "ReAct"
+        }
+      },
+      "operation": "value",
+      "field": "success_rate",
+      "reported": "9.9",
+      "source_unit": "percent",
+      "reported_unit": "percentage_point",
+      "comparison": {
+        "source": {
+          "path": "table4.csv",
+          "format": "csv",
+          "where": {
+            "method": "Act"
+          }
+        },
+        "operation": "value",
+        "field": "success_rate"
+      },
+      "change": "percentage_points"
+    },
+    {
+      "id": "webshop-react-vs-il",
+      "source": {
+        "path": "table4.csv",
+        "format": "csv",
+        "where": {
+          "method": "ReAct"
+        }
+      },
+      "operation": "value",
+      "field": "success_rate",
+      "reported": "10.9",
+      "source_unit": "percent",
+      "reported_unit": "percentage_point",
+      "comparison": {
+        "source": {
+          "path": "table4.csv",
+          "format": "csv",
+          "where": {
+            "method": "IL"
+          }
+        },
+        "operation": "value",
+        "field": "success_rate"
+      },
+      "change": "percentage_points"
+    },
+    {
+      "id": "webshop-react-vs-ilrl",
+      "source": {
+        "path": "table4.csv",
+        "format": "csv",
+        "where": {
+          "method": "ReAct"
+        }
+      },
+      "operation": "value",
+      "field": "success_rate",
+      "reported": "11.3",
+      "source_unit": "percent",
+      "reported_unit": "percentage_point",
+      "comparison": {
+        "source": {
+          "path": "table4.csv",
+          "format": "csv",
+          "where": {
+            "method": "IL+RL"
+          }
+        },
+        "operation": "value",
+        "field": "success_rate"
+      },
+      "change": "percentage_points"
+    }
+  ]
+}

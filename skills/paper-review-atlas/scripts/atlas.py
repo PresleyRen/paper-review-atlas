@@ -11,8 +11,10 @@ from pathlib import Path
 from audit_checks import (AuditInputError, paired_run_stats, reconcile_number,
                          recheck_issue, resolve_under_root, validate_report, verify_quote)
 
+from review_extensions import locate, calibrate, policy, export_macros, bibliography
+
 SKILL_ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 MAX_JSON_BYTES = 4 * 1024 * 1024
 CORE = ["review-contract.md", "input-output.md"]
 ROUTES = {
@@ -24,6 +26,8 @@ ROUTES = {
     "revise": ["revision-rebuttal.md", "bilingual-writing.md"],
     "rereview": ["revision-rebuttal.md"],
     "rebuttal": ["revision-rebuttal.md", "adversarial-review.md"],
+    "guided": ["guided-calibration.md", "argument-novelty.md"],
+    "calibration": ["guided-calibration.md", "adversarial-review.md"],
     "submission": ["citations-venues.md", "input-output.md"],
 }
 
@@ -118,14 +122,14 @@ def audit(root, spec_path):
 
 
 def verify_install():
-    required = ["SKILL.md", "agents/openai.yaml", "scripts/audit_checks.py"]
+    required = ["SKILL.md", "agents/openai.yaml", "scripts/audit_checks.py", "scripts/review_extensions.py"]
     required += ["references/" + x for x in set(CORE + sum(ROUTES.values(), []) + ["domain-agent.md"])]
-    required += ["config/" + x + ".json" for x in ("capabilities", "sources", "conflicts")]
+    required += ["config/" + x + ".json" for x in ("capabilities", "sources", "conflicts", "features", "gaps")]
     missing = [x for x in sorted(required) if not (SKILL_ROOT / x).is_file()]
     return {"status": "invalid" if missing else "valid", "version": VERSION,
             "scope": "Installed files and JSON readability, not scientific review accuracy.",
             "missing": missing,
-            "registries": {x: len(read_json(SKILL_ROOT / "config" / (x + ".json")).get(x, [])) for x in ("capabilities", "sources", "conflicts") if (SKILL_ROOT / "config" / (x + ".json")).is_file()}}
+            "registries": {x: len(read_json(SKILL_ROOT / "config" / (x + ".json")).get(x, [])) for x in ("capabilities", "sources", "conflicts", "features", "gaps") if (SKILL_ROOT / "config" / (x + ".json")).is_file()}}
 
 
 def parser():
@@ -134,11 +138,13 @@ def parser():
     sub = p.add_subparsers(dest="command", required=True)
     sub.add_parser("capabilities", help="Print the capability registry")
     sub.add_parser("verify-install", help="Check the installed footprint")
+    find = sub.add_parser("locate", help="Find capability, source feature, gap and repair entry")
+    find.add_argument("query")
     route = sub.add_parser("plan", help="List relevant review references")
     route.add_argument("--mode", choices=list(ROUTES), default="full")
     route.add_argument("--language", choices=["auto", "zh", "en"], default="auto")
     route.add_argument("--domain", choices=["general", "agent"], default="general")
-    for name, arg in (("preflight", "manifest"), ("audit", "spec"), ("validate-report", "report"), ("recheck", "packet")):
+    for name, arg in (("preflight", "manifest"), ("audit", "spec"), ("validate-report", "report"), ("recheck", "packet"), ("policy", "packet"), ("calibrate", "packet"), ("export-macros", "packet"), ("bib-audit", "packet")):
         sp = sub.add_parser(name)
         sp.add_argument("--root", required=True, type=Path, help="Authorized evidence directory")
         sp.add_argument("--" + arg, required=True, help="JSON path relative to --root")
@@ -152,6 +158,8 @@ def main(argv=None):
             result = read_json(SKILL_ROOT / "config/capabilities.json")
         elif args.command == "verify-install":
             result = verify_install()
+        elif args.command == "locate":
+            result = locate(args.query)
         elif args.command == "plan":
             result = plan(args.mode, args.language, args.domain)
         else:
@@ -164,6 +172,20 @@ def main(argv=None):
                 result = audit(root, args.spec)
             elif args.command == "validate-report":
                 result = validate_report(object_json(root, args.report), root=root)
+            elif args.command in {"policy", "calibrate", "export-macros", "bib-audit"}:
+                packet = object_json(root, args.packet)
+                if args.command == "policy":
+                    result = policy(packet["rule"], packet["facts"], root)
+                    if result.get("check", {}).get("status") in {"mismatch", "invalid", "unverified"}:
+                        result["status"] = result["check"]["status"]
+                    elif result.get("action") == "open":
+                        result["status"] = "mismatch"
+                elif args.command == "calibrate":
+                    result = calibrate(packet["records"])
+                elif args.command == "export-macros":
+                    result = export_macros(root, packet["claims"])
+                else:
+                    result = bibliography(root, packet["bib_path"], packet.get("citations", []), packet.get("query", ""))
             else:
                 packet = object_json(root, args.packet)
                 for key in ("issue", "revision_evidence", "check"):

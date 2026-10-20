@@ -119,3 +119,53 @@ line 可省略；提供时要求引用从真实 1-based 行开始。不模糊匹
 `evaluation.kind` 支持 `number` 或 `quote`。声明式重算真实执行；若重算失败，自称 passed 不能关闭问题。其闭环范围标为 `declarative_check_recomputed`。
 
 人工/视觉检查省略 evaluation，但必须提供具体 method、observations 和可定位的检查日志；范围标为 `recorded_evidence_only`。泛泛的“looks good / reviewer approved / 已完成”不够。仍需原问题证据、修改证据和真正执行的验收。工具没有能力凭日志认证某个人确实看过图或某个完整实验确实运行成功。
+
+## v1.1 helpers
+
+All packet commands take `--root EVIDENCE_DIR --packet FILE.json`. The packet itself and declared evidence paths remain within that root.
+
+### Feature and repair lookup
+
+```bash
+python skills/paper-review-atlas/scripts/atlas.py locate C19
+python skills/paper-review-atlas/scripts/atlas.py locate F030
+python skills/paper-review-atlas/scripts/atlas.py locate G03
+```
+
+`locate` returns capability definitions, matching source features and complementary lanes, plus open gaps containing `edit_location`, `remedy`, `test_command` and `acceptance_check`. Unknown queries return empty results; no new capability is invented. All five registries travel with the installed skill. `guide.json` is a documentation presentation register.
+
+### Calibration
+
+```json
+{"records":[{"id":"issue-1","gold":true,"predicted":true},{"id":"control-1","gold":false,"predicted":false}]}
+```
+
+`calibrate` computes TP/FP/TN/FN, precision, recall and false-positive/negative rates. IDs must be unique and labels strict booleans. Undefined denominators return null. Labels and finding matches must be established before this arithmetic step.
+
+### Conflict policy
+
+```json
+{"rule":"CFX04","facts":{"unit_ids":["task-1","task-1","task-2","task-2"],"independence_justified":true}}
+```
+
+`policy` returns `group_or_justify`, four observations and two distinct units. The complete CFX01–CFX16 packet examples are in `tests/fixtures/conflicts/cases.json`. CFX01 and CFX16 perform source checks; other rules route supplied facts. Missing or incorrectly typed facts are errors. A detected numeric mismatch or failed closure produces exit 1; a requested unverified numeric source produces exit 3.
+
+### Numerical macros
+
+```json
+{"claims":[{"name":"MeanScore","claim":{"source":{"path":"runs.csv","format":"csv"},"operation":"mean","field":"accuracy","reported":"84","source_unit":"fraction","reported_unit":"percent"}}]}
+```
+
+`export-macros` returns JSON with `tex` and source checks. Output is emitted only when every claim verifies. The above source values 0.80, 0.84, 0.88 produce `\newcommand{\MeanScore}{84\%}`. Only unique ASCII-letter names are accepted and common TeX control names are rejected. No manuscript is changed and no TeX is executed. Save the `tex` field only after reviewing the check output.
+
+### Local bibliography
+
+```json
+{"bib_path":"references.bib","citations":["used2024"],"query":"memory"}
+```
+
+`bib-audit` returns matching original entries, duplicate keys, undefined citations and informational uncited keys. Balanced braces, quoted fields and parenthesized entries are scanned; broken entries are rejected. Query matching is literal, case-insensitive text search. Macro expansion, crossref inheritance, advanced author/year operators and online identity/claim support are separate adapter work (G07/G12).
+
+### Additional modes
+
+`plan --mode guided` and `plan --mode calibration` route to `references/guided-calibration.md`. The installed helper does not silently launch external reviewers or load gold labels into a purportedly blind reviewer context.

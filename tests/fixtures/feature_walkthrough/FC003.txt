@@ -1,0 +1,1 @@
+Issue I7 fixes Table 2; the abstract still reports the obsolete value.

@@ -26,7 +26,9 @@
             "C27",
             "C36"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "204d5e03c6f4f92256fb6ace4d1326ec8907b693",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "ieee-access-review",
@@ -72,7 +74,9 @@
             "C05",
             "C27"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "e4635e1bb529ca764aeee2dc3c638a4bc71530d6",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-venue-fit-strategy",
@@ -144,7 +148,9 @@
             "C11",
             "C14"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "1293a05c9cbb3c888ecc94f030655b454acad91f",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-baseline-benchmark-audit",
@@ -155,7 +161,9 @@
             "C13",
             "C31"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "f6ef3e80ef28e721015f0a1956ce0c2766f643f0",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-ml-validity-leakage",
@@ -166,7 +174,9 @@
             "C12",
             "C31"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "1b664ae540d8535b4b9135578b74e91d22031987",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-claims-vs-data",
@@ -177,7 +187,9 @@
             "C17",
             "C18"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "2a00aee8e9898bed4b422da2ed81c1bf681f84ef",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-figure-table-auditor",
@@ -188,7 +200,9 @@
             "C20",
             "C21"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "20a380f5b3a19df45bc0b7c1d12e629bebe977f9",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-formula-audit",
@@ -292,7 +306,9 @@
             "C16",
             "C17"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "2be3da50d2bc733334eba27501ed32a157bafebf",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-repro-compliance",
@@ -315,7 +331,9 @@
             "C22",
             "C23"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "3bf998c667023d43295fdf6467d09ce8416c88c5",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-ai-prose-signals",
@@ -383,7 +401,9 @@
             "C34",
             "C36"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "c277a392721272688a5ba1133b5428e7df66a349",
+          "reviewed_on": "2026-10-20"
         }
       ],
       "related_distribution": "https://github.com/Imbad0202/academic-research-skills-codex",
@@ -416,7 +436,9 @@
             "C35",
             "C36"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "19a08b79e5644b2becedb8451320d7ab4cd61bb6",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "latex-paper-en",
@@ -431,7 +453,9 @@
             "C30",
             "C35"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "5438e00d64865d06e21eef0c66ad61a912145644",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "latex-thesis-zh",
@@ -446,7 +470,9 @@
             "C34",
             "C35"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "cca8df75ae3da3d8f43f0da730177df9426a8a94",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "typst-paper",
@@ -518,7 +544,9 @@
             "C34",
             "C35"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "10c647cf905dba7a5f387fc453e22cec69f2e0b8",
+          "reviewed_on": "2026-10-20"
         }
       ],
       "additional_inspected_urls": [
@@ -552,7 +580,9 @@
             "C27",
             "C36"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "d4f3c3e3b5c19fec2518d569ded7e37ac96a964b",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "scientific-critical-thinking",
@@ -567,7 +597,9 @@
             "C25",
             "C26"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "2a2fc151b5b13e4e11ece7410f21a14d5b25e30d",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "statistical-analysis",
@@ -579,7 +611,9 @@
             "C12",
             "C18"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "4ea7453a12e63f0dbc31d7a47ed41fe3ff4c4c1a",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "scientific-visualization",
@@ -590,7 +624,9 @@
             "C20",
             "C21"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "44ea38c24fb5015535254bfd9b5ae9a856195408",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "scientific-writing",
@@ -604,7 +640,9 @@
             "C24",
             "C32"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "446993fcd4716ae54ab74bc2a91e3bc5af5235c7",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "citation-management",
@@ -615,7 +653,9 @@
             "C24",
             "C32"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "b63b589d4d423969a63e032e62c2b74969147c1c",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "scholar-evaluation",
@@ -627,7 +667,9 @@
             "C06",
             "C27"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "900bc621e6165f7ec27ba29095774fa464c4d368",
+          "reviewed_on": "2026-10-20"
         }
       ],
       "review_notes": "Evidence-led criticism, statistics, citation identity and visualization remain separate competencies. Biomedical grading frameworks apply only to suitable study types. Automatic insertion of a provider-preferred citation is excluded."
@@ -655,7 +697,9 @@
             "C27",
             "C28"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "0408068f39d57b95b5f8a886fa6edf6baae422e0",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "experiment-audit",
@@ -670,7 +714,9 @@
             "C17",
             "C18"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "36a2b28e519656de4e212752023e1846719a4dea",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-claim-audit",
@@ -683,7 +729,9 @@
             "C20",
             "C21"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "6889da5372a59d809b0fe67edaf837badb5265cb",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "result-to-claim",
@@ -726,7 +774,9 @@
             "C27",
             "C30"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "9d03e557c462f00460919c181af0f47f97737697",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "figure-designer",
@@ -737,7 +787,9 @@
             "C20",
             "C21"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "6b58f1ad0f357fb4d658a6ca13a7df5c54ee48f9",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "paper-polish",
@@ -748,7 +800,9 @@
             "C22",
             "C23"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "51c620067f7b37260cc2497b8907a5b1dcd0121a",
+          "reviewed_on": "2026-10-20"
         }
       ],
       "review_notes": "Figure readability and actionable revision inform the workflow. Punctuation, raster use, and missing running examples do not automatically become scientific major/critical findings."
@@ -776,7 +830,9 @@
             "C27",
             "C29"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "c2e66f02d76b0e70bba092c4dffa6b1199062a59",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "ieee-experiment",
@@ -789,7 +845,9 @@
             "C11",
             "C14"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "5579f5347e45496f633af5099b42287e5c1a460d",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "ieee-figure-table",
@@ -800,7 +858,9 @@
             "C20",
             "C21"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "d6bd1ada90a4d889f0a90ac40fb1904120c1890d",
+          "reviewed_on": "2026-10-20"
         }
       ],
       "review_notes": "Review findings require a concrete correction. Repository-specific manifests and shared dependencies are not silently assumed installed."
@@ -829,7 +889,9 @@
             "C34",
             "C36"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "17143b18f7e8f9fed09c138fe410681b0208f1df",
+          "reviewed_on": "2026-10-20"
         }
       ],
       "review_notes": "The source explicitly offers Chinese, English and bilingual output and separates original research from review-article checklists."
@@ -858,7 +920,9 @@
             "C34",
             "C35"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "23f5234d09893d4bb8d82137ba877149508700f5",
+          "reviewed_on": "2026-10-20"
         }
       ],
       "review_notes": "Geophysics-specific review is treated as a domain adapter example, not universal scientific requirements. DOCX output requires an actual document renderer."
@@ -886,7 +950,9 @@
             "C27",
             "C30"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "e72019b31b7c5074d0b28d5766465b687f9368b7",
+          "reviewed_on": "2026-10-20"
         },
         {
           "name": "results-analysis",
@@ -975,7 +1041,9 @@
             "C28",
             "C32"
           ],
-          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed.",
+          "reviewed_blob_sha": "967a6e4e1e5a08746be0fb64d08836a3441dfb8e",
+          "reviewed_on": "2026-10-20"
         }
       ],
       "review_notes": "Role-based re-checking and evidence discipline inform synthesis. Social-science and clinical requirements must be activated by study type rather than globally."

@@ -26,9 +26,20 @@
           "tests/test_audit_checks.py::NumericTests::test_decimal_half_even_and_half_up_rounding",
           "tests/test_audit_checks.py::NumericTests::test_tolerance_applies_after_rounding_in_reported_units",
           "tests/test_audit_checks.py::NumericTests::test_fraction_percent_scaling_requires_explicit_units",
-          "tests/test_audit_checks.py::NumericTests::test_relative_percent_and_percentage_points_are_distinct"
+          "tests/test_audit_checks.py::NumericTests::test_relative_percent_and_percentage_points_are_distinct",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "The deterministic tests passed for supplied decimal, scale and percentage-point cases. This validates these arithmetic rules only; automatic extraction of all manuscript values and experimental truth are not tested."
+        "note": "The deterministic tests passed for supplied decimal, scale and percentage-point cases. This validates these arithmetic rules only; automatic extraction of all manuscript values and experimental truth are not tested. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX01-rounded",
+            "CFX01-wrong",
+            "CFX01-missing"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -55,9 +66,20 @@
           "tests/test_audit_checks.py::ValidationTests::test_zero_findings_valid",
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/forward-control.md"
+          "docs/validation/forward-control.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "A fresh-context writing control retained zero findings. Full reviews retained justified criticisms and explicitly rejected several false positives. This is a limited synthetic behavior check, not an adversarial-prompt benchmark."
+        "note": "A fresh-context writing control retained zero findings. Full reviews retained justified criticisms and explicitly rejected several false positives. This is a limited synthetic behavior check, not an adversarial-prompt benchmark. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX02-clean",
+            "CFX02-one",
+            "CFX02-duplicate"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -83,9 +105,20 @@
         "evidence": [
           "tests/test_audit_checks.py::ValidationTests::test_acceptance_probability_claims_rejected",
           "docs/validation/forward-en.md",
-          "docs/validation/forward-zh.md"
+          "docs/validation/forward-zh.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Structured probability fields are rejected by tests. Full forward reports did not invent acceptance odds, but no direct natural-language request for calibrated odds was evaluated."
+        "note": "Structured probability fields are rejected by tests. Full forward reports did not invent acceptance odds, but no direct natural-language request for calibrated odds was evaluated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX03-requested",
+            "CFX03-none",
+            "CFX03-score"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -113,9 +146,20 @@
           "tests/test_audit_checks.py::PairedStatsTests::test_single_seed_zero_difference_does_not_establish_no_effect",
           "tests/test_audit_checks.py::PairedStatsTests::test_pair_ids_must_match_without_silent_dropping",
           "docs/validation/forward-en.md",
-          "docs/validation/forward-zh.md"
+          "docs/validation/forward-zh.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Both reports separated seed labels from independence. The Chinese review identified repeated-measure and original-question grouping issues without inventing p-values; general inferential validity is not measured."
+        "note": "Both reports separated seed labels from independence. The Chinese review identified repeated-measure and original-question grouping issues without inventing p-values; general inferential validity is not measured. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX04-repeats",
+            "CFX04-independent",
+            "CFX04-unknown"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -142,9 +186,22 @@
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/forward-control.md"
+          "docs/validation/forward-control.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "The English em dash was not treated as a scientific flaw; grammar was editorial and valid bilingual prose was retained. This does not test every style preference or venue."
+        "note": "The English em dash was not treated as a scientific flaw; grammar was editorial and valid bilingual prose was retained. This does not test every style preference or venue. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX05-dash",
+            "CFX05-meaning",
+            "CFX05-science",
+            "CFX05-venue",
+            "CFX05-clean"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -168,9 +225,21 @@
         "case_key": "CFX06",
         "expectation": "A readable microscopy image is accepted as raster; an unreadable chart receives a specific readability finding rather than a blanket format rejection.",
         "evidence": [
-          "docs/validation/forward-en.md"
+          "docs/validation/forward-en.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "The actual PNG diagnostic heatmap was inspected and retained as a valid raster illustration. Photography, microscopy and final-print resolution were not evaluated."
+        "note": "The actual PNG diagnostic heatmap was inspected and retained as a valid raster illustration. Photography, microscopy and final-print resolution were not evaluated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX06-raster",
+            "CFX06-vector",
+            "CFX06-blur",
+            "CFX06-wrong-export"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -195,9 +264,21 @@
         "expectation": "An observational association stays an association after language editing; no causal verb is introduced to improve fluency.",
         "evidence": [
           "docs/validation/forward-en.md",
-          "docs/validation/forward-zh.md"
+          "docs/validation/forward-zh.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Both full reports resolved claim/evidence problems before suggesting prose, and their revised abstracts explicitly narrowed unsupported conclusions. No author manuscript was changed."
+        "note": "Both full reports resolved claim/evidence problems before suggesting prose, and their revised abstracts explicitly narrowed unsupported conclusions. No author manuscript was changed. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX07-preserved",
+            "CFX07-causal",
+            "CFX07-number",
+            "CFX07-negated"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -224,9 +305,20 @@
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/forward-control.md"
+          "docs/validation/forward-control.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Agent papers were reviewed using relevant design criteria; clinical and formal-proof requirements were marked inapplicable. This is not a multidisciplinary expert benchmark."
+        "note": "Agent papers were reviewed using relevant design criteria; clinical and formal-proof requirements were marked inapplicable. This is not a multidisciplinary expert benchmark. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX08-ml",
+            "CFX08-clinical",
+            "CFX08-qual"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -254,9 +346,20 @@
           "tests/test_audit_checks.py::ValidationTests::test_different_families_allowed_as_declared_not_authenticated",
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/forward-control.md"
+          "docs/validation/forward-control.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "All forward reports recorded a single executing model context with multiple lenses, not independent model families. External family identity was not authenticated."
+        "note": "All forward reports recorded a single executing model context with multiple lenses, not independent model families. External family identity was not authenticated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX09-one",
+            "CFX09-three",
+            "CFX09-cross"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -284,9 +387,21 @@
           "tests/test_audit_checks.py::ValidationTests::test_missing_evidence_stays_unverified_not_misconduct",
           "tests/test_audit_checks.py::ValidationTests::test_self_reported_verified_status_without_root_not_enough",
           "docs/validation/forward-en.md",
-          "docs/validation/forward-zh.md"
+          "docs/validation/forward-zh.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Reports distinguished confirmed reporting/design omissions from unknown actual execution, overlap counts, bias magnitudes and misconduct. Missing-data checks also ran; semantic behavior remains case-limited."
+        "note": "Reports distinguished confirmed reporting/design omissions from unknown actual execution, overlap counts, bias magnitudes and misconduct. Missing-data checks also ran; semantic behavior remains case-limited. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX10-missing",
+            "CFX10-inference",
+            "CFX10-observed_omission",
+            "CFX10-observed_contradiction"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -312,9 +427,21 @@
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/forward-control.md"
+          "docs/validation/forward-control.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Review-only inputs remained unchanged according to recorded SHA-256 checks; direct replacements were suggestions. Full authorized manuscript-edit behavior was not end-to-end tested."
+        "note": "Review-only inputs remained unchanged according to recorded SHA-256 checks; direct replacements were suggestions. Full authorized manuscript-edit behavior was not end-to-end tested. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX11-review",
+            "CFX11-revise",
+            "CFX11-unauthorized",
+            "CFX11-authorized"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -341,9 +468,21 @@
         "evidence": [
           "tests/test_audit_checks.py::ValidationTests::test_missing_figure_cannot_pass_but_log_plus_artifact_can",
           "docs/validation/forward-en.md",
-          "docs/validation/forward-zh.md"
+          "docs/validation/forward-zh.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Three supplied PNG objects were actually viewed across two full reviews, and source-data checks were recorded separately. Helper tests reject missing visual evidence; no automatic pixel-understanding claim."
+        "note": "Three supplied PNG objects were actually viewed across two full reviews, and source-data checks were recorded separately. Helper tests reject missing visual evidence; no automatic pixel-understanding claim. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX12-00",
+            "CFX12-01",
+            "CFX12-10",
+            "CFX12-11"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -368,9 +507,21 @@
         "expectation": "Unexecuted commands and missing dependencies remain unverified; an execution failure is recorded rather than converted to a passed check.",
         "evidence": [
           "docs/validation/forward-en.md",
-          "docs/validation/forward-zh.md"
+          "docs/validation/forward-zh.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "English review distinguished static inspection and tiny pure-function diagnostics from any model experiment; Chinese review did not claim execution of unavailable code. Inert-injection tests cover the helper boundary only."
+        "note": "English review distinguished static inspection and tiny pure-function diagnostics from any model experiment; Chinese review did not claim execution of unavailable code. Inert-injection tests cover the helper boundary only. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX13-planned",
+            "CFX13-static_inspection",
+            "CFX13-executed",
+            "CFX13-failed"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -396,9 +547,21 @@
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/forward-control.md"
+          "docs/validation/forward-control.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Original-language replacements preserved or explicitly corrected scientific scope; the clean bilingual pair was retained with exact numeric, negation and uncertainty alignment. Broad translation quality is unmeasured."
+        "note": "Original-language replacements preserved or explicitly corrected scientific scope; the clean bilingual pair was retained with exact numeric, negation and uncertainty alignment. Broad translation quality is unmeasured. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX14-preserved",
+            "CFX14-causal",
+            "CFX14-number",
+            "CFX14-negated"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -426,9 +589,21 @@
           "tests/test_audit_checks.py::ValidationTests::test_confirmed_issue_requires_exact_quote_location",
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/forward-control.md"
+          "docs/validation/forward-control.md",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Actual reports defended and withdrew false criticisms involving rounding, unit conversion, raster format, significance and scope. Quote-anchor tests add a narrower structural check."
+        "note": "Actual reports defended and withdrew false criticisms involving rounding, unit conversion, raster format, significance and scope. Quote-anchor tests add a narrower structural check. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX15-valid",
+            "CFX15-appendix",
+            "CFX15-unknown",
+            "CFX15-partial"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     },
     {
@@ -458,9 +633,20 @@
           "tests/test_audit_checks.py::RecheckTests::test_declarative_number_verified_closes_with_check_scope",
           "tests/test_audit_checks.py::RecheckTests::test_manual_closure_records_scope_and_requires_observations",
           "docs/validation/recheck-failed.json",
-          "docs/validation/recheck-passed.json"
+          "docs/validation/recheck-passed.json",
+          "tests/test_extensions.py",
+          "docs/validation/conflict-comparison.json"
         ],
-        "note": "Recomputed contradictory mean kept an issue open with exit 1 despite status passed; corrected mean plus anchored revision/log closed it with exit 0. Manual checks remain recorded-evidence-only; full experiment reruns were not authenticated."
+        "note": "Recomputed contradictory mean kept an issue open with exit 1 despite status passed; corrected mean plus anchored revision/log closed it with exit 0. Manual checks remain recorded-evidence-only; full experiment reruns were not authenticated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "CFX16-fixed",
+            "CFX16-false-pass",
+            "CFX16-false-anchor"
+          ],
+          "report": "docs/validation/conflict-comparison.json"
+        }
       }
     }
   ]

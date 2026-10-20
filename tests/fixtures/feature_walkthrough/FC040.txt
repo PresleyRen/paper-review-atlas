@@ -1,0 +1,1 @@
+p=0.08, therefore the two methods are equivalent.

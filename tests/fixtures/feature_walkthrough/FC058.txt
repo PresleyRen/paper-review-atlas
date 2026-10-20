@@ -1,0 +1,1 @@
+A plot was manually redrawn to make curves agree with a narrative; the CSV disagrees.

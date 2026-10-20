@@ -1,0 +1,1 @@
+Title: Training-Free. Method: We fine-tune the encoder on labels.

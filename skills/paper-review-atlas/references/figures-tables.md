@@ -120,3 +120,11 @@ Provide source/data repair when the problem is computation; improved styling can
 For every object, report: supporting claim, layers inspected, located issues, exact fixes, verification condition, and source gaps.
 Severity should follow the effect on interpretation: unreadable decisive results can be major; a harmless local alignment error is usually editorial.
 Close a figure finding only after checking the revised rendered object and, when relevant, recomputed source values.
+
+## Designing the replacement figure
+
+When a review requires a redesigned figure, name its purpose: motivation, method, quantitative result, qualitative example, or supplementary diagnostic. Choose the layout from the claim and data rather than a fixed figure quota. Supply an explicit text sketch listing panels, their data, labels, arrows and annotations, then a tool/export plan. A method overview and a measured-result plot need different encodings. Explain what should remain unchanged and which source data each new element uses. Review the rendered replacement at the intended publication size.
+
+A bar that encodes magnitude by length normally requires a meaningful baseline. A line plot may legitimately zoom its y-axis to reveal changes: inspect tick labels, annotations and interpretation rather than automatically requiring zero. Validate matching legends and color-independent cues. Record grayscale or color-vision checks only when actually performed.
+
+For repeated numerical values, use source-derived macros or an equivalent generated values file, and preserve the generating inputs and computation. `export-macros` emits numeric LaTeX definitions after declared checks pass; it does not compile the manuscript or rewrite it.

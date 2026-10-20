@@ -1,0 +1,116 @@
+{
+  "status": "verified",
+  "scope": "Declared anchors and computations only; source selection and scientific validity require review.",
+  "results": [
+    {
+      "kind": "number",
+      "id": "hotpot-react-vs-cot",
+      "status": "verified",
+      "reported": "-2",
+      "reported_unit": "percentage_point",
+      "tolerance": "0",
+      "source": {
+        "path": "table1.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "baseline": {
+        "path": "table1.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "calculated": "-2",
+      "rounded_calculated": "-2",
+      "absolute_error": "0",
+      "message": "reported value agrees with declared calculation"
+    },
+    {
+      "kind": "number",
+      "id": "fever-react-vs-cot",
+      "status": "verified",
+      "reported": "4.6",
+      "reported_unit": "percentage_point",
+      "tolerance": "0",
+      "source": {
+        "path": "table1.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "baseline": {
+        "path": "table1.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "calculated": "4.6",
+      "rounded_calculated": "4.6",
+      "absolute_error": "0",
+      "message": "reported value agrees with declared calculation"
+    },
+    {
+      "kind": "number",
+      "id": "webshop-react-vs-act",
+      "status": "verified",
+      "reported": "9.9",
+      "reported_unit": "percentage_point",
+      "tolerance": "0",
+      "source": {
+        "path": "table4.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "baseline": {
+        "path": "table4.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "calculated": "9.9",
+      "rounded_calculated": "9.9",
+      "absolute_error": "0",
+      "message": "reported value agrees with declared calculation"
+    },
+    {
+      "kind": "number",
+      "id": "webshop-react-vs-il",
+      "status": "verified",
+      "reported": "10.9",
+      "reported_unit": "percentage_point",
+      "tolerance": "0",
+      "source": {
+        "path": "table4.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "baseline": {
+        "path": "table4.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "calculated": "10.9",
+      "rounded_calculated": "10.9",
+      "absolute_error": "0",
+      "message": "reported value agrees with declared calculation"
+    },
+    {
+      "kind": "number",
+      "id": "webshop-react-vs-ilrl",
+      "status": "verified",
+      "reported": "11.3",
+      "reported_unit": "percentage_point",
+      "tolerance": "0",
+      "source": {
+        "path": "table4.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "baseline": {
+        "path": "table4.csv",
+        "rows_total": 5,
+        "rows_selected": 1
+      },
+      "calculated": "11.3",
+      "rounded_calculated": "11.3",
+      "absolute_error": "0",
+      "message": "reported value agrees with declared calculation"
+    }
+  ]
+}

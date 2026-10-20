@@ -1,0 +1,46 @@
+{
+  "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+  "url": "https://arxiv.org/pdf/2210.03629v3",
+  "version": "2210.03629v3",
+  "paper_sha256": "f285b0971ae4a790e402fb93966bed3adde2cf0a04977d08b2b40d6ab0cace69",
+  "data_origin": "Reviewer transcription of published tables, checked against rendered pages; not raw experimental runs.",
+  "inspected_objects": [
+    {
+      "page": 5,
+      "objects": [
+        "Table 1",
+        "Figure 2"
+      ],
+      "observation": "Table values and labels checked; line charts have explicitly labeled nonzero y ranges."
+    },
+    {
+      "page": 6,
+      "objects": [
+        "Table 2",
+        "Section 3.3"
+      ],
+      "observation": "Mixed ReAct/CoT comparison and stratified manual error analysis are stated."
+    },
+    {
+      "page": 8,
+      "objects": [
+        "Table 4",
+        "WebShop results paragraph"
+      ],
+      "observation": "Success-rate values checked; improvement prose could identify comparator and percentage points more precisely."
+    },
+    {
+      "page": 14,
+      "objects": [
+        "Table 5 caption"
+      ],
+      "observation": "HotpotQA explicitly uses a subset of 500 validation questions."
+    }
+  ],
+  "execution": "Local PDF extraction and actual visual inspection, followed by deterministic CSV computations. No original model experiment rerun.",
+  "transcriptions_sha256": {
+    "table1.csv": "40301e52cb29fb0b435a5d1cb152d8f2156583f75318088ed4ff60a6b063c78d",
+    "table5.csv": "2d22d3359707ce4e136dda8dfdefaf8cd8233c3571fade09577cbb77d01b6c96",
+    "table4.csv": "af2bfb327d93a1b1560a6fd9c4b6a25607001f8336be75d4e3815bd7dad73c42"
+  }
+}

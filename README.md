@@ -1,26 +1,23 @@
 # Paper Review Atlas · 论文审查图谱
 
-**一个面向中文与英文研究论文的审稿、实验审查、图表检查和修改复核 Skill。**
+**把中文、英文论文变成可定位、可修改、可复核的审稿任务。**
 
-把严格审稿变成可追溯的工作：每个重要问题都应有真实位置、证据、科学影响、具体改法和验收条件；每项无法完成的检查都应明确留下记录。
+Atlas 面向论文作者、博士生与研究团队：审查研究论证、实验、统计、代码、图表和写作，给出具体修改，并在修改后逐条验收。重点支持 AI、LLM、Agent、RAG 和知识图谱研究，也按研究类型调用一般科学审查流程。
 
-[English](README.en.md) · [能力详情](docs/CAPABILITY_MAP.md) · [冲突与取舍](docs/CONFLICTS.md) · [来源](docs/SOURCES.md) · [验证记录](docs/VALIDATION.md) · [扩展指南](docs/EXTENDING.md)
+[English](README.en.md) · [逐技能特色](docs/FEATURE_MATRIX.md) · [真实论文示例](docs/validation/real-react-review.md) · [测试记录](docs/validation/v1.1-audit.md) · [扩展定位](docs/EXTENSION_INDEX.md)
 
-本项目参考 **13 个公开来源仓库、61 个技能/工作流模块**，将共同需求重写为 **36 项能力、12 篇专项审查协议、9 种可组合工作模式**。它采用原创实现，不把上游仓库简单拼接，也不宣称已经复制或自动运行所有上游工具。本次收录的 61 个主技能文件均已核读；这不表示所有附属脚本、全部上游实现或互联网上的所有技能都已审查。来源、实现范围与实测效果分别登记。
+## 使用后得到什么
 
-## 覆盖范围图
+| 任务 | 交付成果 |
+|---|---|
+| 投稿前严格审稿 | 原文位置、证据、严重度、影响、改法与验收条件齐全的问题清单 |
+| 实验与统计检查 | 主张—实验矩阵、预算/基线核对、消融和泄漏问题、最小充分补实验方案 |
+| 图表检查 | 逐图逐表的科学含义、视觉呈现、数据核对，以及替代布局和图注 |
+| 中英文修改 | 原句—改句—理由；术语、数值、否定与结论强度保持一致 |
+| 返修与回复审稿人 | 稳定问题编号、变更记录、逐项复核和回应信 |
+| 扩展技能 | 输入能力或缺口ID，直接找到协议、来源特色、测试和补强步骤 |
 
-![Paper Review Atlas capability coverage](docs/coverage.svg)
-
-图中的 **W** 表示已写入的审查流程，**D** 表示内置确定性辅助检查，**A** 表示需要宿主模型或外部工具、图像、原始数据、计算环境。覆盖登记表示“有相应流程/工具”，不等于所有错误都能被自动发现，更不等于经过全面测量的审稿准确率。
-
-可检索版本：[逐项能力表](docs/CAPABILITY_MAP.md)；可编辑图源：[Mermaid](docs/coverage.mmd)。图、表、来源和冲突文档来自同一份 JSON 登记，后续扩展不需要另画一张图。
-
-## 快速使用
-
-### 1. 获取并安装到论文项目
-
-需要 **Python 3.10 或更高版本**。运行时检查工具仅使用 Python 标准库。安装器将技能复制到你明确指定的项目目录，不改变账户凭据或安装外部服务。
+## 安装与触发
 
 ```bash
 git clone https://github.com/PresleyRen/paper-review-atlas.git
@@ -28,174 +25,240 @@ cd paper-review-atlas
 python scripts/install_skill.py --project /absolute/path/to/your-paper-project
 ```
 
-安装位置为 `your-paper-project/.agents/skills/paper-review-atlas/`。已存在同名目录时默认停止；更新时可用 `--replace`，旧目录会在项目内的 `.paper-review-atlas-backups/` 保留为带时间戳的备份，避开正在加载的技能目录。宿主应用是否自动发现该路径取决于其技能加载机制；必要时重新载入技能列表，或把完整的 `skills/paper-review-atlas/` 目录交给支持 `SKILL.md` 的宿主。
+需要 Python 3.10+。本地检查工具使用标准库；语义审稿由加载技能的模型完成。项目安装路径为 `.agents/skills/paper-review-atlas/`。在支持该目录的宿主重新加载技能后，输入：
 
-检查安装是否完整：
+```text
+使用 $paper-review-atlas，full 模式严格审查当前论文。
+报告用中文，英文原文的修改建议保持英文。
+覆盖论证、实验、统计、代码与结果、全部图表、引用和写作。
+每条意见给出位置、证据、影响、改法和验收条件。
+```
+
+常见触发词：论文审稿、严格审查、实验审查、图表审查、中英文论文修改、投稿前检查、返修复核。可提供 PDF、Word、LaTeX、Typst、Markdown，以及原图、结果表、配置、日志和代码。图像查看、文档编译与实验执行使用宿主提供的工具。
+
+## 完整能力文本图
+
+```text
+Paper Review Atlas
+├── 证据与溯源
+│   ├── C01 材料接收与溯源
+│   ├── C04 主张—证据闭环
+│   ├── C24 引文与引用支持
+│   └── C36 报告与能力来源
+├── 贡献与论证
+│   ├── C02 目标期刊与会议适配
+│   ├── C03 创新性与文献定位
+│   ├── C05 论证与反例
+│   └── C26 局限与效度威胁
+├── 实验设计
+│   ├── C07 实验设计与因果边界
+│   ├── C08 基线与预算公平
+│   ├── C09 消融与归因
+│   └── C14 稳健性与泛化
+├── 评测有效性
+│   ├── C10 泄漏与污染
+│   ├── C11 统计推断
+│   ├── C12 人工与大模型评测
+│   └── C13 系统性能与资源成本
+├── 方法与复现
+│   ├── C15 理论、公式与证明
+│   ├── C16 产物与复现
+│   ├── C17 代码与结果一致性
+│   └── C31 数据集与基准论文
+├── 图表与数值
+│   ├── C18 数值追溯与一致性
+│   ├── C19 图形视觉检查
+│   ├── C20 图形与科学结论
+│   └── C21 表格语义与可比性
+├── 中英文写作
+│   ├── C06 结构与叙事
+│   ├── C22 中英文书写审校
+│   ├── C23 保留证据的改写
+│   └── C34 翻译与跨语种保真
+├── 审稿与修改
+│   ├── C25 伦理与研究安全
+│   ├── C27 多视角审稿与裁决
+│   ├── C28 修订追踪与复核
+│   └── C29 回复审稿人与申辩
+└── 交付与扩展
+    ├── C30 投稿与提交检查
+    ├── C32 综述与文献评述
+    ├── C33 能力地图与扩展
+    └── C35 文件格式与渲染
+```
+
+输入材料 → 主张与证据 → 方法/实验/统计 → 数值/图表 → 语言/引用 → 质疑与裁决 → 修改 → 复核。
+
+[SVG 图](docs/coverage.svg) · [纯文本文件](docs/coverage.txt) · [详细能力登记](docs/CAPABILITY_MAP.md)
+
+## 36 项能力与作用
+
+点击编号可直达执行协议。
+
+| 编号 | 能力 | 作用与输出 |
+|---|---|---|
+| [C01](skills/paper-review-atlas/references/review-contract.md) | 材料接收与溯源 | 整理版本、原稿、附件、原图、结果和代码，建立材料清单 |
+| [C02](skills/paper-review-atlas/references/citations-venues.md) | 目标期刊与会议适配 | 对照目标期刊/会议读者、范围和具体标准，给出适配路线 |
+| [C03](skills/paper-review-atlas/references/argument-novelty.md) | 创新性与文献定位 | 比较最近邻工作，明确已知内容、真实差异和贡献定位 |
+| [C04](skills/paper-review-atlas/references/argument-novelty.md) | 主张—证据闭环 | 把每个重要主张连到实验、理论、图表或文献 |
+| [C05](skills/paper-review-atlas/references/argument-novelty.md) | 论证与反例 | 找出逻辑跳跃、反例、替代解释和缺失前提 |
+| [C06](skills/paper-review-atlas/references/bilingual-writing.md) | 结构与叙事 | 调整标题、摘要、章节和段落，使问题、方法、结果衔接 |
+| [C07](skills/paper-review-atlas/references/experiments-statistics.md) | 实验设计与因果边界 | 把主张转成可检验假设、对照、独立单位和实验决定 |
+| [C08](skills/paper-review-atlas/references/experiments-statistics.md) | 基线与预算公平 | 核对数据、模型、调参、token、调用次数和硬件公平性 |
+| [C09](skills/paper-review-atlas/references/experiments-statistics.md) | 消融与归因 | 检查消融能否识别模块作用、交互效应和额外预算贡献 |
+| [C10](skills/paper-review-atlas/references/experiments-statistics.md) | 泄漏与污染 | 追踪切分、标注、检索、缓存和未来信息泄漏路径 |
+| [C11](skills/paper-review-atlas/references/experiments-statistics.md) | 统计推断 | 检查配对、重复测量、效应量、区间、检验与多重比较 |
+| [C12](skills/paper-review-atlas/references/experiments-statistics.md) | 人工与大模型评测 | 检查评委盲化、评分量表、顺序、自偏好与人工一致性 |
+| [C13](skills/paper-review-atlas/references/experiments-statistics.md) | 系统性能与资源成本 | 检查端到端延迟、吞吐、内存、能源、费用与测量条件 |
+| [C14](skills/paper-review-atlas/references/experiments-statistics.md) | 稳健性与泛化 | 检查数据变化、长任务、缺工具、噪声和预算变化下的表现 |
+| [C15](skills/paper-review-atlas/references/formal-theory.md) | 理论、公式与证明 | 核查符号、维度、假设、证明、反例与复杂度增长区间 |
+| [C16](skills/paper-review-atlas/references/code-reproducibility.md) | 产物与复现 | 把图表连接到环境、数据、命令、运行日志与输出 |
+| [C17](skills/paper-review-atlas/references/code-reproducibility.md) | 代码与结果一致性 | 核对指标实现、真实标签、配置和结果的对应关系 |
+| [C18](skills/paper-review-atlas/references/figures-tables.md) | 数值追溯与一致性 | 重算声明的CSV/JSON值，区分均值、最大值、单位和舍入 |
+| [C19](skills/paper-review-atlas/references/figures-tables.md) | 图形视觉检查 | 实际检查坐标、标注、图例、颜色、字体和裁切 |
+| [C20](skills/paper-review-atlas/references/figures-tables.md) | 图形与科学结论 | 判断图能支持什么结论，设计替代图与可直接采用的图注 |
+| [C21](skills/paper-review-atlas/references/figures-tables.md) | 表格语义与可比性 | 检查表头、分母、指标方向、最优值和比较条件 |
+| [C22](skills/paper-review-atlas/references/bilingual-writing.md) | 中英文书写审校 | 检查中英文语法、术语、长句、重复与学术表达 |
+| [C23](skills/paper-review-atlas/references/bilingual-writing.md) | 保留证据的改写 | 给出原句—改句—理由，实施已授权修改并保护科研含义 |
+| [C24](skills/paper-review-atlas/references/citations-venues.md) | 引文与引用支持 | 核对文献身份、引用支持、本地BibTeX键与原始条目 |
+| [C25](skills/paper-review-atlas/references/review-contract.md) | 伦理与研究安全 | 检查参与者、隐私、授权、数据发布和双重用途问题 |
+| [C26](skills/paper-review-atlas/references/argument-novelty.md) | 局限与效度威胁 | 把局限和效度威胁对应到具体结论，说明已有缓解 |
+| [C27](skills/paper-review-atlas/references/adversarial-review.md) | 多视角审稿与裁决 | 挑战、辩护、裁决并撤回误报；支持引导问答和标注集校准 |
+| [C28](skills/paper-review-atlas/references/revision-rebuttal.md) | 修订追踪与复核 | 用稳定ID跟踪修改，重跑验收条件并发现问题回归 |
+| [C29](skills/paper-review-atlas/references/revision-rebuttal.md) | 回复审稿人与申辩 | 逐条回应审稿意见，明确修改位置、合理异议和待做工作 |
+| [C30](skills/paper-review-atlas/references/citations-venues.md) | 投稿与提交检查 | 检查目标要求、投稿信、补充材料和最终交付稿 |
+| [C31](skills/paper-review-atlas/references/argument-novelty.md) | 数据集与基准论文 | 检查数据集代表性、标注、版本、许可与榜单治理 |
+| [C32](skills/paper-review-atlas/references/domain-agent.md) | 综述与文献评述 | 检查综述检索范围、筛选、分类、遗漏和选择偏差 |
+| [C33](skills/paper-review-atlas/references/input-output.md) | 能力地图与扩展 | 按能力、来源特色或缺口ID定位文件、测试和补强步骤 |
+| [C34](skills/paper-review-atlas/references/bilingual-writing.md) | 翻译与跨语种保真 | 保持翻译前后的数值、否定、比较、不确定性与因果关系 |
+| [C35](skills/paper-review-atlas/references/input-output.md) | 文件格式与渲染 | 按PDF、Word、LaTeX、Typst分流，保护公式、标签和引用 |
+| [C36](skills/paper-review-atlas/references/input-output.md) | 报告与能力来源 | 输出带位置、证据、严重度、改法和验收条件的报告 |
+
+### AI / Agent 专项
+
+覆盖意图路由、RAG、规划/工具/长期记忆、答案生成与自评、多 Agent 协作、知识图谱与本体。检查重点包括：多 Agent 是否只是增加了采样和调用预算；测试答案是否进入检索索引；记忆是否跨测试集污染；失败重试是否计入成本；图结构是否真的贡献增益。
+
+## 11 种工作模式
+
+| 模式 | 用途 |
+|---|---|
+| `full` / `quick` | 全文审查 / 主要问题快速分诊 |
+| `experiments` / `figures` / `writing` | 实验、图表、写作专项 |
+| `revise` / `rereview` | 实施修改 / 逐条验收 |
+| `rebuttal` / `submission` | 回复审稿 / 投稿准备 |
+| `guided` / `calibration` | 引导作者理解并修复问题 / 对照标注评估审查行为 |
+
+模式可串联，例如：`full → revise → rereview → submission`。
+
+## 来源特色如何互补
+
+61 个来源模块被展开为 **227 个特色检查点**。每个模块有稳定 `Fxxx` 编号、实现位置、互补路径和一个代表案例，见[逐技能矩阵](docs/FEATURE_MATRIX.md)与[案例记录](docs/FEATURE_WALKTHROUGH.md)。
+
+```text
+实验设计 ──检查是否回答问题──> 数值核对
+   ▲                              │
+   │ 识别混杂                     │ 校验聚合与单位
+   │                              ▼
+主张—证据 <──核对图支持的结论── 图表审查
+   │                              │
+   └──限定可支持的措辞──> 中英文改写
+                              │
+                      对抗质疑 ↔ 反证裁决
+                              │
+                       修改记录 → 实际复核
+```
+
+例如，数值工具能验证均值，但实验设计检查负责判断是否选对比较；视觉检查发现坐标问题，原始数据核对负责确认数字；语言润色给出可用句子，主张—证据检查负责保持科研含义。质疑通过裁决排除误报，再进入修改与复核。
+
+| 来源仓库 | 收录模块数 |
+|---|---:|
+| SRC01 · [augustocamargo/paper-reviewer-skills](https://github.com/augustocamargo/paper-reviewer-skills) | 29 |
+| SRC02 · [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | 1 |
+| SRC03 · [bahayonghang/academic-writing-skills](https://github.com/bahayonghang/academic-writing-skills) | 6 |
+| SRC04 · [cLin-c/paper-skill](https://github.com/cLin-c/paper-skill) | 1 |
+| SRC05 · [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 7 |
+| SRC06 · [wanshuiyin/Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | 4 |
+| SRC07 · [HKUSTDial/Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) | 3 |
+| SRC08 · [CloudWave818/ieee-skills](https://github.com/CloudWave818/ieee-skills) | 3 |
+| SRC09 · [manoloss612/peer-review-skill](https://github.com/manoloss612/peer-review-skill) | 1 |
+| SRC10 · [GuangyaoYin/skill-scientific-manuscript-review](https://github.com/GuangyaoYin/skill-scientific-manuscript-review) | 1 |
+| SRC11 · [Galaxy-Dawn/claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) | 3 |
+| SRC12 · [slark-prime/ml-paper-writing](https://github.com/slark-prime/ml-paper-writing) | 1 |
+| SRC13 · [scdenney/open-science-skills](https://github.com/scdenney/open-science-skills) | 1 |
+
+## 实际示例：ReAct 公开论文
+
+对 [ReAct v3](https://arxiv.org/abs/2210.03629v3) 的结果与图表进行了检查，并将已核对的表值制作成可复算案例。
+
+| 输入 | Atlas 的具体输出 |
+|---|---|
+| WebShop 表4：ReAct 40.0%，Act 30.1% | 重算为 **9.9 个百分点**；相对提升为 **32.9%**（一位小数） |
+| 需要精确说明相对已有方法的提升 | 逐个比较对象给出 9.9、10.9、11.3 个百分点，提供英文替换句 |
+| 主文与附录出现不同的 HotpotQA 值 | 查到附录使用500题子集，保留各自结果，记录评测范围 |
+| 主图线图使用非零纵轴 | 根据实际轴标签和图形用途判断，保留清楚表达的缩放 |
+
+示例改写：
+
+> On WebShop, ReAct achieves a 40.0% success rate, exceeding Act, IL, and IL+RL by 9.9, 10.9, and 11.3 percentage points, respectively.
+
+[查看完整审查、输入来源和原始运行输出](docs/validation/real-react-review.md)。另设一个故意混淆“相对百分比/百分点”的错误探针，实际运行会返回不一致。
 
 ```bash
-python /absolute/path/to/your-paper-project/.agents/skills/paper-review-atlas/scripts/atlas.py verify-install
+python skills/paper-review-atlas/scripts/atlas.py audit \
+  --root tests/fixtures/real_react --spec verified-spec.json
 ```
 
-### 2. 给出任务与材料
+## 冲突测试与本地工具
 
-```text
-使用 $paper-review-atlas，对我的论文做 full 模式严格审稿。
-报告用中文；英文原文的修改建议保持英文。
-检查论证、实验设计、统计、代码与结果、全部图表及引用。
-逐条给出位置、证据、影响、修改建议和验收条件。
-材料在当前项目；无法验证的部分请明确标记，不要编造问题。
-```
+16项冲突规则包含舍入、问题配额、统计单位、格式偏好、证据缺失、跨语言保真、多角色来源和修改验收。58个固定输入案例对比两类明确规则：所选规则58项符合预期，对照规则13项符合预期。输入、规则实现和输出都在[测试记录](docs/validation/v1.1-audit.md)中。
 
-只查图表：
-
-```text
-使用 $paper-review-atlas，figures 模式。
-逐图逐表检查科学含义、真实渲染效果、数值来源、坐标单位、
-样本量与误差线、图注和正文主张；给出可直接替换的图注。
-```
-
-审查后修改并复核：
-
-```text
-使用 $paper-review-atlas，按照已确认的问题修改论文，保留变更记录。
-不要虚构实验或强化证据不足的结论；可以明确缩小主张。
-随后用 rereview 模式逐条验收，保留尚未解决的问题和稳定编号。
-```
-
-可以提供 PDF、Word、LaTeX、Typst、Markdown，连同原图、表格、CSV/JSON 结果、评估代码、配置、运行记录和补充材料。格式提取、OCR、编译、视觉查看由宿主已有工具完成；缺少某种工具时，其对应检查必须显示为未完成。没有原始数据也能检查写作与设计，但不能声称已经重算结果。
-
-## 36 项能力的具体内容
-
-| 范围 | 主要能力与实际检查 |
+| 工具 | 功能 |
 |---|---|
-| 研究问题与贡献 | 研究问题、标题/摘要/贡献一致性、创新定位、与最近相关工作的区别、主张—证据映射、替代解释、反例、论证结构、综述的覆盖与选择偏差 |
-| 实验设计 | 对照组、强基线、相同数据/预算/调参资源、消融与因果归因、变量控制、负结果、数据集与基准构建、实验对核心主张是否有辨别力 |
-| 评测有效性 | 数据与答案泄漏、独立实验单位、种子/任务/参与者区分、配对与重复测量、效应大小与不确定性、多重比较、LLM judge 顺序/长度/身份偏差、人工评估 |
-| 系统与复现 | 计算/延迟/成本口径、工具调用数、环境与依赖、代码/配置/数据/模型版本、指标实现、运行日志、表图到源结果的追溯、读代码与实际运行的区别 |
-| 理论与数学 | 符号和单位、公式含义、假设是否足够、定理与证明对应、边界条件、反例、理论结论和实验主张的适用范围；不假称自动定理证明 |
-| 图表与数字 | 实际查看图像、坐标/单位/范围、图例、色彩与可读性、误差线、样本量、表头/最优值/分母、图注和正文是否过度解释、CSV/JSON 重算、舍入与百分比口径 |
-| 中文与英文 | 中文学术表达、英语语法/时态/搭配、段落逻辑、术语一致、中英摘要一致、准确翻译、原句—改句—理由、数字/否定/不确定性/因果强度保持 |
-| 审稿与修改 | 专家视角审查、对抗质疑与反向辩护、撤回误报、严重度分级、可执行修改、最小充分补实验、稳定问题编号、返修复核、rebuttal 与 cover letter |
-| 投稿与维护 | 引用元数据与实质支持分开验证、当前期刊要求、伦理与数据/代码说明、局限性、投稿材料、检查覆盖账本、来源与冲突登记、扩展路线图 |
+| `plan` / `preflight` | 选择协议、检查材料清单 |
+| `audit` | 引文锚点、数值、单位、舍入、配对描述统计 |
+| `policy` | 依据明确证据记录处理 CFX01–CFX16 冲突 |
+| `export-macros` | 从核对后的数据生成LaTeX数字宏 |
+| `bib-audit` | 查询本地BibTeX，保留原始条目，找重复键和缺失引用键 |
+| `calibrate` | 根据已判读标签计算混淆计数、精确率、召回率等 |
+| `validate-report` / `recheck` | 校验问题记录、复核实际验收条件 |
+| `locate` / `capabilities` / `verify-install` | 定位补强入口、列出能力、检查安装 |
 
-36 个稳定 ID 的逐条说明、协议路径、来源、自动检查与外部依赖见 [CAPABILITY_MAP.md](docs/CAPABILITY_MAP.md)。
+接口和示例见 [CLI_REFERENCE.md](docs/CLI_REFERENCE.md)。
 
-### 容易遗漏的能力也已纳入协议
-
-| 场景 | 进一步检查 |
-|---|---|
-| 读者第一印象与重大重组 | 声明只看过哪些表面材料；检查标题承诺、摘要、主要图表与结论是否一致；按主张和读者疑问重排章节，把实验问题连接到确切结果位置 |
-| 基准、人工研究与系统测量 | 榜单版本、隐藏测试和重复提交反馈；标注分歧；参与者流失、顺序与携带效应、定性编码；仪器开销、能源估算、共享资源干扰及逐工作负载退化 |
-| 文献与源文件 | 本地 `.bib` 的筛选与原始条目导出；引用身份与实质支持分别核验；LaTeX/Typst 引用键、标签、公式、宏及 Hayagriva 格式保护，构建结果与文字修改分开记录 |
-| 决策、投稿与返修 | 实验后的“实际结果→可支持措辞→剩余解释→下一决策”；残余局限台账；候选期刊的当前要求与匹配证据；投稿信逐句对齐正文；外审建议与已有作者决定的裁决记录 |
-
-这些是按材料与研究类型启用的审查流程。完整源文件解析、编译、统计推断和外部检索仍需要相应宿主能力；未测量的流程在覆盖登记中保持可见。
-
-### AI / LLM / Agent 专项
-
-除一般论文方法外，还提供 6 类专项配置：路由与意图识别、RAG 与检索、规划/工具/记忆、答案生成与自评、多 Agent 协作、知识图谱/本体。每类都给出主张、基线、消融、泄漏、评测、成本和鲁棒性需要检查的要点。
-
-例如，多 Agent 增益要与更多 token、更多采样和更多工具调用分开；RAG 要检查测试答案进入索引的路径；知识图谱要区分图结构贡献与额外文本/参数贡献。医学、社会科学、系统、理论等研究各有适用标准，不把某一学科的量表或样本量口诀套到全部论文。
-
-## 9 种可组合工作模式
-
-| 模式 | 输出重点 |
-|---|---|
-| `full` | 全文审查，适用能力全部覆盖，明确缺失材料 |
-| `quick` | 主要主张、核心证据和最重要的有效性问题 |
-| `experiments` | 设计、基线、消融、统计、泄漏、成本和复现 |
-| `figures` | 图表科学含义、真实视觉和数据来源三层检查 |
-| `writing` | 中英文结构、语言、术语与可直接使用的改写 |
-| `revise` | 根据证据实施已授权修改并记录变化 |
-| `rereview` | 对原问题与新证据执行验收，防止虚假关闭 |
-| `rebuttal` | 审稿意见分诊、证据回应、变更位置与合理异议 |
-| `submission` | 当前投稿要求、引用、材料与最终渲染检查 |
-| 组合模式 | 同一任务串联上述模式；`full` 加 `revise` 加 `rereview` 是常见组合 |
-
-CLI 提供上述 9 个命名路由；组合工作方式按用户任务顺序串联，不另设命令枚举。
-
-## 融合时如何处理冲突
-
-完整的 **16 项冲突登记**保留了候选做法、选定策略、原因和真实测试状态。主要取舍如下：
-
-| 冲突 | 采用的策略 | 验证方式 |
-|---|---|---|
-| 原始值严格相等 vs 按论文精度比较 | 用 Decimal、明确单位、声明舍入与容差；`0.9477 → 0.948` 可以正确通过 | 数值回归测试与中英文正面对照 |
-| 必须找出固定数量问题 vs 有证据才报告 | 允许零问题，合并重复问题，质疑之后尝试反证 | 零问题记录测试；前向审稿的误报裁决 |
-| 风格禁令 vs 科学严重度 | 破折号、词汇偏好、栅格图不自动升级为科学缺陷 | 合法破折号、清晰 PNG 的前向对照 |
-| 样本多 vs 独立单位正确 | 区分种子、问题、参与者、同源改写和重复测量；不机械套用统计检验 | 配对描述统计测试；中文伪重复案例 |
-| 多角色 vs 独立模型 | 明确单模型多视角；跨模型独立性需真实模型来源 | 模型家族记录测试与报告来源说明 |
-| 缺证据 vs 发现造假 | 缺少资料标为未验证；已观察到的报告错误可确认，不能凭缺失推断违规 | 缺失数据、图像和伪引用定位测试 |
-| 读过图片文字 vs 看过图 | 科学解释、真实渲染、原始数值分开登记 | 实际 PNG 检查；无图不能通过记录校验 |
-| “已经修改” vs 复核通过 | 原问题、修改证据、实际检查记录共同决定；支持重跑声明式检查 | 虚假关闭、失败重算、有效修正测试 |
-
-这些测试支持本版本的具体取舍，不能证明某个策略在所有论文、学科或模型上普遍最优。对尚未完成端到端验证的行为，登记保留 `partial` 或 `planned`，不会用“文件存在”代替效果验证。
-
-## 内置工具实际能做什么
-
-`atlas.py` 是辅助检查 CLI，不会自行调用大模型生成审稿。语义审稿由加载本技能的模型按协议完成。
-
-| 命令 | 确定性作用 | 不能据此声称 |
-|---|---|---|
-| `plan` | 输出所需协议与交付清单 | 已读论文或已审稿 |
-| `preflight` | 检查清单中的文件是否可用 | 文件内容正确或已查看图像 |
-| `audit` | 精确引文/行锚点；CSV/JSON 的 value/mean/sum/count；单位转换、舍入、相对百分比/百分点；配对描述统计 | 自动选对指标、因果成立、总体显著、数据真实 |
-| `validate-report` | 问题结构、引用位置、来源声明和覆盖记录一致性 | 批评在科学上一定正确，或图片真的已被看过 |
-| `recheck` | 重跑支持的引文/数值条件，或核对具体的人工检查记录 | 一段“已通过”文字能证明实验已复现 |
-| `capabilities` | 输出已安装版本的能力登记 | 所有外部工具已经安装 |
-| `verify-install` | 检查运行包关键文件及登记可读性 | 模型审稿质量或真实论文准确率 |
-
-所有声明式文件路径限制在指定证据根目录；拒绝 `..` 和越界符号链接。不执行用户论文的代码、表达式、shell 片段，不联网，不自动安装依赖。数值数据最多 5 MiB / 10,000 条记录；大数据应在明确授权的分析环境中准备可追溯的摘要。JSON 命令规格最多 4 MiB。
-
-返回码：`0` 为该命令声明范围内成功；`1` 为不一致或无效报告；`2` 为输入错误；`3` 为证据不足/未验证。部分失败与未验证同时存在时，先报告不一致，逐项结果仍保留各自状态。不能把退出码 0 理解成“论文通过审稿”。
-
-### 可直接复现的例子
+## 快速定位不足并扩展
 
 ```bash
-# 列出 Agent 全文审查要加载的协议
-python skills/paper-review-atlas/scripts/atlas.py plan --mode full --language zh --domain agent
-
-# 只检查材料是否可用
-python skills/paper-review-atlas/scripts/atlas.py preflight --root tests/fixtures/en_agent --manifest manifest.json
-
-# 有意含错的合成样例：应返回 1，报告均值/相对提升不一致，合法舍入通过
-python skills/paper-review-atlas/scripts/atlas.py audit --root tests/fixtures --spec integration-audit.json
+python skills/paper-review-atlas/scripts/atlas.py locate C19
+python skills/paper-review-atlas/scripts/atlas.py locate academic-paper-reviewer
+python skills/paper-review-atlas/scripts/atlas.py locate G03
 ```
 
-输入模板在 [`assets/`](skills/paper-review-atlas/assets/)；详细 JSON 接口和闭环示例见 [CLI_REFERENCE.md](docs/CLI_REFERENCE.md)。
+返回：能力编号、来源特色、协议路径、互补能力、缺口、修改入口、测试命令和验收条件。[扩展索引](docs/EXTENSION_INDEX.md)登记了12个具体后续方向，如复杂统计、跨模型执行、格式适配、引用核验和图表视觉基准。
 
-## 输出应是什么样
-
-每个保留问题至少包含：**稳定编号 → 严重度 → 状态 → 精确位置和原文/图对象 → 证据 → 科学影响 → 可操作修改 → 验收条件**。报告还包括覆盖账本、论点—证据表、可直接采用的中英文改写、优先修改清单以及未验证的部分。
-
-例如，发现表中 88.0% 是最高种子而不是三种子均值时，应指出实际来源、重算出 84.0%、解释它影响摘要/图表/比较结论，并提出同步修改和复核要求；不能只说“统计不严谨”。
-
-`confirmed / unverified / closed` 是问题状态；`critical / major / minor / editorial` 是影响等级；`observed / inferred / missing` 描述证据基础。它们是不同维度，不以一种标签代替另一种判断。
-
-## 测试与证据
-
-[VALIDATION.md](docs/VALIDATION.md) 是发布验证记录，包含自动化测试、独立新上下文的中英文前向审查、已知问题/正确对照、问题修复和局限。
+```text
+发现不足
+  └─ locate Cxx / Fxxx / Gxx
+      ├─ references/：补审查步骤和输出
+      ├─ scripts/：补实际检查工具
+      ├─ config/features.json：更新特色与互补关系
+      ├─ config/gaps.json：更新问题、补法和验收
+      └─ tests/：错误例 + 正确对照 + 资料缺失例
+          └─ 运行测试 → 重建README/文本图/能力图 → 提交
+```
 
 ```bash
 python -m unittest discover -s tests -v
-python scripts/check_package.py
+python scripts/build_coverage.py
+python scripts/build_feature_docs.py
 python scripts/build_coverage.py --check
-python skills/paper-review-atlas/scripts/atlas.py verify-install
+python scripts/build_feature_docs.py --check
+python scripts/check_package.py
 ```
 
-合成样例全部明确标记为虚构，不包含用户论文或真实实验成果。前向审稿使用新的上下文且不提供答案，但仍属于同一模型体系的开发验证，不等于人类专家评估、跨模型基准或真实世界召回率测量。图像生成脚本仅供开发重建图表，额外需要 matplotlib；运行技能和自动化测试不需要它。
+中英文 README、文本图、特色矩阵和扩展索引由登记与 `docs/templates/` 生成。修改模板或登记后重新生成，能够同步维护文档与实现。
 
-## 项目结构与扩展
+## 目录与许可
 
-- `skills/paper-review-atlas/`：独立可安装的 Skill、12 篇协议、登记、模板和运行工具。
-- `docs/`：能力图、来源、冲突、接口、扩展与验证证据。
-- `tests/`：数值/证据/闭环/安装/登记测试及中英文合成论文。
-- `scripts/`：安装、包校验、覆盖图生成和开发样例生成。
+`skills/paper-review-atlas/` 是可安装技能；`tests/` 保存测试与案例；`docs/` 保存能力、效果与验证记录；`scripts/` 维护安装和文档生成。
 
-新增能力时，在 `capabilities.json` 加稳定 ID，在相关协议写出实际流程，再加正反例和测试，将证据登记到能力/冲突表，最后运行 `python scripts/build_coverage.py`。完整步骤与已有缺口见 [EXTENDING.md](docs/EXTENDING.md)。
-
-## 来源与许可
-
-本仓库的原创代码、协议、模板和合成样例以 [MIT](LICENSE) 许可发布。外部项目仍受各自许可约束；本仓库的 MIT 不重新授权这些外部项目。
-
-来源包含 Paper Reviewer Skills、Academic Research Skills、Academic Writing Skills、cLin Paper Skill、K-Dense Scientific Agent Skills、ARIS、Supervisor Skills、IEEE Skills 等。每个来源模块的链接、审阅深度、能力映射和许可备注见 [SOURCES.md](docs/SOURCES.md)。存在非商业限制或许可不明确的来源仅作为概念参考，没有把其技能正文或代码复制进本包。
+原创实现使用 [MIT](LICENSE)；外部来源保留各自许可。完整来源与版本信息见 [SOURCES.md](docs/SOURCES.md)，具体实现与验证进度见[审计记录](docs/validation/v1.1-audit.md)。

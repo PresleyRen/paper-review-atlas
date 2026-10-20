@@ -1,18 +1,23 @@
 # Paper Review Atlas
 
-**Evidence-grounded peer review, experiment auditing, figure/table inspection, and revision of Chinese and English research papers.**
+**Locate research-paper weaknesses, produce actionable revisions, and verify the fixes—in Chinese and English.**
 
-[中文](README.md) · [Capabilities](docs/CAPABILITY_MAP.md) · [Conflict decisions](docs/CONFLICTS.md) · [Sources](docs/SOURCES.md) · [Validation](docs/VALIDATION.md) · [Extension guide](docs/EXTENDING.md)
+Atlas reviews arguments, experiments, statistics, code/results, figures, tables, references and writing. Authors receive traceable findings, proposed replacements, experiment plans and a revision ledger. The AI track covers LLMs, agents, RAG and knowledge graphs.
 
-Atlas synthesizes concepts from **13 public repositories and 61 skill/workflow modules** into **36 capabilities, 12 specialist protocols and 9 composable modes**. This is an original implementation. All 61 inventoried primary skill bodies were read; their subordinate scripts and references were not comprehensively audited. Source inspection, implemented workflow, deterministic helpers, measured behavior and external dependencies are recorded separately. Inclusion in the source inventory does not imply a complete port of an upstream tool.
+[中文](README.md) · [Source features](docs/FEATURE_MATRIX.md) · [Real-paper example](docs/validation/real-react-review.md) · [Tests](docs/validation/v1.1-audit.md) · [Extension index](docs/EXTENSION_INDEX.md)
 
-![Capability coverage](docs/coverage.svg)
+## What you get
 
-**W** = implemented workflow; **D** = bounded deterministic helper; **A** = external tool, model, visual access, data or execution environment needed. Coverage is not a measured scientific-error detection rate.
+| Task | Deliverable |
+|---|---|
+| Strict pre-submission review | Located evidence, impact, severity, remedy and acceptance check |
+| Experiments and statistics | Claim-to-experiment matrix, fairness/leakage checks and targeted repair plan |
+| Figures and tables | Scientific interpretation, rendered inspection, numerical reconciliation and replacement captions |
+| Bilingual editing | Original/replacement/reason with consistent terminology and scientific meaning |
+| Revision and rebuttal | Stable issue IDs, changes, rechecks and point-by-point responses |
+| Extension | Capability, feature and gap IDs resolving to files, tests and repair routes |
 
 ## Install and invoke
-
-Python 3.10+ is required for local helpers. The runtime and automated tests use the standard library.
 
 ```bash
 git clone https://github.com/PresleyRen/paper-review-atlas.git
@@ -20,113 +25,241 @@ cd paper-review-atlas
 python scripts/install_skill.py --project /absolute/path/to/your-paper-project
 ```
 
-This installs the self-contained skill at `.agents/skills/paper-review-atlas/` in the chosen project. Existing installations are preserved; `--replace` makes a timestamped backup in the project's `.paper-review-atlas-backups/` directory, outside active skill discovery, before updating. Host skill discovery varies. Reload its skill list when needed, or provide the complete skill directory to a host that loads `SKILL.md`.
+Python 3.10+; local helpers use the standard library. The host model performs semantic review. Installation places the skill in `.agents/skills/paper-review-atlas/`. Reload skill discovery in a compatible host, then invoke:
 
 ```text
-Use $paper-review-atlas for a full, rigorous review of this manuscript.
-Review claims, experiments, statistics, code/result consistency, all figures
-and tables, references, and language. Give the report in English.
-For Chinese passages, retain Chinese in proposed replacements.
-For each finding provide the exact location, evidence, consequence,
-actionable fix and acceptance check. Mark unavailable evidence explicitly.
+Use $paper-review-atlas in full mode to review this manuscript.
+Check claims, experiments, statistics, code/results, every figure/table,
+references and language. Report in English; keep Chinese replacements
+in Chinese. Give a location, evidence, consequence, remedy and acceptance
+check for every retained finding.
 ```
 
-Focused tasks can request `figures`, `experiments`, or `writing`. To apply changes, explicitly request `revise`; use `rereview` to check the resulting evidence. A review-only request does not trigger manuscript rewriting, while authorized revision does not require repeated routine confirmations.
+Provide the manuscript and available supplements, figures, tables, CSV/JSON outputs, configurations and code. PDF, Word, LaTeX and Typst routes use the host's extraction, rendering, compilation and editing tools.
 
-## Capability detail
+## Complete text map
 
-| Area | What the protocol examines |
+```text
+Paper Review Atlas
+├── Evidence and traceability
+│   ├── C01 Intake and provenance
+│   ├── C04 Claim–evidence linkage
+│   ├── C24 Citation integrity
+│   └── C36 Reporting and provenance
+├── Contribution and reasoning
+│   ├── C02 Venue fit
+│   ├── C03 Novelty and literature
+│   ├── C05 Arguments and counterexamples
+│   └── C26 Limitations and threats
+├── Experiment design
+│   ├── C07 Experiment design
+│   ├── C08 Baselines and budgets
+│   ├── C09 Ablation and attribution
+│   └── C14 Robustness and generalization
+├── Evaluation validity
+│   ├── C10 Leakage and contamination
+│   ├── C11 Statistical inference
+│   ├── C12 Human and LLM evaluation
+│   └── C13 Systems and resource cost
+├── Methods and artifacts
+│   ├── C15 Theory and formulas
+│   ├── C16 Artifact reproducibility
+│   ├── C17 Code–result integrity
+│   └── C31 Datasets and benchmarks
+├── Figures, tables and numbers
+│   ├── C18 Numeric traceability
+│   ├── C19 Visual figure inspection
+│   ├── C20 Figure scientific support
+│   └── C21 Table semantics
+├── Bilingual writing
+│   ├── C06 Structure and narrative
+│   ├── C22 Chinese and English style
+│   ├── C23 Evidence-preserving edits
+│   └── C34 Translation preservation
+├── Review and revision
+│   ├── C25 Ethics and research safety
+│   ├── C27 Reviewer adjudication
+│   ├── C28 Revision and re-check
+│   └── C29 Rebuttal and response
+└── Delivery and extension
+    ├── C30 Submission readiness
+    ├── C32 Surveys and reviews
+    ├── C33 Coverage and extension
+    └── C35 Formats and rendering
+```
+
+Inputs → claims/evidence → methods/experiments/statistics → numbers/visuals → writing/citations → challenge/adjudication → revision → recheck.
+
+[SVG](docs/coverage.svg) · [Plain text](docs/coverage.txt) · [Capability registry](docs/CAPABILITY_MAP.md)
+
+## 36 capabilities and outputs
+
+Each ID links directly to its implementation protocol.
+
+| ID | Capability | Function and output |
+|---|---|---|
+| [C01](skills/paper-review-atlas/references/review-contract.md) | Intake and provenance | Versioned manuscript, supplement, visual, data and code inventory |
+| [C02](skills/paper-review-atlas/references/citations-venues.md) | Venue fit | Destination-specific fit and criteria checklist |
+| [C03](skills/paper-review-atlas/references/argument-novelty.md) | Novelty and literature | Nearest-work comparison and evidence-backed contribution positioning |
+| [C04](skills/paper-review-atlas/references/argument-novelty.md) | Claim–evidence linkage | Claim-to-experiment, proof, figure and citation map |
+| [C05](skills/paper-review-atlas/references/argument-novelty.md) | Arguments and counterexamples | Located logical gaps, counterexamples and alternative explanations |
+| [C06](skills/paper-review-atlas/references/bilingual-writing.md) | Structure and narrative | Coherent title, abstract, section and paragraph structure |
+| [C07](skills/paper-review-atlas/references/experiments-statistics.md) | Experiment design | Claim-specific experiment cards and analysis decisions |
+| [C08](skills/paper-review-atlas/references/experiments-statistics.md) | Baselines and budgets | Matched-data, model, tuning, inference and hardware comparison |
+| [C09](skills/paper-review-atlas/references/experiments-statistics.md) | Ablation and attribution | Mechanism-isolating ablations and interaction analysis |
+| [C10](skills/paper-review-atlas/references/experiments-statistics.md) | Leakage and contamination | Data-lineage and train/test contamination audit |
+| [C11](skills/paper-review-atlas/references/experiments-statistics.md) | Statistical inference | Design-aware statistics, uncertainty and multiplicity review |
+| [C12](skills/paper-review-atlas/references/experiments-statistics.md) | Human and LLM evaluation | Human/LLM judge design, bias and agreement checks |
+| [C13](skills/paper-review-atlas/references/experiments-statistics.md) | Systems and resource cost | End-to-end performance, resource and measurement audit |
+| [C14](skills/paper-review-atlas/references/experiments-statistics.md) | Robustness and generalization | Claim-relevant stress tests and generalization analysis |
+| [C15](skills/paper-review-atlas/references/formal-theory.md) | Theory and formulas | Notation, dimensional, proof and asymptotic-growth review |
+| [C16](skills/paper-review-atlas/references/code-reproducibility.md) | Artifact reproducibility | Artifact-to-command reproducibility map |
+| [C17](skills/paper-review-atlas/references/code-reproducibility.md) | Code–result integrity | Code, reference answer, configuration and output consistency |
+| [C18](skills/paper-review-atlas/references/figures-tables.md) | Numeric traceability | Source-number reconciliation and checked numeric macros |
+| [C19](skills/paper-review-atlas/references/figures-tables.md) | Visual figure inspection | Rendered-figure readability and encoding inspection |
+| [C20](skills/paper-review-atlas/references/figures-tables.md) | Figure scientific support | Figure-to-claim reasoning, redesign sketches and captions |
+| [C21](skills/paper-review-atlas/references/figures-tables.md) | Table semantics | Table semantics, denominators and comparability checks |
+| [C22](skills/paper-review-atlas/references/bilingual-writing.md) | Chinese and English style | Chinese/English grammar, terminology and local prose editing |
+| [C23](skills/paper-review-atlas/references/bilingual-writing.md) | Evidence-preserving edits | Meaning-preserving revisions with tracked changes |
+| [C24](skills/paper-review-atlas/references/citations-venues.md) | Citation integrity | Citation identity/support checks and local bibliography audit |
+| [C25](skills/paper-review-atlas/references/review-contract.md) | Ethics and research safety | Research ethics, authorization and release review |
+| [C26](skills/paper-review-atlas/references/argument-novelty.md) | Limitations and threats | Claim-specific limitations, mitigations and residual questions |
+| [C27](skills/paper-review-atlas/references/adversarial-review.md) | Reviewer adjudication | Adversarial adjudication, guided dialogue and labeled calibration |
+| [C28](skills/paper-review-atlas/references/revision-rebuttal.md) | Revision and re-check | Stable-ID revision tracking and evidence-backed recheck |
+| [C29](skills/paper-review-atlas/references/revision-rebuttal.md) | Rebuttal and response | Point-by-point rebuttal and change correspondence |
+| [C30](skills/paper-review-atlas/references/citations-venues.md) | Submission readiness | Destination-specific submission and cover-letter preparation |
+| [C31](skills/paper-review-atlas/references/argument-novelty.md) | Datasets and benchmarks | Dataset construction, labeling and benchmark governance |
+| [C32](skills/paper-review-atlas/references/domain-agent.md) | Surveys and reviews | Review-article search, selection and synthesis audit |
+| [C33](skills/paper-review-atlas/references/input-output.md) | Coverage and extension | Capability/feature/gap lookup and extension planning |
+| [C34](skills/paper-review-atlas/references/bilingual-writing.md) | Translation preservation | Cross-language preservation of scientific meaning |
+| [C35](skills/paper-review-atlas/references/input-output.md) | Formats and rendering | Format-aware extraction, editing and rendering routes |
+| [C36](skills/paper-review-atlas/references/input-output.md) | Reporting and provenance | Traceable findings, coverage ledger and actionable report |
+
+### AI / Agent profiles
+
+Intent routing; RAG; planning/tools/memory; generation/self-evaluation; multi-agent cooperation; knowledge graphs/ontologies. Check matched token/call budgets, answer leakage through retrieval, memory across test splits, retry costs and graph-specific gains.
+
+## 11 modes
+
+| Modes | Purpose |
 |---|---|
-| Contribution and argument | Question, novelty positioning, abstract/title/contribution consistency, claim–evidence map, alternatives, counterexamples, structure, survey selection and coverage |
-| Experiment design | Strong controls, matched resources, baseline tuning, attribution, ablations, negative results, discriminating experiments, datasets and benchmark design |
-| Evaluation validity | Leakage, actual independent units, seeds/tasks/participants, pairing and repeated measures, uncertainty and effect size, multiplicity, LLM judge bias and human assessment |
-| Systems and artifacts | Compute/latency/cost, tool calls, environment/config/data/model versions, metric implementation, logs, traceability from artifact to displayed result |
-| Mathematics | Notation, dimensions, assumptions, equations, proof obligations, boundary cases and theorem-to-experiment scope; no automatic proof claim |
-| Figures, tables and values | Scientific interpretation, actual rendered appearance, axes/units/scale, legends, uncertainty, sample size, table semantics, captions and source-data reconciliation |
-| Bilingual writing | Chinese and English structure/grammar/terminology, abstract consistency, exact replacements, translation, preservation of quantities, negations, uncertainty and causal strength |
-| Review and revision | Specialist perspectives, adversarial challenge and defense, false-positive adjudication, severity, feasible repair, stable issue IDs, re-review, rebuttal and cover letters |
-| Submission and maintenance | Citation identity versus claim support, current venue requirements, ethics/disclosure/artifacts, limitations, coverage ledger, provenance and extension roadmap |
+| `full`, `quick` | Full review or central-claim triage |
+| `experiments`, `figures`, `writing` | Specialist passes |
+| `revise`, `rereview` | Authorized revision and acceptance checks |
+| `rebuttal`, `submission` | Responses and submission preparation |
+| `guided`, `calibration` | Progressive author dialogue and labeled review evaluation |
 
-The [capability register](docs/CAPABILITY_MAP.md) lists every stable ID, its implementation route, helpers, external requirements and evidence. The Agent track adds six profiles: routing/intent, RAG, planning/tools/memory, answer generation/self-evaluation, multi-agent cooperation, and knowledge graphs/ontologies. Each profile covers claims, baselines, ablations, leakage, metrics/judges, costs and robustness. Discipline-specific standards are routed by relevance rather than imposed universally.
+Compose modes, for example `full → revise → rereview → submission`.
 
-Additional protocols cover limited-surface first impressions, claim-to-section and experiment-to-result navigation, benchmark leaderboard governance, annotation disagreements, study attrition and carryover, qualitative coding, measurement overhead and energy estimates, local bibliography retrieval/export, and Typst/Hayagriva preservation. Submission work includes evidence-based venue comparison, sentence-level cover-letter alignment and recorded adjudication of external reviews. These are conditional workflows; parsers, compilers, inferential statistics and external retrieval remain host-dependent, and unmeasured behavior stays marked in the registry.
+## Source features and complementary checks
 
-## Modes
+**61 source modules → 227 named facets.** Every Fxxx entry has implementation paths, complementary lanes and a representative case: [integration matrix](docs/FEATURE_MATRIX.md), [walkthroughs](docs/FEATURE_WALKTHROUGH.md).
 
-| Mode | Purpose |
+```text
+Experiment design ──is the comparison informative?──> Numeric audit
+       ^                                                   |
+       | identify confounding                              | units/aggregation
+       |                                                   v
+Claim/evidence <────────what does it establish?──────── Figure review
+       |                                                   |
+       └────────supported wording──────────> Bilingual editing
+                                                   |
+                                       Challenge <-> Adjudication
+                                                   |
+                                           Revision -> Recheck
+```
+
+A correct mean still needs an appropriate comparison; a clear plot still needs data provenance; fluent writing still needs supported claims. Adjudication removes false objections before revision, and recheck verifies the specific repair.
+
+| Source repository | Modules |
+|---|---:|
+| SRC01 · [augustocamargo/paper-reviewer-skills](https://github.com/augustocamargo/paper-reviewer-skills) | 29 |
+| SRC02 · [Imbad0202/academic-research-skills](https://github.com/Imbad0202/academic-research-skills) | 1 |
+| SRC03 · [bahayonghang/academic-writing-skills](https://github.com/bahayonghang/academic-writing-skills) | 6 |
+| SRC04 · [cLin-c/paper-skill](https://github.com/cLin-c/paper-skill) | 1 |
+| SRC05 · [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 7 |
+| SRC06 · [wanshuiyin/Auto-claude-code-research-in-sleep](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep) | 4 |
+| SRC07 · [HKUSTDial/Supervisor-Skills](https://github.com/HKUSTDial/Supervisor-Skills) | 3 |
+| SRC08 · [CloudWave818/ieee-skills](https://github.com/CloudWave818/ieee-skills) | 3 |
+| SRC09 · [manoloss612/peer-review-skill](https://github.com/manoloss612/peer-review-skill) | 1 |
+| SRC10 · [GuangyaoYin/skill-scientific-manuscript-review](https://github.com/GuangyaoYin/skill-scientific-manuscript-review) | 1 |
+| SRC11 · [Galaxy-Dawn/claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) | 3 |
+| SRC12 · [slark-prime/ml-paper-writing](https://github.com/slark-prime/ml-paper-writing) | 1 |
+| SRC13 · [scdenney/open-science-skills](https://github.com/scdenney/open-science-skills) | 1 |
+
+## Real-paper example: ReAct
+
+The [ReAct v3](https://arxiv.org/abs/2210.03629v3) demonstration examines published results and rendered pages, then recomputes transcribed table values.
+
+| Input | Concrete output |
 |---|---|
-| `full` | All applicable review areas, with explicit evidence gaps |
-| `quick` | Central claim, strongest evidence, principal validity risks |
-| `experiments` | Design, fairness, statistics, leakage, cost and reproducibility |
-| `figures` | Scientific, rendered and numerical layers of each visual/table |
-| `writing` | Chinese/English prose and evidence-preserving replacements |
-| `revise` | Authorized edits and change records |
-| `rereview` | Recheck old findings against revised evidence |
-| `rebuttal` | Comment triage, evidence-based responses and change mapping |
-| `submission` | Current requirements and final deliverable checks |
+| WebShop Table 4: ReAct 40.0%, Act 30.1% | **9.9 percentage points**; **32.9% relative** to one decimal |
+| Wording needs explicit comparators | 9.9/10.9/11.3-point gains against Act/IL/IL+RL and an exact replacement sentence |
+| Different main-text/appendix HotpotQA scores | Preserve the distinct evaluations after checking the appendix's 500-question subset |
+| Line-chart nonzero y-axis | Inspect actual labeling and purpose; retain readable zoomed ranges |
 
-Modes can be composed. PDFs, DOCX, LaTeX and Typst require host-provided extraction/rendering/compilation tools; missing tools remain visible in the scope ledger.
+Suggested wording:
 
-## Conflict resolution
+> On WebShop, ReAct achieves a 40.0% success rate, exceeding Act, IL, and IL+RL by 9.9, 10.9, and 11.3 percentage points, respectively.
 
-The [16-entry conflict ledger](docs/CONFLICTS.md) records alternatives, selection, rationale and executed/planned evidence. Examples:
-
-- **Rounding vs raw equality:** Decimal arithmetic, explicit units and declared rounding accept `0.9477 → 0.948`; percentage points and relative percent remain distinct.
-- **Strictness vs fault quotas:** zero findings are allowed; serious objections receive a reasoned defense before retention or withdrawal.
-- **Style vs science:** punctuation preferences and valid raster figures do not become scientific defects automatically.
-- **More samples vs correct units:** seed, question, participant and repeated-answer counts cannot be substituted for one another.
-- **Personas vs independent models:** single-model role coverage is labeled honestly; cross-family declarations require actual family records.
-- **Missing evidence vs allegations:** unavailable data limit verification; they do not prove misconduct.
-- **Text extraction vs visual inspection:** interpreting a figure, viewing pixels and recomputing values are separate activities.
-- **Claimed completion vs closure:** an issue requires original and revised evidence plus a substantive check; supported numeric/quote checks can be rerun.
-
-Tests support these specific choices. They do not establish universal superiority across all disciplines, manuscripts or models. Partial evidence stays partial in the register.
-
-## Deterministic CLI and its limits
-
-The CLI does not call an LLM or generate a peer review by itself. The host model performs semantic review using the protocols.
-
-| Command | What it does |
-|---|---|
-| `plan` | Select protocol references and outputs |
-| `preflight` | Check declared file availability; no content review |
-| `audit` | Verify exact UTF-8 quote anchors; recompute declared CSV/JSON value/mean/sum/count, units, rounding, relative changes and paired descriptive summaries |
-| `validate-report` | Validate records, evidence anchors, coverage logs and reviewer declarations; not scientific correctness |
-| `recheck` | Recompute supported checks or verify concrete manual-check records, keeping their scopes distinct |
-| `capabilities` | Print the installed registry |
-| `verify-install` | Check package files and registry readability |
+[Full review, sources and execution output](docs/validation/real-react-review.md). A separately labeled intentional error probe confuses relative percent with percentage points; the CLI detects it.
 
 ```bash
-python skills/paper-review-atlas/scripts/atlas.py plan --mode full --language en --domain agent
-python skills/paper-review-atlas/scripts/atlas.py preflight --root tests/fixtures/en_agent --manifest manifest.json
-python skills/paper-review-atlas/scripts/atlas.py audit --root tests/fixtures --spec integration-audit.json
+python skills/paper-review-atlas/scripts/atlas.py audit \
+  --root tests/fixtures/real_react --spec verified-spec.json
 ```
 
-The last command intentionally returns **1**: the synthetic paper's mean and relative gain are wrong, while its calibration rounding is correct. Exit codes: **0** declared checks successful; **1** mismatch/invalid record; **2** invalid input; **3** unverified evidence. Success never means “paper accepted” or “science validated.”
+## Conflict tests and local helpers
 
-No network calls, arbitrary expressions, shell fragments or manuscript code execution occur in the helpers. Evidence paths are confined to the explicit root, including symlink resolution. Numeric sources are bounded to 5 MiB / 10,000 records; command JSON to 4 MiB. The paired helper reports sample SD and differences, without a p-value or CI. Full interfaces and recheck examples: [CLI_REFERENCE.md](docs/CLI_REFERENCE.md).
+Sixteen conflicts cover rounding, issue quotas, sampling units, style/format, evidence access, bilingual preservation, reviewer provenance and closure. On 58 fixed structured cases, the selected policies match 58 expected decisions; the explicitly implemented alternatives match 13. Inputs, policy code, comparison method and outputs are in the [audit record](docs/validation/v1.1-audit.md).
 
-## Review output
+| Commands | Function |
+|---|---|
+| `plan`, `preflight` | Protocol routing and material inventory |
+| `audit` | Exact text anchors, values, units, rounding and paired descriptive summaries |
+| `policy` | CFX01–CFX16 decisions from explicit evidence records |
+| `export-macros` | Checked LaTeX numerical definitions |
+| `bib-audit` | Local BibTeX search, exact-entry export, duplicate and undefined keys |
+| `calibrate` | Confusion counts and derived metrics on adjudicated labels |
+| `validate-report`, `recheck` | Record checks and supported acceptance-check execution |
+| `locate`, `capabilities`, `verify-install` | Extension lookup, capability register and installation checks |
 
-A retained finding has a stable ID, title, severity, status, precise location and quote/object, evidence basis, consequence, remedy and acceptance check. The complete report includes scope, a claim–evidence table, original-language replacements, feasible experiment alternatives, priorities and unresolved checks.
+Examples and JSON contracts: [CLI_REFERENCE.md](docs/CLI_REFERENCE.md).
 
-Issue status is `confirmed | unverified | closed`; severity is `critical | major | minor | editorial`; evidence basis is `observed | inferred | missing`. These dimensions are not interchangeable. Exact quote matching proves an anchor, not that a criticism is scientifically sound. An inspection log proves a recorded observation, not automatic pixel understanding.
+## Find and repair a gap
 
-## Validation and development
+```bash
+python skills/paper-review-atlas/scripts/atlas.py locate C19
+python skills/paper-review-atlas/scripts/atlas.py locate academic-paper-reviewer
+python skills/paper-review-atlas/scripts/atlas.py locate G03
+```
+
+Results identify capabilities, features, protocol files, complements, open tasks, edit locations, test commands and closure criteria. The [extension index](docs/EXTENSION_INDEX.md) contains 12 concrete development directions, including statistical inference, cross-model execution, document adapters, citation retrieval and visual benchmarks.
+
+```text
+Missing capability
+  └─ locate Cxx / Fxxx / Gxx
+      ├─ references/: review steps and output
+      ├─ scripts/: executable helper or adapter
+      ├─ config/features.json: distinctive facets and complements
+      ├─ config/gaps.json: remedy and closure criterion
+      └─ tests/: flawed case + correct control + missing evidence
+          └─ test -> regenerate README/text map/coverage -> commit
+```
 
 ```bash
 python -m unittest discover -s tests -v
-python scripts/check_package.py
+python scripts/build_coverage.py
+python scripts/build_feature_docs.py
 python scripts/build_coverage.py --check
-python skills/paper-review-atlas/scripts/atlas.py verify-install
+python scripts/build_feature_docs.py --check
+python scripts/check_package.py
 ```
 
-[VALIDATION.md](docs/VALIDATION.md) records executed tests, fresh-context Chinese/English forward reviews, correct controls, defects repaired during integration and remaining uncertainty. The fictional fixtures contain no user manuscripts or real research results. Fresh-context agents were not given the answer key, but remain development tests within one model family, not independent human evaluation or a calibrated benchmark.
+Both READMEs, the text map, feature matrix and extension index are generated from registries and `docs/templates/`. Update these inputs, regenerate, test and commit them together.
 
-The optional figure-rebuild script needs matplotlib; the runtime and test suite do not. `skills/paper-review-atlas/` is the portable package; `docs/` holds maps/provenance/validation; `tests/` holds fixtures and checks; root `scripts/` maintains installation and generated documentation.
+## Layout and license
 
-To add a capability, give it a stable registry ID, implement its actual protocol/helper, add positive and negative examples, record concrete verification evidence, and regenerate the SVG/Markdown/Mermaid outputs. See [EXTENDING.md](docs/EXTENDING.md) for the current gaps and process.
+`skills/paper-review-atlas/` is the portable skill, `tests/` holds checks and fixtures, `docs/` holds capabilities/results/evidence, and `scripts/` maintains installation and generated documentation.
 
-## Sources and license
-
-Original implementation files are [MIT licensed](LICENSE). External projects retain their licenses. The source ledger records full-text inspection, its scope and available blob identifiers, plus restrictions or uncertainty. Restricted or unclear sources are conceptual references only; no upstream skill text or implementation is vendored in this release.
+Original implementation: [MIT](LICENSE). External sources retain their licenses. See [source provenance](docs/SOURCES.md) and [implementation/test progress](docs/validation/v1.1-audit.md).

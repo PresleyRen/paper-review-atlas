@@ -1,0 +1,1 @@
+A warm-cache run is compared with B cold-start latency; only the mean is reported.

@@ -32,7 +32,11 @@ Load only relevant references after the two core references. A `full` review nor
 | `revise` | Prioritized edits, evidence preservation, author decisions, change log | revision-rebuttal; bilingual-writing |
 | `rereview` | Compare old issue, revision, and actual acceptance check | revision-rebuttal |
 | `rebuttal` | Comment triage, substantive response, change location, disagreement | revision-rebuttal; adversarial-review |
+| `guided` | One evidence-linked question at a time; agreed repair and acceptance condition | guided-calibration |
+| `calibration` | Frozen labels, actual review outputs, adjudicated confusion counts | guided-calibration; adversarial-review |
 | `submission` | Current venue rules, references, required artifacts, compiled delivery | citations-venues; input-output |
+
+Use `atlas.py locate ID_OR_TOPIC` to retrieve the exact source feature, complementary lanes, implementation and gap repair routes. The installed `config/features.json` maps all 61 inventoried modules to 227 specific facets; `config/gaps.json` records open development tasks. A full review follows the applicable capabilities, not an arbitrary quota of upstream tools.
 
 ### Capability-specific references
 
@@ -45,6 +49,7 @@ Load only relevant references after the two core references. A `full` review nor
 - [adversarial-review.md](references/adversarial-review.md): constructive challenge, alternatives, reviewer simulation, defense and adjudication of false positives.
 - [revision-rebuttal.md](references/revision-rebuttal.md): issue tracking, edits, closure evidence, re-review, response letters and cover letters.
 - [formal-theory.md](references/formal-theory.md): notation, units, equations, assumptions, proof structure and counterexamples; no automatic proof claim.
+- [guided-calibration.md](references/guided-calibration.md): progressive author dialogue, explicit target criteria, rubric calibration and separate author/editor channels.
 - [domain-agent.md](references/domain-agent.md): AI/LLM/Agent routing, retrieval, planning, tools, memory, multi-agent systems and knowledge graphs. Apply only where relevant.
 
 ## Review procedure
@@ -128,3 +133,7 @@ python SKILL_DIR/scripts/atlas.py verify-install
 ```
 
 Coverage means a review protocol or named helper, not guaranteed detection of every error. Report dependencies such as vision, primary-source access, statistical libraries, compilers, external models, compute and raw data as available or unavailable. The repository README, generated coverage graph, conflict ledger and validation report explain extension and measured behavior.
+
+## Additional local helpers
+
+`locate` resolves capabilities, source features and development gaps. `policy` applies a named CFX rule to explicit evidence records. `calibrate` computes confusion counts from labeled review items. `export-macros` emits checked LaTeX numerical definitions. `bib-audit` searches and validates local BibTeX entries while preserving their raw text. Use `--help`; these commands never execute manuscript code or make network requests.

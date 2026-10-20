@@ -1,0 +1,1 @@
+The title promises efficiency; no runtime or cost measurement appears in results.

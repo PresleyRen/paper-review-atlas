@@ -1,0 +1,32 @@
+{
+  "version": "1.1.0",
+  "date": "2026-10-20",
+  "python": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+  "test_command": "python -m unittest discover -s tests -v",
+  "tests": 247,
+  "result": "passed",
+  "test_log_sha256": "442aeb5c8b025cbd7a0e328fb714209f73990f2b90a4be61fea097e392c9e54c",
+  "groups": {
+    "original": 88,
+    "policy_and_helpers": 81,
+    "feature_contracts": 68,
+    "public_paper": 10
+  },
+  "conflicts": {
+    "rules": 16,
+    "cases": 58,
+    "selected_matches": 58,
+    "alternative_matches": 13,
+    "kind": "explicit rule implementations on supplied structured facts"
+  },
+  "inventory": {
+    "repositories": 13,
+    "modules": 61,
+    "facets": 227,
+    "capabilities": 36,
+    "gaps": 12,
+    "modes": 11
+  },
+  "execution_url": "https://github.com/PresleyRen/paper-review-atlas/actions/runs/39396756452",
+  "baseline_commit": "d8dc5b1f90b32159c7d3aece69e3af12c5cfc24f"
+}

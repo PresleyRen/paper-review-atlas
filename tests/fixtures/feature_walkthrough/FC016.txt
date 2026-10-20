@@ -1,0 +1,1 @@
+O(NM) is always faster than O(N log N). No relation between M and N is given.

@@ -20,7 +20,7 @@ As of 2026-10-20. 36 documented review capabilities. Status is implementation sc
 |---|---|---|---|---|---|
 | C01 | Intake and provenance / 材料接收与溯源 | W / D / A | [review-contract](../skills/paper-review-atlas/references/review-contract.md) | [SRC01](SOURCES.md#src01), [SRC02](SOURCES.md#src02), [SRC03](SOURCES.md#src03), [SRC04](SOURCES.md#src04), [SRC05](SOURCES.md#src05), [SRC09](SOURCES.md#src09), [SRC10](SOURCES.md#src10), [SRC11](SOURCES.md#src11), [SRC12](SOURCES.md#src12), [SRC13](SOURCES.md#src13) | partial |
 | C04 | Claim–evidence linkage / 主张—证据闭环 | W / D | [argument-novelty](../skills/paper-review-atlas/references/argument-novelty.md) | [SRC01](SOURCES.md#src01), [SRC03](SOURCES.md#src03), [SRC04](SOURCES.md#src04), [SRC05](SOURCES.md#src05), [SRC06](SOURCES.md#src06), [SRC07](SOURCES.md#src07), [SRC08](SOURCES.md#src08), [SRC11](SOURCES.md#src11), [SRC12](SOURCES.md#src12) | partial |
-| C24 | Citation integrity / 引文与引用支持 | W / A | [citations-venues](../skills/paper-review-atlas/references/citations-venues.md) | [SRC01](SOURCES.md#src01), [SRC03](SOURCES.md#src03), [SRC04](SOURCES.md#src04), [SRC05](SOURCES.md#src05), [SRC11](SOURCES.md#src11) | not_measured |
+| C24 | Citation integrity / 引文与引用支持 | W / D / A | [citations-venues](../skills/paper-review-atlas/references/citations-venues.md) | [SRC01](SOURCES.md#src01), [SRC03](SOURCES.md#src03), [SRC04](SOURCES.md#src04), [SRC05](SOURCES.md#src05), [SRC11](SOURCES.md#src11) | partial |
 | C36 | Reporting and provenance / 报告与能力来源 | W / D | [input-output](../skills/paper-review-atlas/references/input-output.md) | [SRC01](SOURCES.md#src01), [SRC02](SOURCES.md#src02), [SRC03](SOURCES.md#src03), [SRC05](SOURCES.md#src05), [SRC09](SOURCES.md#src09) | partial |
 | C02 | Venue fit / 目标期刊与会议适配 | W / A | [citations-venues](../skills/paper-review-atlas/references/citations-venues.md) | [SRC01](SOURCES.md#src01), [SRC02](SOURCES.md#src02), [SRC05](SOURCES.md#src05), [SRC07](SOURCES.md#src07), [SRC08](SOURCES.md#src08) | not_measured |
 | C03 | Novelty and literature / 创新性与文献定位 | W / A | [argument-novelty](../skills/paper-review-atlas/references/argument-novelty.md) | [SRC01](SOURCES.md#src01), [SRC03](SOURCES.md#src03), [SRC05](SOURCES.md#src05), [SRC06](SOURCES.md#src06) | not_measured |
@@ -47,7 +47,7 @@ As of 2026-10-20. 36 documented review capabilities. Status is implementation sc
 | C23 | Evidence-preserving edits / 保留证据的改写 | W / A | [bilingual-writing](../skills/paper-review-atlas/references/bilingual-writing.md) | [SRC01](SOURCES.md#src01), [SRC03](SOURCES.md#src03), [SRC04](SOURCES.md#src04), [SRC05](SOURCES.md#src05), [SRC06](SOURCES.md#src06), [SRC07](SOURCES.md#src07), [SRC12](SOURCES.md#src12) | partial |
 | C34 | Translation preservation / 翻译与跨语种保真 | W | [bilingual-writing](../skills/paper-review-atlas/references/bilingual-writing.md) | [SRC02](SOURCES.md#src02), [SRC03](SOURCES.md#src03), [SRC04](SOURCES.md#src04), [SRC09](SOURCES.md#src09), [SRC10](SOURCES.md#src10) | partial |
 | C25 | Ethics and research safety / 伦理与研究安全 | W / A | [review-contract](../skills/paper-review-atlas/references/review-contract.md) | [SRC01](SOURCES.md#src01), [SRC05](SOURCES.md#src05), [SRC13](SOURCES.md#src13) | not_measured |
-| C27 | Reviewer adjudication / 多视角审稿与裁决 | W / A | [adversarial-review](../skills/paper-review-atlas/references/adversarial-review.md) | [SRC01](SOURCES.md#src01), [SRC02](SOURCES.md#src02), [SRC05](SOURCES.md#src05), [SRC06](SOURCES.md#src06), [SRC07](SOURCES.md#src07), [SRC08](SOURCES.md#src08), [SRC09](SOURCES.md#src09), [SRC10](SOURCES.md#src10), [SRC11](SOURCES.md#src11), [SRC13](SOURCES.md#src13) | partial |
+| C27 | Reviewer adjudication / 多视角审稿与裁决 | W / D / A | [adversarial-review](../skills/paper-review-atlas/references/adversarial-review.md) | [SRC01](SOURCES.md#src01), [SRC02](SOURCES.md#src02), [SRC05](SOURCES.md#src05), [SRC06](SOURCES.md#src06), [SRC07](SOURCES.md#src07), [SRC08](SOURCES.md#src08), [SRC09](SOURCES.md#src09), [SRC10](SOURCES.md#src10), [SRC11](SOURCES.md#src11), [SRC13](SOURCES.md#src13) | partial |
 | C28 | Revision and re-check / 修订追踪与复核 | W / D | [revision-rebuttal](../skills/paper-review-atlas/references/revision-rebuttal.md) | [SRC01](SOURCES.md#src01), [SRC02](SOURCES.md#src02), [SRC03](SOURCES.md#src03), [SRC04](SOURCES.md#src04), [SRC06](SOURCES.md#src06), [SRC12](SOURCES.md#src12), [SRC13](SOURCES.md#src13) | partial |
 | C29 | Rebuttal and response / 回复审稿人与申辩 | W | [revision-rebuttal](../skills/paper-review-atlas/references/revision-rebuttal.md) | [SRC01](SOURCES.md#src01), [SRC02](SOURCES.md#src02), [SRC08](SOURCES.md#src08) | not_measured |
 | C30 | Submission readiness / 投稿与提交检查 | W / A | [citations-venues](../skills/paper-review-atlas/references/citations-venues.md) | [SRC01](SOURCES.md#src01), [SRC03](SOURCES.md#src03), [SRC04](SOURCES.md#src04), [SRC07](SOURCES.md#src07), [SRC11](SOURCES.md#src11), [SRC12](SOURCES.md#src12) | not_measured |
@@ -322,18 +322,20 @@ Static inspection cannot establish that code ran or that outputs came from a spe
 
 Deterministic helpers check supplied records only; they do not extract all paper numbers or validate the underlying experiment.
 
-**Local helpers:** `reconcile_number`
+**Local helpers:** `reconcile_number`, `export_macros`
 
 **External requirements:** Machine-readable result exports
 
 **Conflict cases:** CFX01
 
-**Verification scope:** Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim.
+**Verification scope:** Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim. v1.1 adds tested local record helpers; see the audit report for their exact execution scope.
 
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/behavioral-rubric.md](../docs/validation/behavioral-rubric.md)
 - [tests/test_audit_checks.py::NumericTests::test_relative_percent_and_percentage_points_are_distinct](../tests/test_audit_checks.py)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/v1.1-audit.md](../docs/validation/v1.1-audit.md)
 
 ### C19 — Visual figure inspection / 图形视觉检查
 
@@ -421,13 +423,16 @@ Edits preserve uncertainty, numerical values and causal scope; a user request to
 
 DOI identity and bibliographic existence do not establish that the source supports the cited claim.
 
-**Local helpers:** None; model/human review protocol.
+**Local helpers:** `bibliography`
 
 **External requirements:** Bibliographic lookup and full text
 
 **Conflict cases:** Registry consistency and generation checks.
 
-**Verification scope:** Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness.
+**Verification scope:** Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness. v1.1 adds tested local record helpers; see the audit report for their exact execution scope.
+
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/v1.1-audit.md](../docs/validation/v1.1-audit.md)
 
 ### C25 — Ethics and research safety / 伦理与研究安全
 
@@ -461,17 +466,19 @@ Prioritize limitations that affect actual claims; do not manufacture flaws to fi
 
 Multiple personas from one model are correlated viewpoints, not independent expert validation.
 
-**Local helpers:** None; model/human review protocol.
+**Local helpers:** `policy`, `calibrate`
 
 **External requirements:** Optional independent-model or human review
 
 **Conflict cases:** CFX02, CFX03, CFX05, CFX09, CFX10, CFX15
 
-**Verification scope:** Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim.
+**Verification scope:** Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim. v1.1 adds tested local record helpers; see the audit report for their exact execution scope.
 
 - [docs/validation/forward-en.md](../docs/validation/forward-en.md)
 - [docs/validation/forward-zh.md](../docs/validation/forward-zh.md)
 - [docs/validation/behavioral-rubric.md](../docs/validation/behavioral-rubric.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/v1.1-audit.md](../docs/validation/v1.1-audit.md)
 
 ### C28 — Revision and re-check / 修订追踪与复核
 
@@ -541,16 +548,18 @@ A narrative survey is not automatically a systematic review or a clinical meta-a
 
 Registry coverage shows implemented instructions, not measured real-world review accuracy.
 
-**Local helpers:** `validate_registry`, `coverage_artifact_drift`
+**Local helpers:** `validate_registry`, `coverage_artifact_drift`, `locate`
 
 **External requirements:** No additional adapter requirement specified.
 
 **Conflict cases:** Registry consistency and generation checks.
 
-**Verification scope:** Registry reciprocity, generated map freshness and extension by C37 are tested in the repository. The generator is a repository maintenance tool, not part of the installed runtime; adding a real new scientific domain still needs behavioral validation.
+**Verification scope:** Registry reciprocity, generated map freshness and extension by C37 are tested in the repository. The generator is a repository maintenance tool, not part of the installed runtime; adding a real new scientific domain still needs behavioral validation. v1.1 adds tested local record helpers; see the audit report for their exact execution scope.
 
 - [tests/test_coverage.py::CoverageRegistryTests::test_xml_escaping_and_registry_extension_need_no_template_edit](../tests/test_coverage.py)
 - [docs/validation/integration-review.md](../docs/validation/integration-review.md)
+- [tests/test_extensions.py](../tests/test_extensions.py)
+- [docs/validation/v1.1-audit.md](../docs/validation/v1.1-audit.md)
 
 ### C34 — Translation preservation / 翻译与跨语种保真
 

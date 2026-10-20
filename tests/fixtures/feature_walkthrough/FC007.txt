@@ -1,0 +1,1 @@
+Prior method uses retrieval plus reranking. Ours uses retrieval plus reranking too.

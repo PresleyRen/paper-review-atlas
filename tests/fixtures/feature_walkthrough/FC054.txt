@@ -1,0 +1,1 @@
+Table mixes accuracy values 0.84 and 82 under one percent header.

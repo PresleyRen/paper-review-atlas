@@ -1,0 +1,1 @@
+A line plot uses a clearly labeled y-axis from 25 to 40 to compare close scores.

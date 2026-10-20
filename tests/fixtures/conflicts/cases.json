@@ -1,0 +1,1009 @@
+{
+  "test_type": "structured conflict decisions; semantic facts supplied by test author",
+  "cases": [
+    {
+      "id": "CFX01-rounded",
+      "rule": "CFX01",
+      "facts": {
+        "claim": {
+          "source": {
+            "path": "values.csv",
+            "format": "csv",
+            "where": {
+              "model": "a"
+            }
+          },
+          "operation": "value",
+          "field": "score",
+          "reported": "0.948",
+          "source_unit": "number",
+          "reported_unit": "number",
+          "rounding": {
+            "places": 3,
+            "mode": "half_even"
+          }
+        }
+      },
+      "expected": "retain",
+      "rationale": "合法显示精度应保留。"
+    },
+    {
+      "id": "CFX01-wrong",
+      "rule": "CFX01",
+      "facts": {
+        "claim": {
+          "source": {
+            "path": "values.csv",
+            "format": "csv",
+            "where": {
+              "model": "a"
+            }
+          },
+          "operation": "value",
+          "field": "score",
+          "reported": "0.949",
+          "source_unit": "number",
+          "reported_unit": "number",
+          "rounding": {
+            "places": 3,
+            "mode": "half_even"
+          }
+        }
+      },
+      "expected": "correct",
+      "rationale": "超过显示舍入区间应修正。"
+    },
+    {
+      "id": "CFX01-missing",
+      "rule": "CFX01",
+      "facts": {
+        "claim": {
+          "source": {
+            "path": "missing.csv",
+            "format": "csv",
+            "where": {
+              "model": "a"
+            }
+          },
+          "operation": "value",
+          "field": "score",
+          "reported": "0.948",
+          "source_unit": "number",
+          "reported_unit": "number",
+          "rounding": {
+            "places": 3,
+            "mode": "half_even"
+          }
+        }
+      },
+      "expected": "request_source",
+      "rationale": "缺少源数据不能认定数值错误。"
+    },
+    {
+      "id": "CFX02-clean",
+      "rule": "CFX02",
+      "facts": {
+        "supported_issues": []
+      },
+      "expected": "report",
+      "rationale": "只报告有证据的唯一问题ID，不填充数量。"
+    },
+    {
+      "id": "CFX02-one",
+      "rule": "CFX02",
+      "facts": {
+        "supported_issues": [
+          "I1"
+        ]
+      },
+      "expected": "report",
+      "rationale": "只报告有证据的唯一问题ID，不填充数量。"
+    },
+    {
+      "id": "CFX02-duplicate",
+      "rule": "CFX02",
+      "facts": {
+        "supported_issues": [
+          "I1",
+          "I1"
+        ]
+      },
+      "expected": "report",
+      "rationale": "只报告有证据的唯一问题ID，不填充数量。"
+    },
+    {
+      "id": "CFX03-requested",
+      "rule": "CFX03",
+      "facts": {
+        "requested_probability": 80
+      },
+      "expected": "qualitative_assessment",
+      "rationale": "角色、请求和评分都不产生可校准的录用率。"
+    },
+    {
+      "id": "CFX03-none",
+      "rule": "CFX03",
+      "facts": {},
+      "expected": "qualitative_assessment",
+      "rationale": "角色、请求和评分都不产生可校准的录用率。"
+    },
+    {
+      "id": "CFX03-score",
+      "rule": "CFX03",
+      "facts": {
+        "rubric_score": 9
+      },
+      "expected": "qualitative_assessment",
+      "rationale": "角色、请求和评分都不产生可校准的录用率。"
+    },
+    {
+      "id": "CFX04-repeats",
+      "rule": "CFX04",
+      "facts": {
+        "unit_ids": [
+          "q1",
+          "q1",
+          "q2",
+          "q2"
+        ],
+        "independence_justified": true
+      },
+      "expected": "group_or_justify",
+      "rationale": "同题重复不等于四个独立问题。"
+    },
+    {
+      "id": "CFX04-independent",
+      "rule": "CFX04",
+      "facts": {
+        "unit_ids": [
+          "q1",
+          "q2"
+        ],
+        "independence_justified": true
+      },
+      "expected": "independent_analysis",
+      "rationale": "已说明独立抽样且ID唯一。"
+    },
+    {
+      "id": "CFX04-unknown",
+      "rule": "CFX04",
+      "facts": {
+        "unit_ids": [
+          "q1",
+          "q2"
+        ],
+        "independence_justified": false
+      },
+      "expected": "group_or_justify",
+      "rationale": "唯一ID仍需独立性论证。"
+    },
+    {
+      "id": "CFX05-dash",
+      "rule": "CFX05",
+      "facts": {
+        "impact": "style",
+        "verified_venue_requirement": false
+      },
+      "expected": "optional_style",
+      "rationale": "按影响和实际要求分级。"
+    },
+    {
+      "id": "CFX05-meaning",
+      "rule": "CFX05",
+      "facts": {
+        "impact": "meaning",
+        "verified_venue_requirement": false
+      },
+      "expected": "clarify",
+      "rationale": "按影响和实际要求分级。"
+    },
+    {
+      "id": "CFX05-science",
+      "rule": "CFX05",
+      "facts": {
+        "impact": "scientific",
+        "verified_venue_requirement": false
+      },
+      "expected": "scientific_review",
+      "rationale": "按影响和实际要求分级。"
+    },
+    {
+      "id": "CFX05-venue",
+      "rule": "CFX05",
+      "facts": {
+        "impact": "style",
+        "verified_venue_requirement": true
+      },
+      "expected": "format_fix",
+      "rationale": "按影响和实际要求分级。"
+    },
+    {
+      "id": "CFX05-clean",
+      "rule": "CFX05",
+      "facts": {
+        "impact": "none",
+        "verified_venue_requirement": false
+      },
+      "expected": "retain",
+      "rationale": "按影响和实际要求分级。"
+    },
+    {
+      "id": "CFX06-raster",
+      "rule": "CFX06",
+      "facts": {
+        "format": "raster",
+        "readable": true,
+        "meets_verified_requirement": true
+      },
+      "expected": "retain",
+      "rationale": "看实际用途和可读性，不把格式名称当科学判断。"
+    },
+    {
+      "id": "CFX06-vector",
+      "rule": "CFX06",
+      "facts": {
+        "format": "vector",
+        "readable": true,
+        "meets_verified_requirement": true
+      },
+      "expected": "retain",
+      "rationale": "看实际用途和可读性，不把格式名称当科学判断。"
+    },
+    {
+      "id": "CFX06-blur",
+      "rule": "CFX06",
+      "facts": {
+        "format": "raster",
+        "readable": false,
+        "meets_verified_requirement": true
+      },
+      "expected": "repair_readability",
+      "rationale": "看实际用途和可读性，不把格式名称当科学判断。"
+    },
+    {
+      "id": "CFX06-wrong-export",
+      "rule": "CFX06",
+      "facts": {
+        "format": "vector",
+        "readable": true,
+        "meets_verified_requirement": false
+      },
+      "expected": "repair_format",
+      "rationale": "看实际用途和可读性，不把格式名称当科学判断。"
+    },
+    {
+      "id": "CFX07-preserved",
+      "rule": "CFX07",
+      "facts": {
+        "before": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        },
+        "after": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        }
+      },
+      "expected": "retain",
+      "rationale": "语义清单一致的润色可保留。"
+    },
+    {
+      "id": "CFX07-causal",
+      "rule": "CFX07",
+      "facts": {
+        "before": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        },
+        "after": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "causes",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        }
+      },
+      "expected": "review_scientific_change",
+      "rationale": "需要核实修改理由，不能把科学变化当普通润色。"
+    },
+    {
+      "id": "CFX07-number",
+      "rule": "CFX07",
+      "facts": {
+        "before": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        },
+        "after": {
+          "quantities": [
+            "94%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        }
+      },
+      "expected": "review_scientific_change",
+      "rationale": "需要核实修改理由，不能把科学变化当普通润色。"
+    },
+    {
+      "id": "CFX07-negated",
+      "rule": "CFX07",
+      "facts": {
+        "before": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        },
+        "after": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "negative",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        }
+      },
+      "expected": "review_scientific_change",
+      "rationale": "需要核实修改理由，不能把科学变化当普通润色。"
+    },
+    {
+      "id": "CFX14-preserved",
+      "rule": "CFX14",
+      "facts": {
+        "before": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        },
+        "after": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        }
+      },
+      "expected": "retain",
+      "rationale": "语义清单一致的润色可保留。"
+    },
+    {
+      "id": "CFX14-causal",
+      "rule": "CFX14",
+      "facts": {
+        "before": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        },
+        "after": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "causes",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        }
+      },
+      "expected": "review_scientific_change",
+      "rationale": "需要核实修改理由，不能把科学变化当普通润色。"
+    },
+    {
+      "id": "CFX14-number",
+      "rule": "CFX14",
+      "facts": {
+        "before": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        },
+        "after": {
+          "quantities": [
+            "94%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        }
+      },
+      "expected": "review_scientific_change",
+      "rationale": "需要核实修改理由，不能把科学变化当普通润色。"
+    },
+    {
+      "id": "CFX14-negated",
+      "rule": "CFX14",
+      "facts": {
+        "before": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "positive",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        },
+        "after": {
+          "quantities": [
+            "84%"
+          ],
+          "polarity": "negative",
+          "modality": "may",
+          "causality": "association",
+          "scope": "tested tasks",
+          "entities": [
+            "Agent A"
+          ],
+          "comparators": [
+            "Agent B"
+          ]
+        }
+      },
+      "expected": "review_scientific_change",
+      "rationale": "需要核实修改理由，不能把科学变化当普通润色。"
+    },
+    {
+      "id": "CFX08-ml",
+      "rule": "CFX08",
+      "facts": {
+        "study": "ml_benchmark",
+        "applicable_to": [
+          "clinical_trial"
+        ]
+      },
+      "expected": "not_applicable",
+      "rationale": "按研究类型应用规则。"
+    },
+    {
+      "id": "CFX08-clinical",
+      "rule": "CFX08",
+      "facts": {
+        "study": "clinical_trial",
+        "applicable_to": [
+          "clinical_trial"
+        ]
+      },
+      "expected": "apply",
+      "rationale": "按研究类型应用规则。"
+    },
+    {
+      "id": "CFX08-qual",
+      "rule": "CFX08",
+      "facts": {
+        "study": "qualitative",
+        "applicable_to": [
+          "qualitative"
+        ]
+      },
+      "expected": "apply",
+      "rationale": "按研究类型应用规则。"
+    },
+    {
+      "id": "CFX09-one",
+      "rule": "CFX09",
+      "facts": {
+        "model_families": [
+          "family-a"
+        ]
+      },
+      "expected": "same_family_views",
+      "rationale": "模型家族记录与独立错误过程区分。"
+    },
+    {
+      "id": "CFX09-three",
+      "rule": "CFX09",
+      "facts": {
+        "model_families": [
+          "family-a",
+          "family-a",
+          "family-a"
+        ]
+      },
+      "expected": "same_family_views",
+      "rationale": "模型家族记录与独立错误过程区分。"
+    },
+    {
+      "id": "CFX09-cross",
+      "rule": "CFX09",
+      "facts": {
+        "model_families": [
+          "family-a",
+          "family-b"
+        ]
+      },
+      "expected": "reported_cross_family_views",
+      "rationale": "模型家族记录与独立错误过程区分。"
+    },
+    {
+      "id": "CFX10-missing",
+      "rule": "CFX10",
+      "facts": {
+        "basis": "missing"
+      },
+      "expected": "request_evidence",
+      "rationale": "缺失/推测与可定位的已见矛盾分别处理。"
+    },
+    {
+      "id": "CFX10-inference",
+      "rule": "CFX10",
+      "facts": {
+        "basis": "inference"
+      },
+      "expected": "request_evidence",
+      "rationale": "缺失/推测与可定位的已见矛盾分别处理。"
+    },
+    {
+      "id": "CFX10-observed_omission",
+      "rule": "CFX10",
+      "facts": {
+        "basis": "observed_omission"
+      },
+      "expected": "report_located_issue",
+      "rationale": "缺失/推测与可定位的已见矛盾分别处理。"
+    },
+    {
+      "id": "CFX10-observed_contradiction",
+      "rule": "CFX10",
+      "facts": {
+        "basis": "observed_contradiction"
+      },
+      "expected": "report_located_issue",
+      "rationale": "缺失/推测与可定位的已见矛盾分别处理。"
+    },
+    {
+      "id": "CFX11-review",
+      "rule": "CFX11",
+      "facts": {
+        "mode": "review"
+      },
+      "expected": "suggest_only",
+      "rationale": "行动与明确任务授权一致。"
+    },
+    {
+      "id": "CFX11-revise",
+      "rule": "CFX11",
+      "facts": {
+        "mode": "revise"
+      },
+      "expected": "tracked_edit",
+      "rationale": "行动与明确任务授权一致。"
+    },
+    {
+      "id": "CFX11-unauthorized",
+      "rule": "CFX11",
+      "facts": {
+        "mode": "submit",
+        "submission_authorized": false
+      },
+      "expected": "prepare_only",
+      "rationale": "行动与明确任务授权一致。"
+    },
+    {
+      "id": "CFX11-authorized",
+      "rule": "CFX11",
+      "facts": {
+        "mode": "submit",
+        "submission_authorized": true
+      },
+      "expected": "submit",
+      "rationale": "行动与明确任务授权一致。"
+    },
+    {
+      "id": "CFX12-00",
+      "rule": "CFX12",
+      "facts": {
+        "image_viewed": false,
+        "data_recomputed": false
+      },
+      "expected": "visual_unassessed",
+      "rationale": "看图与重算数值分别登记。"
+    },
+    {
+      "id": "CFX12-01",
+      "rule": "CFX12",
+      "facts": {
+        "image_viewed": false,
+        "data_recomputed": true
+      },
+      "expected": "visual_unassessed",
+      "rationale": "看图与重算数值分别登记。"
+    },
+    {
+      "id": "CFX12-10",
+      "rule": "CFX12",
+      "facts": {
+        "image_viewed": true,
+        "data_recomputed": false
+      },
+      "expected": "visual_record_available",
+      "rationale": "看图与重算数值分别登记。"
+    },
+    {
+      "id": "CFX12-11",
+      "rule": "CFX12",
+      "facts": {
+        "image_viewed": true,
+        "data_recomputed": true
+      },
+      "expected": "visual_record_available",
+      "rationale": "看图与重算数值分别登记。"
+    },
+    {
+      "id": "CFX13-planned",
+      "rule": "CFX13",
+      "facts": {
+        "activity": "planned"
+      },
+      "expected": "planned",
+      "rationale": "描述实际完成的工作。"
+    },
+    {
+      "id": "CFX13-static_inspection",
+      "rule": "CFX13",
+      "facts": {
+        "activity": "static_inspection"
+      },
+      "expected": "static_inspection",
+      "rationale": "描述实际完成的工作。"
+    },
+    {
+      "id": "CFX13-executed",
+      "rule": "CFX13",
+      "facts": {
+        "activity": "recomputed",
+        "command": "python calculate.py",
+        "exit_code": 0,
+        "output_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "expected": "recomputed",
+      "rationale": "实际失败记录不得升级为完成。"
+    },
+    {
+      "id": "CFX13-failed",
+      "rule": "CFX13",
+      "facts": {
+        "activity": "recomputed",
+        "command": "python calculate.py",
+        "exit_code": 1,
+        "output_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "expected": "execution_failed",
+      "rationale": "实际失败记录不得升级为完成。"
+    },
+    {
+      "id": "CFX15-valid",
+      "rule": "CFX15",
+      "facts": {
+        "objection_support": "supported",
+        "counterevidence": "none"
+      },
+      "expected": "retain",
+      "rationale": "对反证作出不同的实质处理。"
+    },
+    {
+      "id": "CFX15-appendix",
+      "rule": "CFX15",
+      "facts": {
+        "objection_support": "supported",
+        "counterevidence": "resolves"
+      },
+      "expected": "withdraw",
+      "rationale": "对反证作出不同的实质处理。"
+    },
+    {
+      "id": "CFX15-unknown",
+      "rule": "CFX15",
+      "facts": {
+        "objection_support": "unknown",
+        "counterevidence": "none"
+      },
+      "expected": "investigate",
+      "rationale": "对反证作出不同的实质处理。"
+    },
+    {
+      "id": "CFX15-partial",
+      "rule": "CFX15",
+      "facts": {
+        "objection_support": "supported",
+        "counterevidence": "partial"
+      },
+      "expected": "narrow",
+      "rationale": "对反证作出不同的实质处理。"
+    },
+    {
+      "id": "CFX16-fixed",
+      "rule": "CFX16",
+      "facts": {
+        "issue": {
+          "id": "I1",
+          "status": "confirmed",
+          "severity": "major",
+          "location": {
+            "path": "original.md",
+            "line": 1
+          },
+          "evidence": {
+            "quote": "The mean is 88%."
+          },
+          "fix": "Replace the maximum with the actual three-run mean.",
+          "acceptance_check": "Recompute the three-run mean and verify the revised number."
+        },
+        "revision_evidence": {
+          "path": "revision.md",
+          "quote": "The mean is 84%.",
+          "line": 1
+        },
+        "check": {
+          "status": "passed",
+          "method": "Recompute the mean of the three supplied rows.",
+          "observations": "The displayed correction must equal the computed mean.",
+          "evidence": {
+            "path": "check.md",
+            "quote": "Three values 0.80, 0.84 and 0.88 have mean 0.84.",
+            "line": 1
+          },
+          "evaluation": {
+            "kind": "number",
+            "claim": {
+              "source": {
+                "path": "values.csv",
+                "format": "csv",
+                "where": {
+                  "model": "b"
+                }
+              },
+              "operation": "mean",
+              "field": "score",
+              "reported": "84",
+              "source_unit": "fraction",
+              "reported_unit": "percent"
+            }
+          }
+        }
+      },
+      "expected": "closed",
+      "rationale": "实际重算通过且修订锚点有效才关闭。"
+    },
+    {
+      "id": "CFX16-false-pass",
+      "rule": "CFX16",
+      "facts": {
+        "issue": {
+          "id": "I1",
+          "status": "confirmed",
+          "severity": "major",
+          "location": {
+            "path": "original.md",
+            "line": 1
+          },
+          "evidence": {
+            "quote": "The mean is 88%."
+          },
+          "fix": "Replace the maximum with the actual three-run mean.",
+          "acceptance_check": "Recompute the three-run mean and verify the revised number."
+        },
+        "revision_evidence": {
+          "path": "revision.md",
+          "quote": "The mean is 84%.",
+          "line": 1
+        },
+        "check": {
+          "status": "passed",
+          "method": "Recompute the mean of the three supplied rows.",
+          "observations": "The displayed correction must equal the computed mean.",
+          "evidence": {
+            "path": "check.md",
+            "quote": "Three values 0.80, 0.84 and 0.88 have mean 0.84.",
+            "line": 1
+          },
+          "evaluation": {
+            "kind": "number",
+            "claim": {
+              "source": {
+                "path": "values.csv",
+                "format": "csv",
+                "where": {
+                  "model": "b"
+                }
+              },
+              "operation": "mean",
+              "field": "score",
+              "reported": "88",
+              "source_unit": "fraction",
+              "reported_unit": "percent"
+            }
+          }
+        }
+      },
+      "expected": "open",
+      "rationale": "虽然声称passed但实际重算失败，保持开放。"
+    },
+    {
+      "id": "CFX16-false-anchor",
+      "rule": "CFX16",
+      "facts": {
+        "issue": {
+          "id": "I1",
+          "status": "confirmed",
+          "severity": "major",
+          "location": {
+            "path": "original.md",
+            "line": 1
+          },
+          "evidence": {
+            "quote": "The mean is 88%."
+          },
+          "fix": "Replace the maximum with the actual three-run mean.",
+          "acceptance_check": "Recompute the three-run mean and verify the revised number."
+        },
+        "revision_evidence": {
+          "path": "revision.md",
+          "quote": "The mean is 99%.",
+          "line": 1
+        },
+        "check": {
+          "status": "passed",
+          "method": "Recompute the mean of the three supplied rows.",
+          "observations": "The displayed correction must equal the computed mean.",
+          "evidence": {
+            "path": "check.md",
+            "quote": "Three values 0.80, 0.84 and 0.88 have mean 0.84.",
+            "line": 1
+          },
+          "evaluation": {
+            "kind": "number",
+            "claim": {
+              "source": {
+                "path": "values.csv",
+                "format": "csv",
+                "where": {
+                  "model": "b"
+                }
+              },
+              "operation": "mean",
+              "field": "score",
+              "reported": "84",
+              "source_unit": "fraction",
+              "reported_unit": "percent"
+            }
+          }
+        }
+      },
+      "expected": "open",
+      "rationale": "修订引用不存在，不能关闭。"
+    }
+  ]
+}

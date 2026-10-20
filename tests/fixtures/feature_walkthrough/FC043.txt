@@ -1,0 +1,1 @@
+Two BibTeX entries share one key but describe different papers.

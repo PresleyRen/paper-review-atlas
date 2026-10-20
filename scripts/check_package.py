@@ -31,7 +31,7 @@ def check():
             path = (file.parent / target.split("#")[0]).resolve()
             if not path.is_relative_to(SKILL.resolve()) or not path.exists():
                 errors.append(f"Broken or external package link: {file.relative_to(SKILL)} -> {target}")
-    for name in ("capabilities", "sources", "conflicts"):
+    for name in ("capabilities", "sources", "conflicts", "features", "gaps"):
         data = json.loads((SKILL / "config" / (name + ".json")).read_text(encoding="utf-8"))
         if not isinstance(data.get(name), list) or not data[name]:
             errors.append("Empty registry: " + name)
