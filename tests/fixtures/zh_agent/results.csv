@@ -1,0 +1,7 @@
+system,seed,accuracy
+baseline,1,0.78
+baseline,2,0.80
+baseline,3,0.82
+full,1,0.83
+full,2,0.84
+full,3,0.85

@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1202" viewBox="0 0 1600 1202" role="img" aria-labelledby="title desc">
+<title id="title">Paper Review Atlas — capability coverage / 论文审查能力地图</title>
+<desc id="desc">36 documented capabilities across 9 groups, based on a transparent inventory of 13 repositories and 61 modules. W means written workflow, D means narrow deterministic helper, A means external adapter requirement. Coverage is not measured review accuracy.</desc>
+<defs><linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#14243b"/><stop offset="1" stop-color="#243c5c"/></linearGradient></defs>
+<style>text{font-family:Inter,"Noto Sans CJK SC","Microsoft YaHei",Arial,sans-serif}.cap{font-size:17px;font-weight:600;fill:#172b43}.en{font-size:13px;fill:#536379}.badge{font-size:11px;font-weight:700;letter-spacing:.6px}.small{font-size:15px;fill:#52647a}</style>
+<rect width="1600" height="1202" fill="#f2f5f9"/>
+<rect width="1600" height="156" fill="url(#header)"/>
+<text x="44" y="51" fill="#a5c9ee" font-size="14" font-weight="700" letter-spacing="3">EVIDENCE · CRITIQUE · REVISION</text>
+<text x="44" y="99" fill="#ffffff" font-size="40" font-weight="750">Paper Review Atlas</text>
+<text x="484" y="98" fill="#d6e5f5" font-size="27">Capability coverage</text>
+<text x="44" y="132" fill="#d6e5f5" font-size="17">36 documented capabilities · 9 domains · 13 source repositories · 61 inventoried modules</text>
+<text x="44" y="179" class="small">W  Written review workflow     D  Narrow deterministic checks     A  External adapter or evidence required</text>
+<rect x="44" y="194" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="44" y="194" width="7" height="260" rx="3" fill="#2563eb"/>
+<text x="68" y="226" font-size="21" font-weight="700" fill="#2563eb">Evidence and traceability</text>
+<text x="68" y="248" font-size="14" fill="#62738a">证据与溯源</text>
+<text x="68" y="280" class="cap"><tspan fill="#2563eb">C01</tspan><tspan dx="10">Intake and provenance</tspan></text>
+<text x="111" y="298" class="en">材料接收与溯源</text>
+<text x="510" y="280" text-anchor="end" class="badge" fill="#536d88">W D A</text>
+<text x="510" y="298" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="68" y="325" class="cap"><tspan fill="#2563eb">C04</tspan><tspan dx="10">Claim–evidence linkage</tspan></text>
+<text x="111" y="343" class="en">主张—证据闭环</text>
+<text x="510" y="325" text-anchor="end" class="badge" fill="#536d88">W D</text>
+<text x="510" y="343" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="68" y="370" class="cap"><tspan fill="#2563eb">C24</tspan><tspan dx="10">Citation integrity</tspan></text>
+<text x="111" y="388" class="en">引文与引用支持</text>
+<text x="510" y="370" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="510" y="388" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="68" y="415" class="cap"><tspan fill="#2563eb">C36</tspan><tspan dx="10">Reporting and provenance</tspan></text>
+<text x="111" y="433" class="en">报告与能力来源</text>
+<text x="510" y="415" text-anchor="end" class="badge" fill="#536d88">W D</text>
+<text x="510" y="433" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<rect x="556" y="194" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="556" y="194" width="7" height="260" rx="3" fill="#7c3aed"/>
+<text x="580" y="226" font-size="21" font-weight="700" fill="#7c3aed">Contribution and reasoning</text>
+<text x="580" y="248" font-size="14" fill="#62738a">贡献与论证</text>
+<text x="580" y="280" class="cap"><tspan fill="#7c3aed">C02</tspan><tspan dx="10">Venue fit</tspan></text>
+<text x="623" y="298" class="en">目标期刊与会议适配</text>
+<text x="1022" y="280" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="298" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="580" y="325" class="cap"><tspan fill="#7c3aed">C03</tspan><tspan dx="10">Novelty and literature</tspan></text>
+<text x="623" y="343" class="en">创新性与文献定位</text>
+<text x="1022" y="325" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="343" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="580" y="370" class="cap"><tspan fill="#7c3aed">C05</tspan><tspan dx="10">Arguments and counterexamples</tspan></text>
+<text x="623" y="388" class="en">论证与反例</text>
+<text x="1022" y="370" text-anchor="end" class="badge" fill="#536d88">W</text>
+<text x="1022" y="388" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="580" y="415" class="cap"><tspan fill="#7c3aed">C26</tspan><tspan dx="10">Limitations and threats</tspan></text>
+<text x="623" y="433" class="en">局限与效度威胁</text>
+<text x="1022" y="415" text-anchor="end" class="badge" fill="#536d88">W</text>
+<text x="1022" y="433" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<rect x="1068" y="194" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="1068" y="194" width="7" height="260" rx="3" fill="#0891b2"/>
+<text x="1092" y="226" font-size="21" font-weight="700" fill="#0891b2">Experiment design</text>
+<text x="1092" y="248" font-size="14" fill="#62738a">实验设计</text>
+<text x="1092" y="280" class="cap"><tspan fill="#0891b2">C07</tspan><tspan dx="10">Experiment design</tspan></text>
+<text x="1135" y="298" class="en">实验设计与因果边界</text>
+<text x="1534" y="280" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1534" y="298" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="1092" y="325" class="cap"><tspan fill="#0891b2">C08</tspan><tspan dx="10">Baselines and budgets</tspan></text>
+<text x="1135" y="343" class="en">基线与预算公平</text>
+<text x="1534" y="325" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1534" y="343" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="1092" y="370" class="cap"><tspan fill="#0891b2">C09</tspan><tspan dx="10">Ablation and attribution</tspan></text>
+<text x="1135" y="388" class="en">消融与归因</text>
+<text x="1534" y="370" text-anchor="end" class="badge" fill="#536d88">W</text>
+<text x="1534" y="388" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="1092" y="415" class="cap"><tspan fill="#0891b2">C14</tspan><tspan dx="10">Robustness and generalization</tspan></text>
+<text x="1135" y="433" class="en">稳健性与泛化</text>
+<text x="1534" y="415" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1534" y="433" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<rect x="44" y="478" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="44" y="478" width="7" height="260" rx="3" fill="#0d9488"/>
+<text x="68" y="510" font-size="21" font-weight="700" fill="#0d9488">Evaluation validity</text>
+<text x="68" y="532" font-size="14" fill="#62738a">评测有效性</text>
+<text x="68" y="564" class="cap"><tspan fill="#0d9488">C10</tspan><tspan dx="10">Leakage and contamination</tspan></text>
+<text x="111" y="582" class="en">泄漏与污染</text>
+<text x="510" y="564" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="510" y="582" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="68" y="609" class="cap"><tspan fill="#0d9488">C11</tspan><tspan dx="10">Statistical inference</tspan></text>
+<text x="111" y="627" class="en">统计推断</text>
+<text x="510" y="609" text-anchor="end" class="badge" fill="#536d88">W D A</text>
+<text x="510" y="627" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="68" y="654" class="cap"><tspan fill="#0d9488">C12</tspan><tspan dx="10">Human and LLM evaluation</tspan></text>
+<text x="111" y="672" class="en">人工与大模型评测</text>
+<text x="510" y="654" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="510" y="672" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="68" y="699" class="cap"><tspan fill="#0d9488">C13</tspan><tspan dx="10">Systems and resource cost</tspan></text>
+<text x="111" y="717" class="en">系统性能与资源成本</text>
+<text x="510" y="699" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="510" y="717" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<rect x="556" y="478" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="556" y="478" width="7" height="260" rx="3" fill="#059669"/>
+<text x="580" y="510" font-size="21" font-weight="700" fill="#059669">Methods and artifacts</text>
+<text x="580" y="532" font-size="14" fill="#62738a">方法与复现</text>
+<text x="580" y="564" class="cap"><tspan fill="#059669">C15</tspan><tspan dx="10">Theory and formulas</tspan></text>
+<text x="623" y="582" class="en">理论、公式与证明</text>
+<text x="1022" y="564" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="582" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="580" y="609" class="cap"><tspan fill="#059669">C16</tspan><tspan dx="10">Artifact reproducibility</tspan></text>
+<text x="623" y="627" class="en">产物与复现</text>
+<text x="1022" y="609" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="627" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="580" y="654" class="cap"><tspan fill="#059669">C17</tspan><tspan dx="10">Code–result integrity</tspan></text>
+<text x="623" y="672" class="en">代码与结果一致性</text>
+<text x="1022" y="654" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="672" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="580" y="699" class="cap"><tspan fill="#059669">C31</tspan><tspan dx="10">Datasets and benchmarks</tspan></text>
+<text x="623" y="717" class="en">数据集与基准论文</text>
+<text x="1022" y="699" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="717" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<rect x="1068" y="478" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="1068" y="478" width="7" height="260" rx="3" fill="#d97706"/>
+<text x="1092" y="510" font-size="21" font-weight="700" fill="#d97706">Figures, tables and numbers</text>
+<text x="1092" y="532" font-size="14" fill="#62738a">图表与数值</text>
+<text x="1092" y="564" class="cap"><tspan fill="#d97706">C18</tspan><tspan dx="10">Numeric traceability</tspan></text>
+<text x="1135" y="582" class="en">数值追溯与一致性</text>
+<text x="1534" y="564" text-anchor="end" class="badge" fill="#536d88">W D A</text>
+<text x="1534" y="582" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="1092" y="609" class="cap"><tspan fill="#d97706">C19</tspan><tspan dx="10">Visual figure inspection</tspan></text>
+<text x="1135" y="627" class="en">图形视觉检查</text>
+<text x="1534" y="609" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1534" y="627" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="1092" y="654" class="cap"><tspan fill="#d97706">C20</tspan><tspan dx="10">Figure scientific support</tspan></text>
+<text x="1135" y="672" class="en">图形与科学结论</text>
+<text x="1534" y="654" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1534" y="672" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="1092" y="699" class="cap"><tspan fill="#d97706">C21</tspan><tspan dx="10">Table semantics</tspan></text>
+<text x="1135" y="717" class="en">表格语义与可比性</text>
+<text x="1534" y="699" text-anchor="end" class="badge" fill="#536d88">W D A</text>
+<text x="1534" y="717" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<rect x="44" y="762" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="44" y="762" width="7" height="260" rx="3" fill="#e11d48"/>
+<text x="68" y="794" font-size="21" font-weight="700" fill="#e11d48">Bilingual writing</text>
+<text x="68" y="816" font-size="14" fill="#62738a">中英文写作</text>
+<text x="68" y="848" class="cap"><tspan fill="#e11d48">C06</tspan><tspan dx="10">Structure and narrative</tspan></text>
+<text x="111" y="866" class="en">结构与叙事</text>
+<text x="510" y="848" text-anchor="end" class="badge" fill="#536d88">W</text>
+<text x="510" y="866" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="68" y="893" class="cap"><tspan fill="#e11d48">C22</tspan><tspan dx="10">Chinese and English style</tspan></text>
+<text x="111" y="911" class="en">中英文书写审校</text>
+<text x="510" y="893" text-anchor="end" class="badge" fill="#536d88">W</text>
+<text x="510" y="911" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="68" y="938" class="cap"><tspan fill="#e11d48">C23</tspan><tspan dx="10">Evidence-preserving edits</tspan></text>
+<text x="111" y="956" class="en">保留证据的改写</text>
+<text x="510" y="938" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="510" y="956" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="68" y="983" class="cap"><tspan fill="#e11d48">C34</tspan><tspan dx="10">Translation preservation</tspan></text>
+<text x="111" y="1001" class="en">翻译与跨语种保真</text>
+<text x="510" y="983" text-anchor="end" class="badge" fill="#536d88">W</text>
+<text x="510" y="1001" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<rect x="556" y="762" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="556" y="762" width="7" height="260" rx="3" fill="#9333ea"/>
+<text x="580" y="794" font-size="21" font-weight="700" fill="#9333ea">Review and revision</text>
+<text x="580" y="816" font-size="14" fill="#62738a">审稿与修改</text>
+<text x="580" y="848" class="cap"><tspan fill="#9333ea">C25</tspan><tspan dx="10">Ethics and research safety</tspan></text>
+<text x="623" y="866" class="en">伦理与研究安全</text>
+<text x="1022" y="848" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="866" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="580" y="893" class="cap"><tspan fill="#9333ea">C27</tspan><tspan dx="10">Reviewer adjudication</tspan></text>
+<text x="623" y="911" class="en">多视角审稿与裁决</text>
+<text x="1022" y="893" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1022" y="911" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="580" y="938" class="cap"><tspan fill="#9333ea">C28</tspan><tspan dx="10">Revision and re-check</tspan></text>
+<text x="623" y="956" class="en">修订追踪与复核</text>
+<text x="1022" y="938" text-anchor="end" class="badge" fill="#536d88">W D</text>
+<text x="1022" y="956" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="580" y="983" class="cap"><tspan fill="#9333ea">C29</tspan><tspan dx="10">Rebuttal and response</tspan></text>
+<text x="623" y="1001" class="en">回复审稿人与申辩</text>
+<text x="1022" y="983" text-anchor="end" class="badge" fill="#536d88">W</text>
+<text x="1022" y="1001" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<rect x="1068" y="762" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
+<rect x="1068" y="762" width="7" height="260" rx="3" fill="#475569"/>
+<text x="1092" y="794" font-size="21" font-weight="700" fill="#475569">Delivery and extension</text>
+<text x="1092" y="816" font-size="14" fill="#62738a">交付与扩展</text>
+<text x="1092" y="848" class="cap"><tspan fill="#475569">C30</tspan><tspan dx="10">Submission readiness</tspan></text>
+<text x="1135" y="866" class="en">投稿与提交检查</text>
+<text x="1534" y="848" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1534" y="866" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="1092" y="893" class="cap"><tspan fill="#475569">C32</tspan><tspan dx="10">Surveys and reviews</tspan></text>
+<text x="1135" y="911" class="en">综述与文献评述</text>
+<text x="1534" y="893" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1534" y="911" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="1092" y="938" class="cap"><tspan fill="#475569">C33</tspan><tspan dx="10">Coverage and extension</tspan></text>
+<text x="1135" y="956" class="en">能力地图与扩展</text>
+<text x="1534" y="938" text-anchor="end" class="badge" fill="#536d88">W D</text>
+<text x="1534" y="956" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
+<text x="1092" y="983" class="cap"><tspan fill="#475569">C35</tspan><tspan dx="10">Formats and rendering</tspan></text>
+<text x="1135" y="1001" class="en">文件格式与渲染</text>
+<text x="1534" y="983" text-anchor="end" class="badge" fill="#536d88">W A</text>
+<text x="1534" y="1001" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="44" y="1064" font-size="18" font-weight="700" fill="#20364f">Documented review scope, not a measured scientific-review accuracy score.</text>
+<text x="44" y="1092" class="small">Format parsers, visual access, literature search and experimental execution depend on available adapters and evidence.</text>
+<text x="44" y="1119" class="small">Expand: protocol → capability registry → source mapping → conflict case → tests → regenerate this map.</text>
+<text x="44" y="1146" class="small">partial: exercised on limited cases · not_measured: protocol present, behavioral effectiveness not measured.</text>
+<text x="44" y="1173" font-size="13" fill="#708399">Generated from config/capabilities.json, sources.json and conflicts.json · 2026-10-20 · Source inventory ≠ copied implementations</text>
+</svg>

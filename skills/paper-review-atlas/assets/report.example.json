@@ -1,0 +1,17 @@
+{
+  "paper_id": "example-only",
+  "reviewers": [{"id": "R1", "model": "record-actual-model", "family": "record-actual-family", "persona": "methods and writing"}],
+  "independence_claim": "none",
+  "issues": [
+    {
+      "id": "PRA-001", "title": "Reported mean needs reconciliation",
+      "status": "unverified", "severity": "major",
+      "location": {"path": "manuscript.md"},
+      "evidence": {"quote": "Replace this with the exact manuscript sentence."},
+      "evidence_basis": "missing", "provenance": "Manuscript read; raw runs not supplied.",
+      "consequence": "The aggregate cannot yet be traced to the stated runs.",
+      "fix": "Supply run-level results and compute the stated aggregate; revise the claim if needed.",
+      "acceptance_check": "Recompute the mean from all declared runs using the stated unit and rounding."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "status": "open",
+  "issue_id": "PRA-DEMO-001",
+  "validation": {
+    "status": "invalid",
+    "effective_status": "confirmed",
+    "errors": [
+      "recomputed declarative check failed"
+    ],
+    "warnings": [],
+    "validation_scope": "record_structure_and_exact_evidence_anchors",
+    "id": "PRA-DEMO-001",
+    "evidence_check": {
+      "status": "verified",
+      "source": "old.md",
+      "requested_line": null,
+      "matches": [
+        {
+          "line_start": 1,
+          "line_end": 1,
+          "column_start": 1
+        }
+      ],
+      "message": "exact quote and anchor verified"
+    },
+    "closure_check": {
+      "status": "mismatch",
+      "revision_evidence": {
+        "status": "verified",
+        "source": "still-wrong.md",
+        "requested_line": null,
+        "matches": [
+          {
+            "line_start": 1,
+            "line_end": 1,
+            "column_start": 1
+          }
+        ],
+        "message": "exact quote and anchor verified"
+      },
+      "closure_scope": "declarative_check_recomputed",
+      "check_evidence": {
+        "status": "verified",
+        "source": "check-log.md",
+        "requested_line": null,
+        "matches": [
+          {
+            "line_start": 1,
+            "line_end": 1,
+            "column_start": 1
+          }
+        ],
+        "message": "exact quote and anchor verified"
+      },
+      "check_evaluation": {
+        "status": "mismatch",
+        "reported": "88",
+        "reported_unit": "percent",
+        "tolerance": "0",
+        "source": {
+          "path": "runs.csv",
+          "rows_total": 3,
+          "rows_selected": 3
+        },
+        "calculated": "84",
+        "rounded_calculated": "84",
+        "absolute_error": "4",
+        "message": "reported value disagrees with declared calculation",
+        "evaluation_kind": "number",
+        "execution_scope": "builtin_declarative_check_only"
+      },
+      "message": "recomputed declarative check failed"
+    }
+  },
+  "recorded_exit_code": 1
+}

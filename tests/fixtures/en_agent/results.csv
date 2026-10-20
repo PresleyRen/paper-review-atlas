@@ -1,0 +1,7 @@
+model,seed,accuracy
+baseline,11,0.79
+baseline,22,0.80
+baseline,33,0.81
+proposed,11,0.80
+proposed,22,0.84
+proposed,33,0.88

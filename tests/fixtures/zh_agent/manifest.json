@@ -1,0 +1,36 @@
+{
+  "paper_id": "zh_agent",
+  "version": "synthetic-v1",
+  "language": "zh",
+  "domain": "agent",
+  "artifacts": [
+    {
+      "path": "config.json",
+      "role": "evidence"
+    },
+    {
+      "path": "figure1.png",
+      "role": "rendered_figure"
+    },
+    {
+      "path": "figure1.svg",
+      "role": "evidence"
+    },
+    {
+      "path": "latency.csv",
+      "role": "evidence"
+    },
+    {
+      "path": "manuscript.md",
+      "role": "manuscript"
+    },
+    {
+      "path": "results.csv",
+      "role": "evidence"
+    },
+    {
+      "path": "results.json",
+      "role": "evidence"
+    }
+  ]
+}

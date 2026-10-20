@@ -1,0 +1,14 @@
+{
+  "paper_id": "replace-with-local-id",
+  "version": "draft-1",
+  "language": "en",
+  "domain": "agent",
+  "mode": "full",
+  "artifacts": [
+    {"path": "manuscript.md", "role": "manuscript"},
+    {"path": "figures/figure1.png", "role": "rendered_figure"},
+    {"path": "results.csv", "role": "source_data"},
+    {"path": "config.json", "role": "experiment_config"},
+    {"path": "references.bib", "role": "bibliography"}
+  ]
+}

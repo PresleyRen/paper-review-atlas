@@ -1,0 +1,44 @@
+{
+  "release": "v1.0.0",
+  "tested_at_utc": "2026-10-20T04:16:58.723740+00:00",
+  "python": "3.12.14",
+  "platform": "Linux",
+  "scope": "Final local automated/package checks; no inference of scientific review accuracy.",
+  "checks": [
+    {
+      "name": "unit-tests",
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "status": "passed",
+      "output": "----------------------------------------------------------------------\nRan 88 tests in 1.927s\n\nOK"
+    },
+    {
+      "name": "package",
+      "command": "python scripts/check_package.py",
+      "exit_code": 0,
+      "status": "passed",
+      "output": "{\n  \"status\": \"valid\",\n  \"errors\": []\n}"
+    },
+    {
+      "name": "coverage",
+      "command": "python scripts/build_coverage.py --check",
+      "exit_code": 0,
+      "status": "passed",
+      "output": "Verified 5 coverage artifacts. Structural consistency only; no semantic review-effectiveness claim."
+    },
+    {
+      "name": "runtime",
+      "command": "python skills/paper-review-atlas/scripts/atlas.py verify-install",
+      "exit_code": 0,
+      "status": "passed",
+      "output": "{\n  \"status\": \"valid\",\n  \"version\": \"1.0.0\",\n  \"scope\": \"Installed files and JSON readability, not scientific review accuracy.\",\n  \"missing\": [],\n  \"registries\": {\n    \"capabilities\": 36,\n    \"sources\": 13,\n    \"conflicts\": 16\n  }\n}"
+    },
+    {
+      "name": "skill-creator",
+      "command": "skill-creator quick_validate.py skills/paper-review-atlas",
+      "exit_code": 0,
+      "status": "passed",
+      "output": "Skill is valid!"
+    }
+  ]
+}

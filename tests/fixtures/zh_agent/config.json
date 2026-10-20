@@ -1,0 +1,11 @@
+{
+  "synthetic": true,
+  "original_question_count": 60,
+  "paraphrases_per_question": 5,
+  "split_level": "paraphrase",
+  "group_by_original_question": false,
+  "baseline": {"agents": 1, "max_tool_calls": 2, "memory": false, "knowledge_graph": false},
+  "full": {"agents": 4, "max_tool_calls": 12, "memory": true, "knowledge_graph": true},
+  "judge": {"same_as_generator": true, "blind_system_names": false, "randomize_order": false},
+  "seeds": [1, 2, 3]
+}

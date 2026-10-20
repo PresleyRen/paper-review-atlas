@@ -1,0 +1,74 @@
+{
+  "status": "closed",
+  "issue_id": "PRA-DEMO-001",
+  "validation": {
+    "status": "valid",
+    "effective_status": "closed",
+    "errors": [],
+    "warnings": [],
+    "validation_scope": "record_structure_and_exact_evidence_anchors",
+    "id": "PRA-DEMO-001",
+    "evidence_check": {
+      "status": "verified",
+      "source": "old.md",
+      "requested_line": null,
+      "matches": [
+        {
+          "line_start": 1,
+          "line_end": 1,
+          "column_start": 1
+        }
+      ],
+      "message": "exact quote and anchor verified"
+    },
+    "closure_check": {
+      "status": "verified",
+      "revision_evidence": {
+        "status": "verified",
+        "source": "revised.md",
+        "requested_line": null,
+        "matches": [
+          {
+            "line_start": 1,
+            "line_end": 1,
+            "column_start": 1
+          }
+        ],
+        "message": "exact quote and anchor verified"
+      },
+      "closure_scope": "declarative_check_recomputed",
+      "check_evidence": {
+        "status": "verified",
+        "source": "check-log.md",
+        "requested_line": null,
+        "matches": [
+          {
+            "line_start": 1,
+            "line_end": 1,
+            "column_start": 1
+          }
+        ],
+        "message": "exact quote and anchor verified"
+      },
+      "check_evaluation": {
+        "status": "verified",
+        "reported": "84",
+        "reported_unit": "percent",
+        "tolerance": "0",
+        "source": {
+          "path": "runs.csv",
+          "rows_total": 3,
+          "rows_selected": 3
+        },
+        "calculated": "84",
+        "rounded_calculated": "84",
+        "absolute_error": "0",
+        "message": "reported value agrees with declared calculation",
+        "evaluation_kind": "number",
+        "execution_scope": "builtin_declarative_check_only"
+      },
+      "message": "revision and check record anchors verified; semantic judgment is not authenticated"
+    }
+  },
+  "recorded_exit_code": 0
+}

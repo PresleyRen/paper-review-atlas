@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+.agents/
+.paper-review-atlas-backups/
+build/
+dist/
+.pytest_cache/
+*.egg-info/

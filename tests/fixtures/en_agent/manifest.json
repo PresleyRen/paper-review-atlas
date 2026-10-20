@@ -1,0 +1,40 @@
+{
+  "paper_id": "en_agent",
+  "version": "synthetic-v1",
+  "language": "en",
+  "domain": "agent",
+  "artifacts": [
+    {
+      "path": "config.json",
+      "role": "evidence"
+    },
+    {
+      "path": "evaluation.py",
+      "role": "evidence"
+    },
+    {
+      "path": "figure1.png",
+      "role": "rendered_figure"
+    },
+    {
+      "path": "figure1.svg",
+      "role": "evidence"
+    },
+    {
+      "path": "figure2.png",
+      "role": "rendered_figure"
+    },
+    {
+      "path": "manuscript.md",
+      "role": "manuscript"
+    },
+    {
+      "path": "results.csv",
+      "role": "evidence"
+    },
+    {
+      "path": "results.json",
+      "role": "evidence"
+    }
+  ]
+}

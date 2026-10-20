@@ -1,0 +1,1280 @@
+{
+  "schema_version": 1,
+  "package_version": "1.0.0",
+  "as_of": "2026-10-20",
+  "coverage_claim": "36 documented review capabilities. Status is implementation scope, not a measured effectiveness score. Deterministic helpers operate only on supplied structured records; external adapters are requirements, not bundled tools.",
+  "groups": [
+    {
+      "id": "evidence",
+      "title_en": "Evidence and traceability",
+      "title_zh": "证据与溯源",
+      "color": "#2563eb"
+    },
+    {
+      "id": "contribution",
+      "title_en": "Contribution and reasoning",
+      "title_zh": "贡献与论证",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "experiments",
+      "title_en": "Experiment design",
+      "title_zh": "实验设计",
+      "color": "#0891b2"
+    },
+    {
+      "id": "evaluation",
+      "title_en": "Evaluation validity",
+      "title_zh": "评测有效性",
+      "color": "#0d9488"
+    },
+    {
+      "id": "methods",
+      "title_en": "Methods and artifacts",
+      "title_zh": "方法与复现",
+      "color": "#059669"
+    },
+    {
+      "id": "figures",
+      "title_en": "Figures, tables and numbers",
+      "title_zh": "图表与数值",
+      "color": "#d97706"
+    },
+    {
+      "id": "language",
+      "title_en": "Bilingual writing",
+      "title_zh": "中英文写作",
+      "color": "#e11d48"
+    },
+    {
+      "id": "review",
+      "title_en": "Review and revision",
+      "title_zh": "审稿与修改",
+      "color": "#9333ea"
+    },
+    {
+      "id": "delivery",
+      "title_en": "Delivery and extension",
+      "title_zh": "交付与扩展",
+      "color": "#475569"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "C01",
+      "title_en": "Intake and provenance",
+      "title_zh": "材料接收与溯源",
+      "group": "evidence",
+      "protocol": "references/review-contract.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [
+          "resolve_under_root"
+        ],
+        "adapter": [
+          "PDF/DOCX extraction",
+          "OCR when needed"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC03",
+        "SRC04",
+        "SRC05",
+        "SRC09",
+        "SRC10",
+        "SRC11",
+        "SRC12",
+        "SRC13"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX10"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "resolve_under_root only confines evidence paths; it does not authenticate provenance. Inventory and evidence states do not prove that missing material does not exist."
+    },
+    {
+      "id": "C02",
+      "title_en": "Venue fit",
+      "title_zh": "目标期刊与会议适配",
+      "group": "contribution",
+      "protocol": "references/citations-venues.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Current official venue instructions"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC05",
+        "SRC07",
+        "SRC08"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [
+          "CFX03"
+        ],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "Venue eligibility and required checks must be looked up when time-sensitive; no invented acceptance probability."
+    },
+    {
+      "id": "C03",
+      "title_en": "Novelty and literature",
+      "title_zh": "创新性与文献定位",
+      "group": "contribution",
+      "protocol": "references/argument-novelty.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Literature search and full-text access"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC05",
+        "SRC06"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "Novelty is bounded by searched sources and dates; a search cannot prove global absence."
+    },
+    {
+      "id": "C04",
+      "title_en": "Claim–evidence linkage",
+      "title_zh": "主张—证据闭环",
+      "group": "evidence",
+      "protocol": "references/argument-novelty.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [
+          "verify_quote"
+        ],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC04",
+        "SRC05",
+        "SRC06",
+        "SRC07",
+        "SRC08",
+        "SRC11",
+        "SRC12"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX07"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "verify_quote checks exact source text and position, not semantic support. Semantic entailment requires reasoned review; a matched quotation alone is not support."
+    },
+    {
+      "id": "C05",
+      "title_en": "Arguments and counterexamples",
+      "title_zh": "论证与反例",
+      "group": "contribution",
+      "protocol": "references/argument-novelty.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC05",
+        "SRC06",
+        "SRC08",
+        "SRC13"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX02",
+          "CFX15"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Counterexamples are hypotheses until established; disagreement is not proof of invalidity."
+    },
+    {
+      "id": "C06",
+      "title_en": "Structure and narrative",
+      "title_zh": "结构与叙事",
+      "group": "language",
+      "protocol": "references/bilingual-writing.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC04",
+        "SRC05",
+        "SRC07",
+        "SRC11",
+        "SRC12"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX05"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/forward-control.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Style is subordinate to the paper purpose, discipline and evidence."
+    },
+    {
+      "id": "C07",
+      "title_en": "Experiment design",
+      "title_zh": "实验设计与因果边界",
+      "group": "experiments",
+      "protocol": "references/experiments-statistics.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Domain-specific study standards as applicable"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC05",
+        "SRC06",
+        "SRC08",
+        "SRC10",
+        "SRC13"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX04",
+          "CFX08"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Clinical, qualitative, observational and ML studies require different design checks."
+    },
+    {
+      "id": "C08",
+      "title_en": "Baselines and budgets",
+      "title_zh": "基线与预算公平",
+      "group": "experiments",
+      "protocol": "references/experiments-statistics.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Training/evaluation logs and configuration"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC06",
+        "SRC08"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Baseline fairness cannot be inferred from names alone."
+    },
+    {
+      "id": "C09",
+      "title_en": "Ablation and attribution",
+      "title_zh": "消融与归因",
+      "group": "experiments",
+      "protocol": "references/experiments-statistics.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC08"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Changing multiple factors limits component-specific attribution."
+    },
+    {
+      "id": "C10",
+      "title_en": "Leakage and contamination",
+      "title_zh": "泄漏与污染",
+      "group": "evaluation",
+      "protocol": "references/experiments-statistics.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Dataset lineage and split inspection"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC05",
+        "SRC06"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX10"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "No access to provenance means not assessable, not automatically contaminated."
+    },
+    {
+      "id": "C11",
+      "title_en": "Statistical inference",
+      "title_zh": "统计推断",
+      "group": "evaluation",
+      "protocol": "references/experiments-statistics.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [
+          "paired_run_stats"
+        ],
+        "adapter": [
+          "Statistical environment and raw data for recomputation"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC05",
+        "SRC08",
+        "SRC11",
+        "SRC13"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX04",
+          "CFX08"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "paired_run_stats computes matched-run descriptive summaries; it does not supply p-values, confidence intervals or a valid inference design. The experimental unit, dependence structure and preregistration govern valid inference; text-only review is limited."
+    },
+    {
+      "id": "C12",
+      "title_en": "Human and LLM evaluation",
+      "title_zh": "人工与大模型评测",
+      "group": "evaluation",
+      "protocol": "references/experiments-statistics.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Annotator/judge records and evaluation runs"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC05"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX04",
+          "CFX09"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Agreement, blinding and bias need actual records; same-model judges are not independent evidence."
+    },
+    {
+      "id": "C13",
+      "title_en": "Systems and resource cost",
+      "title_zh": "系统性能与资源成本",
+      "group": "evaluation",
+      "protocol": "references/experiments-statistics.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Hardware/runtime logs and measurement environment"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC06"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Wall time, throughput, latency, memory, energy and cost require comparable measurement conditions."
+    },
+    {
+      "id": "C14",
+      "title_en": "Robustness and generalization",
+      "title_zh": "稳健性与泛化",
+      "group": "experiments",
+      "protocol": "references/experiments-statistics.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "External data or reruns for new tests"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC05",
+        "SRC08"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Unrun stress tests are proposed experiments, never completed evidence."
+    },
+    {
+      "id": "C15",
+      "title_en": "Theory and formulas",
+      "title_zh": "理论、公式与证明",
+      "group": "methods",
+      "protocol": "references/formal-theory.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Symbolic algebra/proof assistants when appropriate"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC05"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "Reasoned proof inspection is not machine-checked verification; assumptions and counterexamples remain explicit."
+    },
+    {
+      "id": "C16",
+      "title_en": "Artifact reproducibility",
+      "title_zh": "产物与复现",
+      "group": "methods",
+      "protocol": "references/code-reproducibility.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Repository, environment and authorized compute"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC06",
+        "SRC12"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX13",
+          "CFX16"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "A reproducibility plan is not a reproduced result; execution must be logged."
+    },
+    {
+      "id": "C17",
+      "title_en": "Code–result integrity",
+      "title_zh": "代码与结果一致性",
+      "group": "methods",
+      "protocol": "references/code-reproducibility.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Source code, raw outputs and execution traces"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC06"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX13"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Static inspection cannot establish that code ran or that outputs came from a specific run."
+    },
+    {
+      "id": "C18",
+      "title_en": "Numeric traceability",
+      "title_zh": "数值追溯与一致性",
+      "group": "figures",
+      "protocol": "references/figures-tables.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [
+          "reconcile_number"
+        ],
+        "adapter": [
+          "Machine-readable result exports"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC05",
+        "SRC06",
+        "SRC11"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX01"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md",
+          "tests/test_audit_checks.py::NumericTests::test_relative_percent_and_percentage_points_are_distinct"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Deterministic helpers check supplied records only; they do not extract all paper numbers or validate the underlying experiment."
+    },
+    {
+      "id": "C19",
+      "title_en": "Visual figure inspection",
+      "title_zh": "图形视觉检查",
+      "group": "figures",
+      "protocol": "references/figures-tables.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Actual figure images and vision/rendering access"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC04",
+        "SRC05",
+        "SRC07",
+        "SRC08"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX05",
+          "CFX06",
+          "CFX12"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Layout, glyphs, color and cropped content are not assessable from extracted text alone."
+    },
+    {
+      "id": "C20",
+      "title_en": "Figure scientific support",
+      "title_zh": "图形与科学结论",
+      "group": "figures",
+      "protocol": "references/figures-tables.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Underlying data and figure source when needed"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC04",
+        "SRC05",
+        "SRC06",
+        "SRC07",
+        "SRC08"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX06",
+          "CFX12"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "A visually clean figure does not establish claim support or data integrity."
+    },
+    {
+      "id": "C21",
+      "title_en": "Table semantics",
+      "title_zh": "表格语义与可比性",
+      "group": "figures",
+      "protocol": "references/figures-tables.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [
+          "reconcile_number"
+        ],
+        "adapter": [
+          "Table extraction or original source"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC04",
+        "SRC05",
+        "SRC06",
+        "SRC07",
+        "SRC08"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX01",
+          "CFX12"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "reconcile_number checks supplied structured numeric records, not table meaning or automatic cell extraction. Footnotes, denominators, metric directions and uncertainty must be interpreted with the caption."
+    },
+    {
+      "id": "C22",
+      "title_en": "Chinese and English style",
+      "title_zh": "中英文书写审校",
+      "group": "language",
+      "protocol": "references/bilingual-writing.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC04",
+        "SRC05",
+        "SRC07",
+        "SRC09",
+        "SRC10"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX05",
+          "CFX07",
+          "CFX14"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/forward-control.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Bilingual protocols are implemented; broad bilingual effectiveness has not been established by these tests."
+    },
+    {
+      "id": "C23",
+      "title_en": "Evidence-preserving edits",
+      "title_zh": "保留证据的改写",
+      "group": "language",
+      "protocol": "references/bilingual-writing.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Document editing adapter for in-place changes"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC04",
+        "SRC05",
+        "SRC06",
+        "SRC07",
+        "SRC12"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX07",
+          "CFX11",
+          "CFX14"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/forward-control.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Edits preserve uncertainty, numerical values and causal scope; a user request to review does not itself request file mutation."
+    },
+    {
+      "id": "C24",
+      "title_en": "Citation integrity",
+      "title_zh": "引文与引用支持",
+      "group": "evidence",
+      "protocol": "references/citations-venues.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Bibliographic lookup and full text"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC04",
+        "SRC05",
+        "SRC11"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "DOI identity and bibliographic existence do not establish that the source supports the cited claim."
+    },
+    {
+      "id": "C25",
+      "title_en": "Ethics and research safety",
+      "title_zh": "伦理与研究安全",
+      "group": "review",
+      "protocol": "references/review-contract.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Relevant domain and venue policies"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC05",
+        "SRC13"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [
+          "CFX08",
+          "CFX10"
+        ],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "Flag bounded concerns with evidence; neither missing disclosure nor a visual anomaly alone proves misconduct."
+    },
+    {
+      "id": "C26",
+      "title_en": "Limitations and threats",
+      "title_zh": "局限与效度威胁",
+      "group": "contribution",
+      "protocol": "references/argument-novelty.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC05"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX02"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Prioritize limitations that affect actual claims; do not manufacture flaws to fill a quota."
+    },
+    {
+      "id": "C27",
+      "title_en": "Reviewer adjudication",
+      "title_zh": "多视角审稿与裁决",
+      "group": "review",
+      "protocol": "references/adversarial-review.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Optional independent-model or human review"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC05",
+        "SRC06",
+        "SRC07",
+        "SRC08",
+        "SRC09",
+        "SRC10",
+        "SRC11",
+        "SRC13"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX02",
+          "CFX03",
+          "CFX05",
+          "CFX09",
+          "CFX10",
+          "CFX15"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Multiple personas from one model are correlated viewpoints, not independent expert validation."
+    },
+    {
+      "id": "C28",
+      "title_en": "Revision and re-check",
+      "title_zh": "修订追踪与复核",
+      "group": "review",
+      "protocol": "references/revision-rebuttal.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [
+          "recheck_issue"
+        ],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC03",
+        "SRC04",
+        "SRC06",
+        "SRC12",
+        "SRC13"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX11",
+          "CFX15",
+          "CFX16"
+        ],
+        "evidence": [
+          "docs/validation/recheck-failed.json",
+          "docs/validation/recheck-passed.json",
+          "tests/test_audit_checks.py::RecheckTests::test_manual_closure_records_scope_and_requires_observations"
+        ],
+        "annotation": "Actual declarative mean checks demonstrate failed and successful closure; manual checks validate records only. No complete model-experiment rerun or longitudinal manuscript study was performed."
+      },
+      "limitations": "recheck_issue validates a supplied closure record and any declared supported recheck; manual-review notes are not independent semantic verification. Closure requires evidence and reviewer re-check; author assertion alone does not resolve an issue."
+    },
+    {
+      "id": "C29",
+      "title_en": "Rebuttal and response",
+      "title_zh": "回复审稿人与申辩",
+      "group": "review",
+      "protocol": "references/revision-rebuttal.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC08"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [
+          "CFX16"
+        ],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "Responses must distinguish completed corrections from proposed work and justified disagreement."
+    },
+    {
+      "id": "C30",
+      "title_en": "Submission readiness",
+      "title_zh": "投稿与提交检查",
+      "group": "delivery",
+      "protocol": "references/citations-venues.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Current venue rules and format tools"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC03",
+        "SRC04",
+        "SRC07",
+        "SRC11",
+        "SRC12"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [
+          "CFX03",
+          "CFX11"
+        ],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "Readiness is not acceptance; permissions to submit or message others are separate from preparing material."
+    },
+    {
+      "id": "C31",
+      "title_en": "Datasets and benchmarks",
+      "title_zh": "数据集与基准论文",
+      "group": "methods",
+      "protocol": "references/argument-novelty.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Dataset documentation and evaluation artifacts"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "Licensing, representativeness and maintenance claims need inspectable documentation."
+    },
+    {
+      "id": "C32",
+      "title_en": "Surveys and reviews",
+      "title_zh": "综述与文献评述",
+      "group": "delivery",
+      "protocol": "references/domain-agent.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "Search records and reporting standard for review type"
+        ]
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC05",
+        "SRC09",
+        "SRC13"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [
+          "CFX08"
+        ],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "A narrative survey is not automatically a systematic review or a clinical meta-analysis."
+    },
+    {
+      "id": "C33",
+      "title_en": "Coverage and extension",
+      "title_zh": "能力地图与扩展",
+      "group": "delivery",
+      "protocol": "references/input-output.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [
+          "validate_registry",
+          "coverage_artifact_drift"
+        ],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [],
+        "evidence": [
+          "tests/test_coverage.py::CoverageRegistryTests::test_xml_escaping_and_registry_extension_need_no_template_edit",
+          "docs/validation/integration-review.md"
+        ],
+        "annotation": "Registry reciprocity, generated map freshness and extension by C37 are tested in the repository. The generator is a repository maintenance tool, not part of the installed runtime; adding a real new scientific domain still needs behavioral validation."
+      },
+      "limitations": "Registry coverage shows implemented instructions, not measured real-world review accuracy."
+    },
+    {
+      "id": "C34",
+      "title_en": "Translation preservation",
+      "title_zh": "翻译与跨语种保真",
+      "group": "language",
+      "protocol": "references/bilingual-writing.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC02",
+        "SRC03",
+        "SRC04",
+        "SRC09",
+        "SRC10"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX14"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/forward-control.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Translation must preserve uncertainty, comparisons, negation, numerical meaning and field terminology."
+    },
+    {
+      "id": "C35",
+      "title_en": "Formats and rendering",
+      "title_zh": "文件格式与渲染",
+      "group": "delivery",
+      "protocol": "references/input-output.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [],
+        "adapter": [
+          "PDF/OCR, DOCX, LaTeX and Typst adapters"
+        ]
+      },
+      "status": "partial_adapter",
+      "sources": [
+        "SRC03",
+        "SRC04",
+        "SRC10"
+      ],
+      "verification": {
+        "state": "not_measured",
+        "planned_cases": [
+          "CFX06"
+        ],
+        "evidence": [],
+        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+      },
+      "limitations": "No built-in PDF/DOCX/OCR/LaTeX/Typst parser or renderer is claimed; unavailable formats are reported explicitly."
+    },
+    {
+      "id": "C36",
+      "title_en": "Reporting and provenance",
+      "title_zh": "报告与能力来源",
+      "group": "evidence",
+      "protocol": "references/input-output.md",
+      "implementation": {
+        "workflow": true,
+        "deterministic": [
+          "validate_issue",
+          "validate_report",
+          "validate_registry",
+          "coverage_artifact_drift"
+        ],
+        "adapter": []
+      },
+      "status": "implemented_workflow",
+      "sources": [
+        "SRC01",
+        "SRC02",
+        "SRC03",
+        "SRC05",
+        "SRC09"
+      ],
+      "verification": {
+        "state": "partial",
+        "planned_cases": [
+          "CFX09",
+          "CFX12",
+          "CFX13",
+          "CFX16"
+        ],
+        "evidence": [
+          "docs/validation/forward-en.md",
+          "docs/validation/forward-zh.md",
+          "docs/validation/behavioral-rubric.md"
+        ],
+        "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
+      },
+      "limitations": "Record validation checks structure and quote anchors, not the scientific truth of a finding. Record actual access, tools, tests and limitations; sourced capability descriptions do not inherit upstream benchmark results."
+    }
+  ],
+  "repository_url": "https://github.com/PresleyRen/paper-review-atlas"
+}

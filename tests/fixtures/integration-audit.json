@@ -1,0 +1,73 @@
+{
+  "numeric_claims": [
+    {
+      "id": "mean",
+      "source": {
+        "path": "en_agent/results.csv",
+        "format": "csv",
+        "where": {
+          "model": "proposed"
+        }
+      },
+      "operation": "mean",
+      "field": "accuracy",
+      "source_unit": "fraction",
+      "reported_unit": "percent",
+      "reported": "88.0",
+      "rounding": {
+        "places": 1,
+        "mode": "half_even"
+      }
+    },
+    {
+      "id": "relative",
+      "source": {
+        "path": "en_agent/results.csv",
+        "format": "csv",
+        "where": {
+          "model": "proposed"
+        }
+      },
+      "operation": "mean",
+      "field": "accuracy",
+      "comparison": {
+        "source": {
+          "path": "en_agent/results.csv",
+          "format": "csv",
+          "where": {
+            "model": "baseline"
+          }
+        },
+        "operation": "mean",
+        "field": "accuracy"
+      },
+      "change": "relative_percent",
+      "source_unit": "fraction",
+      "reported_unit": "percent",
+      "reported": "20",
+      "rounding": {
+        "places": 1,
+        "mode": "half_even"
+      }
+    },
+    {
+      "id": "rounding-positive-control",
+      "source": {
+        "path": "en_agent/results.json",
+        "format": "json",
+        "where": {
+          "metric": "calibration_ratio"
+        }
+      },
+      "operation": "value",
+      "field": "value",
+      "source_unit": "number",
+      "reported_unit": "number",
+      "reported": "0.948",
+      "rounding": {
+        "places": 3,
+        "mode": "half_even"
+      }
+    }
+  ]
+}

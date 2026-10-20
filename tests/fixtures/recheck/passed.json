@@ -1,0 +1,41 @@
+{
+  "issue": {
+    "id": "PRA-DEMO-001",
+    "status": "confirmed",
+    "severity": "major",
+    "location": {
+      "path": "old.md"
+    },
+    "evidence": {
+      "quote": "The mean accuracy is 88.0%."
+    },
+    "fix": "Replace the best-seed result with the mean across all three seeds.",
+    "acceptance_check": "Recompute the mean and reconcile the revised statement."
+  },
+  "revision_evidence": {
+    "path": "revised.md",
+    "quote": "The mean accuracy is 84.0%."
+  },
+  "check": {
+    "status": "passed",
+    "method": "Recomputed the complete three-seed mean using reconcile_number.",
+    "evidence": {
+      "path": "check-log.md",
+      "quote": "Calculated accuracy: 84 percent."
+    },
+    "evaluation": {
+      "kind": "number",
+      "claim": {
+        "source": {
+          "path": "runs.csv",
+          "format": "csv"
+        },
+        "operation": "mean",
+        "field": "accuracy",
+        "source_unit": "fraction",
+        "reported_unit": "percent",
+        "reported": "84.0"
+      }
+    }
+  }
+}

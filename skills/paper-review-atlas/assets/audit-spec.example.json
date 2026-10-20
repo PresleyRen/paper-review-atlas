@@ -1,0 +1,22 @@
+{
+  "description": "Schema example; replace paths and values with evidence from your own paper.",
+  "quotes": [{"id": "anchor-1", "path": "manuscript.md", "quote": "The baseline accuracy was 80.0%."}],
+  "numeric_claims": [
+    {
+      "id": "reported-mean",
+      "source": {"path": "results.csv", "format": "csv", "where": {"model": "proposed"}},
+      "operation": "mean", "field": "accuracy",
+      "source_unit": "fraction", "reported_unit": "percent",
+      "reported": "84.0", "rounding": {"places": 1, "mode": "half_even"}, "tolerance": "0"
+    },
+    {
+      "id": "relative-gain",
+      "source": {"path": "results.csv", "format": "csv", "where": {"model": "proposed"}},
+      "operation": "mean", "field": "accuracy",
+      "comparison": {"source": {"path": "results.csv", "format": "csv", "where": {"model": "baseline"}}, "operation": "mean", "field": "accuracy"},
+      "change": "relative_percent", "source_unit": "fraction", "reported_unit": "percent",
+      "reported": "5.0", "rounding": {"places": 1, "mode": "half_even"}
+    }
+  ],
+  "paired_runs": [{"id": "descriptive-only", "left": {"seed-1": 0.79, "seed-2": 0.80, "seed-3": 0.81}, "right": {"seed-1": 0.80, "seed-2": 0.84, "seed-3": 0.88}}]
+}

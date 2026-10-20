@@ -1,0 +1,985 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-20",
+  "reuse_policy": "Original synthesis of review capabilities. Source names and links identify conceptual influences; no upstream code or instruction text is vendored. Catalog inclusion is not an implementation port, license grant, installed dependency, or evidence of effectiveness. Source pages may change after the consultation date.",
+  "sources": [
+    {
+      "id": "SRC01",
+      "title": "Paper Reviewer Skills — 29-module inventory",
+      "repository": "augustocamargo/paper-reviewer-skills",
+      "url": "https://github.com/augustocamargo/paper-reviewer-skills",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established in this synthesis. No upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "cs-ai-paper-review",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/cs-ai-paper-review/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C02",
+            "C04",
+            "C27",
+            "C36"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "ieee-access-review",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/ieee-access-review/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C02",
+            "C30"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "9fd33f98c431434de349d9431074c6c0cfa6fbbf",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-surgical-editor",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-surgical-editor/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C23",
+            "C28"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "5a1423e99872f67d21fad5691f1cf738cfddc1ce",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-busy-reviewer",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-busy-reviewer/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C06",
+            "C27"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "2a28f29314b0bbdb9f091eb009483e01d9989d5e",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-reviewer-sim",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-reviewer-sim/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C05",
+            "C27"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-venue-fit-strategy",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-venue-fit-strategy/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C02",
+            "C30"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "7400db0e20373022848de1539fcb0e47dcabc384",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-novelty-positioning",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-novelty-positioning/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C03",
+            "C05"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "3dd9e17151d36f0c8058675a3d417133154b1302",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-abstract-title-contribution",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-abstract-title-contribution/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C04",
+            "C06",
+            "C22"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "3afab953c76b9ba2ff60202bb395b39582a8d491",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-claim-evidence-auditor",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-claim-evidence-auditor/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C04",
+            "C18"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "5fbf0c09e73a01f7358486dec2602f2b0b81242b",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-structure-pertinence",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-structure-pertinence/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C06"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "80f389c55d47e5422af314d7cfd93edd9d918772",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-experiment-design",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-experiment-design/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C07",
+            "C09",
+            "C11",
+            "C14"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-baseline-benchmark-audit",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-baseline-benchmark-audit/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C08",
+            "C13",
+            "C31"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-ml-validity-leakage",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-ml-validity-leakage/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C10",
+            "C12",
+            "C31"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-claims-vs-data",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-claims-vs-data/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C04",
+            "C17",
+            "C18"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-figure-table-auditor",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-figure-table-auditor/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C19",
+            "C20",
+            "C21"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-formula-audit",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-formula-audit/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C15"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "0c2c34a9672f00eaf542acf7dfc3fb241f43d069",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-theory-proof-audit",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-theory-proof-audit/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C15"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "c36aa1ad61e7461f51fdb16cde8b9513eed8566e",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-systems-performance-audit",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-systems-performance-audit/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C13"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "202f2487f1bb48356a5b6d338697ecb94d473382",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-dataset-benchmark-paper",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-dataset-benchmark-paper/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C25",
+            "C31"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "4e20fae703b6c401b53598229aa18f37fa545770",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-user-study-audit",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-user-study-audit/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C07",
+            "C11",
+            "C12",
+            "C25"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "e34bb70248ded1b3ddd815745df641befd79574b",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-citation-check",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-citation-check/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C03",
+            "C24"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "96a4f4d7fe0d4744ee6d644f46e4b349520fc30a",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-security-ethics-safety",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-security-ethics-safety/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C25"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "779c62236e238f56a4a901b310fcbb4ad0f01cf1",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-limitations-threats",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-limitations-threats/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C14",
+            "C26"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "dd1c86077744451efd08e1949f39ad9599839969",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-artifact-evaluation",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-artifact-evaluation/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C16",
+            "C17"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-repro-compliance",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-repro-compliance/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C16",
+            "C30"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "fe24ad677c50f053bf4acb45ff913a39846a9c09",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-writing-auditor",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-writing-auditor/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C06",
+            "C22",
+            "C23"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-ai-prose-signals",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-ai-prose-signals/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C22"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "0eab8066beb926bae22fab467343b4723849bf31",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-external-review-triage",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-external-review-triage/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C27",
+            "C28"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "d9345d74d11e73687e5702af52bc8a87834624a1",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "paper-rebuttal-response",
+          "url": "https://github.com/augustocamargo/paper-reviewer-skills/blob/main/paper-rebuttal-response/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C28",
+            "C29"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "a983fd229c468f04d6db8eda3a96cfcd3f918a40",
+          "reviewed_on": "2026-10-20"
+        }
+      ],
+      "review_notes": "All 29 listed primary SKILL.md bodies were read. Fixed issue quotas, uncalibrated acceptance percentages, exact-string numeric disagreement, retrospective prediction claims, rigid section roles and unsupported Big-O speed rankings were not adopted. Linked implementation assets were not comprehensively audited."
+    },
+    {
+      "id": "SRC02",
+      "title": "Academic Research Skills / Academic Paper Reviewer",
+      "repository": "Imbad0202/academic-research-skills",
+      "url": "https://github.com/Imbad0202/academic-research-skills",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established. No upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "academic-paper-reviewer",
+          "url": "https://github.com/Imbad0202/academic-research-skills/blob/main/academic-paper-reviewer/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C02",
+            "C05",
+            "C07",
+            "C11",
+            "C27",
+            "C28",
+            "C29",
+            "C34",
+            "C36"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        }
+      ],
+      "related_distribution": "https://github.com/Imbad0202/academic-research-skills-codex",
+      "review_notes": "Role-based critique, evidence-led issue records, fresh review and re-review are conceptual references. Same-model roles are not treated as statistically independent reviewers."
+    },
+    {
+      "id": "SRC03",
+      "title": "Academic Writing Skills — English, Chinese, LaTeX and Typst",
+      "repository": "bahayonghang/academic-writing-skills",
+      "url": "https://github.com/bahayonghang/academic-writing-skills",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "Repository README states Academic Use Only / Not for commercial use; do not describe it as MIT. No restricted text or code is bundled.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "paper-audit",
+          "url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/paper-audit/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C04",
+            "C18",
+            "C22",
+            "C24",
+            "C28",
+            "C30",
+            "C35",
+            "C36"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "latex-paper-en",
+          "url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/latex-paper-en/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C06",
+            "C19",
+            "C22",
+            "C23",
+            "C24",
+            "C30",
+            "C35"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "latex-thesis-zh",
+          "url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/latex-thesis-zh/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C06",
+            "C22",
+            "C23",
+            "C24",
+            "C30",
+            "C34",
+            "C35"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "typst-paper",
+          "url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/typst-paper/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C22",
+            "C30",
+            "C35"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "62d5a2902e1f4df0d2556e4025df8bfd03f309b8",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "cover-letter",
+          "url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/cover-letter/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C30"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "9d20256417bd372ef5948d3e4593b5f21ceb72ec",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "bib-search-citation",
+          "url": "https://github.com/bahayonghang/academic-writing-skills/blob/main/academic-writing-skills/bib-search-citation/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C03",
+            "C24"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "c72af79a478027e0fc80527cc1af1453dd125a68",
+          "reviewed_on": "2026-10-20"
+        }
+      ],
+      "review_notes": "All six listed primary skill bodies were read. Typst/Hayagriva preservation, local bibliography retrieval and cover-letter alignment are host-assisted protocols, not ports of upstream scripts. Academic-use restrictions remain attached to the source; no upstream implementation is redistributed."
+    },
+    {
+      "id": "SRC04",
+      "title": "Paper Skill — Chinese-first paper review and revision",
+      "repository": "cLin-c/paper-skill",
+      "url": "https://github.com/cLin-c/paper-skill",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "MIT license was verified during source research; no upstream text or code is bundled.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "paper-skill",
+          "url": "https://github.com/cLin-c/paper-skill/blob/main/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C04",
+            "C06",
+            "C19",
+            "C20",
+            "C21",
+            "C22",
+            "C23",
+            "C24",
+            "C28",
+            "C30",
+            "C34",
+            "C35"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        }
+      ],
+      "additional_inspected_urls": [
+        "https://github.com/cLin-c/paper-skill/blob/main/workflows/figure-audit.md"
+      ],
+      "review_notes": "Claim-to-evidence and figure-to-claim linkage inform the protocol. Upstream submission-gate pass counts are not evidence of semantic peer-review accuracy."
+    },
+    {
+      "id": "SRC05",
+      "title": "Scientific Agent Skills — seven complementary scientific skills",
+      "repository": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "MIT labels were verified in the inspected skill frontmatter. No upstream instructions or scripts are bundled.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "peer-review",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/peer-review/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C04",
+            "C07",
+            "C11",
+            "C25",
+            "C26",
+            "C27",
+            "C36"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "scientific-critical-thinking",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-critical-thinking/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C05",
+            "C07",
+            "C10",
+            "C14",
+            "C15",
+            "C25",
+            "C26"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "statistical-analysis",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/statistical-analysis/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C07",
+            "C11",
+            "C12",
+            "C18"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "scientific-visualization",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-visualization/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C19",
+            "C20",
+            "C21"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "scientific-writing",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scientific-writing/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C03",
+            "C06",
+            "C22",
+            "C23",
+            "C24",
+            "C32"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "citation-management",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/citation-management/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C03",
+            "C24",
+            "C32"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "scholar-evaluation",
+          "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/scholar-evaluation/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C02",
+            "C04",
+            "C06",
+            "C27"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        }
+      ],
+      "review_notes": "Evidence-led criticism, statistics, citation identity and visualization remain separate competencies. Biomedical grading frameworks apply only to suitable study types. Automatic insertion of a provider-preferred citation is excluded."
+    },
+    {
+      "id": "SRC06",
+      "title": "ARIS — research review, experiment audit and result-to-claim discipline",
+      "repository": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "MIT license was verified during source research; no upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "research-review",
+          "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/research-review/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C03",
+            "C05",
+            "C07",
+            "C27",
+            "C28"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "experiment-audit",
+          "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/experiment-audit/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C07",
+            "C08",
+            "C10",
+            "C13",
+            "C16",
+            "C17",
+            "C18"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-claim-audit",
+          "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/paper-claim-audit/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C04",
+            "C17",
+            "C18",
+            "C20",
+            "C21"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "result-to-claim",
+          "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/main/skills/result-to-claim/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C04",
+            "C18",
+            "C23"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "e4f63c77cdcc2cb9d51f1458d3e88fc224a76d6c",
+          "reviewed_on": "2026-10-20"
+        }
+      ],
+      "review_notes": "All four listed primary skill bodies were read. Distinct model families can be an optional review adapter; configuration cannot prove execution or independence. Result-to-claim decisions distinguish access, arithmetic and scientific support; a failed exact-string match does not establish fabricated evidence."
+    },
+    {
+      "id": "SRC07",
+      "title": "Supervisor Skills — submission, figures and polishing",
+      "repository": "HKUSTDial/Supervisor-Skills",
+      "url": "https://github.com/HKUSTDial/Supervisor-Skills",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "Conflicting license declarations were observed: repository-level CC BY-NC-SA 4.0 versus selected skill-frontmatter CC BY 4.0. Treat licensing as unresolved; no text or code copied.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "pre-submission-reviewer",
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/main/skills/pre-submission-reviewer/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C02",
+            "C04",
+            "C06",
+            "C19",
+            "C22",
+            "C27",
+            "C30"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "figure-designer",
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/main/skills/figure-designer/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C19",
+            "C20",
+            "C21"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "paper-polish",
+          "url": "https://github.com/HKUSTDial/Supervisor-Skills/blob/main/skills/paper-polish/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C06",
+            "C22",
+            "C23"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        }
+      ],
+      "review_notes": "Figure readability and actionable revision inform the workflow. Punctuation, raster use, and missing running examples do not automatically become scientific major/critical findings."
+    },
+    {
+      "id": "SRC08",
+      "title": "IEEE Skills — reviewer, experiments and figure/table checks",
+      "repository": "CloudWave818/ieee-skills",
+      "url": "https://github.com/CloudWave818/ieee-skills",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "MIT license was verified during source research; no upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "ieee-reviewer",
+          "url": "https://github.com/CloudWave818/ieee-skills/blob/main/skills/ieee-reviewer/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C02",
+            "C04",
+            "C05",
+            "C27",
+            "C29"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "ieee-experiment",
+          "url": "https://github.com/CloudWave818/ieee-skills/blob/main/skills/ieee-experiment/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C07",
+            "C08",
+            "C09",
+            "C11",
+            "C14"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "ieee-figure-table",
+          "url": "https://github.com/CloudWave818/ieee-skills/blob/main/skills/ieee-figure-table/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C19",
+            "C20",
+            "C21"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        }
+      ],
+      "review_notes": "Review findings require a concrete correction. Repository-specific manifests and shared dependencies are not silently assumed installed."
+    },
+    {
+      "id": "SRC09",
+      "title": "Peer Review Skill — Chinese, English and bilingual reports",
+      "repository": "manoloss612/peer-review-skill",
+      "url": "https://github.com/manoloss612/peer-review-skill",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established; no upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "peer-review-skill",
+          "url": "https://github.com/manoloss612/peer-review-skill/blob/main/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C22",
+            "C27",
+            "C32",
+            "C34",
+            "C36"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        }
+      ],
+      "review_notes": "The source explicitly offers Chinese, English and bilingual output and separates original research from review-article checklists."
+    },
+    {
+      "id": "SRC10",
+      "title": "Scientific Manuscript Review — domain-focused bilingual review",
+      "repository": "GuangyaoYin/skill-scientific-manuscript-review",
+      "url": "https://github.com/GuangyaoYin/skill-scientific-manuscript-review",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established; no upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "scientific-manuscript-review",
+          "url": "https://github.com/GuangyaoYin/skill-scientific-manuscript-review/blob/main/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C07",
+            "C22",
+            "C27",
+            "C34",
+            "C35"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        }
+      ],
+      "review_notes": "Geophysics-specific review is treated as a domain adapter example, not universal scientific requirements. DOCX output requires an actual document renderer."
+    },
+    {
+      "id": "SRC11",
+      "title": "Claude Scholar — self-review with statistics/citation routing",
+      "repository": "Galaxy-Dawn/claude-scholar",
+      "url": "https://github.com/Galaxy-Dawn/claude-scholar",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established; no upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "paper-self-review",
+          "url": "https://github.com/Galaxy-Dawn/claude-scholar/blob/main/skills/paper-self-review/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C04",
+            "C06",
+            "C27",
+            "C30"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        },
+        {
+          "name": "results-analysis",
+          "url": "https://github.com/Galaxy-Dawn/claude-scholar/blob/main/skills/results-analysis/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C11",
+            "C18"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "22e34019d8bef9bc8d1a0f86528f61c0288e3cb1",
+          "reviewed_on": "2026-10-20"
+        },
+        {
+          "name": "citation-verification",
+          "url": "https://github.com/Galaxy-Dawn/claude-scholar/blob/main/skills/citation-verification/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C24"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "04b91fc947f0373f2c5678c8b5ce6608ff2f8352",
+          "reviewed_on": "2026-10-20"
+        }
+      ],
+      "review_notes": "All three listed primary skill bodies were read. Statistics, citation identity and substantive citation support remain separate. Source-specific error-rate anecdotes, citation counts as quality evidence and mandatory search-provider assumptions were not adopted."
+    },
+    {
+      "id": "SRC12",
+      "title": "ML Paper Writing — operating modes and audit separation",
+      "repository": "slark-prime/ml-paper-writing",
+      "url": "https://github.com/slark-prime/ml-paper-writing",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established; no upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "ml-paper-writing",
+          "url": "https://github.com/slark-prime/ml-paper-writing/blob/main/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C04",
+            "C06",
+            "C16",
+            "C23",
+            "C28",
+            "C30"
+          ],
+          "treatment": "Primary SKILL.md body read in full for conceptual comparison; original local protocols retained and expanded where useful. Linked scripts and subordinate references were not comprehensively audited; no upstream prose or code redistributed.",
+          "reviewed_blob_sha": "b5b5fe576f956437b4d72c3811928103bd5eb9ab",
+          "reviewed_on": "2026-10-20"
+        }
+      ],
+      "additional_inspected_urls": [
+        "https://github.com/slark-prime/ml-paper-writing/blob/main/references/operating-modes-audits.md"
+      ],
+      "review_notes": "Mode separation is retained; no bundled implementation or performance inheritance is claimed."
+    },
+    {
+      "id": "SRC13",
+      "title": "Open Science Skills — paper-review-lite",
+      "repository": "scdenney/open-science-skills",
+      "url": "https://github.com/scdenney/open-science-skills",
+      "consulted_on": "2026-10-20",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established; no upstream implementation is redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "paper-review-lite",
+          "url": "https://github.com/scdenney/open-science-skills/blob/main/codex/paper-review-lite/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C01",
+            "C05",
+            "C07",
+            "C11",
+            "C25",
+            "C27",
+            "C28",
+            "C32"
+          ],
+          "treatment": "Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed."
+        }
+      ],
+      "review_notes": "Role-based re-checking and evidence discipline inform synthesis. Social-science and clinical requirements must be activated by study type rather than globally."
+    }
+  ],
+  "inspection_scope": "All 61 inventoried primary skill bodies were reviewed; this does not claim every subordinate file, upstream implementation, or skill on the internet was reviewed. Reading depth, implemented capabilities and measured behavior are separate."
+}

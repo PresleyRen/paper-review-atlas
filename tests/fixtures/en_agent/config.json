@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "dataset": "TaskBench-Q",
+  "split": "test",
+  "index_fields": ["question", "gold_answer"],
+  "index_split": "test",
+  "exclude_evaluation_question": false,
+  "baseline": {"max_tokens": 600, "retrieval_calls": 1, "routing": false},
+  "proposed": {"max_tokens": 2400, "retrieval_calls": 4, "routing": true},
+  "judge": {"type": "llm", "blind_method_names": false, "shuffle_answer_order": false, "proposed_first": true, "checkpoint": "same-as-generator"},
+  "seeds": [11, 22, 33]
+}

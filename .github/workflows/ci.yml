@@ -1,0 +1,32 @@
+name: Validate Paper Review Atlas
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run deterministic and integration tests
+        run: python -m unittest discover -s tests -v
+      - name: Check portable package
+        run: python scripts/check_package.py
+      - name: Check generated coverage freshness
+        run: python scripts/build_coverage.py --check
+      - name: Verify installed runtime footprint
+        run: python skills/paper-review-atlas/scripts/atlas.py verify-install
