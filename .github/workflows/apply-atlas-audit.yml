@@ -16,88 +16,75 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Apply hash-verified original changes
+      - name: Focus exact-ID navigation and strengthen regression assertions
         shell: python
         run: |
-          import hashlib, json, lzma, pathlib, shutil, subprocess
-          root = pathlib.Path.cwd().resolve()
-          parts = [root / '.atlas-upload' / ('part-%02d.xz' % i) for i in range(15)]
-          data = lzma.decompress(b''.join(p.read_bytes() for p in parts))
-          assert hashlib.sha256(data).hexdigest() == 'c4fc00ef51cb01d6382c2b133fe9a0f872f5d6fcb73bff0f83b9029634bd1f12'
-          payload = json.loads(data)
-          subprocess.run(['git', 'apply', '--check', '-'], input=payload['patch'], text=True, check=True)
-          subprocess.run(['git', 'apply', '-'], input=payload['patch'], text=True, check=True)
-          for name, text in payload['files'].items():
-              p = (root / name).resolve()
-              if root not in p.parents or '.git' in pathlib.Path(name).parts:
-                  raise ValueError('unsafe path: ' + name)
-              p.parent.mkdir(parents=True, exist_ok=True)
-              p.write_text(text, encoding='utf-8')
-          cases = json.loads((root / 'tests/fixtures/feature-walkthrough.json').read_text())['cases']
-          for case in cases:
-              data = (case['review_output']['quote'] + '\n').encode('utf-8')
-              assert hashlib.sha256(data).hexdigest() == case['input_sha256']
-              p = (root / case['input_path']).resolve()
-              if root not in p.parents:
-                  raise ValueError('unsafe fixture path')
-              p.parent.mkdir(parents=True, exist_ok=True)
-              p.write_bytes(data)
-          shutil.rmtree(root / '.atlas-upload')
-          print('Applied original source patch and reconstructed', len(cases), 'hashed fixtures')
-      - name: Replay conflict and public-paper checks
-        run: |
-          python scripts/compare_policies.py > docs/validation/conflict-comparison.json
-          python skills/paper-review-atlas/scripts/atlas.py audit --root tests/fixtures/real_react --spec verified-spec.json > docs/validation/react-correct.json
-          set +e
-          python skills/paper-review-atlas/scripts/atlas.py audit --root tests/fixtures/real_react --spec intentional-error-spec.json > docs/validation/react-error.json
-          status=$?
-          set -e
-          test "$status" -eq 1
-      - name: Regenerate documents
-        run: |
-          python scripts/build_coverage.py
-          python scripts/build_feature_docs.py
-      - name: Run all tests
+          from pathlib import Path
+          p = Path('skills/paper-review-atlas/scripts/review_extensions.py')
+          text = p.read_text()
+          start, end = text.index('def locate('), text.index('\n\ndef calibrate(')
+          new = '''def locate(query: str) -> dict:
+              """Resolve exact IDs first, then search descriptions without recursive fan-out."""
+              if not isinstance(query, str) or not query.strip():
+                  raise AuditInputError('locate needs a nonempty ID or search term')
+              q = query.strip().casefold()
+              caps = load('capabilities')['capabilities']
+              features = load('features')['features']
+              gaps = load('gaps')['gaps']
+              exact_caps = [c for c in caps if c['id'].casefold() == q]
+              exact_features = [f for f in features if f['id'].casefold() == q or f['module'].casefold() == q]
+              exact_gaps = [g for g in gaps if g['id'].casefold() == q]
+              if exact_caps:
+                  ids = {c['id'] for c in exact_caps}
+                  found_features = [f for f in features if set(f['capabilities']) & ids]
+                  found_gaps = [g for g in gaps if set(g['capabilities']) & ids]
+              elif exact_features:
+                  found_features = exact_features
+                  ids = {x for f in exact_features for x in f['capabilities']}
+                  found_gaps = [g for g in gaps if set(g['capabilities']) & ids]
+              elif exact_gaps:
+                  found_gaps = exact_gaps
+                  ids = {x for g in exact_gaps for x in g['capabilities']}
+                  found_features = [f for f in features if set(f['capabilities']) & ids]
+              else:
+                  direct = [c for c in caps if q in json.dumps(c, ensure_ascii=False).casefold()]
+                  found_features = [f for f in features if q in json.dumps(f, ensure_ascii=False).casefold()]
+                  found_gaps = [g for g in gaps if q in json.dumps(g, ensure_ascii=False).casefold()]
+                  ids = {c['id'] for c in direct} | {x for f in found_features for x in f['capabilities']} | {x for g in found_gaps for x in g['capabilities']}
+              return {'query': query, 'capabilities': [c for c in caps if c['id'] in ids],
+                      'features': found_features, 'gaps': found_gaps}
+          '''
+          p.write_text(text[:start] + new + text[end:])
+          p = Path('tests/test_extensions.py')
+          text = p.read_text()
+          old = "r=ext.locate(query);self.assertTrue(r['capabilities']);self.assertTrue(r['features'])"
+          extra = old + "\n        self.assertEqual([c['id'] for c in ext.locate('C19')['capabilities']], ['C19'])\n        self.assertEqual([f['id'] for f in ext.locate('F030')['features']], ['F030'])\n        self.assertEqual([f['module'] for f in ext.locate('academic-paper-reviewer')['features']], ['academic-paper-reviewer'])\n        self.assertEqual([g['id'] for g in ext.locate('G03')['gaps']], ['G03'])"
+          assert old in text
+          p.write_text(text.replace(old, extra))
+          p = Path('docs/validation/v1.1-audit.md')
+          p.write_text(p.read_text().replace('These are implementation repairs,', 'An additional CLI smoke check found over-broad exact-ID search results; exact capability, feature, module and gap queries now stay focused, with regression assertions. These are implementation repairs,'))
+      - name: Run complete suite and package checks
         run: |
           python -m unittest discover -s tests -v > docs/validation/v1.1-unit-tests.txt 2>&1
           cat docs/validation/v1.1-unit-tests.txt
-      - name: Record actual test execution
-        shell: python
-        run: |
-          import hashlib, json, os, pathlib, re, sys
-          out = pathlib.Path('docs/validation')
-          data = (out / 'v1.1-unit-tests.txt').read_bytes()
-          matches = re.findall(r'Ran (\d+) tests', data.decode())
-          assert matches and int(matches[-1]) == 247
-          summary = {'version': '1.1.0', 'date': '2026-10-20', 'python': sys.version, 'test_command': 'python -m unittest discover -s tests -v', 'tests': 247, 'result': 'passed', 'test_log_sha256': hashlib.sha256(data).hexdigest(), 'groups': {'original': 88, 'policy_and_helpers': 81, 'feature_contracts': 68, 'public_paper': 10}, 'conflicts': {'rules': 16, 'cases': 58, 'selected_matches': 58, 'alternative_matches': 13, 'kind': 'explicit rule implementations on supplied structured facts'}, 'inventory': {'repositories': 13, 'modules': 61, 'facets': 227, 'capabilities': 36, 'gaps': 12, 'modes': 11}, 'execution_url': os.environ['GITHUB_SERVER_URL'] + '/' + os.environ['GITHUB_REPOSITORY'] + '/actions/runs/' + os.environ['GITHUB_RUN_ID'], 'baseline_commit': 'd8dc5b1f90b32159c7d3aece69e3af12c5cfc24f'}
-          (out / 'v1.1-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n')
-      - name: Verify package and generators
-        run: |
           python scripts/check_package.py
           python scripts/build_coverage.py --check
           python scripts/build_feature_docs.py --check
           python skills/paper-review-atlas/scripts/atlas.py verify-install
-      - name: Archive validated source for recovery
+      - name: Refresh actual execution summary
         shell: python
         run: |
-          import pathlib, zipfile
-          root = pathlib.Path.cwd()
-          with zipfile.ZipFile('/tmp/atlas-validated.zip', 'w', zipfile.ZIP_DEFLATED) as z:
-              for p in root.rglob('*'):
-                  rel = p.relative_to(root)
-                  if p.is_file() and not any(x in rel.parts for x in ('.git', '__pycache__', '.atlas-upload')):
-                      z.write(p, rel)
-      - uses: actions/upload-artifact@v4
-        with:
-          name: atlas-validated-update
-          path: /tmp/atlas-validated.zip
-          retention-days: 1
-          if-no-files-found: error
-      - name: Commit validated source on audit branch
+          import hashlib, json, os, pathlib, re, sys
+          p = pathlib.Path('docs/validation/v1.1-summary.json')
+          summary = json.loads(p.read_text())
+          data = pathlib.Path('docs/validation/v1.1-unit-tests.txt').read_bytes()
+          assert re.findall(r'Ran (\d+) tests', data.decode())[-1] == '247'
+          summary.update(python=sys.version, test_log_sha256=hashlib.sha256(data).hexdigest(), execution_url=os.environ['GITHUB_SERVER_URL'] + '/' + os.environ['GITHUB_REPOSITORY'] + '/actions/runs/' + os.environ['GITHUB_RUN_ID'])
+          p.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n')
+      - name: Commit validated navigation repair
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git restore --source=HEAD -- .github/workflows/ci.yml
-          git add -A
-          git commit -m "feat: integrate source features, conflict tests and bilingual capability maps"
+          git add skills/paper-review-atlas/scripts/review_extensions.py tests/test_extensions.py docs/validation/v1.1-audit.md docs/validation/v1.1-unit-tests.txt docs/validation/v1.1-summary.json
+          git commit -m "fix: keep capability and gap ID navigation precise"
           git push origin HEAD:audit/feature-completeness
