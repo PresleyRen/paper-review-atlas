@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-20",
+  "as_of": "2026-10-21",
   "testing_policy": "Policies are design resolutions. A planned case is not an executed test. Deterministic checks verify narrow structured invariants; forward synthetic reviews test model behavior only on the supplied cases and cannot establish general review accuracy.",
   "conflicts": [
     {
@@ -646,6 +646,240 @@
             "CFX16-false-anchor"
           ],
           "report": "docs/validation/conflict-comparison.json"
+        }
+      }
+    },
+    {
+      "id": "CFX17",
+      "topic": "Venue importance versus universal SCI gates",
+      "topic_zh": "期刊重要性标准与通用SCI门槛",
+      "options": [
+        "Apply importance gate to every venue",
+        "Use the verified destination criterion"
+      ],
+      "policy": "Keep scientific validity separate from venue-specific importance; retrieve missing policies.",
+      "why": "The remedy must follow the inspected claim, available evidence and applicable criterion.",
+      "capabilities": [
+        "C02",
+        "C27",
+        "C30"
+      ],
+      "test_kind": "deterministic",
+      "verification": {
+        "state": "partial",
+        "case_key": "CFX17",
+        "expectation": "Conditional action must match each fixed correct, adverse and missing-information case.",
+        "evidence": [
+          "tests/test_reviewer_priorities.py",
+          "docs/validation/reviewer-priorities-comparison.json"
+        ],
+        "note": "Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "RP001",
+            "RP002",
+            "RP003",
+            "RP004",
+            "RP005",
+            "RP006",
+            "RP007"
+          ],
+          "report": "docs/validation/reviewer-priorities-comparison.json"
+        }
+      }
+    },
+    {
+      "id": "CFX18",
+      "topic": "Mechanism identification versus empirical effect",
+      "topic_zh": "机制识别与经验效果",
+      "options": [
+        "A positive score proves the mechanism",
+        "Tie evidence demand to the actual claim"
+      ],
+      "policy": "Retain a measured effect; demand discriminating evidence or narrowing for a mechanism claim.",
+      "why": "The remedy must follow the inspected claim, available evidence and applicable criterion.",
+      "capabilities": [
+        "C04",
+        "C07",
+        "C09"
+      ],
+      "test_kind": "deterministic",
+      "verification": {
+        "state": "partial",
+        "case_key": "CFX18",
+        "expectation": "Conditional action must match each fixed correct, adverse and missing-information case.",
+        "evidence": [
+          "tests/test_reviewer_priorities.py",
+          "docs/validation/reviewer-priorities-comparison.json"
+        ],
+        "note": "Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "RP008",
+            "RP009",
+            "RP010",
+            "RP011",
+            "RP012",
+            "RP013"
+          ],
+          "report": "docs/validation/reviewer-priorities-comparison.json"
+        }
+      }
+    },
+    {
+      "id": "CFX19",
+      "topic": "Essential repair versus scope expansion",
+      "topic_zh": "必要修复与扩展新课题",
+      "options": [
+        "Require every proposed experiment",
+        "Request the minimum evidence for the current claim"
+      ],
+      "policy": "Separate required tests, supported narrowing, optional extension and already resolved requests.",
+      "why": "The remedy must follow the inspected claim, available evidence and applicable criterion.",
+      "capabilities": [
+        "C07",
+        "C28",
+        "C29"
+      ],
+      "test_kind": "deterministic",
+      "verification": {
+        "state": "partial",
+        "case_key": "CFX19",
+        "expectation": "Conditional action must match each fixed correct, adverse and missing-information case.",
+        "evidence": [
+          "tests/test_reviewer_priorities.py",
+          "docs/validation/reviewer-priorities-comparison.json"
+        ],
+        "note": "Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "RP014",
+            "RP015",
+            "RP016",
+            "RP017",
+            "RP018"
+          ],
+          "report": "docs/validation/reviewer-priorities-comparison.json"
+        }
+      }
+    },
+    {
+      "id": "CFX20",
+      "topic": "Novelty evidence versus superficial proxies",
+      "topic_zh": "创新证据与命名模块排名代理",
+      "options": [
+        "Reject from module count or one rank",
+        "Compare contribution with located prior results"
+      ],
+      "policy": "Establish what is new by contribution type and prior-work evidence, not module count, names or rank.",
+      "why": "The remedy must follow the inspected claim, available evidence and applicable criterion.",
+      "capabilities": [
+        "C03",
+        "C05",
+        "C06"
+      ],
+      "test_kind": "deterministic",
+      "verification": {
+        "state": "partial",
+        "case_key": "CFX20",
+        "expectation": "Conditional action must match each fixed correct, adverse and missing-information case.",
+        "evidence": [
+          "tests/test_reviewer_priorities.py",
+          "docs/validation/reviewer-priorities-comparison.json"
+        ],
+        "note": "Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "RP019",
+            "RP020",
+            "RP021",
+            "RP022",
+            "RP023"
+          ],
+          "report": "docs/validation/reviewer-priorities-comparison.json"
+        }
+      }
+    },
+    {
+      "id": "CFX21",
+      "topic": "Frozen reviews versus manufactured consensus",
+      "topic_zh": "冻结审稿与事后制造共识",
+      "options": [
+        "Rewrite reports after seeing audit",
+        "Freeze reports and label origin"
+      ],
+      "policy": "Keep audit discoveries separate, label shared contexts and preserve genuine disagreement.",
+      "why": "The remedy must follow the inspected claim, available evidence and applicable criterion.",
+      "capabilities": [
+        "C18",
+        "C27",
+        "C36"
+      ],
+      "test_kind": "deterministic",
+      "verification": {
+        "state": "partial",
+        "case_key": "CFX21",
+        "expectation": "Conditional action must match each fixed correct, adverse and missing-information case.",
+        "evidence": [
+          "tests/test_reviewer_priorities.py",
+          "docs/validation/reviewer-priorities-comparison.json"
+        ],
+        "note": "Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "RP024",
+            "RP025",
+            "RP026",
+            "RP027",
+            "RP028",
+            "RP029",
+            "RP030"
+          ],
+          "report": "docs/validation/reviewer-priorities-comparison.json"
+        }
+      }
+    },
+    {
+      "id": "CFX22",
+      "topic": "Accessible advice versus inferred video views",
+      "topic_zh": "可核验建议与猜测视频观点",
+      "options": [
+        "Infer speaker views from the title",
+        "Require accessible content before attribution"
+      ],
+      "policy": "Keep unavailable sources pending; prefer verified applicable policies to conflicting personal advice.",
+      "why": "The remedy must follow the inspected claim, available evidence and applicable criterion.",
+      "capabilities": [
+        "C01",
+        "C02",
+        "C36"
+      ],
+      "test_kind": "deterministic",
+      "verification": {
+        "state": "partial",
+        "case_key": "CFX22",
+        "expectation": "Conditional action must match each fixed correct, adverse and missing-information case.",
+        "evidence": [
+          "tests/test_reviewer_priorities.py",
+          "docs/validation/reviewer-priorities-comparison.json"
+        ],
+        "note": "Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.",
+        "structured_regression": {
+          "state": "passed",
+          "cases": [
+            "RP031",
+            "RP032",
+            "RP033",
+            "RP034",
+            "RP035",
+            "RP036"
+          ],
+          "report": "docs/validation/reviewer-priorities-comparison.json"
         }
       }
     }

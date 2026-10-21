@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-20",
+  "as_of": "2026-10-21",
   "reuse_policy": "Original synthesis of review capabilities. Source names and links identify conceptual influences; no upstream code or instruction text is vendored. Catalog inclusion is not an implementation port, license grant, installed dependency, or evidence of effectiveness. Source pages may change after the consultation date.",
   "sources": [
     {
@@ -1047,6 +1047,71 @@
         }
       ],
       "review_notes": "Role-based re-checking and evidence discipline inform synthesis. Social-science and clinical requirements must be activated by study type rather than globally."
+    },
+    {
+      "id": "SRC14",
+      "title": "nature-reviewer",
+      "repository": "Yuan1z0825/nature-skills",
+      "url": "https://github.com/Yuan1z0825/nature-skills",
+      "consulted_on": "2026-10-21",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established. Original synthesis only; no upstream prose or code redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "nature-reviewer",
+          "url": "https://github.com/Yuan1z0825/nature-skills/blob/main/skills/nature-reviewer/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C02",
+            "C04",
+            "C18",
+            "C27",
+            "C28",
+            "C36"
+          ],
+          "treatment": "Fixed reviewer counts and punctuation bans omitted; conditional criteria and frozen-report procedure reimplemented.",
+          "reviewed_blob_sha": "04938b9c002d929365a84ddcedff577a39713178",
+          "reviewed_on": "2026-10-21"
+        }
+      ],
+      "notes": "Fixed reviewer counts and punctuation bans omitted; conditional criteria and frozen-report procedure reimplemented."
+    },
+    {
+      "id": "SRC15",
+      "title": "review-revision",
+      "repository": "M1n-n9/paper-lifecycle",
+      "url": "https://github.com/M1n-n9/paper-lifecycle",
+      "consulted_on": "2026-10-21",
+      "inspection_level": "listed_skill_bodies_reviewed",
+      "license_note": "License not independently established. Original synthesis only; no upstream prose or code redistributed.",
+      "relationship": "conceptual_reference_only",
+      "copied_code": false,
+      "copied_instruction_text": false,
+      "skills": [
+        {
+          "name": "review-revision",
+          "url": "https://github.com/M1n-n9/paper-lifecycle/blob/master/review-revision/SKILL.md",
+          "inspection_level": "skill_body_reviewed",
+          "capabilities": [
+            "C03",
+            "C04",
+            "C05",
+            "C06",
+            "C07",
+            "C08",
+            "C09",
+            "C23",
+            "C28"
+          ],
+          "treatment": "No automatic rejection from module count, multiple contributions or non-SOTA results. Reference framework lines 1–150 additionally read; later sections not inspected.",
+          "reviewed_blob_sha": "f871152c34388cb51d4c750057cdb90dbd82b559",
+          "reviewed_on": "2026-10-21"
+        }
+      ],
+      "notes": "No automatic rejection from module count, multiple contributions or non-SOTA results. Reference framework lines 1–150 additionally read; later sections not inspected."
     }
   ],
   "inspection_scope": "All 61 inventoried primary skill bodies were reviewed; this does not claim every subordinate file, upstream implementation, or skill on the internet was reviewed. Reading depth, implemented capabilities and measured behavior are separate."

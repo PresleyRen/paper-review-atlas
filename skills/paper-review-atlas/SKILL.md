@@ -24,6 +24,7 @@ Load only relevant references after the two core references. A `full` review nor
 
 | Mode | Required passes | References |
 |---|---|---|
+| `priorities` | Central case, destination criteria, decisive evidence and minimum sufficient repairs | reviewer-priorities; argument-novelty; experiments-statistics; adversarial-review; citations-venues |
 | `full` | Claims → methods/results → visuals → writing/citations → adjudication → repairs | All applicable references below |
 | `quick` | Main claim, strongest evidence, principal validity risks, scope limits | argument-novelty; experiments-statistics; adversarial-review |
 | `experiments` | Design, comparison fairness, leakage, statistical unit, robustness, reproducibility | experiments-statistics; code-reproducibility |
@@ -36,10 +37,13 @@ Load only relevant references after the two core references. A `full` review nor
 | `calibration` | Frozen labels, actual review outputs, adjudicated confusion counts | guided-calibration; adversarial-review |
 | `submission` | Current venue rules, references, required artifacts, compiled delivery | citations-venues; input-output |
 
-Use `atlas.py locate ID_OR_TOPIC` to retrieve the exact source feature, complementary lanes, implementation and gap repair routes. The installed `config/features.json` maps all 61 inventoried modules to 227 specific facets; `config/gaps.json` records open development tasks. A full review follows the applicable capabilities, not an arbitrary quota of upstream tools.
+Use `atlas.py locate ID_OR_TOPIC` to retrieve the exact source feature, complementary lanes, implementation and gap repair routes. The installed `config/features.json` maps all 63 inventoried modules to 239 specific facets; `config/gaps.json` records open development tasks. A full review follows the applicable capabilities, not an arbitrary quota of upstream tools.
+
+For `full` and `quick`, read [reviewer-priorities.md](references/reviewer-priorities.md) before forming a verdict. Keep scientific support, contribution, venue fit and presentation distinct.
 
 ### Capability-specific references
 
+- [reviewer-priorities.md](references/reviewer-priorities.md): reviewer decision questions, venue profiles, minimal repairs, first-pass correction and frozen-review synthesis. Advice provenance: [reviewer-advice.json](config/reviewer-advice.json).
 - [argument-novelty.md](references/argument-novelty.md): question, contribution, literature positioning, claim–evidence chains, counterexamples, abstract/title, narrative and surveys.
 - [experiments-statistics.md](references/experiments-statistics.md): design, controls, budgets, ablations, independent units, uncertainty, human/LLM evaluations, robustness, systems cost, datasets/benchmarks.
 - [figures-tables.md](references/figures-tables.md): visible layout and scientific interpretation; axes, units, uncertainty, sample size, table semantics, source-data reconciliation, captions.

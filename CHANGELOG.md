@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 — 2026-10-21
+
+- Add reviewer priorities to full/quick and a dedicated mode.
+- Integrate two source modules, 12 facets, 6 conflict policies and 36 structured cases.
+- Separate venue fit from validity, effects from mechanisms, and essential repair from scope expansion.
+- Preserve frozen-review provenance and pending attribution for inaccessible advice.
+- Add real ReAct mixed-result review, portable tests and bilingual documentation.
+
 ## 1.0.0 — 2026-10-20
 
 Initial public release of Paper Review Atlas.

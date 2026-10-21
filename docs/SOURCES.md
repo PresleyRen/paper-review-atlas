@@ -3,7 +3,7 @@
 
 Original synthesis of review capabilities. Source names and links identify conceptual influences; no upstream code or instruction text is vendored. Catalog inclusion is not an implementation port, license grant, installed dependency, or evidence of effectiveness. Source pages may change after the consultation date.
 
-**Inventory:** 13 repositories, 61 named modules. 61 module bodies were reviewed; 0 entries are catalog/cross-reference inventory. Consultation date: 2026-10-20.
+**Inventory:** 15 repositories, 63 named modules. 63 module bodies were reviewed; 0 entries are catalog/cross-reference inventory. Consultation date: 2026-10-21.
 
 All 61 inventoried primary skill bodies were reviewed; this does not claim every subordinate file, upstream implementation, or skill on the internet was reviewed. Reading depth, implemented capabilities and measured behavior are separate.
 
@@ -272,3 +272,35 @@ Role-based re-checking and evidence discipline inform synthesis. Social-science 
 | Module | Inspection depth | Atlas capabilities | Retrieved blob, when recorded | Integration treatment |
 |---|---|---|---|---|
 | [paper-review-lite](https://github.com/scdenney/open-science-skills/blob/main/codex/paper-review-lite/SKILL.md) | Body reviewed / 正文已审阅 | C01, C05, C07, C11, C25, C27, C28, C32 | 967a6e4e1e5a08746be0fb64d08836a3441dfb8e | Conceptual comparison only; rewritten as original review instructions; no upstream text or code redistributed. |
+
+## SRC14
+
+### nature-reviewer
+
+**Repository:** [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills)
+
+**License handling:** License not independently established. Original synthesis only; no upstream prose or code redistributed.
+
+**Consulted:** 2026-10-21 · **Relationship:** conceptual reference only · **Copied code/instruction text:** no.
+
+
+
+| Module | Inspection depth | Atlas capabilities | Retrieved blob, when recorded | Integration treatment |
+|---|---|---|---|---|
+| [nature-reviewer](https://github.com/Yuan1z0825/nature-skills/blob/main/skills/nature-reviewer/SKILL.md) | Body reviewed / 正文已审阅 | C02, C04, C18, C27, C28, C36 | 04938b9c002d929365a84ddcedff577a39713178 | Fixed reviewer counts and punctuation bans omitted; conditional criteria and frozen-report procedure reimplemented. |
+
+## SRC15
+
+### review-revision
+
+**Repository:** [M1n-n9/paper-lifecycle](https://github.com/M1n-n9/paper-lifecycle)
+
+**License handling:** License not independently established. Original synthesis only; no upstream prose or code redistributed.
+
+**Consulted:** 2026-10-21 · **Relationship:** conceptual reference only · **Copied code/instruction text:** no.
+
+
+
+| Module | Inspection depth | Atlas capabilities | Retrieved blob, when recorded | Integration treatment |
+|---|---|---|---|---|
+| [review-revision](https://github.com/M1n-n9/paper-lifecycle/blob/master/review-revision/SKILL.md) | Body reviewed / 正文已审阅 | C03, C04, C05, C06, C07, C08, C09, C23, C28 | f871152c34388cb51d4c750057cdb90dbd82b559 | No automatic rejection from module count, multiple contributions or non-SOTA results. Reference framework lines 1–150 additionally read; later sections not inspected. |

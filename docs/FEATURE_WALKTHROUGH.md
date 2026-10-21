@@ -795,3 +795,29 @@ Decision: **revise**
 
 [Frozen input](../tests/fixtures/feature_walkthrough/FC061.txt) · SHA-256 `a029fa8208177c3bb16363c81037bfb5c6b4228ec36b2bfd7cc53817f6d14e8f`
 
+## FC062
+**F062 · nature-reviewer**
+
+Input: `三份同上下文审稿没有提出数值矛盾。随后审计发现均值标错，汇总应把该错误写成三位审稿人的共同意见。`
+
+Decision: **revise**
+
+将数值矛盾作为审计新增问题，提供重算位置。保留原有报告；同上下文意见按多视角记录，不把后续发现写成既有共识。
+
+验收 / acceptance: 汇总分别列出原始审稿意见与审计发现；均值重算可追溯且冻结报告保持不变。
+
+[Frozen input](../tests/fixtures/feature_walkthrough/FC062.txt) · SHA-256 `28454f7729ab3ed14a73485869b80dbe80d59481448c1beee203e208d23d270f`
+
+## FC063
+**F063 · review-revision**
+
+Input: `该方法用了五个模块，并且一项指标没有达到SOTA，所以没有创新，必须全部重做。`
+
+Decision: **revise**
+
+删除按模块数量和单项排名否定创新的结论。先按贡献类型对照最接近工作，定位主张、设置、证据与可保留增量，再提出针对性的实验或表述修订。
+
+验收 / acceptance: 每条创新性质疑对应具体已有结果及本文差异；所要求实验解决现有主张的确切证据缺口。
+
+[Frozen input](../tests/fixtures/feature_walkthrough/FC063.txt) · SHA-256 `6a3a927f6f95db4928feafe3fccf3ac09535a277794fba27c8e0a918799846e3`
+

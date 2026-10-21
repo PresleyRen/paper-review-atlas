@@ -75,7 +75,7 @@ def outputs():
         matrix.append(f"| {f['id']} · [{f['module']}]({f['source_url']}) | {'；'.join(f['facets'])} | {implementation} | {complement} | [{f['review_case']}](FEATURE_WALKTHROUGH.md#{f['review_case'].lower()}) / [test](../{f['contract_test'].split('::')[0]}) | {missing} |")
     matrix+=['','## Integration decisions','',
        'Preserve the useful review behavior and author intent; implement workflow equivalents rather than redistribute upstream instructions. Source-specific model backends, scoring engines, external retrieval, renderers and compilers are adapter work identified below. Fixed fault quotas, automatic rejection for punctuation/raster images, invented acceptance odds and provider-required promotional citations are not adopted. All source snapshots have content hashes in the feature register.','',
-       'The 61 rows account for the declared source inventory; they do not claim every optional upstream script was ported. Use the facets, linked protocols and open gaps to identify the next concrete extension.']
+       f'The {len(features)} rows account for the declared source inventory; they do not claim every optional upstream script was ported. Use the facets, linked protocols and open gaps to identify the next concrete extension.']
     outputs['docs/FEATURE_MATRIX.md']='\n'.join(matrix)+'\n'
     walk=['# Representative source-feature walkthrough / 逐技能特色案例','',
           'Inputs are deliberately small synthetic excerpts. The authoring assistant applied Atlas protocols in the same development conversation and recorded the following decisions. These records preserve concrete reasoning and fixes; tests replay their anchors and route checks, not an independent LLM evaluation.','']

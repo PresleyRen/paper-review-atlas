@@ -2414,6 +2414,103 @@
         "independent_benchmark": false
       },
       "executable_helpers": []
+    },
+    {
+      "id": "F062",
+      "source": "SRC14",
+      "module": "nature-reviewer",
+      "source_url": "https://github.com/Yuan1z0825/nature-skills/blob/main/skills/nature-reviewer/SKILL.md",
+      "source_blob_sha": "04938b9c002d929365a84ddcedff577a39713178",
+      "facets": [
+        "期刊标准分层",
+        "重大意见与核心阻断分离",
+        "冻结事实包与独立上下文",
+        "先冻结后汇总",
+        "数值审计与共识分离",
+        "保留真实分歧"
+      ],
+      "capabilities": [
+        "C02",
+        "C04",
+        "C18",
+        "C27",
+        "C28",
+        "C36"
+      ],
+      "implementation_locations": [
+        "references/reviewer-priorities.md",
+        "scripts/reviewer_priorities.py"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "用可追溯数字核对支持科学判断，而不把数值正确等同于结论成立。"
+        },
+        {
+          "capability": "C28",
+          "reason": "把关键质疑连接到最小修改与实际复核。"
+        }
+      ],
+      "review_case": "FC062",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F062",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "policy CFX17–CFX22"
+      ]
+    },
+    {
+      "id": "F063",
+      "source": "SRC15",
+      "module": "review-revision",
+      "source_url": "https://github.com/M1n-n9/paper-lifecycle/blob/master/review-revision/SKILL.md",
+      "source_blob_sha": "f871152c34388cb51d4c750057cdb90dbd82b559",
+      "facets": [
+        "贡献类型对应评审",
+        "去掉命名后检查增量",
+        "问题与可控变量",
+        "方法到可检验预测",
+        "核心主张对应实验",
+        "最小修改与反证"
+      ],
+      "capabilities": [
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C23",
+        "C28"
+      ],
+      "implementation_locations": [
+        "references/reviewer-priorities.md",
+        "scripts/reviewer_priorities.py"
+      ],
+      "complements": [
+        {
+          "capability": "C18",
+          "reason": "用可追溯数字核对支持科学判断，而不把数值正确等同于结论成立。"
+        },
+        {
+          "capability": "C28",
+          "reason": "把关键质疑连接到最小修改与实际复核。"
+        }
+      ],
+      "review_case": "FC063",
+      "contract_test": "tests/test_feature_contracts.py::FeatureContracts::test_F063",
+      "verification": {
+        "mapping": "checked",
+        "semantic_evaluation": "reviewer_walkthrough",
+        "independent_benchmark": false
+      },
+      "executable_helpers": [
+        "policy CFX17–CFX22"
+      ]
     }
   ]
 }

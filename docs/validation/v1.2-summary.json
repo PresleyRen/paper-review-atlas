@@ -1,0 +1,93 @@
+{
+  "version": "1.2.0",
+  "date": "2026-10-21",
+  "python": "3.12.15",
+  "tests": 299,
+  "result": "passed",
+  "baseline_tests": 247,
+  "new_test_count": 52,
+  "new_conflict_cases": 36,
+  "prior_conflict_cases": 58,
+  "source_modules": 63,
+  "feature_facets": 239,
+  "top_level_capabilities": 36,
+  "rule_count": 22,
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0d7d256ab54579b39dcba0e5e33fe3017e37063166dbb38853ac71946ad2f4fb"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_package.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2eadcab294f9e81a04e1c11ebe254862bb5e4f5ad232f67517b3fd752977bd08"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/build_coverage.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a69be529c096fabf51d1697c3196dfb88f60339126276f278bd4b28c50885ff5"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/build_feature_docs.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4d869f78575058631ad33fc66bbfc9d356f21491d3dc537f1f3dada4c0611d3a"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/compare_policies.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0b30c663d3a35b1de127f6665de291336e9d5dbe9025b85b6c5901a497fa0641"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/compare_reviewer_priorities.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "12d0ec0d573d231d62a3f0b98391379ec4ac59000fbd00b819c2c9aca0272646"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/run_priority_demo.py"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "340b129d27c10e79f2faa16f983f454959b69db6b177e91041ac800a57ab4570"
+    },
+    {
+      "command": [
+        "python",
+        "skills/paper-review-atlas/scripts/atlas.py",
+        "verify-install"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5743c1a6e58bf1494bd8884545d2c1b8fa683909d0094b9fa831b08af4384297"
+    }
+  ],
+  "test_log_sha256": "febf7033e6791099fecc4cd08b454309a1171e4f66671d449f92d493f90155e5",
+  "execution_url": "https://github.com/PresleyRen/paper-review-atlas/actions/runs/39591130398",
+  "semantic_review_type": "same-context focused real-paper walkthrough; no independent LLM benchmark",
+  "source_video": "unavailable; not attributed"
+}

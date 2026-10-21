@@ -172,6 +172,21 @@
       "remedy": "加入宏展开、crossref继承及复杂查询过滤；保留原始条目，使用标准语法对照集。",
       "test_command": "python -m unittest discover -s tests -p test_extensions.py -v",
       "acceptance_check": "宏、交叉引用、括号引用和坏文件恢复各有对照"
+    },
+    {
+      "id": "G13",
+      "title": "用户分享视频的逐观点核验",
+      "status": "open",
+      "capabilities": [
+        "C01",
+        "C02",
+        "C27",
+        "C36"
+      ],
+      "edit_location": "references/reviewer-priorities.md",
+      "remedy": "取得指定抖音视频或字幕，按时间戳核对原话、适用研究类型和已有规则，补充冲突正反例。",
+      "test_command": "python -m unittest discover -s tests -p test_reviewer_priorities.py -v",
+      "acceptance_check": "ADV00包含可读原文或字幕及时间戳；每条归因均有证据并映射至协议、测试与采用状态。"
     }
   ]
 }

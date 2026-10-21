@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-21",
+  "sources": [
+    {
+      "id": "ADV00",
+      "title": "SCI审稿人自述：我最关注的几个生死点",
+      "author": "爱玩鱼龟的真叫兽（用户分享署名）",
+      "url": "https://v.douyin.com/A4JwDjhX-9A/",
+      "status": "pending",
+      "access": "user-supplied title; shortlink fetch unsuccessful; transcript unavailable",
+      "attributed_claims": [],
+      "adoption": "No speaker-specific rule added. Obtain transcript/video and timestamp each claim.",
+      "gap": "G13",
+      "checked_on": "2026-10-21"
+    },
+    {
+      "id": "ADV01",
+      "title": "How to peer review",
+      "author": "Matt Might",
+      "url": "https://matt.might.net/articles/how-to-peer-review/",
+      "status": "read",
+      "access": "primary author webpage",
+      "adopted": [
+        "Record first-pass confusion and revisit later clarification",
+        "Give specific, actionable repair rather than only a negative judgment"
+      ],
+      "not_adopted": [
+        "Personal punctuation or scheduling preferences as scientific gates"
+      ],
+      "checked_on": "2026-10-21"
+    },
+    {
+      "id": "ADV02",
+      "title": "Review anti-patterns",
+      "author": "Prem Devanbu",
+      "url": "https://homes.cs.washington.edu/~mernst/advice/review-antipatterns-devanbu.txt",
+      "status": "read",
+      "access": "authored advice reproduced on university site",
+      "adopted": [
+        "Locate the exact prior result behind a novelty objection",
+        "Explain the flaw and what evidence or change would resolve it"
+      ],
+      "not_adopted": [
+        "Treat hosted advice as journal policy"
+      ],
+      "checked_on": "2026-10-21"
+    },
+    {
+      "id": "ADV03",
+      "title": "How to write a report",
+      "author": "Nature",
+      "url": "https://www.nature.com/nature/for-referees/how-to-write-a-report",
+      "status": "excerpt_verified",
+      "access": "primary-site search-index excerpt; full-page open redirected unsuccessfully",
+      "adopted": [
+        "Validity and significance are distinct assessments",
+        "Use technical evidence, methods and appropriate additional tests"
+      ],
+      "not_adopted": [
+        "Generalize Nature importance and readership criteria to all journals"
+      ],
+      "checked_on": "2026-10-21"
+    },
+    {
+      "id": "ADV04",
+      "title": "Guide to referees",
+      "author": "Scientific Reports",
+      "url": "https://www.nature.com/srep/guide-to-referees",
+      "status": "excerpt_verified",
+      "access": "primary-site search-index excerpt; full-page open redirected unsuccessfully",
+      "adopted": [
+        "Technical validity rather than perceived importance as a selection criterion"
+      ],
+      "not_adopted": [
+        "Drop ethics, originality or validity because the venue is soundness-focused"
+      ],
+      "checked_on": "2026-10-21"
+    },
+    {
+      "id": "ADV05",
+      "title": "Guidelines for Reviewers",
+      "author": "PLOS ONE",
+      "url": "https://journals.plos.org/plosone/s/reviewer-guidelines",
+      "status": "read",
+      "access": "official full webpage",
+      "adopted": [
+        "Review rigor and supported conclusions rather than perceived importance",
+        "Use article-stage criteria for protocols and registered reports"
+      ],
+      "not_adopted": [
+        "Require final results from a study-protocol manuscript"
+      ],
+      "checked_on": "2026-10-21"
+    }
+  ],
+  "source_skills": [
+    "SRC14",
+    "SRC15"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "source": "https://arxiv.org/pdf/2210.03629v3",
+  "printed_pages_reinspected": [
+    5,
+    6
+  ],
+  "table_transcription_sha256": "40301e52cb29fb0b435a5d1cb152d8f2156583f75318088ed4ff60a6b063c78d",
+  "data_origin": "published aggregate table; not raw experimental runs",
+  "react_minus_cot_percentage_points": {
+    "hotpot_em": "-2.0",
+    "fever_accuracy": "4.6"
+  },
+  "synthetic_probe": {
+    "text": "ReAct is universally superior to CoT across all tasks.",
+    "authored_by_paper": false,
+    "contradicted_by_hotpot_table": true
+  },
+  "actual_paper_control": "Section 3.3 explicitly discusses the mixed outcome; retain that discussion.",
+  "cli_executions": [
+    {
+      "arguments": [
+        "plan",
+        "--mode",
+        "priorities",
+        "--domain",
+        "agent",
+        "--language",
+        "zh"
+      ],
+      "exit_code": 0,
+      "output": {
+        "mode": "priorities",
+        "language": "zh",
+        "domain": "agent",
+        "references": [
+          "references/review-contract.md",
+          "references/input-output.md",
+          "references/reviewer-priorities.md",
+          "references/argument-novelty.md",
+          "references/experiments-statistics.md",
+          "references/adversarial-review.md",
+          "references/citations-venues.md",
+          "references/domain-agent.md"
+        ],
+        "scope": "Review plan only; no manuscript inspected by this command.",
+        "required_outputs": [
+          "scope and evidence ledger",
+          "claim-evidence map",
+          "anchored findings",
+          "actionable revisions",
+          "acceptance checks",
+          "unverified areas"
+        ]
+      }
+    },
+    {
+      "arguments": [
+        "policy",
+        "--root",
+        "<temporary evidence root>",
+        "--packet",
+        "non-sota.json"
+      ],
+      "exit_code": 0,
+      "output": {
+        "rule": "CFX20",
+        "basis": "reviewer-supplied facts; conditional routing, not a manuscript verdict",
+        "action": "build_contribution_map"
+      }
+    },
+    {
+      "arguments": [
+        "policy",
+        "--root",
+        "<temporary evidence root>",
+        "--packet",
+        "missing-video.json"
+      ],
+      "exit_code": 0,
+      "output": {
+        "rule": "CFX22",
+        "basis": "reviewer-supplied facts; conditional routing, not a manuscript verdict",
+        "action": "pending_source_no_attribution"
+      }
+    },
+    {
+      "arguments": [
+        "policy",
+        "--root",
+        "<temporary evidence root>",
+        "--packet",
+        "soundness-venue.json"
+      ],
+      "exit_code": 0,
+      "output": {
+        "rule": "CFX17",
+        "basis": "reviewer-supplied facts; conditional routing, not a manuscript verdict",
+        "action": "no_importance_veto"
+      }
+    }
+  ],
+  "original_model_experiments_rerun": false
+}

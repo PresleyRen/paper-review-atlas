@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1202" viewBox="0 0 1600 1202" role="img" aria-labelledby="title desc">
 <title id="title">Paper Review Atlas — capability coverage / 论文审查能力地图</title>
-<desc id="desc">36 documented capabilities across 9 groups, based on a transparent inventory of 13 repositories and 61 modules. W means written workflow, D means narrow deterministic helper, A means external adapter requirement. Coverage is not measured review accuracy.</desc>
+<desc id="desc">36 documented capabilities across 9 groups, based on a transparent inventory of 15 repositories and 63 modules. W means written workflow, D means narrow deterministic helper, A means external adapter requirement. Coverage is not measured review accuracy.</desc>
 <defs><linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#14243b"/><stop offset="1" stop-color="#243c5c"/></linearGradient></defs>
 <style>text{font-family:Inter,"Noto Sans CJK SC","Microsoft YaHei",Arial,sans-serif}.cap{font-size:17px;font-weight:600;fill:#172b43}.en{font-size:13px;fill:#536379}.badge{font-size:11px;font-weight:700;letter-spacing:.6px}.small{font-size:15px;fill:#52647a}</style>
 <rect width="1600" height="1202" fill="#f2f5f9"/>
@@ -8,7 +8,7 @@
 <text x="44" y="51" fill="#a5c9ee" font-size="14" font-weight="700" letter-spacing="3">EVIDENCE · CRITIQUE · REVISION</text>
 <text x="44" y="99" fill="#ffffff" font-size="40" font-weight="750">Paper Review Atlas</text>
 <text x="484" y="98" fill="#d6e5f5" font-size="27">Capability coverage</text>
-<text x="44" y="132" fill="#d6e5f5" font-size="17">36 documented capabilities · 9 domains · 13 source repositories · 61 inventoried modules</text>
+<text x="44" y="132" fill="#d6e5f5" font-size="17">36 documented capabilities · 9 domains · 15 source repositories · 63 inventoried modules</text>
 <text x="44" y="179" class="small">W  Written review workflow     D  Narrow deterministic checks     A  External adapter or evidence required</text>
 <rect x="44" y="194" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
 <rect x="44" y="194" width="7" height="260" rx="3" fill="#2563eb"/>
@@ -37,11 +37,11 @@
 <text x="580" y="280" class="cap"><tspan fill="#7c3aed">C02</tspan><tspan dx="10">Venue fit</tspan></text>
 <text x="623" y="298" class="en">目标期刊与会议适配</text>
 <text x="1022" y="280" text-anchor="end" class="badge" fill="#536d88">W A</text>
-<text x="1022" y="298" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="1022" y="298" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
 <text x="580" y="325" class="cap"><tspan fill="#7c3aed">C03</tspan><tspan dx="10">Novelty and literature</tspan></text>
 <text x="623" y="343" class="en">创新性与文献定位</text>
 <text x="1022" y="325" text-anchor="end" class="badge" fill="#536d88">W A</text>
-<text x="1022" y="343" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="1022" y="343" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
 <text x="580" y="370" class="cap"><tspan fill="#7c3aed">C05</tspan><tspan dx="10">Arguments and counterexamples</tspan></text>
 <text x="623" y="388" class="en">论证与反例</text>
 <text x="1022" y="370" text-anchor="end" class="badge" fill="#536d88">W</text>
@@ -169,7 +169,7 @@
 <text x="580" y="983" class="cap"><tspan fill="#9333ea">C29</tspan><tspan dx="10">Rebuttal and response</tspan></text>
 <text x="623" y="1001" class="en">回复审稿人与申辩</text>
 <text x="1022" y="983" text-anchor="end" class="badge" fill="#536d88">W</text>
-<text x="1022" y="1001" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="1022" y="1001" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
 <rect x="1068" y="762" width="488" height="260" rx="15" fill="#ffffff" stroke="#dce4ef"/>
 <rect x="1068" y="762" width="7" height="260" rx="3" fill="#475569"/>
 <text x="1092" y="794" font-size="21" font-weight="700" fill="#475569">Delivery and extension</text>
@@ -177,7 +177,7 @@
 <text x="1092" y="848" class="cap"><tspan fill="#475569">C30</tspan><tspan dx="10">Submission readiness</tspan></text>
 <text x="1135" y="866" class="en">投稿与提交检查</text>
 <text x="1534" y="848" text-anchor="end" class="badge" fill="#536d88">W A</text>
-<text x="1534" y="866" text-anchor="end" font-size="10" fill="#64748b">not_measured</text>
+<text x="1534" y="866" text-anchor="end" font-size="10" fill="#9a6700">partial</text>
 <text x="1092" y="893" class="cap"><tspan fill="#475569">C32</tspan><tspan dx="10">Surveys and reviews</tspan></text>
 <text x="1135" y="911" class="en">综述与文献评述</text>
 <text x="1534" y="893" text-anchor="end" class="badge" fill="#536d88">W A</text>
@@ -194,5 +194,5 @@
 <text x="44" y="1092" class="small">Format parsers, visual access, literature search and experimental execution depend on available adapters and evidence.</text>
 <text x="44" y="1119" class="small">Expand: protocol → capability registry → source mapping → conflict case → tests → regenerate this map.</text>
 <text x="44" y="1146" class="small">partial: exercised on limited cases · not_measured: protocol present, behavioral effectiveness not measured.</text>
-<text x="44" y="1173" font-size="13" fill="#708399">Generated from config/capabilities.json, sources.json and conflicts.json · 2026-10-20 · Source inventory ≠ copied implementations</text>
+<text x="44" y="1173" font-size="13" fill="#708399">Generated from config/capabilities.json, sources.json and conflicts.json · 2026-10-21 · Source inventory ≠ copied implementations</text>
 </svg>

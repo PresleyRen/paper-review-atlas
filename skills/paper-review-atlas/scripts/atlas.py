@@ -14,18 +14,19 @@ from audit_checks import (AuditInputError, paired_run_stats, reconcile_number,
 from review_extensions import locate, calibrate, policy, export_macros, bibliography
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 MAX_JSON_BYTES = 4 * 1024 * 1024
 CORE = ["review-contract.md", "input-output.md"]
 ROUTES = {
-    "full": ["argument-novelty.md", "experiments-statistics.md", "figures-tables.md", "code-reproducibility.md", "bilingual-writing.md", "citations-venues.md", "formal-theory.md", "adversarial-review.md", "revision-rebuttal.md"],
-    "quick": ["argument-novelty.md", "experiments-statistics.md", "adversarial-review.md"],
+    "full": ["reviewer-priorities.md", "argument-novelty.md", "experiments-statistics.md", "figures-tables.md", "code-reproducibility.md", "bilingual-writing.md", "citations-venues.md", "formal-theory.md", "adversarial-review.md", "revision-rebuttal.md"],
+    "quick": ["reviewer-priorities.md", "argument-novelty.md", "experiments-statistics.md", "adversarial-review.md"],
     "experiments": ["experiments-statistics.md", "code-reproducibility.md"],
     "figures": ["figures-tables.md", "code-reproducibility.md"],
     "writing": ["bilingual-writing.md", "argument-novelty.md"],
     "revise": ["revision-rebuttal.md", "bilingual-writing.md"],
     "rereview": ["revision-rebuttal.md"],
     "rebuttal": ["revision-rebuttal.md", "adversarial-review.md"],
+    "priorities": ["reviewer-priorities.md", "argument-novelty.md", "experiments-statistics.md", "adversarial-review.md", "citations-venues.md"],
     "guided": ["guided-calibration.md", "argument-novelty.md"],
     "calibration": ["guided-calibration.md", "adversarial-review.md"],
     "submission": ["citations-venues.md", "input-output.md"],
@@ -122,7 +123,7 @@ def audit(root, spec_path):
 
 
 def verify_install():
-    required = ["SKILL.md", "agents/openai.yaml", "scripts/audit_checks.py", "scripts/review_extensions.py"]
+    required = ["SKILL.md", "agents/openai.yaml", "scripts/audit_checks.py", "scripts/review_extensions.py", "scripts/reviewer_priorities.py", "config/reviewer-advice.json"]
     required += ["references/" + x for x in set(CORE + sum(ROUTES.values(), []) + ["domain-agent.md"])]
     required += ["config/" + x + ".json" for x in ("capabilities", "sources", "conflicts", "features", "gaps")]
     missing = [x for x in sorted(required) if not (SKILL_ROOT / x).is_file()]

@@ -22,6 +22,7 @@ python skills/paper-review-atlas/scripts/atlas.py locate G03
 | G10 更多学科专门规范 | C07, C15, C25, C31, C32 | [references/domain-agent.md](../skills/paper-review-atlas/references/domain-agent.md) | 由领域专家补充地球物理、临床、质性、形式化等profile；记录适用条件和反例。 | `python -m unittest discover -s tests -p test_feature_contracts.py -v` | 各profile有真正适用与不适用的研究案例并经领域核查 |
 | G11 返修长期回归 | C23, C28, C29, C34 | [references/revision-rebuttal.md](../skills/paper-review-atlas/references/revision-rebuttal.md) | 准备多版本稿件；检测问题修复后在摘要、附录、译文或图表中重新出现。 | `python -m unittest discover -s tests -p test_extensions.py -v` | 旧问题ID不变、回归问题重新打开、全部受影响位置被复核 |
 | G12 BibTeX扩展语法 | C24, C35 | [references/citations-venues.md](../skills/paper-review-atlas/references/citations-venues.md) | 加入宏展开、crossref继承及复杂查询过滤；保留原始条目，使用标准语法对照集。 | `python -m unittest discover -s tests -p test_extensions.py -v` | 宏、交叉引用、括号引用和坏文件恢复各有对照 |
+| G13 用户分享视频的逐观点核验 | C01, C02, C27, C36 | [references/reviewer-priorities.md](../skills/paper-review-atlas/references/reviewer-priorities.md) | 取得指定抖音视频或字幕，按时间戳核对原话、适用研究类型和已有规则，补充冲突正反例。 | `python -m unittest discover -s tests -p test_reviewer_priorities.py -v` | ADV00包含可读原文或字幕及时间戳；每条归因均有证据并映射至协议、测试与采用状态。 |
 
 ## Maintenance sequence
 

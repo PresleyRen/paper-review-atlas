@@ -169,3 +169,9 @@ python skills/paper-review-atlas/scripts/atlas.py locate G03
 ### Additional modes
 
 `plan --mode guided` and `plan --mode calibration` route to `references/guided-calibration.md`. The installed helper does not silently launch external reviewers or load gold labels into a purportedly blind reviewer context.
+
+## Reviewer priorities (1.2)
+
+`plan --mode priorities --domain agent --language zh` selects the new pass. Full/quick automatically include it. `policy` now accepts CFX17–CFX22 with the fact schemas demonstrated in `tests/fixtures/reviewer-priorities-cases.json`. `locate F062`, `locate F063` and `locate G13` navigate the two new source integrations and video-source repair task.
+
+Reproduce decisions with `python scripts/compare_reviewer_priorities.py`. Policy exit 0 means the input was valid and an action was returned, not that the paper passed review.

@@ -23,6 +23,12 @@ Policies are design resolutions. A planned case is not an executed test. Determi
 | CFX14 | 双语流畅与含义保真 | Translate and edit using a shared term table and local context. Keep numerals, comparators, units, modality, statistical and causal meaning consistent; flag ambiguous source wording. | forward | partial |
 | CFX15 | 审稿质疑与证据裁决 | Separate a concern from a confirmed finding; verify quotations and calculations, inspect counterevidence, merge duplicates, and retract false positives with reasons. | forward | partial |
 | CFX16 | 宣称完成与证据闭环 | Track open, addressed, verified, unresolved and accepted-risk states. Close an issue only when the original concern and revised evidence have been re-evaluated; record who or what checked it. | forward | partial |
+| CFX17 | 期刊重要性标准与通用SCI门槛 | Keep scientific validity separate from venue-specific importance; retrieve missing policies. | deterministic | partial |
+| CFX18 | 机制识别与经验效果 | Retain a measured effect; demand discriminating evidence or narrowing for a mechanism claim. | deterministic | partial |
+| CFX19 | 必要修复与扩展新课题 | Separate required tests, supported narrowing, optional extension and already resolved requests. | deterministic | partial |
+| CFX20 | 创新证据与命名模块排名代理 | Establish what is new by contribution type and prior-work evidence, not module count, names or rank. | deterministic | partial |
+| CFX21 | 冻结审稿与事后制造共识 | Keep audit discoveries separate, label shared contexts and preserve genuine disagreement. | deterministic | partial |
+| CFX22 | 可核验建议与猜测视频观点 | Keep unavailable sources pending; prefer verified applicable policies to conflicting personal advice. | deterministic | partial |
 
 ## CFX01 — 显示舍入与原始数值精确匹配
 
@@ -495,3 +501,159 @@ Declared completion versus verified closure
 - [docs/validation/conflict-comparison.json](../docs/validation/conflict-comparison.json)
 
 Recomputed contradictory mean kept an issue open with exit 1 despite status passed; corrected mean plus anchored revision/log closed it with exit 0. Manual checks remain recorded-evidence-only; full experiment reruns were not authenticated. v1.1 executes the explicitly defined competing rules on supplied structured facts; this is not a run of upstream models or a semantic accuracy benchmark.
+
+## CFX17 — 期刊重要性标准与通用SCI门槛
+
+Venue importance versus universal SCI gates
+
+**Alternatives considered:**
+
+- Apply importance gate to every venue
+- Use the verified destination criterion
+
+**Chosen policy:** Keep scientific validity separate from venue-specific importance; retrieve missing policies.
+
+**Reason:** The remedy must follow the inspected claim, available evidence and applicable criterion.
+
+**Capability links:** C02, C27, C30
+
+**Test design (deterministic):** Conditional action must match each fixed correct, adverse and missing-information case.
+
+**Verification:** partial. Stable case key: `CFX17`.
+
+**Recorded evidence:**
+
+- [tests/test_reviewer_priorities.py](../tests/test_reviewer_priorities.py)
+- [docs/validation/reviewer-priorities-comparison.json](../docs/validation/reviewer-priorities-comparison.json)
+
+Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.
+
+## CFX18 — 机制识别与经验效果
+
+Mechanism identification versus empirical effect
+
+**Alternatives considered:**
+
+- A positive score proves the mechanism
+- Tie evidence demand to the actual claim
+
+**Chosen policy:** Retain a measured effect; demand discriminating evidence or narrowing for a mechanism claim.
+
+**Reason:** The remedy must follow the inspected claim, available evidence and applicable criterion.
+
+**Capability links:** C04, C07, C09
+
+**Test design (deterministic):** Conditional action must match each fixed correct, adverse and missing-information case.
+
+**Verification:** partial. Stable case key: `CFX18`.
+
+**Recorded evidence:**
+
+- [tests/test_reviewer_priorities.py](../tests/test_reviewer_priorities.py)
+- [docs/validation/reviewer-priorities-comparison.json](../docs/validation/reviewer-priorities-comparison.json)
+
+Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.
+
+## CFX19 — 必要修复与扩展新课题
+
+Essential repair versus scope expansion
+
+**Alternatives considered:**
+
+- Require every proposed experiment
+- Request the minimum evidence for the current claim
+
+**Chosen policy:** Separate required tests, supported narrowing, optional extension and already resolved requests.
+
+**Reason:** The remedy must follow the inspected claim, available evidence and applicable criterion.
+
+**Capability links:** C07, C28, C29
+
+**Test design (deterministic):** Conditional action must match each fixed correct, adverse and missing-information case.
+
+**Verification:** partial. Stable case key: `CFX19`.
+
+**Recorded evidence:**
+
+- [tests/test_reviewer_priorities.py](../tests/test_reviewer_priorities.py)
+- [docs/validation/reviewer-priorities-comparison.json](../docs/validation/reviewer-priorities-comparison.json)
+
+Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.
+
+## CFX20 — 创新证据与命名模块排名代理
+
+Novelty evidence versus superficial proxies
+
+**Alternatives considered:**
+
+- Reject from module count or one rank
+- Compare contribution with located prior results
+
+**Chosen policy:** Establish what is new by contribution type and prior-work evidence, not module count, names or rank.
+
+**Reason:** The remedy must follow the inspected claim, available evidence and applicable criterion.
+
+**Capability links:** C03, C05, C06
+
+**Test design (deterministic):** Conditional action must match each fixed correct, adverse and missing-information case.
+
+**Verification:** partial. Stable case key: `CFX20`.
+
+**Recorded evidence:**
+
+- [tests/test_reviewer_priorities.py](../tests/test_reviewer_priorities.py)
+- [docs/validation/reviewer-priorities-comparison.json](../docs/validation/reviewer-priorities-comparison.json)
+
+Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.
+
+## CFX21 — 冻结审稿与事后制造共识
+
+Frozen reviews versus manufactured consensus
+
+**Alternatives considered:**
+
+- Rewrite reports after seeing audit
+- Freeze reports and label origin
+
+**Chosen policy:** Keep audit discoveries separate, label shared contexts and preserve genuine disagreement.
+
+**Reason:** The remedy must follow the inspected claim, available evidence and applicable criterion.
+
+**Capability links:** C18, C27, C36
+
+**Test design (deterministic):** Conditional action must match each fixed correct, adverse and missing-information case.
+
+**Verification:** partial. Stable case key: `CFX21`.
+
+**Recorded evidence:**
+
+- [tests/test_reviewer_priorities.py](../tests/test_reviewer_priorities.py)
+- [docs/validation/reviewer-priorities-comparison.json](../docs/validation/reviewer-priorities-comparison.json)
+
+Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.
+
+## CFX22 — 可核验建议与猜测视频观点
+
+Accessible advice versus inferred video views
+
+**Alternatives considered:**
+
+- Infer speaker views from the title
+- Require accessible content before attribution
+
+**Chosen policy:** Keep unavailable sources pending; prefer verified applicable policies to conflicting personal advice.
+
+**Reason:** The remedy must follow the inspected claim, available evidence and applicable criterion.
+
+**Capability links:** C01, C02, C36
+
+**Test design (deterministic):** Conditional action must match each fixed correct, adverse and missing-information case.
+
+**Verification:** partial. Stable case key: `CFX22`.
+
+**Recorded evidence:**
+
+- [tests/test_reviewer_priorities.py](../tests/test_reviewer_priorities.py)
+- [docs/validation/reviewer-priorities-comparison.json](../docs/validation/reviewer-priorities-comparison.json)
+
+Executed structured rule tests; scientific adequacy of input facts is reviewed by the host, not authenticated by this helper.

@@ -4,7 +4,7 @@
 
 Atlas reviews arguments, experiments, statistics, code/results, figures, tables, references and writing. Authors receive traceable findings, proposed replacements, experiment plans and a revision ledger. The AI track covers LLMs, agents, RAG and knowledge graphs.
 
-[中文](README.md) · [Source features](docs/FEATURE_MATRIX.md) · [Real-paper example](docs/validation/real-react-review.md) · [Tests](docs/validation/v1.1-audit.md) · [Extension index](docs/EXTENSION_INDEX.md)
+[中文](README.md) · [Source features](docs/FEATURE_MATRIX.md) · [Real-paper example](docs/validation/real-react-review.md) · [Tests](docs/validation/reviewer-priorities-validation.md) · [Extension index](docs/EXTENSION_INDEX.md)
 
 ## What you get
 
@@ -139,10 +139,36 @@ Each ID links directly to its implementation protocol.
 
 Intent routing; RAG; planning/tools/memory; generation/self-evaluation; multi-agent cooperation; knowledge graphs/ontologies. Check matched token/call budgets, answer leakage through retrieval, memory across test splits, retry costs and graph-specific gains.
 
-## 11 modes
+## Reviewer priorities and minimum sufficient repairs
+
+The new `priorities` mode identifies evidence gaps affecting the central case before polishing local prose. Full and quick reviews load it automatically.
+
+```text
+Problem -> contribution -> operation and prediction -> decisive evidence
+                                              |
+                                  alternatives and quality-cost tradeoffs
+                                              |
+                         validity / contribution / venue fit / presentation
+                                              |
+                                minimum repair -> acceptance condition
+```
+
+The pass selects verified venue criteria, compares contributions without branding or module-count shortcuts, separates measured effects from mechanism claims, revisits initial concerns after reading supporting material, and produces a claim-specific repair plan. Optional isolated reviews are frozen before synthesis; later numerical audit findings retain their separate provenance.
+
+```text
+Use $paper-review-atlas in priorities mode.
+Identify central-case concerns, supporting and opposing evidence,
+the minimum sufficient repair and an observable acceptance condition.
+Separate validity, contribution, venue fit and presentation.
+```
+
+The synthesis uses Matt Might and Prem Devanbu's reviewer advice, official journal criteria, and selected `nature-reviewer` and `review-revision` capabilities. [Sources and adoption](docs/REVIEWER_ADVICE.md) · [Real ReAct exercise](docs/validation/real-react-priorities.md)
+
+## 12 modes
 
 | Modes | Purpose |
 |---|---|
+| `priorities` | Central case, decisive evidence, venue criteria and minimum repairs |
 | `full`, `quick` | Full review or central-claim triage |
 | `experiments`, `figures`, `writing` | Specialist passes |
 | `revise`, `rereview` | Authorized revision and acceptance checks |
@@ -153,7 +179,7 @@ Compose modes, for example `full → revise → rereview → submission`.
 
 ## Source features and complementary checks
 
-**61 source modules → 227 named facets.** Every Fxxx entry has implementation paths, complementary lanes and a representative case: [integration matrix](docs/FEATURE_MATRIX.md), [walkthroughs](docs/FEATURE_WALKTHROUGH.md).
+**63 source modules → 239 named facets.** Every Fxxx entry has implementation paths, complementary lanes and a representative case: [integration matrix](docs/FEATURE_MATRIX.md), [walkthroughs](docs/FEATURE_WALKTHROUGH.md).
 
 ```text
 Experiment design ──is the comparison informative?──> Numeric audit
@@ -186,6 +212,8 @@ A correct mean still needs an appropriate comparison; a clear plot still needs d
 | SRC11 · [Galaxy-Dawn/claude-scholar](https://github.com/Galaxy-Dawn/claude-scholar) | 3 |
 | SRC12 · [slark-prime/ml-paper-writing](https://github.com/slark-prime/ml-paper-writing) | 1 |
 | SRC13 · [scdenney/open-science-skills](https://github.com/scdenney/open-science-skills) | 1 |
+| SRC14 · [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | 1 |
+| SRC15 · [M1n-n9/paper-lifecycle](https://github.com/M1n-n9/paper-lifecycle) | 1 |
 
 ## Real-paper example: ReAct
 
@@ -211,13 +239,13 @@ python skills/paper-review-atlas/scripts/atlas.py audit \
 
 ## Conflict tests and local helpers
 
-Sixteen conflicts cover rounding, issue quotas, sampling units, style/format, evidence access, bilingual preservation, reviewer provenance and closure. On 58 fixed structured cases, the selected policies match 58 expected decisions; the explicitly implemented alternatives match 13. Inputs, policy code, comparison method and outputs are in the [audit record](docs/validation/v1.1-audit.md).
+Twenty-two conflict policies cover numeric checks, sampling units, evidence access, bilingual preservation, revision closure and the new reviewer-priority decisions. The original 58 fixed cases and 36 new cases have executable inputs and recorded results in the [validation record](docs/validation/reviewer-priorities-validation.md).
 
 | Commands | Function |
 |---|---|
 | `plan`, `preflight` | Protocol routing and material inventory |
 | `audit` | Exact text anchors, values, units, rounding and paired descriptive summaries |
-| `policy` | CFX01–CFX16 decisions from explicit evidence records |
+| `policy` | CFX01–CFX22 decisions from explicit evidence records |
 | `export-macros` | Checked LaTeX numerical definitions |
 | `bib-audit` | Local BibTeX search, exact-entry export, duplicate and undefined keys |
 | `calibrate` | Confusion counts and derived metrics on adjudicated labels |
@@ -234,7 +262,7 @@ python skills/paper-review-atlas/scripts/atlas.py locate academic-paper-reviewer
 python skills/paper-review-atlas/scripts/atlas.py locate G03
 ```
 
-Results identify capabilities, features, protocol files, complements, open tasks, edit locations, test commands and closure criteria. The [extension index](docs/EXTENSION_INDEX.md) contains 12 concrete development directions, including statistical inference, cross-model execution, document adapters, citation retrieval and visual benchmarks.
+Results identify capabilities, features, protocol files, complements, open tasks, edit locations, test commands and closure criteria. The [extension index](docs/EXTENSION_INDEX.md) contains 13 concrete development directions, including statistical inference, cross-model execution, document adapters, citation retrieval and visual benchmarks.
 
 ```text
 Missing capability
@@ -262,4 +290,4 @@ Both READMEs, the text map, feature matrix and extension index are generated fro
 
 `skills/paper-review-atlas/` is the portable skill, `tests/` holds checks and fixtures, `docs/` holds capabilities/results/evidence, and `scripts/` maintains installation and generated documentation.
 
-Original implementation: [MIT](LICENSE). External sources retain their licenses. See [source provenance](docs/SOURCES.md) and [implementation/test progress](docs/validation/v1.1-audit.md).
+Original implementation: [MIT](LICENSE). External sources retain their licenses. See [source provenance](docs/SOURCES.md) and [implementation/test progress](docs/validation/reviewer-priorities-validation.md).

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "package_version": "1.1.0",
-  "as_of": "2026-10-20",
+  "package_version": "1.2.0",
+  "as_of": "2026-10-21",
   "coverage_claim": "36 documented review capabilities. Status is implementation scope, not a measured effectiveness score. Deterministic helpers operate only on supplied structured records; external adapters are requirements, not bundled tools.",
   "groups": [
     {
@@ -92,12 +92,14 @@
       "verification": {
         "state": "partial",
         "planned_cases": [
-          "CFX10"
+          "CFX10",
+          "CFX22"
         ],
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/behavioral-rubric.md"
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
       },
@@ -122,15 +124,21 @@
         "SRC02",
         "SRC05",
         "SRC07",
-        "SRC08"
+        "SRC08",
+        "SRC14"
       ],
       "verification": {
-        "state": "not_measured",
+        "state": "partial",
         "planned_cases": [
-          "CFX03"
+          "CFX03",
+          "CFX17",
+          "CFX22"
         ],
-        "evidence": [],
-        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+        "evidence": [
+          "docs/validation/reviewer-priorities-validation.md",
+          "docs/validation/reviewer-priorities-validation.md"
+        ],
+        "annotation": "Conditional reviewer-priority rules exercised; complete semantic capability remains unmeasured."
       },
       "limitations": "Venue eligibility and required checks must be looked up when time-sensitive; no invented acceptance probability."
     },
@@ -152,13 +160,18 @@
         "SRC01",
         "SRC03",
         "SRC05",
-        "SRC06"
+        "SRC06",
+        "SRC15"
       ],
       "verification": {
-        "state": "not_measured",
-        "planned_cases": [],
-        "evidence": [],
-        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+        "state": "partial",
+        "planned_cases": [
+          "CFX20"
+        ],
+        "evidence": [
+          "docs/validation/reviewer-priorities-validation.md"
+        ],
+        "annotation": "Conditional reviewer-priority rules exercised; complete semantic capability remains unmeasured."
       },
       "limitations": "Novelty is bounded by searched sources and dates; a search cannot prove global absence."
     },
@@ -185,17 +198,21 @@
         "SRC07",
         "SRC08",
         "SRC11",
-        "SRC12"
+        "SRC12",
+        "SRC14",
+        "SRC15"
       ],
       "verification": {
         "state": "partial",
         "planned_cases": [
-          "CFX07"
+          "CFX07",
+          "CFX18"
         ],
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/behavioral-rubric.md"
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
       },
@@ -219,18 +236,21 @@
         "SRC05",
         "SRC06",
         "SRC08",
-        "SRC13"
+        "SRC13",
+        "SRC15"
       ],
       "verification": {
         "state": "partial",
         "planned_cases": [
           "CFX02",
-          "CFX15"
+          "CFX15",
+          "CFX20"
         ],
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/behavioral-rubric.md"
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
       },
@@ -255,18 +275,21 @@
         "SRC05",
         "SRC07",
         "SRC11",
-        "SRC12"
+        "SRC12",
+        "SRC15"
       ],
       "verification": {
         "state": "partial",
         "planned_cases": [
-          "CFX05"
+          "CFX05",
+          "CFX20"
         ],
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
           "docs/validation/behavioral-rubric.md",
-          "docs/validation/forward-control.md"
+          "docs/validation/forward-control.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
       },
@@ -293,18 +316,23 @@
         "SRC06",
         "SRC08",
         "SRC10",
-        "SRC13"
+        "SRC13",
+        "SRC15"
       ],
       "verification": {
         "state": "partial",
         "planned_cases": [
           "CFX04",
-          "CFX08"
+          "CFX08",
+          "CFX18",
+          "CFX19"
         ],
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/behavioral-rubric.md"
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/reviewer-priorities-validation.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
       },
@@ -327,7 +355,8 @@
       "sources": [
         "SRC01",
         "SRC06",
-        "SRC08"
+        "SRC08",
+        "SRC15"
       ],
       "verification": {
         "state": "partial",
@@ -355,15 +384,19 @@
       "status": "implemented_workflow",
       "sources": [
         "SRC01",
-        "SRC08"
+        "SRC08",
+        "SRC15"
       ],
       "verification": {
         "state": "partial",
-        "planned_cases": [],
+        "planned_cases": [
+          "CFX18"
+        ],
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/behavioral-rubric.md"
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
       },
@@ -649,12 +682,14 @@
         "SRC03",
         "SRC05",
         "SRC06",
-        "SRC11"
+        "SRC11",
+        "SRC14"
       ],
       "verification": {
         "state": "partial",
         "planned_cases": [
-          "CFX01"
+          "CFX01",
+          "CFX21"
         ],
         "evidence": [
           "docs/validation/forward-en.md",
@@ -662,7 +697,8 @@
           "docs/validation/behavioral-rubric.md",
           "tests/test_audit_checks.py::NumericTests::test_relative_percent_and_percentage_points_are_distinct",
           "tests/test_extensions.py",
-          "docs/validation/v1.1-audit.md"
+          "docs/validation/v1.1-audit.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim. v1.1 adds tested local record helpers; see the audit report for their exact execution scope."
       },
@@ -841,7 +877,8 @@
         "SRC05",
         "SRC06",
         "SRC07",
-        "SRC12"
+        "SRC12",
+        "SRC15"
       ],
       "verification": {
         "state": "partial",
@@ -981,7 +1018,8 @@
         "SRC09",
         "SRC10",
         "SRC11",
-        "SRC13"
+        "SRC13",
+        "SRC14"
       ],
       "verification": {
         "state": "partial",
@@ -991,14 +1029,18 @@
           "CFX05",
           "CFX09",
           "CFX10",
-          "CFX15"
+          "CFX15",
+          "CFX17",
+          "CFX21"
         ],
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
           "docs/validation/behavioral-rubric.md",
           "tests/test_extensions.py",
-          "docs/validation/v1.1-audit.md"
+          "docs/validation/v1.1-audit.md",
+          "docs/validation/reviewer-priorities-validation.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim. v1.1 adds tested local record helpers; see the audit report for their exact execution scope."
       },
@@ -1025,19 +1067,23 @@
         "SRC04",
         "SRC06",
         "SRC12",
-        "SRC13"
+        "SRC13",
+        "SRC14",
+        "SRC15"
       ],
       "verification": {
         "state": "partial",
         "planned_cases": [
           "CFX11",
           "CFX15",
-          "CFX16"
+          "CFX16",
+          "CFX19"
         ],
         "evidence": [
           "docs/validation/recheck-failed.json",
           "docs/validation/recheck-passed.json",
-          "tests/test_audit_checks.py::RecheckTests::test_manual_closure_records_scope_and_requires_observations"
+          "tests/test_audit_checks.py::RecheckTests::test_manual_closure_records_scope_and_requires_observations",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Actual declarative mean checks demonstrate failed and successful closure; manual checks validate records only. No complete model-experiment rerun or longitudinal manuscript study was performed."
       },
@@ -1061,12 +1107,15 @@
         "SRC08"
       ],
       "verification": {
-        "state": "not_measured",
+        "state": "partial",
         "planned_cases": [
-          "CFX16"
+          "CFX16",
+          "CFX19"
         ],
-        "evidence": [],
-        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+        "evidence": [
+          "docs/validation/reviewer-priorities-validation.md"
+        ],
+        "annotation": "Conditional reviewer-priority rules exercised; complete semantic capability remains unmeasured."
       },
       "limitations": "Responses must distinguish completed corrections from proposed work and justified disagreement."
     },
@@ -1093,13 +1142,16 @@
         "SRC12"
       ],
       "verification": {
-        "state": "not_measured",
+        "state": "partial",
         "planned_cases": [
           "CFX03",
-          "CFX11"
+          "CFX11",
+          "CFX17"
         ],
-        "evidence": [],
-        "annotation": "Documented protocol; deterministic and synthetic checks are reported separately and do not establish full semantic effectiveness."
+        "evidence": [
+          "docs/validation/reviewer-priorities-validation.md"
+        ],
+        "annotation": "Conditional reviewer-priority rules exercised; complete semantic capability remains unmeasured."
       },
       "limitations": "Readiness is not acceptance; permissions to submit or message others are separate from preparing material."
     },
@@ -1272,7 +1324,8 @@
         "SRC02",
         "SRC03",
         "SRC05",
-        "SRC09"
+        "SRC09",
+        "SRC14"
       ],
       "verification": {
         "state": "partial",
@@ -1280,12 +1333,16 @@
           "CFX09",
           "CFX12",
           "CFX13",
-          "CFX16"
+          "CFX16",
+          "CFX21",
+          "CFX22"
         ],
         "evidence": [
           "docs/validation/forward-en.md",
           "docs/validation/forward-zh.md",
-          "docs/validation/behavioral-rubric.md"
+          "docs/validation/behavioral-rubric.md",
+          "docs/validation/reviewer-priorities-validation.md",
+          "docs/validation/reviewer-priorities-validation.md"
         ],
         "annotation": "Exercised in two fresh-context synthetic full reviews. Specific supported checks and correct controls are recorded in the reports/rubric; this is not a measured real-paper accuracy or full-domain coverage claim."
       },

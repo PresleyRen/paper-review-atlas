@@ -96,7 +96,10 @@ def _choice(facts, key, choices):
 
 def policy(rule: str, facts: dict, root: Path | None = None) -> dict:
     """Adjudicate one named conflict; fail closed on unspecified decision inputs."""
-    if not re.fullmatch(r'CFX(?:0[1-9]|1[0-6])', rule):
+    from reviewer_priorities import RULES, policy as priority_policy
+    if isinstance(rule, str) and rule in RULES:
+        return priority_policy(rule, facts)
+    if not isinstance(rule, str) or not re.fullmatch(r'CFX(?:0[1-9]|1[0-6])', rule):
         raise AuditInputError('unknown conflict ID')
     if not isinstance(facts, dict):
         raise AuditInputError('facts must be an object')

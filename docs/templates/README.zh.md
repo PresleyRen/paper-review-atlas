@@ -4,7 +4,7 @@
 
 Atlas 面向论文作者、博士生与研究团队：审查研究论证、实验、统计、代码、图表和写作，给出具体修改，并在修改后逐条验收。重点支持 AI、LLM、Agent、RAG 和知识图谱研究，也按研究类型调用一般科学审查流程。
 
-[English](README.en.md) · [逐技能特色](docs/FEATURE_MATRIX.md) · [真实论文示例](docs/validation/real-react-review.md) · [测试记录](docs/validation/v1.1-audit.md) · [扩展定位](docs/EXTENSION_INDEX.md)
+[English](README.en.md) · [逐技能特色](docs/FEATURE_MATRIX.md) · [真实论文示例](docs/validation/real-react-review.md) · [测试记录](docs/validation/reviewer-priorities-validation.md) · [扩展定位](docs/EXTENSION_INDEX.md)
 
 ## 使用后得到什么
 
@@ -58,10 +58,42 @@ python scripts/install_skill.py --project /absolute/path/to/your-paper-project
 
 覆盖意图路由、RAG、规划/工具/长期记忆、答案生成与自评、多 Agent 协作、知识图谱与本体。检查重点包括：多 Agent 是否只是增加了采样和调用预算；测试答案是否进入检索索引；记忆是否跨测试集污染；失败重试是否计入成本；图结构是否真的贡献增益。
 
-## 11 种工作模式
+## 审稿人关键问题与修改优先级
+
+新增 `priorities` 模式，先找影响论文核心结论的证据缺口，再处理局部表达。全文审查和快速审查会自动加载这一流程。
+
+```text
+研究问题 → 实际贡献 → 方法与预测 → 决定性证据
+                                 ↓
+                        反例、替代解释与成本
+                                 ↓
+                 科学有效性 / 期刊适配 / 表达清晰度
+                                 ↓
+                    最小充分修改 → 明确验收条件
+```
+
+| 审稿关注点 | 实际作用 |
+|---|---|
+| 期刊标准 | 区分关注重要性的期刊和侧重科学可靠性的期刊，按目标期刊核验要求 |
+| 创新与机制 | 去掉名称看具体贡献；将方法操作、变量、预测与实验连起来 |
+| 决定性实验 | 区分效果提升与机制识别，检查预算、基线和替代解释 |
+| 修改优先级 | 标出阻碍核心结论的问题，给出重分析、补证据或收窄主张的最小方案 |
+| 阅读与图表 | 阅读附录后复核初步质疑，定位主图主表与结论的对应关系 |
+| 多视角审查 | 先冻结报告再汇总，将后续数字审计与既有审稿共识分开 |
+
+```text
+使用 $paper-review-atlas，priorities 模式审查当前论文。
+围绕核心结论列出重要问题、支持和反对证据、最小修改及验收条件。
+分别判断科学有效性、贡献增量、期刊适配和表达问题。
+```
+
+本轮融合 Matt Might、Prem Devanbu 的审稿经验、期刊官方规则，以及 `nature-reviewer`、`review-revision` 的适用能力。[来源与采用方式](docs/REVIEWER_ADVICE.md) · [真实 ReAct 重点审查示例](docs/validation/real-react-priorities.md)
+
+## 12 种工作模式
 
 | 模式 | 用途 |
 |---|---|
+| `priorities` | 核心贡献、决定性证据、期刊标准与最小充分修改 |
 | `full` / `quick` | 全文审查 / 主要问题快速分诊 |
 | `experiments` / `figures` / `writing` | 实验、图表、写作专项 |
 | `revise` / `rereview` | 实施修改 / 逐条验收 |
@@ -118,13 +150,13 @@ python skills/paper-review-atlas/scripts/atlas.py audit \
 
 ## 冲突测试与本地工具
 
-16项冲突规则包含舍入、问题配额、统计单位、格式偏好、证据缺失、跨语言保真、多角色来源和修改验收。58个固定输入案例对比两类明确规则：所选规则58项符合预期，对照规则13项符合预期。输入、规则实现和输出都在[测试记录](docs/validation/v1.1-audit.md)中。
+22项冲突规则覆盖原有数值、统计、图表、翻译和返修检查，并增加期刊标准、机制证据、最小修复、创新判断、冻结审稿与来源归因。原有58个案例与新增36个案例均有可执行输入和输出，见[本轮测试记录](docs/validation/reviewer-priorities-validation.md)。
 
 | 工具 | 功能 |
 |---|---|
 | `plan` / `preflight` | 选择协议、检查材料清单 |
 | `audit` | 引文锚点、数值、单位、舍入、配对描述统计 |
-| `policy` | 依据明确证据记录处理 CFX01–CFX16 冲突 |
+| `policy` | 依据明确证据记录处理 CFX01–CFX22 冲突 |
 | `export-macros` | 从核对后的数据生成LaTeX数字宏 |
 | `bib-audit` | 查询本地BibTeX，保留原始条目，找重复键和缺失引用键 |
 | `calibrate` | 根据已判读标签计算混淆计数、精确率、召回率等 |
@@ -141,7 +173,7 @@ python skills/paper-review-atlas/scripts/atlas.py locate academic-paper-reviewer
 python skills/paper-review-atlas/scripts/atlas.py locate G03
 ```
 
-返回：能力编号、来源特色、协议路径、互补能力、缺口、修改入口、测试命令和验收条件。[扩展索引](docs/EXTENSION_INDEX.md)登记了12个具体后续方向，如复杂统计、跨模型执行、格式适配、引用核验和图表视觉基准。
+返回：能力编号、来源特色、协议路径、互补能力、缺口、修改入口、测试命令和验收条件。[扩展索引](docs/EXTENSION_INDEX.md)登记了13个具体后续方向，如复杂统计、跨模型执行、格式适配、引用核验和图表视觉基准。
 
 ```text
 发现不足
@@ -169,4 +201,4 @@ python scripts/check_package.py
 
 `skills/paper-review-atlas/` 是可安装技能；`tests/` 保存测试与案例；`docs/` 保存能力、效果与验证记录；`scripts/` 维护安装和文档生成。
 
-原创实现使用 [MIT](LICENSE)；外部来源保留各自许可。完整来源与版本信息见 [SOURCES.md](docs/SOURCES.md)，具体实现与验证进度见[审计记录](docs/validation/v1.1-audit.md)。
+原创实现使用 [MIT](LICENSE)；外部来源保留各自许可。完整来源与版本信息见 [SOURCES.md](docs/SOURCES.md)，具体实现与验证进度见[审计记录](docs/validation/reviewer-priorities-validation.md)。

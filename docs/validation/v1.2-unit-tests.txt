@@ -1,0 +1,321 @@
+test_bad_reported_numbers_and_declaration_bounds_rejected (test_audit_checks.NumericTests.test_bad_reported_numbers_and_declaration_bounds_rejected) ... ok
+test_decimal_half_even_and_half_up_rounding (test_audit_checks.NumericTests.test_decimal_half_even_and_half_up_rounding)
+CFX01: decimal ties do not inherit binary-float rounding errors. ... ok
+test_empty_missing_and_multiple_value_groups_unverified (test_audit_checks.NumericTests.test_empty_missing_and_multiple_value_groups_unverified) ... ok
+test_file_and_record_bounds_unverified (test_audit_checks.NumericTests.test_file_and_record_bounds_unverified) ... ok
+test_fraction_percent_scaling_requires_explicit_units (test_audit_checks.NumericTests.test_fraction_percent_scaling_requires_explicit_units)
+CFX01: 0.82 as a fraction means 82%, not 0.82%. ... ok
+test_injection_is_inert_text_not_expression (test_audit_checks.NumericTests.test_injection_is_inert_text_not_expression)
+CFX13: shell/Python-looking manuscript text is evidence, never code. ... ok
+test_json_records_key_and_exact_typed_filters (test_audit_checks.NumericTests.test_json_records_key_and_exact_typed_filters) ... ok
+test_malformed_csv_and_json_duplicate_keys_are_unverified (test_audit_checks.NumericTests.test_malformed_csv_and_json_duplicate_keys_are_unverified) ... ok
+test_relative_percent_and_percentage_points_are_distinct (test_audit_checks.NumericTests.test_relative_percent_and_percentage_points_are_distinct)
+CFX01: 80% to 82% is +2 points but +2.5 percent relative. ... ok
+test_source_nan_inf_bool_and_missing_values_rejected (test_audit_checks.NumericTests.test_source_nan_inf_bool_and_missing_values_rejected) ... ok
+test_source_path_escape_rejected (test_audit_checks.NumericTests.test_source_path_escape_rejected) ... ok
+test_tolerance_applies_after_rounding_in_reported_units (test_audit_checks.NumericTests.test_tolerance_applies_after_rounding_in_reported_units) ... ok
+test_value_mean_sum_count_csv (test_audit_checks.NumericTests.test_value_mean_sum_count_csv) ... ok
+test_zero_baseline_is_unverified (test_audit_checks.NumericTests.test_zero_baseline_is_unverified) ... ok
+test_empty_or_nonfinite_runs_rejected (test_audit_checks.PairedStatsTests.test_empty_or_nonfinite_runs_rejected) ... ok
+test_pair_ids_must_match_without_silent_dropping (test_audit_checks.PairedStatsTests.test_pair_ids_must_match_without_silent_dropping) ... ok
+test_paired_sample_sd_and_difference_not_unpaired (test_audit_checks.PairedStatsTests.test_paired_sample_sd_and_difference_not_unpaired)
+CFX04: explicit paired differences use n-1 sample SD. ... ok
+test_single_seed_zero_difference_does_not_establish_no_effect (test_audit_checks.PairedStatsTests.test_single_seed_zero_difference_does_not_establish_no_effect)
+CFX04: n=1 and a zero observed difference are not equivalence evidence. ... ok
+test_bad_line_empty_or_huge_quote_rejected (test_audit_checks.QuoteTests.test_bad_line_empty_or_huge_quote_rejected) ... ok
+test_exact_bilingual_multiline_quote_with_real_anchor (test_audit_checks.QuoteTests.test_exact_bilingual_multiline_quote_with_real_anchor) ... ok
+test_quote_matching_is_literal_not_normalized (test_audit_checks.QuoteTests.test_quote_matching_is_literal_not_normalized) ... ok
+test_unreadable_encoding_and_nonfile_unverified (test_audit_checks.QuoteTests.test_unreadable_encoding_and_nonfile_unverified) ... ok
+test_wrong_quote_or_anchor_is_mismatch (test_audit_checks.QuoteTests.test_wrong_quote_or_anchor_is_mismatch)
+CFX15: a plausible quote or invented line cannot confirm an issue. ... ok
+test_author_says_done_and_approval_language_cannot_close (test_audit_checks.RecheckTests.test_author_says_done_and_approval_language_cannot_close)
+CFX16: an approval string is not a recorded substantive check. ... ok
+test_declarative_number_failure_overrides_passed_claim (test_audit_checks.RecheckTests.test_declarative_number_failure_overrides_passed_claim)
+CFX16: an actual contradictory recomputation defeats status='passed'. ... ok
+test_declarative_number_verified_closes_with_check_scope (test_audit_checks.RecheckTests.test_declarative_number_verified_closes_with_check_scope) ... ok
+test_declarative_quote_recomputed (test_audit_checks.RecheckTests.test_declarative_quote_recomputed) ... ok
+test_manual_closure_records_scope_and_requires_observations (test_audit_checks.RecheckTests.test_manual_closure_records_scope_and_requires_observations) ... ok
+test_missing_or_false_revision_or_check_record_remains_open (test_audit_checks.RecheckTests.test_missing_or_false_revision_or_check_record_remains_open) ... ok
+test_recheck_preserves_original_issue_and_missing_root_unverified (test_audit_checks.RecheckTests.test_recheck_preserves_original_issue_and_missing_root_unverified) ... ok
+test_external_and_dangling_symlinks_rejected (test_audit_checks.SafePathTests.test_external_and_dangling_symlinks_rejected) ... ok
+test_internal_symlink_allowed_and_missing_file_unverified (test_audit_checks.SafePathTests.test_internal_symlink_allowed_and_missing_file_unverified) ... ok
+test_rooted_relative_and_inside_absolute_paths (test_audit_checks.SafePathTests.test_rooted_relative_and_inside_absolute_paths) ... ok
+test_traversal_and_outside_absolute_rejected (test_audit_checks.SafePathTests.test_traversal_and_outside_absolute_rejected) ... ok
+test_acceptance_probability_claims_rejected (test_audit_checks.ValidationTests.test_acceptance_probability_claims_rejected)
+CFX03: an offline review cannot manufacture acceptance probabilities. ... ok
+test_confirmed_issue_requires_exact_quote_location (test_audit_checks.ValidationTests.test_confirmed_issue_requires_exact_quote_location)
+CFX15: record validation does not certify the judgment's semantics. ... ok
+test_different_families_allowed_as_declared_not_authenticated (test_audit_checks.ValidationTests.test_different_families_allowed_as_declared_not_authenticated) ... ok
+test_duplicate_issue_id_and_wrong_schemas_rejected (test_audit_checks.ValidationTests.test_duplicate_issue_id_and_wrong_schemas_rejected) ... ok
+test_issue_requires_actionable_fix_acceptance_check_and_id (test_audit_checks.ValidationTests.test_issue_requires_actionable_fix_acceptance_check_and_id) ... ok
+test_missing_evidence_stays_unverified_not_misconduct (test_audit_checks.ValidationTests.test_missing_evidence_stays_unverified_not_misconduct) ... ok
+test_missing_figure_cannot_pass_but_log_plus_artifact_can (test_audit_checks.ValidationTests.test_missing_figure_cannot_pass_but_log_plus_artifact_can)
+CFX12: missing visual evidence remains unavailable, never a passed audit. ... ok
+test_same_model_personas_not_cross_family_independence (test_audit_checks.ValidationTests.test_same_model_personas_not_cross_family_independence)
+CFX09: multiple personas do not create independent model families. ... ok
+test_self_reported_verified_status_without_root_not_enough (test_audit_checks.ValidationTests.test_self_reported_verified_status_without_root_not_enough) ... ok
+test_zero_findings_valid (test_audit_checks.ValidationTests.test_zero_findings_valid)
+CFX02: a finding quota must never invent a criticism. ... ok
+test_decimal_literals_preserve_paired_difference (test_cli_install.CliIntegration.test_decimal_literals_preserve_paired_difference) ... ok
+test_duplicate_json_keys_cannot_override_evidence (test_cli_install.CliIntegration.test_duplicate_json_keys_cannot_override_evidence) ... ok
+test_duplicate_manifest_artifacts_rejected (test_cli_install.CliIntegration.test_duplicate_manifest_artifacts_rejected) ... ok
+test_empty_audit_cannot_silently_pass (test_cli_install.CliIntegration.test_empty_audit_cannot_silently_pass) ... ok
+test_empty_findings_is_valid (test_cli_install.CliIntegration.test_empty_findings_is_valid) ... ok
+test_exact_chinese_quote_is_supported (test_cli_install.CliIntegration.test_exact_chinese_quote_is_supported) ... ok
+test_malformed_json_returns_error_record (test_cli_install.CliIntegration.test_malformed_json_returns_error_record) ... ok
+test_manifest_cannot_escape_root (test_cli_install.CliIntegration.test_manifest_cannot_escape_root) ... ok
+test_manifest_does_not_claim_review (test_cli_install.CliIntegration.test_manifest_does_not_claim_review) ... ok
+test_mismatch_has_failing_exit (test_cli_install.CliIntegration.test_mismatch_has_failing_exit) ... ok
+test_missing_manifest_artifact_not_passed (test_cli_install.CliIntegration.test_missing_manifest_artifact_not_passed) ... ok
+test_missing_source_has_distinct_exit (test_cli_install.CliIntegration.test_missing_source_has_distinct_exit) ... ok
+test_nonfinite_json_is_rejected (test_cli_install.CliIntegration.test_nonfinite_json_is_rejected) ... ok
+test_plan_routes_agent_work (test_cli_install.CliIntegration.test_plan_routes_agent_work) ... ok
+test_recheck_invalid_original_anchor_is_failure_not_missing_evidence (test_cli_install.CliIntegration.test_recheck_invalid_original_anchor_is_failure_not_missing_evidence) ... ok
+test_recheck_open_cannot_return_success (test_cli_install.CliIntegration.test_recheck_open_cannot_return_success) ... ok
+test_reported_decimal_literal_is_not_silently_rounded (test_cli_install.CliIntegration.test_reported_decimal_literal_is_not_silently_rounded) ... ok
+test_rounding_and_aggregation_cli_success (test_cli_install.CliIntegration.test_rounding_and_aggregation_cli_success) ... ok
+test_backup_directory_escape_preserves_active_skill (test_cli_install.InstallerIntegration.test_backup_directory_escape_preserves_active_skill) ... ok
+test_backup_is_not_an_active_skill_definition (test_cli_install.InstallerIntegration.test_backup_is_not_an_active_skill_definition) ... ok
+test_existing_skill_is_preserved (test_cli_install.InstallerIntegration.test_existing_skill_is_preserved) ... ok
+test_install_rejects_destination_inside_source (test_cli_install.InstallerIntegration.test_install_rejects_destination_inside_source) ... ok
+test_install_rejects_escaping_project_directory (test_cli_install.InstallerIntegration.test_install_rejects_escaping_project_directory) ... ok
+test_install_rejects_source_symlinks (test_cli_install.InstallerIntegration.test_install_rejects_source_symlinks) ... ok
+test_install_rejects_symlink_destination (test_cli_install.InstallerIntegration.test_install_rejects_symlink_destination) ... ok
+test_installed_skill_self_contained (test_cli_install.InstallerIntegration.test_installed_skill_self_contained) ... ok
+test_replace_creates_backup (test_cli_install.InstallerIntegration.test_replace_creates_backup) ... ok
+test_cli_check_detects_drift_without_overwriting (test_coverage.CoverageRegistryTests.test_cli_check_detects_drift_without_overwriting) ... Generated coverage files are stale:
+- docs/coverage.svg
+ok
+test_duplicate_ids_and_unknown_sources_are_rejected (test_coverage.CoverageRegistryTests.test_duplicate_ids_and_unknown_sources_are_rejected) ... ok
+test_every_source_mapping_is_reciprocal (test_coverage.CoverageRegistryTests.test_every_source_mapping_is_reciprocal) ... ok
+test_evidence_reference_cannot_escape_repository (test_coverage.CoverageRegistryTests.test_evidence_reference_cannot_escape_repository) ... ok
+test_evidence_symlink_cannot_escape_repository (test_coverage.CoverageRegistryTests.test_evidence_symlink_cannot_escape_repository) ... ok
+test_executed_test_status_requires_concrete_evidence (test_coverage.CoverageRegistryTests.test_executed_test_status_requires_concrete_evidence) ... ok
+test_generated_artifacts_match_single_source_registries (test_coverage.CoverageRegistryTests.test_generated_artifacts_match_single_source_registries) ... ok
+test_protocol_path_cannot_escape_skill (test_coverage.CoverageRegistryTests.test_protocol_path_cannot_escape_skill) ... ok
+test_real_nested_test_reference_resolves (test_coverage.CoverageRegistryTests.test_real_nested_test_reference_resolves) ... ok
+test_release_registry_and_protocol_paths_are_consistent (test_coverage.CoverageRegistryTests.test_release_registry_and_protocol_paths_are_consistent) ... ok
+test_requested_core_is_present_without_preventing_extension (test_coverage.CoverageRegistryTests.test_requested_core_is_present_without_preventing_extension) ... ok
+test_source_inventory_records_scope_without_claiming_copied_ports (test_coverage.CoverageRegistryTests.test_source_inventory_records_scope_without_claiming_copied_ports) ... ok
+test_source_module_cannot_map_to_an_invented_capability (test_coverage.CoverageRegistryTests.test_source_module_cannot_map_to_an_invented_capability) ... ok
+test_stale_missing_test_name_is_rejected (test_coverage.CoverageRegistryTests.test_stale_missing_test_name_is_rejected) ... ok
+test_svg_is_valid_xml_and_represents_every_capability_once (test_coverage.CoverageRegistryTests.test_svg_is_valid_xml_and_represents_every_capability_once) ... ok
+test_unknown_conflict_reference_is_rejected (test_coverage.CoverageRegistryTests.test_unknown_conflict_reference_is_rejected) ... ok
+test_xml_escaping_and_registry_extension_need_no_template_edit (test_coverage.CoverageRegistryTests.test_xml_escaping_and_registry_extension_need_no_template_edit) ... ok
+test_CFX01_missing (test_extensions.ConflictCases.test_CFX01_missing) ... ok
+test_CFX01_rounded (test_extensions.ConflictCases.test_CFX01_rounded) ... ok
+test_CFX01_wrong (test_extensions.ConflictCases.test_CFX01_wrong) ... ok
+test_CFX02_clean (test_extensions.ConflictCases.test_CFX02_clean) ... ok
+test_CFX02_duplicate (test_extensions.ConflictCases.test_CFX02_duplicate) ... ok
+test_CFX02_one (test_extensions.ConflictCases.test_CFX02_one) ... ok
+test_CFX03_none (test_extensions.ConflictCases.test_CFX03_none) ... ok
+test_CFX03_requested (test_extensions.ConflictCases.test_CFX03_requested) ... ok
+test_CFX03_score (test_extensions.ConflictCases.test_CFX03_score) ... ok
+test_CFX04_independent (test_extensions.ConflictCases.test_CFX04_independent) ... ok
+test_CFX04_repeats (test_extensions.ConflictCases.test_CFX04_repeats) ... ok
+test_CFX04_unknown (test_extensions.ConflictCases.test_CFX04_unknown) ... ok
+test_CFX05_clean (test_extensions.ConflictCases.test_CFX05_clean) ... ok
+test_CFX05_dash (test_extensions.ConflictCases.test_CFX05_dash) ... ok
+test_CFX05_meaning (test_extensions.ConflictCases.test_CFX05_meaning) ... ok
+test_CFX05_science (test_extensions.ConflictCases.test_CFX05_science) ... ok
+test_CFX05_venue (test_extensions.ConflictCases.test_CFX05_venue) ... ok
+test_CFX06_blur (test_extensions.ConflictCases.test_CFX06_blur) ... ok
+test_CFX06_raster (test_extensions.ConflictCases.test_CFX06_raster) ... ok
+test_CFX06_vector (test_extensions.ConflictCases.test_CFX06_vector) ... ok
+test_CFX06_wrong_export (test_extensions.ConflictCases.test_CFX06_wrong_export) ... ok
+test_CFX07_causal (test_extensions.ConflictCases.test_CFX07_causal) ... ok
+test_CFX07_negated (test_extensions.ConflictCases.test_CFX07_negated) ... ok
+test_CFX07_number (test_extensions.ConflictCases.test_CFX07_number) ... ok
+test_CFX07_preserved (test_extensions.ConflictCases.test_CFX07_preserved) ... ok
+test_CFX08_clinical (test_extensions.ConflictCases.test_CFX08_clinical) ... ok
+test_CFX08_ml (test_extensions.ConflictCases.test_CFX08_ml) ... ok
+test_CFX08_qual (test_extensions.ConflictCases.test_CFX08_qual) ... ok
+test_CFX09_cross (test_extensions.ConflictCases.test_CFX09_cross) ... ok
+test_CFX09_one (test_extensions.ConflictCases.test_CFX09_one) ... ok
+test_CFX09_three (test_extensions.ConflictCases.test_CFX09_three) ... ok
+test_CFX10_inference (test_extensions.ConflictCases.test_CFX10_inference) ... ok
+test_CFX10_missing (test_extensions.ConflictCases.test_CFX10_missing) ... ok
+test_CFX10_observed_contradiction (test_extensions.ConflictCases.test_CFX10_observed_contradiction) ... ok
+test_CFX10_observed_omission (test_extensions.ConflictCases.test_CFX10_observed_omission) ... ok
+test_CFX11_authorized (test_extensions.ConflictCases.test_CFX11_authorized) ... ok
+test_CFX11_review (test_extensions.ConflictCases.test_CFX11_review) ... ok
+test_CFX11_revise (test_extensions.ConflictCases.test_CFX11_revise) ... ok
+test_CFX11_unauthorized (test_extensions.ConflictCases.test_CFX11_unauthorized) ... ok
+test_CFX12_00 (test_extensions.ConflictCases.test_CFX12_00) ... ok
+test_CFX12_01 (test_extensions.ConflictCases.test_CFX12_01) ... ok
+test_CFX12_10 (test_extensions.ConflictCases.test_CFX12_10) ... ok
+test_CFX12_11 (test_extensions.ConflictCases.test_CFX12_11) ... ok
+test_CFX13_executed (test_extensions.ConflictCases.test_CFX13_executed) ... ok
+test_CFX13_failed (test_extensions.ConflictCases.test_CFX13_failed) ... ok
+test_CFX13_planned (test_extensions.ConflictCases.test_CFX13_planned) ... ok
+test_CFX13_static_inspection (test_extensions.ConflictCases.test_CFX13_static_inspection) ... ok
+test_CFX14_causal (test_extensions.ConflictCases.test_CFX14_causal) ... ok
+test_CFX14_negated (test_extensions.ConflictCases.test_CFX14_negated) ... ok
+test_CFX14_number (test_extensions.ConflictCases.test_CFX14_number) ... ok
+test_CFX14_preserved (test_extensions.ConflictCases.test_CFX14_preserved) ... ok
+test_CFX15_appendix (test_extensions.ConflictCases.test_CFX15_appendix) ... ok
+test_CFX15_partial (test_extensions.ConflictCases.test_CFX15_partial) ... ok
+test_CFX15_unknown (test_extensions.ConflictCases.test_CFX15_unknown) ... ok
+test_CFX15_valid (test_extensions.ConflictCases.test_CFX15_valid) ... ok
+test_CFX16_false_anchor (test_extensions.ConflictCases.test_CFX16_false_anchor) ... ok
+test_CFX16_false_pass (test_extensions.ConflictCases.test_CFX16_false_pass) ... ok
+test_CFX16_fixed (test_extensions.ConflictCases.test_CFX16_fixed) ... ok
+test_all_sixteen_rules_have_positive_and_negative_cases (test_extensions.ConflictCases.test_all_sixteen_rules_have_positive_and_negative_cases) ... ok
+test_comparison_replays_distinct_rules_not_upstream_models (test_extensions.ConflictCases.test_comparison_replays_distinct_rules_not_upstream_models) ... ok
+test_invalid_policy_facts_rejected (test_extensions.ConflictCases.test_invalid_policy_facts_rejected) ... ok
+test_same_family_case_and_whitespace_not_independent (test_extensions.ConflictCases.test_same_family_case_and_whitespace_not_independent) ... ok
+test_bib_comments_and_macros_not_entries (test_extensions.NewHelpers.test_bib_comments_and_macros_not_entries) ... ok
+test_bib_duplicate_and_undefined_are_errors (test_extensions.NewHelpers.test_bib_duplicate_and_undefined_are_errors) ... ok
+test_bib_malformed_not_silently_skipped (test_extensions.NewHelpers.test_bib_malformed_not_silently_skipped) ... ok
+test_bib_nested_braces_and_raw_preservation (test_extensions.NewHelpers.test_bib_nested_braces_and_raw_preservation) ... ok
+test_bib_quoted_delimiters_and_parentheses (test_extensions.NewHelpers.test_bib_quoted_delimiters_and_parentheses) ... ok
+test_bib_root_boundary (test_extensions.NewHelpers.test_bib_root_boundary) ... ok
+test_calibration_counts (test_extensions.NewHelpers.test_calibration_counts) ... ok
+test_calibration_duplicate_and_nonboolean_rejected (test_extensions.NewHelpers.test_calibration_duplicate_and_nonboolean_rejected) ... ok
+test_calibration_zero_denominators (test_extensions.NewHelpers.test_calibration_zero_denominators) ... ok
+test_cli_macros_and_bib_real_files (test_extensions.NewHelpers.test_cli_macros_and_bib_real_files) ... ok
+test_cli_policy_missing_input_rejected (test_extensions.NewHelpers.test_cli_policy_missing_input_rejected) ... ok
+test_installed_commands_actual_subprocess (test_extensions.NewHelpers.test_installed_commands_actual_subprocess) ... ok
+test_locate_capability_and_feature (test_extensions.NewHelpers.test_locate_capability_and_feature) ... ok
+test_locate_empty_rejected_and_unknown_not_invented (test_extensions.NewHelpers.test_locate_empty_rejected_and_unknown_not_invented) ... ok
+test_locate_gap_returns_repair_and_capabilities (test_extensions.NewHelpers.test_locate_gap_returns_repair_and_capabilities) ... ok
+test_macro_computed_mean_not_best_seed (test_extensions.NewHelpers.test_macro_computed_mean_not_best_seed) ... ok
+test_macro_failure_suppresses_all_output (test_extensions.NewHelpers.test_macro_failure_suppresses_all_output) ... ok
+test_macro_injection_and_duplicate_rejected (test_extensions.NewHelpers.test_macro_injection_and_duplicate_rejected) ... ok
+test_macro_missing_source_unverified (test_extensions.NewHelpers.test_macro_missing_source_unverified) ... ok
+test_F001 (test_feature_contracts.FeatureContracts.test_F001) ... ok
+test_F002 (test_feature_contracts.FeatureContracts.test_F002) ... ok
+test_F003 (test_feature_contracts.FeatureContracts.test_F003) ... ok
+test_F004 (test_feature_contracts.FeatureContracts.test_F004) ... ok
+test_F005 (test_feature_contracts.FeatureContracts.test_F005) ... ok
+test_F006 (test_feature_contracts.FeatureContracts.test_F006) ... ok
+test_F007 (test_feature_contracts.FeatureContracts.test_F007) ... ok
+test_F008 (test_feature_contracts.FeatureContracts.test_F008) ... ok
+test_F009 (test_feature_contracts.FeatureContracts.test_F009) ... ok
+test_F010 (test_feature_contracts.FeatureContracts.test_F010) ... ok
+test_F011 (test_feature_contracts.FeatureContracts.test_F011) ... ok
+test_F012 (test_feature_contracts.FeatureContracts.test_F012) ... ok
+test_F013 (test_feature_contracts.FeatureContracts.test_F013) ... ok
+test_F014 (test_feature_contracts.FeatureContracts.test_F014) ... ok
+test_F015 (test_feature_contracts.FeatureContracts.test_F015) ... ok
+test_F016 (test_feature_contracts.FeatureContracts.test_F016) ... ok
+test_F017 (test_feature_contracts.FeatureContracts.test_F017) ... ok
+test_F018 (test_feature_contracts.FeatureContracts.test_F018) ... ok
+test_F019 (test_feature_contracts.FeatureContracts.test_F019) ... ok
+test_F020 (test_feature_contracts.FeatureContracts.test_F020) ... ok
+test_F021 (test_feature_contracts.FeatureContracts.test_F021) ... ok
+test_F022 (test_feature_contracts.FeatureContracts.test_F022) ... ok
+test_F023 (test_feature_contracts.FeatureContracts.test_F023) ... ok
+test_F024 (test_feature_contracts.FeatureContracts.test_F024) ... ok
+test_F025 (test_feature_contracts.FeatureContracts.test_F025) ... ok
+test_F026 (test_feature_contracts.FeatureContracts.test_F026) ... ok
+test_F027 (test_feature_contracts.FeatureContracts.test_F027) ... ok
+test_F028 (test_feature_contracts.FeatureContracts.test_F028) ... ok
+test_F029 (test_feature_contracts.FeatureContracts.test_F029) ... ok
+test_F030 (test_feature_contracts.FeatureContracts.test_F030) ... ok
+test_F031 (test_feature_contracts.FeatureContracts.test_F031) ... ok
+test_F032 (test_feature_contracts.FeatureContracts.test_F032) ... ok
+test_F033 (test_feature_contracts.FeatureContracts.test_F033) ... ok
+test_F034 (test_feature_contracts.FeatureContracts.test_F034) ... ok
+test_F035 (test_feature_contracts.FeatureContracts.test_F035) ... ok
+test_F036 (test_feature_contracts.FeatureContracts.test_F036) ... ok
+test_F037 (test_feature_contracts.FeatureContracts.test_F037) ... ok
+test_F038 (test_feature_contracts.FeatureContracts.test_F038) ... ok
+test_F039 (test_feature_contracts.FeatureContracts.test_F039) ... ok
+test_F040 (test_feature_contracts.FeatureContracts.test_F040) ... ok
+test_F041 (test_feature_contracts.FeatureContracts.test_F041) ... ok
+test_F042 (test_feature_contracts.FeatureContracts.test_F042) ... ok
+test_F043 (test_feature_contracts.FeatureContracts.test_F043) ... ok
+test_F044 (test_feature_contracts.FeatureContracts.test_F044) ... ok
+test_F045 (test_feature_contracts.FeatureContracts.test_F045) ... ok
+test_F046 (test_feature_contracts.FeatureContracts.test_F046) ... ok
+test_F047 (test_feature_contracts.FeatureContracts.test_F047) ... ok
+test_F048 (test_feature_contracts.FeatureContracts.test_F048) ... ok
+test_F049 (test_feature_contracts.FeatureContracts.test_F049) ... ok
+test_F050 (test_feature_contracts.FeatureContracts.test_F050) ... ok
+test_F051 (test_feature_contracts.FeatureContracts.test_F051) ... ok
+test_F052 (test_feature_contracts.FeatureContracts.test_F052) ... ok
+test_F053 (test_feature_contracts.FeatureContracts.test_F053) ... ok
+test_F054 (test_feature_contracts.FeatureContracts.test_F054) ... ok
+test_F055 (test_feature_contracts.FeatureContracts.test_F055) ... ok
+test_F056 (test_feature_contracts.FeatureContracts.test_F056) ... ok
+test_F057 (test_feature_contracts.FeatureContracts.test_F057) ... ok
+test_F058 (test_feature_contracts.FeatureContracts.test_F058) ... ok
+test_F059 (test_feature_contracts.FeatureContracts.test_F059) ... ok
+test_F060 (test_feature_contracts.FeatureContracts.test_F060) ... ok
+test_F061 (test_feature_contracts.FeatureContracts.test_F061) ... ok
+test_F062 (test_feature_contracts.FeatureContracts.test_F062) ... ok
+test_F063 (test_feature_contracts.FeatureContracts.test_F063) ... ok
+test_bilingual_readmes_include_every_capability (test_feature_contracts.FeatureContracts.test_bilingual_readmes_include_every_capability) ... ok
+test_gap_routes_have_test_files_and_closure (test_feature_contracts.FeatureContracts.test_gap_routes_have_test_files_and_closure) ... ok
+test_generated_docs_current (test_feature_contracts.FeatureContracts.test_generated_docs_current) ... ok
+test_missing_or_duplicate_feature_mapping_is_detected (test_feature_contracts.FeatureContracts.test_missing_or_duplicate_feature_mapping_is_detected) ... ok
+test_new_capability_propagates_without_diagram_template_edit (test_feature_contracts.FeatureContracts.test_new_capability_propagates_without_diagram_template_edit) ... ok
+test_source_inventory_exactly_matches_features (test_feature_contracts.FeatureContracts.test_source_inventory_exactly_matches_features) ... ok
+test_unrecognized_implementation_path_is_detected (test_feature_contracts.FeatureContracts.test_unrecognized_implementation_path_is_detected) ... ok
+test_actual_cli_exit_codes (test_real_paper.RealPaperCalculations.test_actual_cli_exit_codes) ... ok
+test_corrected_units_export_to_safe_macro (test_real_paper.RealPaperCalculations.test_corrected_units_export_to_safe_macro) ... ok
+test_different_cohorts_not_silently_compared (test_real_paper.RealPaperCalculations.test_different_cohorts_not_silently_compared) ... ok
+test_fever_react_vs_cot (test_real_paper.RealPaperCalculations.test_fever_react_vs_cot) ... ok
+test_hotpot_react_vs_cot (test_real_paper.RealPaperCalculations.test_hotpot_react_vs_cot) ... ok
+test_invented_relative_percent_error_detected (test_real_paper.RealPaperCalculations.test_invented_relative_percent_error_detected) ... ok
+test_transcription_hashes (test_real_paper.RealPaperCalculations.test_transcription_hashes) ... ok
+test_webshop_react_vs_act (test_real_paper.RealPaperCalculations.test_webshop_react_vs_act) ... ok
+test_webshop_react_vs_il (test_real_paper.RealPaperCalculations.test_webshop_react_vs_il) ... ok
+test_webshop_react_vs_ilrl (test_real_paper.RealPaperCalculations.test_webshop_react_vs_ilrl) ... ok
+test_RP001 (test_reviewer_priorities.ReviewerPriorities.test_RP001) ... ok
+test_RP002 (test_reviewer_priorities.ReviewerPriorities.test_RP002) ... ok
+test_RP003 (test_reviewer_priorities.ReviewerPriorities.test_RP003) ... ok
+test_RP004 (test_reviewer_priorities.ReviewerPriorities.test_RP004) ... ok
+test_RP005 (test_reviewer_priorities.ReviewerPriorities.test_RP005) ... ok
+test_RP006 (test_reviewer_priorities.ReviewerPriorities.test_RP006) ... ok
+test_RP007 (test_reviewer_priorities.ReviewerPriorities.test_RP007) ... ok
+test_RP008 (test_reviewer_priorities.ReviewerPriorities.test_RP008) ... ok
+test_RP009 (test_reviewer_priorities.ReviewerPriorities.test_RP009) ... ok
+test_RP010 (test_reviewer_priorities.ReviewerPriorities.test_RP010) ... ok
+test_RP011 (test_reviewer_priorities.ReviewerPriorities.test_RP011) ... ok
+test_RP012 (test_reviewer_priorities.ReviewerPriorities.test_RP012) ... ok
+test_RP013 (test_reviewer_priorities.ReviewerPriorities.test_RP013) ... ok
+test_RP014 (test_reviewer_priorities.ReviewerPriorities.test_RP014) ... ok
+test_RP015 (test_reviewer_priorities.ReviewerPriorities.test_RP015) ... ok
+test_RP016 (test_reviewer_priorities.ReviewerPriorities.test_RP016) ... ok
+test_RP017 (test_reviewer_priorities.ReviewerPriorities.test_RP017) ... ok
+test_RP018 (test_reviewer_priorities.ReviewerPriorities.test_RP018) ... ok
+test_RP019 (test_reviewer_priorities.ReviewerPriorities.test_RP019) ... ok
+test_RP020 (test_reviewer_priorities.ReviewerPriorities.test_RP020) ... ok
+test_RP021 (test_reviewer_priorities.ReviewerPriorities.test_RP021) ... ok
+test_RP022 (test_reviewer_priorities.ReviewerPriorities.test_RP022) ... ok
+test_RP023 (test_reviewer_priorities.ReviewerPriorities.test_RP023) ... ok
+test_RP024 (test_reviewer_priorities.ReviewerPriorities.test_RP024) ... ok
+test_RP025 (test_reviewer_priorities.ReviewerPriorities.test_RP025) ... ok
+test_RP026 (test_reviewer_priorities.ReviewerPriorities.test_RP026) ... ok
+test_RP027 (test_reviewer_priorities.ReviewerPriorities.test_RP027) ... ok
+test_RP028 (test_reviewer_priorities.ReviewerPriorities.test_RP028) ... ok
+test_RP029 (test_reviewer_priorities.ReviewerPriorities.test_RP029) ... ok
+test_RP030 (test_reviewer_priorities.ReviewerPriorities.test_RP030) ... ok
+test_RP031 (test_reviewer_priorities.ReviewerPriorities.test_RP031) ... ok
+test_RP032 (test_reviewer_priorities.ReviewerPriorities.test_RP032) ... ok
+test_RP033 (test_reviewer_priorities.ReviewerPriorities.test_RP033) ... ok
+test_RP034 (test_reviewer_priorities.ReviewerPriorities.test_RP034) ... ok
+test_RP035 (test_reviewer_priorities.ReviewerPriorities.test_RP035) ... ok
+test_RP036 (test_reviewer_priorities.ReviewerPriorities.test_RP036) ... ok
+test_all_six_new_rules_and_distinct_controls (test_reviewer_priorities.ReviewerPriorities.test_all_six_new_rules_and_distinct_controls) ... ok
+test_cli_plan_and_policy_execute (test_reviewer_priorities.ReviewerPriorities.test_cli_plan_and_policy_execute) ... ok
+test_every_required_field_checked (test_reviewer_priorities.ReviewerPriorities.test_every_required_field_checked) ... ok
+test_fixed_comparison_script_runs (test_reviewer_priorities.ReviewerPriorities.test_fixed_comparison_script_runs) ... ok
+test_full_quick_and_priorities_really_load_protocol (test_reviewer_priorities.ReviewerPriorities.test_full_quick_and_priorities_really_load_protocol) ... ok
+test_new_features_and_pending_video_are_locatable (test_reviewer_priorities.ReviewerPriorities.test_new_features_and_pending_video_are_locatable) ... ok
+test_no_attribution_to_unread_video (test_reviewer_priorities.ReviewerPriorities.test_no_attribution_to_unread_video) ... ok
+test_portable_install_contains_new_workflow_and_helper (test_reviewer_priorities.ReviewerPriorities.test_portable_install_contains_new_workflow_and_helper) ... ok
+test_priority_template_has_usable_repair_fields (test_reviewer_priorities.ReviewerPriorities.test_priority_template_has_usable_repair_fields) ... ok
+test_public_react_mixed_result_preserved (test_reviewer_priorities.ReviewerPriorities.test_public_react_mixed_result_preserved) ... ok
+test_real_paper_demo_executes_cli_and_records_provenance (test_reviewer_priorities.ReviewerPriorities.test_real_paper_demo_executes_cli_and_records_provenance) ... ok
+test_report_count_bounds (test_reviewer_priorities.ReviewerPriorities.test_report_count_bounds) ... ok
+test_unknown_rule_and_nonobject (test_reviewer_priorities.ReviewerPriorities.test_unknown_rule_and_nonobject) ... ok
+test_wrong_types_do_not_become_truthy_evidence (test_reviewer_priorities.ReviewerPriorities.test_wrong_types_do_not_become_truthy_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 299 tests in 3.129s
+
+OK
+Generated 5 coverage artifacts. Structural consistency only; no semantic review-effectiveness claim.

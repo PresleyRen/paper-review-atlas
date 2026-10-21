@@ -1,0 +1,405 @@
+{
+  "scope": "Fixed structured facts, not upstream skill execution or blind LLM evaluation",
+  "cases": [
+    {
+      "id": "RP001",
+      "rule": "CFX17",
+      "facts": {
+        "profile": "soundness_only",
+        "policy_verified": true,
+        "criterion": "importance"
+      },
+      "expected": "no_importance_veto",
+      "alternative": "assess_venue_fit"
+    },
+    {
+      "id": "RP002",
+      "rule": "CFX17",
+      "facts": {
+        "profile": "importance_selective",
+        "policy_verified": true,
+        "criterion": "importance"
+      },
+      "expected": "assess_venue_fit",
+      "alternative": "assess_venue_fit"
+    },
+    {
+      "id": "RP003",
+      "rule": "CFX17",
+      "facts": {
+        "profile": "unknown",
+        "policy_verified": false,
+        "criterion": "importance"
+      },
+      "expected": "retrieve_venue_policy",
+      "alternative": "assess_venue_fit"
+    },
+    {
+      "id": "RP004",
+      "rule": "CFX17",
+      "facts": {
+        "profile": "soundness_only",
+        "policy_verified": false,
+        "criterion": "importance"
+      },
+      "expected": "retrieve_venue_policy",
+      "alternative": "assess_venue_fit"
+    },
+    {
+      "id": "RP005",
+      "rule": "CFX17",
+      "facts": {
+        "profile": "unknown",
+        "policy_verified": true,
+        "criterion": "importance"
+      },
+      "expected": "retrieve_venue_policy",
+      "alternative": "assess_venue_fit"
+    },
+    {
+      "id": "RP006",
+      "rule": "CFX17",
+      "facts": {
+        "profile": "soundness_only",
+        "policy_verified": true,
+        "criterion": "validity"
+      },
+      "expected": "assess_validity",
+      "alternative": "assess_validity"
+    },
+    {
+      "id": "RP007",
+      "rule": "CFX17",
+      "facts": {
+        "profile": "importance_selective",
+        "policy_verified": true,
+        "criterion": "validity"
+      },
+      "expected": "assess_validity",
+      "alternative": "assess_validity"
+    },
+    {
+      "id": "RP008",
+      "rule": "CFX18",
+      "facts": {
+        "claim_type": "performance",
+        "effect_supported": true,
+        "discriminating_evidence": false
+      },
+      "expected": "retain_measured_effect",
+      "alternative": "retain_measured_effect"
+    },
+    {
+      "id": "RP009",
+      "rule": "CFX18",
+      "facts": {
+        "claim_type": "mechanism",
+        "effect_supported": true,
+        "discriminating_evidence": false
+      },
+      "expected": "test_mechanism_or_narrow_claim",
+      "alternative": "retain_measured_effect"
+    },
+    {
+      "id": "RP010",
+      "rule": "CFX18",
+      "facts": {
+        "claim_type": "mechanism",
+        "effect_supported": true,
+        "discriminating_evidence": true
+      },
+      "expected": "assess_mechanism_support",
+      "alternative": "retain_measured_effect"
+    },
+    {
+      "id": "RP011",
+      "rule": "CFX18",
+      "facts": {
+        "claim_type": "performance",
+        "effect_supported": false,
+        "discriminating_evidence": true
+      },
+      "expected": "request_effect_evidence",
+      "alternative": "request_effect_evidence"
+    },
+    {
+      "id": "RP012",
+      "rule": "CFX18",
+      "facts": {
+        "claim_type": "mechanism",
+        "effect_supported": false,
+        "discriminating_evidence": false
+      },
+      "expected": "request_effect_evidence",
+      "alternative": "request_effect_evidence"
+    },
+    {
+      "id": "RP013",
+      "rule": "CFX18",
+      "facts": {
+        "claim_type": "performance",
+        "effect_supported": true,
+        "discriminating_evidence": true
+      },
+      "expected": "retain_measured_effect",
+      "alternative": "retain_measured_effect"
+    },
+    {
+      "id": "RP014",
+      "rule": "CFX19",
+      "facts": {
+        "request_purpose": "current_claim",
+        "supported_narrower_claim": false
+      },
+      "expected": "minimum_sufficient_test",
+      "alternative": "minimum_sufficient_test"
+    },
+    {
+      "id": "RP015",
+      "rule": "CFX19",
+      "facts": {
+        "request_purpose": "current_claim",
+        "supported_narrower_claim": true
+      },
+      "expected": "test_or_narrow_claim",
+      "alternative": "minimum_sufficient_test"
+    },
+    {
+      "id": "RP016",
+      "rule": "CFX19",
+      "facts": {
+        "request_purpose": "new_scope",
+        "supported_narrower_claim": false
+      },
+      "expected": "optional_extension",
+      "alternative": "minimum_sufficient_test"
+    },
+    {
+      "id": "RP017",
+      "rule": "CFX19",
+      "facts": {
+        "request_purpose": "already_resolved",
+        "supported_narrower_claim": true
+      },
+      "expected": "close_resolved_request",
+      "alternative": "minimum_sufficient_test"
+    },
+    {
+      "id": "RP018",
+      "rule": "CFX19",
+      "facts": {
+        "request_purpose": "unspecified",
+        "supported_narrower_claim": false
+      },
+      "expected": "specify_evidence_gap",
+      "alternative": "minimum_sufficient_test"
+    },
+    {
+      "id": "RP019",
+      "rule": "CFX20",
+      "facts": {
+        "objection_basis": "module_count",
+        "prior_result_verified": false
+      },
+      "expected": "build_contribution_map",
+      "alternative": "novelty_rejection"
+    },
+    {
+      "id": "RP020",
+      "rule": "CFX20",
+      "facts": {
+        "objection_basis": "method_name",
+        "prior_result_verified": false
+      },
+      "expected": "build_contribution_map",
+      "alternative": "novelty_rejection"
+    },
+    {
+      "id": "RP021",
+      "rule": "CFX20",
+      "facts": {
+        "objection_basis": "sota_rank",
+        "prior_result_verified": false
+      },
+      "expected": "build_contribution_map",
+      "alternative": "novelty_rejection"
+    },
+    {
+      "id": "RP022",
+      "rule": "CFX20",
+      "facts": {
+        "objection_basis": "located_prior_result",
+        "prior_result_verified": true
+      },
+      "expected": "assess_incremental_contribution",
+      "alternative": "novelty_rejection"
+    },
+    {
+      "id": "RP023",
+      "rule": "CFX20",
+      "facts": {
+        "objection_basis": "located_prior_result",
+        "prior_result_verified": false
+      },
+      "expected": "verify_prior_result",
+      "alternative": "novelty_rejection"
+    },
+    {
+      "id": "RP024",
+      "rule": "CFX21",
+      "facts": {
+        "reports_frozen": false,
+        "contexts_isolated": true,
+        "shared_concerns_before_freeze": false,
+        "finding_origin": "reviewer",
+        "reports_raising_concern": 2
+      },
+      "expected": "freeze_before_synthesis",
+      "alternative": "record_convergent_reports"
+    },
+    {
+      "id": "RP025",
+      "rule": "CFX21",
+      "facts": {
+        "reports_frozen": true,
+        "contexts_isolated": true,
+        "shared_concerns_before_freeze": false,
+        "finding_origin": "audit",
+        "reports_raising_concern": 0
+      },
+      "expected": "separate_audit_finding",
+      "alternative": "record_convergent_reports"
+    },
+    {
+      "id": "RP026",
+      "rule": "CFX21",
+      "facts": {
+        "reports_frozen": true,
+        "contexts_isolated": false,
+        "shared_concerns_before_freeze": false,
+        "finding_origin": "reviewer",
+        "reports_raising_concern": 3
+      },
+      "expected": "label_shared_context_views",
+      "alternative": "record_convergent_reports"
+    },
+    {
+      "id": "RP027",
+      "rule": "CFX21",
+      "facts": {
+        "reports_frozen": true,
+        "contexts_isolated": true,
+        "shared_concerns_before_freeze": true,
+        "finding_origin": "reviewer",
+        "reports_raising_concern": 3
+      },
+      "expected": "label_shared_context_views",
+      "alternative": "record_convergent_reports"
+    },
+    {
+      "id": "RP028",
+      "rule": "CFX21",
+      "facts": {
+        "reports_frozen": true,
+        "contexts_isolated": true,
+        "shared_concerns_before_freeze": false,
+        "finding_origin": "reviewer",
+        "reports_raising_concern": 2
+      },
+      "expected": "record_convergent_reports",
+      "alternative": "record_convergent_reports"
+    },
+    {
+      "id": "RP029",
+      "rule": "CFX21",
+      "facts": {
+        "reports_frozen": true,
+        "contexts_isolated": true,
+        "shared_concerns_before_freeze": false,
+        "finding_origin": "reviewer",
+        "reports_raising_concern": 1
+      },
+      "expected": "record_nonconsensus_finding",
+      "alternative": "record_convergent_reports"
+    },
+    {
+      "id": "RP030",
+      "rule": "CFX21",
+      "facts": {
+        "reports_frozen": true,
+        "contexts_isolated": true,
+        "shared_concerns_before_freeze": false,
+        "finding_origin": "reviewer",
+        "reports_raising_concern": 0
+      },
+      "expected": "record_nonconsensus_finding",
+      "alternative": "record_convergent_reports"
+    },
+    {
+      "id": "RP031",
+      "rule": "CFX22",
+      "facts": {
+        "source_access": "unavailable",
+        "conflicts_with_verified_policy": false,
+        "advice_scope": "general"
+      },
+      "expected": "pending_source_no_attribution",
+      "alternative": "conditional_review_rule"
+    },
+    {
+      "id": "RP032",
+      "rule": "CFX22",
+      "facts": {
+        "source_access": "title_only",
+        "conflicts_with_verified_policy": false,
+        "advice_scope": "general"
+      },
+      "expected": "pending_source_no_attribution",
+      "alternative": "conditional_review_rule"
+    },
+    {
+      "id": "RP033",
+      "rule": "CFX22",
+      "facts": {
+        "source_access": "full_text",
+        "conflicts_with_verified_policy": true,
+        "advice_scope": "venue_specific"
+      },
+      "expected": "use_verified_policy",
+      "alternative": "conditional_review_rule"
+    },
+    {
+      "id": "RP034",
+      "rule": "CFX22",
+      "facts": {
+        "source_access": "transcript",
+        "conflicts_with_verified_policy": false,
+        "advice_scope": "style_preference"
+      },
+      "expected": "optional_style",
+      "alternative": "conditional_review_rule"
+    },
+    {
+      "id": "RP035",
+      "rule": "CFX22",
+      "facts": {
+        "source_access": "full_text",
+        "conflicts_with_verified_policy": false,
+        "advice_scope": "general"
+      },
+      "expected": "conditional_review_rule",
+      "alternative": "conditional_review_rule"
+    },
+    {
+      "id": "RP036",
+      "rule": "CFX22",
+      "facts": {
+        "source_access": "transcript",
+        "conflicts_with_verified_policy": false,
+        "advice_scope": "venue_specific"
+      },
+      "expected": "conditional_review_rule",
+      "alternative": "conditional_review_rule"
+    }
+  ]
+}
