@@ -32,5 +32,9 @@ jobs:
         run: python scripts/build_feature_docs.py --check
       - name: Replay conflict policies
         run: python scripts/compare_policies.py > /tmp/atlas-conflicts.json
+      - name: Replay reviewer-priority policies
+        run: python scripts/compare_reviewer_priorities.py > /tmp/atlas-priorities.json
+      - name: Run public-table priority demo
+        run: python scripts/run_priority_demo.py > /tmp/atlas-priority-demo.json
       - name: Verify installed runtime footprint
         run: python skills/paper-review-atlas/scripts/atlas.py verify-install
