@@ -17,6 +17,14 @@ Atlas 面向论文作者、博士生与研究团队：审查研究论证、实�
 | 返修与回复审稿人 | 稳定问题编号、变更记录、逐项复核和回应信 |
 | 扩展技能 | 输入能力或缺口ID，直接找到协议、来源特色、测试和补强步骤 |
 
+## 顶刊 / 顶会审查—整改—验收（2026-11-26）
+
+在原有36项能力之上新增[18类证据验收关卡](skills/paper-review-atlas/references/acceptance-gates.md)。它不是新增18个独立技能，而是把全文、实验、统计、图表、代码、引用、伦理、期刊/会议规则、公开收录身份与返修回归串成可复核的闭环。按研究类型判断适用性；公开已录用论文也要独立审查，不能把录用当科学正确证明。严格遵守实际会议的保密和AI审稿规定。
+
+示例：`使用 $paper-review-atlas，full 模式，按18个验收关卡审查论文。给出位置、证据、整改建议、执行依赖和可观察的验收条件。先修复有证据支持的问题，再逐项复核并核查跨章节回归；对未完成的实验或不可读证据保留阻塞状态。`
+
+新增本地[验收台账模板](skills/paper-review-atlas/assets/acceptance.example.json)与[记录检查器](skills/paper-review-atlas/scripts/acceptance_gate.py)：拦截缺关卡、旧版本哈希、缺证据、重大未关闭问题等。执行 `python SKILL_DIR/scripts/acceptance_gate.py --root PAPER_DIR --ledger acceptance.json`（替换实际目录）。28项合成记录测试可通过 `python skills/paper-review-atlas/scripts/test_acceptance_gate.py` 运行。正式投稿或录用后最终交稿必须使用 `--publication --venue 实际目标 --submission-file 实际文件`（每个附件重复该选项），核对目标、完整附件与关闭问题证据；换目标或文件后必须重新验收。它不判断科学真伪或录用概率，不替代审稿人；13项已有开发缺口仍按原验收条件追踪。真实论文专家盲测、跨模型实际执行与实验复现尚未因这次新增而完成。
+
 ## 安装与触发
 
 ```bash
