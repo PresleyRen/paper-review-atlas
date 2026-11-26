@@ -23,9 +23,9 @@ class GateTests(unittest.TestCase):
     def digest(self, name):
         return hashlib.sha256((self.root / name).read_bytes()).hexdigest()
 
-    def result(self):
+    def result(self, **kwargs):
         self.write("acceptance.json", json.dumps(self.ledger))
-        return validate(self.root, "acceptance.json")
+        return validate(self.root, "acceptance.json", **kwargs)
 
     def blocked(self):
         self.assertEqual(self.result()["status"], "blocked")
@@ -80,6 +80,7 @@ class GateTests(unittest.TestCase):
 
     def test_closed_linked_issue(self):
         self.issue(status="closed")
+        self.ledger["closures"] = {"PRA-001": {"check_result": "synthetic recheck", "evidence": {"paper.md": self.artifacts["paper.md"]}}}
         self.ledger["gates"][0]["issue_ids"] = ["PRA-001"]
         self.assertEqual(self.result()["status"], "records_current")
 
@@ -95,6 +96,67 @@ class GateTests(unittest.TestCase):
     def test_symlink(self):
         (self.root / "alias.md").symlink_to(self.root / "paper.md")
         self.artifacts["alias.md"] = self.artifacts["paper.md"]
+        self.blocked()
+
+    def prepare_publication(self):
+        self.ledger.update(mode="submission", target_venue="Synthetic Journal/Research", submission_files=["paper.md"])
+        return {"publication": True, "venue": "Synthetic Journal/Research", "submission_files": ["paper.md"]}
+
+    def test_publication_valid(self):
+        self.assertEqual(self.result(**self.prepare_publication())["status"], "records_current")
+
+    def test_publication_full_mode_rejected(self):
+        self.assertEqual(self.result(publication=True, venue="Synthetic Journal/Research", submission_files=["paper.md"])["status"], "blocked")
+
+    def test_publication_missing_target(self):
+        self.prepare_publication()
+        del self.ledger["target_venue"]
+        self.blocked()
+
+    def test_publication_missing_actual_package(self):
+        self.prepare_publication()
+        self.assertEqual(self.result(publication=True)["status"], "blocked")
+
+    def test_publication_venue_changed(self):
+        options = self.prepare_publication()
+        options["venue"] = "Other Journal"
+        self.assertEqual(self.result(**options)["status"], "blocked")
+
+    def test_publication_files_changed(self):
+        options = self.prepare_publication()
+        options["submission_files"] = ["other.pdf"]
+        self.assertEqual(self.result(**options)["status"], "blocked")
+
+    def test_publication_a02_na(self):
+        self.prepare_publication()
+        self.ledger["gates"][1]["status"] = "not_applicable"
+        self.blocked()
+
+    def test_publication_a16_na(self):
+        self.prepare_publication()
+        self.ledger["gates"][15]["status"] = "not_applicable"
+        self.blocked()
+
+    def test_publication_attachment_not_checked(self):
+        self.prepare_publication()
+        self.write("supplement.txt", "synthetic supplement")
+        self.artifacts["supplement.txt"] = self.digest("supplement.txt")
+        self.ledger["submission_files"].append("supplement.txt")
+        self.blocked()
+
+    def test_closure_evidence_missing(self):
+        self.issue(status="closed")
+        self.blocked()
+
+    def test_closure_stale_hash(self):
+        self.issue(status="closed")
+        self.ledger["closures"] = {"PRA-001": {"check_result": "synthetic recheck", "evidence": {"paper.md": "old hash"}}}
+        self.blocked()
+
+    def test_repair_gate_cannot_be_na_after_closure(self):
+        self.issue(status="closed")
+        self.ledger["closures"] = {"PRA-001": {"check_result": "synthetic recheck", "evidence": {"paper.md": self.artifacts["paper.md"]}}}
+        self.ledger["gates"][16]["status"] = "not_applicable"
         self.blocked()
 
     def test_duplicate_json_key(self):
