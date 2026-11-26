@@ -1,0 +1,157 @@
+{
+  "paper_id": "replace-with-local-paper-id",
+  "version": "replace-with-actual-version",
+  "mode": "full",
+  "manuscript": "manuscript.md",
+  "report": "review.json",
+  "artifacts": {
+    "manuscript.md": "replace-with-actual-sha256",
+    "review.json": "replace-with-actual-sha256"
+  },
+  "gates": [
+    {
+      "id": "A01",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A02",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A03",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A04",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A05",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A06",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A07",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A08",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A09",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A10",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A11",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A12",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A13",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A14",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A15",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A16",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A17",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    },
+    {
+      "id": "A18",
+      "status": "blocked",
+      "basis": "Not yet checked; replace with actual scope and evidence.",
+      "check_result": "Not executed.",
+      "evidence": {},
+      "issue_ids": []
+    }
+  ]
+}
