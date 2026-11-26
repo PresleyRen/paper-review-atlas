@@ -63,6 +63,12 @@ Use assets/acceptance.example.json as a schema example (not a passing paper). Cr
 
     python SKILL_DIR/scripts/acceptance_gate.py --root PAPER_DIR --ledger acceptance.json
 
+For final submission or camera-ready, set mode to submission or camera_ready, record target_venue (exact verified venue/track identifier), submission_files (all intended upload paths), and include every submission file in A16 evidence. For each closed issue add a closures entry keyed by issue ID containing check_result and a nonempty evidence mapping of current artifact paths to hashes. The actual target and intended upload file list must be supplied independently when running the final publication command, not copied blindly from stale records:
+
+    python SKILL_DIR/scripts/acceptance_gate.py --root PAPER_DIR --ledger acceptance.json --publication --venue "Actual venue/track" --submission-file manuscript.pdf --submission-file supplement.pdf
+
+Repeat --submission-file for each real file; replace these example values. A02 and A16 cannot be not_applicable for submission/camera_ready; A17 cannot be not_applicable when issues were closed. Any scope, target, artifact or dependent evidence change requires actual affected rechecks and a fresh receipt. Do not bypass the final gate by running a narrower mode. The tool is a local record gate, not a publisher authorization or automatic technical restriction on external upload systems.
+
 The checker verifies the declared inventory, completeness of all 18 gates, current SHA-256s, evidence links, issue references, and open major/critical issues. It rejects passed lanes linked to unresolved findings, missing gates, invalid paths, absent files, stale hashes, or unjustified NA of always-required gates. It cannot inspect omitted artifacts, validate actual source support or reproduce experiments; it checks records only. Use atlas.py validate-report/recheck for existing checks. A record-level pass is not a scientific certification, cannot create an acceptance decision, and does not replace host/model/author checks. Never manufacture evidence to satisfy the checker. Full runtime benchmarks against real paper labels remain an open development task.
 
 ## 6. Official method sources (checked 2026-11-26)
