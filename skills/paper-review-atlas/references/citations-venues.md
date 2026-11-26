@@ -48,6 +48,10 @@ Verify a newly introduced citation when adding it, then include it in the final 
 Preserve existing citation keys unless a key change is necessary and every affected reference can be updated and checked.
 Distinguish the manuscript's rendered reference list from a shared bibliography collection. An unused entry in a shared `.bib` file is not a defect and must not be deleted automatically.
 
+### Shared citation audit handoff (2026-11-26)
+
+For a full citation or submission pass, prefer the installed `paper-evidence-audit` companion from [paper-review-writing-skill](https://github.com/PresleyRen/paper-review-writing-skill/blob/2d947ebbe6dfbdba77937e92d0fcad260efffe9d/.agents/skills/paper-evidence-audit/references/citation-verification.md). Read its actual local protocol and invoke it if available; consume its source and occurrence ledger, but independently assess important claims against the original evidence and the current manuscript version. Do not copy or require a second installed audit implementation. If the companion is not installed, this standalone review still performs the identity/field/status/claim checks above, covering every in-scope occurrence for submission; use a genuinely isolated reviewer only when available and label missing access and review independence. Report unresolved checks and coverage, not a pass inferred from the bibliography or another skill's name. No auto-installation or external manuscript upload.
+
 ## Local bibliography retrieval and export
 
 When searching a supplied bibliography, record the file/version and interpreted topic, author, date, venue, identifier, and field filters.
