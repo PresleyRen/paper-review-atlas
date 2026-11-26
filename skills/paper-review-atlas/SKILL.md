@@ -56,6 +56,10 @@ For `full` and `quick`, read [reviewer-priorities.md](references/reviewer-priori
 - [guided-calibration.md](references/guided-calibration.md): progressive author dialogue, explicit target criteria, rubric calibration and separate author/editor channels.
 - [domain-agent.md](references/domain-agent.md): AI/LLM/Agent routing, retrieval, planning, tools, memory, multi-agent systems and knowledge graphs. Apply only where relevant.
 
+## Full acceptance gates and regression review
+
+For `full` or `submission`, and when preparing an accepted/camera-ready manuscript or learning from a public accepted paper, read [acceptance-gates.md](references/acceptance-gates.md) before inspection. Distinguish author self-review from official confidential reviewer assignments; obey the actual venue's AI and confidentiality policies. Apply all 18 lanes with justified applicability, use the existing issue lifecycle, and record concrete repair/acceptance evidence and scope. For `revise` and `rereview`, use the same protocol to recheck affected gates and invalidate stale approvals. For focused modes, report omitted lanes; do not claim full readiness. In full or submission work, write the actual [acceptance ledger](assets/acceptance.example.json) and execute `python SKILL_DIR/scripts/acceptance_gate.py --root PAPER_DIR --ledger acceptance.json`. The local checker verifies records/hashes, not scientific truth. Do not call an absent check passed or confuse acceptance by a venue with scientific correctness.
+
 ## Review procedure
 
 ### 1. Establish scope and an evidence inventory
