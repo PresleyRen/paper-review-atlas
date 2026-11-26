@@ -68,6 +68,8 @@ Do not allow a polished abstract to retain a claim removed from the results.
 
 ## Re-review and close findings
 
+For comprehensive reviews and repairs, also apply [acceptance-gates.md](acceptance-gates.md). Freeze the original and current artifact manifests, bind each material issue to affected acceptance lanes and record the actual repair test. Re-evaluate gates when any dependent input changes; a closed issue is not automatically a passed lane. Run the ledger checker for full readiness after the actual checks. For focused revision report its scope instead of claiming full acceptance.
+
 Retain stable finding IDs. New independent problems receive new IDs; do not renumber the history.
 For every previous finding, inspect the current evidence and perform the stated acceptance check.
 Use the machine statuses confirmed, unverified, and closed consistently.
