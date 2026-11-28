@@ -38,3 +38,17 @@ jobs:
         run: python scripts/run_priority_demo.py > /tmp/atlas-priority-demo.json
       - name: Verify installed runtime footprint
         run: python skills/paper-review-atlas/scripts/atlas.py verify-install
+
+  required-ci:
+    # Branch protection requires this name. Update needs when adding required jobs.
+    name: Paper Review Atlas CI
+    if: ${{ always() }}
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all validation jobs to succeed
+        env:
+          VALIDATION_RESULT: ${{ needs.validate.result }}
+        run: |
+          printf 'Validation result: %s\n' "$VALIDATION_RESULT"
+          test "$VALIDATION_RESULT" = success
