@@ -1,4 +1,5 @@
 # Paper Review Atlas
+<!-- Generated from docs/templates/README.en.md. Edit the template and run python scripts/build_feature_docs.py. -->
 
 **Locate research-paper weaknesses, produce actionable revisions, and verify the fixes—in Chinese and English.**
 

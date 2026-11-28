@@ -22,14 +22,14 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Check source-feature matrix and README text maps
+        run: python scripts/build_feature_docs.py --check
       - name: Run deterministic and integration tests
         run: python -m unittest discover -s tests -v
       - name: Check portable package
         run: python scripts/check_package.py
       - name: Check generated coverage freshness
         run: python scripts/build_coverage.py --check
-      - name: Check source-feature matrix and README text maps
-        run: python scripts/build_feature_docs.py --check
       - name: Replay conflict policies
         run: python scripts/compare_policies.py > /tmp/atlas-conflicts.json
       - name: Replay reviewer-priority policies
