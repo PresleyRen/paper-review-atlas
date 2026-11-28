@@ -114,6 +114,12 @@ def main():
             if not path.is_file() or path.read_text(encoding='utf-8')!=content:stale.append(rel)
         else:
             path.parent.mkdir(parents=True,exist_ok=True);path.write_text(content,encoding='utf-8')
-    if stale:print('Generated feature documentation is stale: '+', '.join(stale));return 1
+    if stale:
+        print('Generated feature documentation is stale: '+', '.join(stale))
+        for output,template in [('README.md','README.zh.md'),('README.en.md','README.en.md')]:
+            if output in stale:
+                print(f'Edit docs/templates/{template} for changes to {output}.')
+        print('Run python scripts/build_feature_docs.py and commit the regenerated files with their inputs.')
+        return 1
     print('Feature inventory, repair routes and bilingual text maps: OK');return 0
 if __name__=='__main__':raise SystemExit(main())

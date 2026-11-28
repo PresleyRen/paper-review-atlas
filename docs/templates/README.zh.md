@@ -1,4 +1,5 @@
 # Paper Review Atlas · 论文审查图谱
+<!-- 由 docs/templates/README.zh.md 生成。请修改模板，再运行 python scripts/build_feature_docs.py。 -->
 
 **把中文、英文论文变成可定位、可修改、可复核的审稿任务。**
 
